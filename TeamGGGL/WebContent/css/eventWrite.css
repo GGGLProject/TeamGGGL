@@ -1,0 +1,37 @@
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+	background-color: rgba(0,0,0,0.9);
+}
+
+body {
+	background-image: url('../image/lol_back1.jpg');
+	background-repeat: no-repeat;
+	color: #dedee0;
+}
+
+h2 {
+	padding-top: 40px;
+	padding-bottom: 20px;
+	text-align : center;
+	color: white;
+}
+
+.input {
+	background-color: rgba(0,0,0,0.1);
+}
+
+.text-link td>a {
+	color: black;
+	text-decoration: none;
+}
+
+.event-img {
+	border: 1px solid black;
+}
+
+.category {
+	color:black;
+}
+
+.table {
+	 background-color: rgba(0,0,0,0.8);
+}

@@ -1,0 +1,69 @@
+body {
+	background-image: url('../image/lol_back1.jpg');
+	background-attachment: fixed;
+	color: #dedee0;
+}
+
+.row {
+	padding: 0 15px;
+}
+
+/* .container_t {
+	width: 100%;
+	height: auto;
+} */
+
+h1 {
+	padding-top: 40px;
+	padding-bottom: 20px; 
+	text-align : center;
+	color: white;
+}
+
+.hotNews, .updateNews {
+	padding: 10px;
+}
+
+.thumbnail {
+	background-color: rgba(35,35,35,0.5);
+	padding : 15px 10px;
+}
+
+body, a {
+	color: #dedee0;
+}
+
+a:hover {
+	color: #3ba0f7;
+}
+
+.news_writer, .news_date {
+	color: #dedee0;
+	font-size: 12px
+}
+
+.hotNews_underline a, .updateNews_underline a  {
+	text-decoration: none;
+	font-size: 15px;
+}
+
+hr {
+	margin: 10px;
+	height: 1px;
+	color: #dedee0;
+	background-color: #dedee0;
+	border: none
+}
+
+.news_img a img {
+	border: 2px solid #dedee0
+}
+
+.news_img {
+	text-align: center;
+	margin: 20px auto
+}
+
+.row_content {
+	margin: 10px auto;
+}

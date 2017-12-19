@@ -1,0 +1,98 @@
+body {
+	background-image: url('../image/lol_back1.jpg');
+	background-attachment: fixed;
+	color: white;
+}
+
+/* h1 {
+	padding : 20px 0;
+	text-align : center;
+	color: #dedee0;
+} */
+
+
+h1 {
+	padding-top: 40px;
+	padding-bottom: 20px;
+	text-align : center;
+	color: white;
+}
+
+.team_vs {
+	padding: 30px 0 20px 0;
+}
+
+.player_vs {
+	margin-bottom: 30px;
+	padding: 30px 15px 20px 15px;
+} 
+
+.h_teamName, .a_teamName {
+	font-size: 18px;
+}
+
+.container-fluid-news {
+	margin-top: 50px;
+	border: 1px solid #dedee0;
+	padding: 10px 0;
+}
+
+.container {
+	background-color: rgba(20, 20, 20, 0.7);
+}
+
+.container-fluid-news .com_2 {
+	margin: 10px 0;
+}
+
+.comment_form {
+	border-bottom: 1px solid #dedee0;
+	margin-bottom: 20px;
+	padding: 0 10px 10px 10px;
+}
+
+.writer_img {
+	text-align: center;
+	margin: auto 10px;
+}
+
+.comment_content {
+	margin-left: 110px;
+}
+
+.comment_content .writer_info .w_nickName {
+	color: #3d9eed
+}
+
+.h_player1name {
+	height: 130px;
+}
+
+.player1name {
+	width: 100px;
+	height: 50px;
+	margin-top: 50px;
+}
+
+.a_player1name {
+	width: 100px;
+	height: 50px;
+	margin-top: 50px;
+	margin-left: 70px;
+}
+
+.hi {
+	margin: 30px 0px;
+}
+
+.hi2 {
+	margin-right: 10px;
+}
+
+hr {
+	margin: 10px;
+	height: 1px;
+	color: #dedee0;
+	background-color: #dedee0;
+	border: none
+}

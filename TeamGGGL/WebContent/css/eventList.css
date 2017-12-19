@@ -1,0 +1,30 @@
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+	background-color: rgba(0,0,0,0.9);
+	vertical-align: middle;
+}
+
+.table tbody tr td, tbody tr th{
+	vertical-align: middle;
+}
+
+h2 {
+	padding-top: 40px;
+	padding-bottom: 20px;
+	text-align : center;
+	color: #dedee0;
+}
+
+body {
+	background-image: url('../image/lol_back1.jpg');
+	background-repeat: no-repeat;
+	color:white;
+}
+
+.table {
+	 background-color: rgba(0,0,0,0.9);
+}
+
+.text-link td>a {
+	color:white;
+	text-decoration:none;
+}

@@ -1,0 +1,398 @@
+body {
+	background-image: url('../image/lol_back1.jpg');
+	background-attachment: fixed;
+}
+
+h2 {
+	padding-top: 40px;
+	padding-bottom: 20px;
+	color: white;
+	text-align: center;
+}
+
+.gametable .table tr th, .gametable .table tr td {
+	height: 40px;
+	font-size: 16px; vertical-align : middle;
+	color: white;
+	vertical-align: middle;
+}
+
+.container .nav-tabs li {
+	text-align: center;
+}
+
+.container .nav-tabs .nonselected a:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tab-content .tab-pane .row {
+	padding-top: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: white;
+}
+
+.tab-content .tab-pane .row .col-md-3 {
+	height: 230px;
+	border: 1px solid rgb(215, 215, 215);
+	background-color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	line-height: 230px;
+	padding-top: 10px;
+}
+
+.tab-content .tab-pane .row .col-md-3:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.tab-content .tab-pane .row .col-md-3 .detail_button {
+	text-align: center;
+	transition: all 0.8s, color 0.3s 0.3s;
+	cursor: pointer;
+	color: white;
+}
+
+.tab-content .tab-pane .row .col-md-3 .detail_button:hover {
+	box-shadow: 400px 0 0 0 rgba(0, 0, 0, 0.80) inset, -400px 0 0 0
+		rgba(0, 0, 0, 0.80) inset;
+	font-size: 18px;
+	color: #fff;
+}
+
+.container ul li a {
+	color: white;
+	font-size: 16px;
+}
+
+/* 게임시작전 */
+.tab-content .tab-pane .row .gameready .leaguelogo {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 22px;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameready .leaguelogo img {
+	height: 43px;
+	margin-right: 10px;
+}
+
+.tab-content .tab-pane .row .gameready .firstteam_logo {
+	width: 40px;
+	margin-top: 30px;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameready .firstteam_logo img {
+	width: 100px;
+}
+
+.tab-content .tab-pane .row .gameready .firstteam_name {
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-left: 0px;
+	text-align: center;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameready .vsvs {
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 28px;
+	font-weight: bold;
+	margin-top: -80px;
+	padding-left: 110px;
+	color: rgb(220, 220, 220);
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameready .lastteam_logo {
+	width: 40px;
+	margin-top: -40px;
+	padding-left: 160px;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameready .lastteam_logo img {
+	width: 100px;
+}
+
+.tab-content .tab-pane .row .gameready .lastteam_name {
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	margin-top: 10px;
+	padding-left: 190px;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameready .game_time {
+	width: 42px;
+	height: 20px;
+	line-height: 20px;
+	margin-top: -40px;
+	margin-left: 109px;
+	border-radius: 20px;
+	border: 1px solid rgb(190, 190, 190);
+	font-size: 11px;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameready .detail_button {
+	width: 280px;
+	height: 45px;
+	line-height: 45px;
+	border-top: 1px solid rgb(215, 215, 215);
+	margin-top: 35px;
+	margin-left: -15px;
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameready a {
+	text-decoration: none;
+}
+
+/* 게임종료후 */
+.tab-content .tab-pane .row .gameover .leaguelogo {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 22px;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameover .leaguelogo img {
+	height: 43px;
+	margin-right: 10px;
+}
+
+.tab-content .tab-pane .row .gameover .firstteam_logo {
+	width: 40px;
+	margin-top: 30px;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameover .firstteam_logo img {
+	width: 100px;
+}
+
+.tab-content .tab-pane .row .gameover .firstteam_name {
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-left: 0px;
+	text-align: center;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameover .firstteam_score {
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: -80px;
+	padding-left: 99px;
+	text-align: center;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameover .vsvs {
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: -30px;
+	padding-left: 125px;
+	text-align: center;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameover .lastteam_logo {
+	width: 40px;
+	margin-top: -40px;
+	padding-left: 160px;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameover .lastteam_logo img {
+	width: 100px;
+}
+
+.tab-content .tab-pane .row .gameover .lastteam_name {
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	margin-top: 10px;
+	padding-left: 190px;
+	text-align: center;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameover .lastteam_score {
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: -30px;
+	padding-left: 146px;
+	text-align: center;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameover .game_time {
+	width: 42px;
+	height: 20px;
+	line-height: 20px;
+	margin-top: -40px;
+	margin-left: 109px;
+	border-radius: 20px;
+	border: 1px solid rgb(130, 130, 130);
+	background-color: rgb(130, 130, 130);
+	color: white;
+	font-size: 11px;
+	text-align: center;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameover .detail_button {
+	width: 280px;
+	height: 45px;
+	line-height: 45px;
+	border-top: 1px solid rgb(215, 215, 215);
+	margin-top: 35px;
+	margin-left: -15px;
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .gameover a {
+	text-decoration: none;
+}
+
+/* 게임없는날  */
+.tab-content .tab-pane .row .nogame img {
+	width: 20px;
+	height: 18px;
+	margin-top: 90px;
+	margin-left: -100px;
+	position: relative;
+}
+
+.tab-content .tab-pane .row .nogame p {
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 70px;
+	margin-top: -23px;
+	position: relative;
+}
+
+.gametable h4 {
+	color: white;
+	font-size: 20px;
+}
+
+.gametable .table tr td {
+	text-align: center;
+}
+
+.gametable .table tr td a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+.gametable .table tr td div {
+	width: 100px;
+	height: 30px;
+	line-height: 28px;
+	margin-left: 30px;
+	border-radius: 20px;
+	border: 1px solid rgb(255, 255, 255);
+	text-align: center;
+	transition: all 0.5s, color 0.1s 0.1s;
+	cursor: pointer;
+}
+
+.gametable .table tr td div:hover {
+	box-shadow: 400px 0 0 0 rgba(0, 0, 0, 0.7) inset;
+	border: 1px solid rgb(0, 0, 0);
+	color: #fff;
+}
+
+ul.middle_nav_tabs {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 60px;
+	opacity: 1;
+	width: 100%;
+	font-size: 16px;
+	margin-bottom: 60px;
+}
+
+ul.middle_nav_tabs li {
+	float: inherit;
+	text-align: center;
+	cursor: pointer;
+	width: 19%;
+	height: 60px;
+	border: 1px solid white;
+	margin: 0 5.7px 0px 5.7px;
+	color: white;
+	line-height: 60px;
+	font-weight: bold;
+	overflow: hidden;
+	position: relative;
+}
+
+ul.middle_nav_tabs li img {
+	height: 42px;
+	margin-right: 20px;
+}
+
+ul.middle_nav_tabs li.active2 {
+	border: 1px solid white;
+	color: black;
+	background-color: white;
+	opacity: 0.9;
+}
+
+.middle_tab_container {
+	border-top: none;
+	clear: both;
+	float: left;
+	margin-left: -25px;
+}
+
+/* .middle_tab_container .middle_tab_content .gametable .table tr td img {
+	height: 32px;
+	margin-right: 10px;
+} */
+
+.middle_tab_content {
+	background-color: transparent;
+	width: 1190px;
+	height: auto;
+	font-size: 12px;
+	display: none;
+}
+
