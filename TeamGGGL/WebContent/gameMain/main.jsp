@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR" import="com.sist.change.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- 수정테스트 입니다 . ㅎㅌㅎㅎㅎㅎddddd-->
+<!-- 수정테스트 입니다 . ㅎㅌㅎㅎㅎㅎdddhgjdd-->
 <%
     String mode = request.getParameter("mode");
     if(mode==null)
