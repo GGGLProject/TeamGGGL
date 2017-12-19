@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR" import="com.sist.change.*"%>
+    pageEncoding="EUC-KR" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%
-    String mode = request.getParameter("mode");
-    if(mode==null)
-       mode="0";
-    String jsp = JspChange.change(Integer.parseInt(mode));
-%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,10 +30,10 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
          <ul class="nav navbar-nav">
-               <li><a href="main.jsp?mode=1">뉴스</a></li>
-               <li><a href="main.jsp?mode=2">일정 / 결과</a></li>
-               <li><a href="main.jsp?mode=3">갤러리</a></li>
-               <li><a href="main.jsp?mode=4">이벤트</a></li>
+               <li><a href="#">뉴스</a></li>
+               <li><a href="#">일정 / 결과</a></li>
+               <li><a href="#">갤러리</a></li>
+               <li><a href="#">이벤트</a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span>
@@ -51,7 +46,7 @@
    </nav>
 
    <!-- Content -->
-   <jsp:include page="<%= jsp %>"></jsp:include>
+   
    <!-- Footer -->
    <footer class="text-center"> <a class="up-arrow"
       href="#myPage" data-toggle="tooltip" title="TO TOP"> <span
