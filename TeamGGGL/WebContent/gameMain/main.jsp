@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-<link href="../css/gameMain.css" rel="stylesheet" type="text/css">
+<link href="css/gameMain.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -30,7 +30,7 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
          <ul class="nav navbar-nav">
-               <li><a href="#">뉴스</a></li>
+               <li><a href="news_main.do">뉴스</a></li>
                <li><a href="#">일정 / 결과</a></li>
                <li><a href="#">갤러리</a></li>
                <li><a href="#">이벤트</a></li>
@@ -46,7 +46,7 @@
    </nav>
 
    <!-- Content -->
-   
+   <jsp:include page="${ main_jsp}"></jsp:include>
    <!-- Footer -->
    <footer class="text-center"> <a class="up-arrow"
       href="#myPage" data-toggle="tooltip" title="TO TOP"> <span
