@@ -1,0 +1,148 @@
+.homelogo{
+   margin-left:9%
+   
+}
+
+.homelogok{
+width:150px;
+}
+
+.awaylogo{
+margin-right:10%
+}
+.awaylogok{
+width:170px;
+}
+.homescore{
+margin-left:30%;
+margin-top:80px;
+width:150px;
+height:150px;
+}
+.homepoint{
+margin-top:45px;
+margin-left:30px;
+}
+.point{
+text-align: center;
+}
+
+.awayscore{
+margin-right:30%;
+margin-top:80px;
+width:150px;
+height:150px;
+}
+
+.awaypoint{
+margin-top:45px;
+margin-left:45px;
+}
+.w3-container{
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.league{
+    border: 4px groove black;
+    border-radius: 2em;
+}
+.homeplayer{
+	position:absolute;
+	
+	left:10%;
+	top:390px;
+	width:500px;
+	height:160px;
+}
+.homeplayer2{
+	position:absolute;
+	
+	left:10%;
+	top:560px;
+	width:500px;
+	height:160px;
+}
+.homeplayer3{
+	position:absolute;
+	
+	left:10%;
+	top:730px;
+	width:500px;
+	height:160px;
+}
+.vsbox{
+	position:absolute;
+	left:37%;
+	top:390px;
+	width:500px;
+	height:500px;
+}
+.awayplayer1{
+	position:absolute;
+	left: 1220px;
+	top:390px;
+	width:500px;
+	height:160px;
+}
+.awayplayer2{
+	position:absolute;
+	left: 1220px;
+	top:560px;
+	width:500px;
+	height:160px;
+}
+.awayplayer3{
+	position:absolute;
+	left: 1220px;
+	top:730px;
+	width:500px;
+	height:160px;
+}
+.homeplayer1profile{
+	position:absolute;
+	left:10px;
+	top:20px;
+	width: 120px;
+	height: 120px;
+}
+.homeplayer1name{
+	position:absolute;
+	left:150px;
+	top:60px;
+	width: 100px;
+	height: 40px;
+}
+.homeplayer1Id{
+	position:absolute;
+	left:150px;
+	top:100px;
+	width: 100px;
+	height: 40px;
+}
+.vs{
+	position: absolute;
+	left: 70px;
+	top: 100px;
+}
+.awayplayer1profile{
+	position:absolute;
+	left:370px;
+	top:20px;
+	width: 120px;
+	height: 120px;
+}
+.awayplayer1name{
+	position:absolute;
+	left:280px;
+	top:60px;
+	width: 100px;
+	height: 40px;
+}
+.awayplayer1Id{
+	position:absolute;
+	left:280px;
+	top:100px;
+	width: 100px;
+	height: 40px;
+}
