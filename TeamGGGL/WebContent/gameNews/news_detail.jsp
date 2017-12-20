@@ -27,7 +27,7 @@
 						16:00</span> 
 				</div>
 			</div>
-			<hr>
+			<hr> 
 			<div class="contentImage text-center">
 				<img src="http://static.inven.co.kr/column/2017/12/08/news/i15653367474.jpg"
 					style="width: 60%; height: 50%">
