@@ -2,7 +2,7 @@ package com.sist.event.dao;
 
 import java.util.*;
 
-public class eventVO {
+public class EventVO {
 	//TABLE gggl_event
 	//컬럼명과 일치되는 변수명 
 	// date 자료형은 java.util.date;

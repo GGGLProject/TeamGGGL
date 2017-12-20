@@ -15,13 +15,16 @@ public class WebApplicationContext {
    {
 	   try
 	   {
+		   System.out.println(path);
 		   SAXParserFactory spf=
 				  SAXParserFactory.newInstance();
 		   // SAX파서기 생성 
 		   System.out.println("SAX파서기 생성");
 		   SAXParser sp=spf.newSAXParser();
 		   HandlerMapping hm=new HandlerMapping();
-		   sp.parse(new File(path),hm);
+		   
+		   sp.parse(new File(path), hm);
+
 		   List<String> packList=hm.getList();
 		   
 		   FileConfig fc=new FileConfig();
@@ -37,7 +40,7 @@ public class WebApplicationContext {
 		   
 	   }catch(Exception ex) 
 	   {
-		   System.out.println("WebApplication : "+ex.getMessage());
+		   System.out.println("WebApplicationContext : "+ex.getMessage());
 	   }
    }
 	public List<String> getList() {
