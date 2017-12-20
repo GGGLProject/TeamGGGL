@@ -75,6 +75,7 @@ $(function () {
 		<div class="tab-content">
 			<div id="home" class="tab-pane fade">
 				<div class="row">
+				
 					<div class="col-md-3 gameover">
 						<div class="leaguelogo"><img src="../gameSchedule/image/lck.png">LCK</div>
 						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
@@ -87,6 +88,7 @@ $(function () {
 						<div class="game_time">종료</div>
 						<a href="main.jsp?mode=6"><div class="detail_button">상세보기 ></div></a>
 					</div>
+					
 					<div class="col-md-3 gameover">
 						<div class="leaguelogo"><img src="../gameSchedule/image/na-lcs.png">NA LCS</div>
 						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
@@ -366,6 +368,17 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 				    		
+				    		<c:forEach var="vo" items="${list}">
+				    		<tr>
+				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">${vo.matchleague }</td>
+				    			<td width=23% class="text-center qna-th">${vo.matchname }</td>
+				    			<td width=10% class="text-center qna-th">${vo.matchdate }</td>
+				    			<td width=37% class="text-center qna-th">${vo.homename }<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">${vo.awayname }</td>
+				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    		</tr>
+				    		</c:forEach>
+				    		
+			   				<!-- 
 			   				<tr>
 				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
@@ -393,7 +406,7 @@ $(function () {
 				    			<td width=10% class="text-center qna-th">18:00</td>
 				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
 				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
-				    		</tr>
+				    		</tr> -->
 				    			    		
 				    	</table>
 				    	<br>
