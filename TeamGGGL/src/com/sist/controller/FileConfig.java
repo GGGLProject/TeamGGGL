@@ -7,7 +7,7 @@ public class FileConfig {
   {
 	  List<String> list=new ArrayList<String>();
 	  try
-	  {
+	  {	  //승재경로임니다 바꾸야댐
 		  String path="C:\\Users\\sistMoon\\git\\TeamGGGL\\TeamGGGL\\src\\";
 		  path=path+pack.replace(".", "\\");
 		  File dir=new File(path);
