@@ -26,14 +26,14 @@
             <span class="icon-bar"></span> <span class="icon-bar"></span> <span
                class="icon-bar"></span>
          </button>
-         <a class="navbar-brand" href="#">GGGL</a>
+         <a class="navbar-brand" href="main.do">GGGL</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
          <ul class="nav navbar-nav">
                <li><a href="news_main.do">뉴스</a></li>
-               <li><a href="#">일정 / 결과</a></li>
-               <li><a href="#">갤러리</a></li>
-               <li><a href="#">이벤트</a></li>
+               <li><a href="game_schedule.do">일정 / 결과</a></li>
+               <li><a href="gallery.do">갤러리</a></li>
+               <li><a href="event_list.do">이벤트</a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span>
@@ -41,12 +41,16 @@
             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
                   로그인</a></li>
          </ul>
+ <!--                <li><a href="reserve.do">영화예매</a></li>
+                                   <li><a href="recommand.do">추천영화</a></li> -->
       </div>
    </div>
    </nav>
 
    <!-- Content -->
-   <jsp:include page="${ main_jsp}"></jsp:include>
+               <%-- include --%>
+              <jsp:include page="${main_jsp }"></jsp:include>
+
    <!-- Footer -->
    <footer class="text-center"> <a class="up-arrow"
       href="#myPage" data-toggle="tooltip" title="TO TOP"> <span

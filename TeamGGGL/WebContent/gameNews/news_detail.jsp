@@ -7,19 +7,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>LOL 뉴스 - GG GL</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="../css/newsDetail.css" rel="stylesheet" type="text/css">
+<link href="css/newsDetail.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    $(".comment_tab_content").hide();
+    $(".comment_tab_content:first").show();
+    $("ul.comment_nav_tabs li").click(function () {
+        $("ul.comment_nav_tabs li").removeClass("active2");
+        $(this).addClass("active2");
+        $(".comment_tab_content").hide();
+        var activeTab = $(this).attr("rel");
+        $("#" + activeTab).fadeIn();
+    });
+});
+</script>
 </head>
 <body>
 	<div class="container">
-		<div style="height: 50px"></div>
 		<div class="newsPart">
 			<div class="newsHead text-center">
-				<h3>
+				<h2>
 					<span class="newsCategory">[뉴스]</span><span class="newsTitle">
 						'베인글로리', ‘레이저'와 모바일 e스포츠 위한 제휴 체결</span>
-				</h3>
+				</h2>
 				<br>
 				<div class="topInfo text-right">
 					<span class="t-writer">김홍제</span>&nbsp;<span>기자</span>&nbsp;&nbsp;
@@ -87,7 +99,7 @@
 						<c:forEach var="i" begin="1" end="4">
 							<div class="comment_form">
 								<div class="writer_img pull-left">
-									<img src="../image/co_user.png">
+									<img src="image/co_user.png">
 								</div>
 								<div class="comment_content">
 									<div class="writer_info">
@@ -122,7 +134,7 @@
 						<c:forEach var="i" begin="1" end="4">
 							<div class="comment_form">
 								<div class="writer_img pull-left">
-									<img src="../image/co_user.png">
+									<img src="image/co_user.png">
 								</div>
 								<div class="comment_content">
 									<div class="writer_info">
@@ -157,14 +169,14 @@
 						<c:forEach var="i" begin="1" end="4">
 							<div class="comment_form">
 								<div class="writer_img pull-left">
-									<img src="../image/co_user.png">
+									<img src="image/co_user.png">
 								</div>
 								<div class="comment_content">
 									<div class="writer_info">
 										<div class="w_nickName">
 											<strong>ybr0971</strong>
 										</div>
-										<div class="w_time" style="font-size: 12px; color: #9f9fa0">2017.09.21
+										<div class="w_time" style="font-size: 13px; color: #9f9fa0">2017.09.21
 											00:27</div>
 									</div>
 									<div class="comment_body">

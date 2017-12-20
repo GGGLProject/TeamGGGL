@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>갤러리 - GG GL</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="../css/gameGallery.css" rel="stylesheet" type="text/css">
+<link href="css/gameGallery.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -28,7 +28,7 @@
 				<div class="row qnarow gametable">
 					<div class="row text-center">
 						<figure class="snip1200" id="myImg1">
-							<img id="modal1" src="../gameGallery/image/가렌.jpg" alt="lol" />
+							<img id="modal1" src="gameGallery/image/가렌.jpg" alt="lol" />
 								<figcaption>
 									<p>I say, if your knees aren't green by the end of the day,
 										you ought to seriously re-examine your life.</p>
@@ -40,7 +40,7 @@
 						</figure>
 
 						<figure class="snip1200" id="myImg2">
-							<img id="modal2" src="../gameGallery/image/갈리오.jpg" alt="lol" />
+							<img id="modal2" src="gameGallery/image/갈리오.jpg" alt="lol" />
 								<figcaption>
 									<p>The inside of my head was exploding with fireworks.
 										Fortunately, my last thought turned out the lights when it left.</p>
@@ -52,7 +52,7 @@
 						</figure>
 						
 						<figure class="snip1200" id="myImg3">
-							<img id="modal3" src="../gameGallery/image/갱플랭크.jpg" alt="오버워치" />
+							<img id="modal3" src="gameGallery/image/갱플랭크.jpg" alt="오버워치" />
 								<figcaption>
 									<p>That's the difference between me and the rest of the world!
 										Happiness isn't good enough for me! I demand euphoria!</p>
@@ -64,7 +64,7 @@
 						</figure>
 						
 						<figure class="snip1200" id="myImg4">
-							<img id="modal4" src="../gameGallery/image/그라가스.jpg" alt="오버워치" />
+							<img id="modal4" src="gameGallery/image/그라가스.jpg" alt="오버워치" />
 								<figcaption>
 									<p>That's the difference between me and the rest of the world!
 										Happiness isn't good enough for me! I demand euphoria!</p>
@@ -76,7 +76,7 @@
 						</figure>
 						
 						<figure class="snip1200" id="myImg5">
-							<img id="modal5" src="../gameGallery/image/그레이브즈.jpg" alt="카스" />
+							<img id="modal5" src="gameGallery/image/그레이브즈.jpg" alt="카스" />
 								<figcaption>
 									<p>That's the difference between me and the rest of the world!
 										Happiness isn't good enough for me! I demand euphoria!</p>
@@ -88,7 +88,7 @@
 						</figure>
 						
 						<figure class="snip1200" id="myImg6">
-							<img id="modal6" src="../gameGallery/image/나르.jpg" alt="카스" />
+							<img id="modal6" src="gameGallery/image/나르.jpg" alt="카스" />
 								<figcaption>
 									<p>That's the difference between me and the rest of the world!
 										Happiness isn't good enough for me! I demand euphoria!</p>
@@ -100,7 +100,7 @@
 						</figure>
 						
 						<figure class="snip1200" id="myImg7">
-							<img id="modal7" src="../gameGallery/image/나미.jpg" alt="스타" />
+							<img id="modal7" src="gameGallery/image/나미.jpg" alt="스타" />
 								<figcaption>
 									<p>That's the difference between me and the rest of the world!
 										Happiness isn't good enough for me! I demand euphoria!</p>
@@ -112,7 +112,7 @@
 						</figure>
 						
 						<figure class="snip1200" id="myImg8">
-							<img id="modal8" src="../gameGallery/image/나서스.jpg" alt="스타" />
+							<img id="modal8" src="gameGallery/image/나서스.jpg" alt="스타" />
 								<figcaption>
 									<p>That's the difference between me and the rest of the world!
 									Happiness isn't good enough for me! I demand euphoria!</p>
