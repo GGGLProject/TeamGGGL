@@ -10,9 +10,7 @@ public class FileConfig {
 	  {
 		  String path="C:\\Users\\Jieun\\git\\TeamGGGL\\TeamGGGL\\src\\";
 		  //String path="https:\\github.com\\GGGLProject\\TeamGGGL\\tree\\master\\TeamGGGL\\src\\";
-		  // https://github.com/GGGLProject/TeamGGGL/blob/master/TeamGGGL/WebContent
-
-	  {	  
+		  // https://github.com/GGGLProject/TeamGGGL/blob/master/TeamGGGL/WebContent  
 		  path=path+pack.replace(".", "\\");
 		  File dir=new File(path);
 		  File[] files=dir.listFiles();
