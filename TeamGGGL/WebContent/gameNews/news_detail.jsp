@@ -174,7 +174,7 @@
 										</p>
 									</div>
 								</div>
-							</div>
+							</div> 
 						</c:forEach>
 						<center>
 							<button class="btn btn-primary btn-block moreBtn" type="button">´õº¸±â

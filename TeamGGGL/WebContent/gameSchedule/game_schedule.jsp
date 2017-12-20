@@ -340,7 +340,7 @@ $(function () {
 				<li rel="tab2"><img src="../gameSchedule/image/lck.png">LCK</li>
 				<li rel="tab3"><img src="../gameSchedule/image/na-lcs.png">NA LCS</li>
 				<li rel="tab4"><img src="../gameSchedule/image/eu-lcs.png">EU LCS</li>
-				<li rel="tab5"><img src="../gameSchedule/image/cblol.png">CBLOL</li>
+				<li rel="tab5"><img src="../gameSchedule/image/cblol.png">Worlds</li>
 			</ul>
 			<div class="middle_tab_container">
 			
