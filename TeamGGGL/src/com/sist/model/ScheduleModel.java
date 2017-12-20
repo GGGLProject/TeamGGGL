@@ -23,14 +23,15 @@ public class ScheduleModel {
 	}
 	
 	@RequestMapping("game_schedule.do")
-<<<<<<< HEAD
-	public String news_main(HttpServletRequest req, HttpServletResponse res) {
-		Map map = new HashMap();
-		List<MatchVO> list = MatchDAO.matchList(map);
-		req.setAttribute("list", list);
-=======
+
+//	public String news_main(HttpServletRequest req, HttpServletResponse res) {
+//		Map map = new HashMap();
+//		List<MatchVO> list = MatchDAO.matchList(map);
+//		req.setAttribute("list", list);
+//	return list;
+//	}
 	public String schedule_main(HttpServletRequest req, HttpServletResponse res) {
->>>>>>> branch '1.2' of https://github.com/GGGLProject/TeamGGGL.git
+
 		req.setAttribute("main_jsp", "../gameSchedule/game_schedule.jsp");
 		return "gameMain/main.jsp";
 		

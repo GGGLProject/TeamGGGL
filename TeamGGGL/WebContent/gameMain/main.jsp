@@ -38,7 +38,7 @@
          <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span>
                   회원가입</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+            <li><a href="login.do"><span class="glyphicon glyphicon-log-in"></span>
                   로그인</a></li>
          </ul>
  <!--                <li><a href="reserve.do">영화예매</a></li>
