@@ -24,7 +24,7 @@
 				<div class="topInfo text-right">
 					<span class="t-writer">김홍제</span>&nbsp;<span>기자</span>&nbsp;&nbsp;
 					| &nbsp; <span>기사입력 : </span><span class="newsDate">2017-12-08
-						16:00</span>
+						16:00</span> 
 				</div>
 			</div>
 			<hr>
