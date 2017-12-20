@@ -19,7 +19,7 @@ public class WebApplicationContext {
 		   SAXParserFactory spf=
 				  SAXParserFactory.newInstance();
 		   // SAX파서기 생성 
-		   System.out.println("SAX파서기 생성");
+		   //System.out.println("SAX파서기 생성");
 		   SAXParser sp=spf.newSAXParser();
 		   HandlerMapping hm=new HandlerMapping();
 		   
@@ -33,7 +33,7 @@ public class WebApplicationContext {
 			   List<String> p=fc.componentScan(pack);
 			   for(String s:p)
 			   {
-				   System.out.println(s);
+				   //System.out.println(s);
 				   list.add(s);
 			   }
 		   }

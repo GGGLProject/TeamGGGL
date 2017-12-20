@@ -7,16 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container" style="margin-top: 5%;">
+<!-- <div class="container" style="margin-top: 5%;">
     <div class="col-md-4 col-md-offset-4">
         <div class="panel panel-primary">
             <div class="panel-heading">Login</div>
             <div class="panel-body">
             
-            <!-- Login Form -->
+            Login Form
             <form role="form">
             
-            <!-- Username Field -->
+            Username Field
                 <div class="row">
                     <div class="form-group col-xs-12">
                     <label for="username"><span class="text-danger" style="margin-right:5px;">*</span>Username:</label>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 
-                <!-- Content Field -->
+                Content Field
                 <div class="row">
                     <div class="form-group col-xs-12">
                         <label for="password"><span class="text-danger" style="margin-right:5px;">*</span>Password:</label>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 
-                <!-- Login Button -->
+                Login Button
                 <div class="row">
                     <div class="form-group col-xs-4">
                         <button class="btn btn-primary" type="submit">Submit</button>
@@ -52,10 +52,10 @@
                 </div>
                 
             </form>
-            <!-- End of Login Form -->
+            End of Login Form
             
         </div>
     </div>
-</div>
+</div> -->
 </body>
 </html>
