@@ -7,11 +7,11 @@ import com.sist.controller.Controller;
 import com.sist.controller.RequestMapping;
 
 @Controller
-public class MovieModel {
-   @RequestMapping("detail.do")
-   public String movie_detail(HttpServletRequest req,HttpServletResponse res)
+public class GalleryModel {
+   @RequestMapping("gallery.do")
+   public String gallery(HttpServletRequest req,HttpServletResponse res)
    {
-	   req.setAttribute("main_jsp", "../movie/detail.jsp");
-	   return "main/main.jsp";
+	   req.setAttribute("main_jsp", "../gameGallery/gallery.jsp");
+	   return "gameMain/main.jsp";
    }
 }
