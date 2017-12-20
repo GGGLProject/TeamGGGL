@@ -5,10 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="css/gameGallery.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-<!-- <div class="container" style="margin-top: 5%;">
-    <div class="col-md-4 col-md-offset-4">
+
+    
         <div class="panel panel-primary">
             <div class="panel-heading">Login</div>
             <div class="panel-body">
@@ -55,7 +61,7 @@
             End of Login Form
             
         </div>
-    </div>
-</div> -->
+    
+
 </body>
 </html>
