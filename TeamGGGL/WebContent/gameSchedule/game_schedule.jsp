@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ page import="java.util.*, java.text.*"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%
 	 java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("MM.dd(E)");
 	 String today = formatter.format(new java.util.Date());
@@ -49,6 +51,12 @@ $(function () {
     });
 });
 </script>
+<style type="text/css">
+.leaguechoice {
+	text-align: center;
+	color: white;
+}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -324,7 +332,7 @@ $(function () {
 			
 		</div>
 	
-		<br><br><br><br><br><br><br>
+		<br><br><br><br><br>
 
 
 
@@ -335,6 +343,7 @@ $(function () {
 
 
 		<div id="middle_nav_menu">
+			<h3 class="leaguechoice">리그별 경기일정</h3><hr>
 			<ul class="middle_nav_tabs">
 				<li class="active2" rel="tab1">ALL</li>
 				<li rel="tab2"><img src="../gameSchedule/image/lck.png">LCK</li>
