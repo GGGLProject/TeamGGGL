@@ -33,7 +33,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>일정 / 결과 - GG GL</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="../css/gameSchedule.css" rel="stylesheet" type="text/css">
+<link href="css/gameSchedule.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
@@ -77,257 +77,257 @@ $(function () {
 				<div class="row">
 				
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="../gameSchedule/image/lck.png">LCK</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/lck.png">LCK</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="firstteam_score">1</div>
 						<div class="vsvs">:</div>
 						<div class="lastteam_score">2</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">종료</div>
-						<a href="main.jsp?mode=6"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="../gameSchedule/image/na-lcs.png">NA LCS</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/na-lcs.png">NA LCS</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="firstteam_score">1</div>
 						<div class="vsvs">:</div>
 						<div class="lastteam_score">1</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">종료</div>
-						<a href="main.jsp?mode=6"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="../gameSchedule/image/eu-lcs.png">EU LCS</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/eu-lcs.png">EU LCS</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">18:00</div>
-						<a href="main.jsp?mode=6"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="../gameSchedule/image/cblol.png">CBLOL</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/cblol.png">CBLOL</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">18:00</div>
-						<a href="main.jsp?mode=6"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 				</div>
 			</div>
 			<div id="menu1" class="tab-pane fade">
 				<div class="row">
-					<div class="col-md-3 nogame"><img src="../gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="../gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="../gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="../gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
 				</div>
 			</div>
 			<div id="menu2" class="tab-pane fade">
 				<div class="row">
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="../gameSchedule/image/lck.png">LCK</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/lck.png">LCK</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="firstteam_score">1</div>
 						<div class="vsvs">:</div>
 						<div class="lastteam_score">2</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">종료</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="../gameSchedule/image/na-lcs.png">NA LCS</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/na-lcs.png">NA LCS</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="firstteam_score">1</div>
 						<div class="vsvs">:</div>
 						<div class="lastteam_score">1</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">종료</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="../gameSchedule/image/eu-lcs.png">EU LCS</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/eu-lcs.png">EU LCS</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">18:00</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="../gameSchedule/image/cblol.png">CBLOL</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/cblol.png">CBLOL</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">18:00</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 				</div>
 			</div>
 			<div id="menu3" class="tab-pane fade in active">
 				<div class="row">
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="../gameSchedule/image/lck.png">LCK</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/lck.png">LCK</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="firstteam_score">1</div>
 						<div class="vsvs">:</div>
 						<div class="lastteam_score">2</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">종료</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="../gameSchedule/image/na-lcs.png">NA LCS</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/na-lcs.png">NA LCS</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="firstteam_score">1</div>
 						<div class="vsvs">:</div>
 						<div class="lastteam_score">1</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">종료</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="../gameSchedule/image/eu-lcs.png">EU LCS</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/eu-lcs.png">EU LCS</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">18:00</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="../gameSchedule/image/cblol.png">CBLOL</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/cblol.png">CBLOL</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">18:00</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 				</div>
 			</div>
 			<div id="menu4" class="tab-pane fade">
 				<div class="row">
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="../gameSchedule/image/lck.png">LCK</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/lck.png">LCK</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="firstteam_score">1</div>
 						<div class="vsvs">:</div>
 						<div class="lastteam_score">2</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">종료</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="../gameSchedule/image/na-lcs.png">NA LCS</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/na-lcs.png">NA LCS</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="firstteam_score">1</div>
 						<div class="vsvs">:</div>
 						<div class="lastteam_score">1</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">종료</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="../gameSchedule/image/eu-lcs.png">EU LCS</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/eu-lcs.png">EU LCS</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">18:00</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="../gameSchedule/image/cblol.png">CBLOL</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/cblol.png">CBLOL</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">18:00</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 				</div>
 			</div>
 			<div id="menu5" class="tab-pane fade">
 				<div class="row">
-					<div class="col-md-3 nogame"><img src="../gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="../gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="../gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="../gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
 				</div>
 			</div>
 			<div id="menu6" class="tab-pane fade">
 				<div class="row">
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="../gameSchedule/image/lck.png">LCK</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/lck.png">LCK</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="firstteam_score">1</div>
 						<div class="vsvs">:</div>
 						<div class="lastteam_score">2</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">종료</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="../gameSchedule/image/na-lcs.png">NA LCS</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/na-lcs.png">NA LCS</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="firstteam_score">1</div>
 						<div class="vsvs">:</div>
 						<div class="lastteam_score">1</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">종료</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="../gameSchedule/image/eu-lcs.png">EU LCS</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/eu-lcs.png">EU LCS</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">18:00</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="../gameSchedule/image/cblol.png">CBLOL</div>
-						<div class="firstteam_logo"><img src="../gameSchedule/image/fnatic.png"></div>
+						<div class="leaguelogo"><img src="gameSchedule/image/cblol.png">CBLOL</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
 						<div class="firstteam_name">fnatic</div>
 						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="../gameSchedule/image/faZe.png"></div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
 						<div class="lastteam_name">faZe</div>
 						<div class="game_time">18:00</div>
-						<a href="#"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
 				</div>
 			</div>
@@ -348,13 +348,12 @@ $(function () {
 			<h3 class="leaguechoice">리그별 경기일정</h3><hr>
 			<ul class="middle_nav_tabs">
 				<li class="active2" rel="tab1">ALL</li>
-				<li rel="tab2"><img src="../gameSchedule/image/lck.png">LCK</li>
-				<li rel="tab3"><img src="../gameSchedule/image/na-lcs.png">NA LCS</li>
-				<li rel="tab4"><img src="../gameSchedule/image/eu-lcs.png">EU LCS</li>
-				<li rel="tab5"><img src="../gameSchedule/image/cblol.png">Worlds</li>
+				<li rel="tab2"><img src="gameSchedule/image/lck.png">LCK</li>
+				<li rel="tab3"><img src="gameSchedule/image/na-lcs.png">NA LCS</li>
+				<li rel="tab4"><img src="gameSchedule/image/eu-lcs.png">EU LCS</li>
+				<li rel="tab5"><img src="gameSchedule/image/cblol.png">Worlds</li>
 			</ul>
 			<div class="middle_tab_container">
-			
 			<!-- All -->
 				<div id="tab1" class="middle_tab_content">
 					<div class="row qnarow gametable">
@@ -380,33 +379,39 @@ $(function () {
 				    		
 			   				<!-- 
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
+<<<<<<< HEAD
 				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
 				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
 				    		</tr> -->
+=======
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		</tr>
+>>>>>>> branch '1.2' of https://github.com/GGGLProject/TeamGGGL.git
 				    			    		
 				    	</table>
 				    	<br>
@@ -424,7 +429,7 @@ $(function () {
 				    			for(int i=1;i<=4;i++) {
 				    		%>
 				    				<tr>
-						    			<td colspan="6"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    			<td colspan="6"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 						    		</tr>
 				    		<%
 				    			}
@@ -443,32 +448,32 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    			    		
 				    	</table>
@@ -487,7 +492,7 @@ $(function () {
 				    			for(int i=1;i<=4;i++) {
 				    		%>
 				    				<tr>
-						    			<td colspan="6"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    			<td colspan="6"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 						    		</tr>
 				    		<%
 				    			}
@@ -506,32 +511,32 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    			    		
 				    	</table>
@@ -550,7 +555,7 @@ $(function () {
 				    			for(int i=1;i<=4;i++) {
 				    		%>
 				    				<tr>
-						    			<td colspan="6"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    			<td colspan="6"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 						    		</tr>
 				    		<%
 				    			}
@@ -569,32 +574,32 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    			    		
 				    	</table>
@@ -615,11 +620,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    			    		
 				    	</table>
@@ -634,7 +639,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -650,11 +655,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>
@@ -669,7 +674,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -685,11 +690,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>
@@ -704,7 +709,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -720,11 +725,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>
@@ -745,11 +750,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    			    		
 				    	</table>
@@ -764,7 +769,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -780,11 +785,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>
@@ -799,7 +804,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -815,11 +820,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>
@@ -834,7 +839,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -850,11 +855,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>
@@ -875,11 +880,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    			    		
 				    	</table>
@@ -894,7 +899,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -910,11 +915,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>
@@ -929,7 +934,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -945,11 +950,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>
@@ -964,7 +969,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -980,11 +985,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>
@@ -1005,11 +1010,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    			    		
 				    	</table>
@@ -1024,7 +1029,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -1040,11 +1045,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>
@@ -1059,7 +1064,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -1075,11 +1080,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>
@@ -1094,7 +1099,7 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 		    				<tr>
-				    			<td colspan="5"><img src="../gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
 				    		
 				    	</table>
@@ -1110,11 +1115,11 @@ $(function () {
 				    		</tr>
 				    		
 			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		
 				    	</table>

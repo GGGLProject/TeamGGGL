@@ -34,21 +34,16 @@ public class DispatcherServlet extends HttpServlet {
 			{
 				Class clsName=Class.forName(s);
 				// 클래스 정보 읽기
-				System.out.println("클래스 정보 읽기");
 				if(clsName.isAnnotationPresent(Controller.class)==false)
 					continue;
 				// 어노테이션이 존재할 때 객체 메모리 할당 
-				System.out.println("Annotation 존재 시 객체 메모리 할당");
 				Object obj=clsName.newInstance();
 				
 				// 메소드 호출 
-				System.out.println("메소드 호출");
 				Method[] methods=clsName.getDeclaredMethods();
 				// 선언되어 있는 클래스의 모든 메소드를 읽어 온다 
-				System.out.println("선언되어 있는 클래스의 모든 메소드를 읽는 반복문 호출");
 				for(Method m:methods)
 				{
-					System.out.println("반복문 구동");
 					RequestMapping rm=m.getAnnotation(RequestMapping.class);
 					if(rm.value().equals(cmd))
 					{

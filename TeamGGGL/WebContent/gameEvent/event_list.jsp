@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Event - GG GL</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="../css/eventList.css" rel="stylesheet" type="text/css">
+<link href="css/eventList.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -32,8 +32,8 @@
 						<tr class ="text-link">
 							<td  class="text-center td-top">${i }</td>
 							<td class="text-center td-top">PUBG</td>
-							<td class="text-center"><a href="main.jsp?mode=8"><img src="../image/posterImage.png" width=100 height=50></a></td>
-							<td class="text-center td-top"><a href="main.jsp?mode=8">[신촌] 신촌역 3POP PC방 배틀그라운드 듀오 대회</a></td>
+							<td class="text-center"><a href="event_content.do"><img src="image/posterImage.png" width=100 height=50></a></td>
+							<td class="text-center td-top"><a href="event_content.do">[신촌] 신촌역 3POP PC방 배틀그라운드 듀오 대회</a></td>
 							<td class="text-center td-top">2017.10.20</td>
 							<td class="text-center td-top">신촌 3POP PC방</td>
 							<td class="text-center td-top">임도진</td>
@@ -44,7 +44,7 @@
 			</div>
 		</div>
 		<div class="text-right">
-			<a href="event_write.jsp" class="btn btn-danger btn-nm">등록</a>
+			<a href="event_write.do" class="btn btn-danger btn-nm">등록</a>
 		</div>
 	</div>
 </body>

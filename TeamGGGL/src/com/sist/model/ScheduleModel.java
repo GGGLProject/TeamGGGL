@@ -16,11 +16,21 @@ import com.sist.match.dao.MatchVO;
 
 @Controller
 public class ScheduleModel {
+	@RequestMapping("game_detail.do")
+	public String schedule_detail(HttpServletRequest req, HttpServletResponse res) {
+		req.setAttribute("main_jsp", "../gameDetail/game_detail.jsp");
+		return "gameMain/main.jsp";
+	}
+	
 	@RequestMapping("game_schedule.do")
+<<<<<<< HEAD
 	public String news_main(HttpServletRequest req, HttpServletResponse res) {
 		Map map = new HashMap();
 		List<MatchVO> list = MatchDAO.matchList(map);
 		req.setAttribute("list", list);
+=======
+	public String schedule_main(HttpServletRequest req, HttpServletResponse res) {
+>>>>>>> branch '1.2' of https://github.com/GGGLProject/TeamGGGL.git
 		req.setAttribute("main_jsp", "../gameSchedule/game_schedule.jsp");
 		return "gameMain/main.jsp";
 		

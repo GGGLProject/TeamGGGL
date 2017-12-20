@@ -12,4 +12,16 @@ public class EventModel {
 		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
 		return "gameMain/main.jsp";
 	}
+	
+	@RequestMapping("event_content.do")
+	public String event_content(HttpServletRequest req, HttpServletResponse res) {
+		req.setAttribute("main_jsp", "../gameEvent/event_content.jsp");
+		return "gameMain/main.jsp";
+	}
+	
+	@RequestMapping("event_write.do")
+	public String event_write(HttpServletRequest req, HttpServletResponse res) {
+		req.setAttribute("main_jsp", "../gameEvent/event_write.jsp");
+		return "gameMain/main.jsp";
+	}
 }
