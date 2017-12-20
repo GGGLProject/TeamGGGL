@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>LOL 뉴스 - GG GL</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="../css/newsMain.css" rel="stylesheet" type="text/css">
+<link href="css/newsMain.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -79,7 +79,7 @@
 					<div class="row">
 						<div class="row_img col-sm-3 col-md-2">
 							<div class="news_img">
-								<a href="main.jsp?mode=5">
+								<a href="news_detail.do">
 									<img src="http://cmg.ruliweb.com/data/news/tn/17/12/06/1602ab9dc97_osmfwz.jpg" height="80">
 								</a>
 							</div>

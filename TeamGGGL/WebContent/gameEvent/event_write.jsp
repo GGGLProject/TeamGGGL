@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Event 글쓰기 - GG GL</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="../css/eventWrite.css" rel="stylesheet" type="text/css">
+<link href="css/eventWrite.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -24,7 +24,8 @@
 						</tr>
 						<tr>
 							<td width=20% class="text-center">이벤트 일정</td>
-							<td width=30% class="text-center"><input class="input" type=date name="day" size=30>~<input class="input" type=date name="day" size=30></td>
+							<td width=30% class="text-center">
+							<input class="input" type=date name="day" size=30>~<input class="input" type=date name="day" size=30></td>
 						</tr>
 						<tr>
 							<td width=20% class="text-center">이벤트 장소</td>
@@ -36,7 +37,7 @@
 						</tr>
 
 						<tr>
-							<td class="text-center" colspan=2><img src="../image/posterImage.png"
+							<td class="text-center" colspan=2><img src="image/posterImage.png"
 								class="event-img" height=350></td>
 						</tr>
 						<tr>

@@ -10,11 +10,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 <link href="css/gameMain.css" rel="stylesheet" type="text/css">
-<link href="css/gameDetail.css" rel="stylesheet" type="text/css">
-<link href="css/gamegallery.css" rel="stylesheet" type="text/css">
-<link href="css/gameSchedule.css" rel="stylesheet" type="text/css">
-<link href="css/gameDetail.css" rel="stylesheet" type="text/css">
-<link href="css/gameMain.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -55,6 +50,7 @@
    <!-- Content -->
                <%-- include --%>
               <jsp:include page="${main_jsp }"></jsp:include>
+
    <!-- Footer -->
    <footer class="text-center"> <a class="up-arrow"
       href="#myPage" data-toggle="tooltip" title="TO TOP"> <span

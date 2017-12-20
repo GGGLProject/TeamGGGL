@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Event 상세 내용 - GG GL</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="../css/eventContent.css" rel="stylesheet" type="text/css">
+<link href="css/eventContent.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -34,7 +34,7 @@
 						</tr>
 						<tr>
 							<td class="text-center" colspan=2>
-								<img src="../image/posterImage.png" class="event-img" height=350>
+								<img src="image/posterImage.png" class="event-img" height=350>
 							</td>
 						</tr>
 						<tr>
