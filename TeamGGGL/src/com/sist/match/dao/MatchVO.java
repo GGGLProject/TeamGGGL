@@ -4,7 +4,7 @@ import java.util.*;
 
 public class MatchVO {
 	private int match_no;
-	private Date match_day;
+	private String match_day;
 	private String match_league;
 	private String match_name;
 	private String home_name;
@@ -19,10 +19,11 @@ public class MatchVO {
 	public void setMatch_no(int match_no) {
 		this.match_no = match_no;
 	}
-	public Date getMatch_day() {
+	
+	public String getMatch_day() {
 		return match_day;
 	}
-	public void setMatch_day(Date match_day) {
+	public void setMatch_day(String match_day) {
 		this.match_day = match_day;
 	}
 	public String getMatch_league() {

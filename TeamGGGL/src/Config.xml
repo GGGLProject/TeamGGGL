@@ -2,71 +2,34 @@
 <!DOCTYPE configuration
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<!-- 
-     (properties?, (*)
-      settings?, (*)
-      ***typeAliases?, (*)
-      typeHandlers?, (*)
-      objectFactory?, 
-      objectWrapperFactory?, 
-      reflectorFactory?, 
-      plugins?, 
-      ***environments?, (*)
-      databaseIdProvider?,
-       ***mappers?(*))
- -->
+
 <configuration>
-  <typeAliases>
-   <!-- XML = type(클래스 선언) -->
-   <typeAlias type="com.sist.movie.dao.MovieVO" alias="MovieVO"/>
-  </typeAliases>
-  <!-- "(environment)+" -->
-  <environments default="development">
-    <!-- (transactionManager,dataSource) -->
-    <environment id="development">
-      <transactionManager type="JDBC"/>
-       <!-- 
-            transcation : COMMIT,ROLLBACK(일괄처리)
-            JDBC라이브러리 이용 = JDBC (autoCommit)
-            MANAGED : 프로그래머가 관리 
-            try
-            {
-                autoCommit
-                -
-                -
-                -
-                -
-            }catch(Excetion ex)
-            {
-               rollback
-            }
-        -->
-      <!-- 오라클 정보 저장 driver,url,username,password 
-           = Connection
-           = JDBC = UNPOOLED
-             DBCP = POOLED
-       -->
-      <dataSource type="POOLED">
-        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-        <!-- 
-              driver : thin = 오라클하고 연결만 담당
-                       oci  = 오라클정보를 전체 가지고 있다
-              ORCL : 데이터베이스 이름 (SID,전역 데이터베이스)
-                               오라클
-               DATABASE = 여러개의 테이블 
-               ========        =====
-                                        폴더                          파일 
-         -->
-        <property name="url" value="jdbc:oracle:thin:@211.238.142.222:1521:ORCL"/>
-        <property name="username" value="scott"/>
-        <property name="password" value="tiger"/>
-      </dataSource>
-    </environment>
-  </environments>
-  <mappers>
-     <!-- PreparedStatement,ResultSet -->
-     <mapper resource="com/sist/movie/dao/movie-mapper.xml"/>
-  </mappers>
+	<typeAliases>
+		<!-- XML = type(클래스 선언) -->
+		<typeAlias type="com.sist.news.dao.NewsVO" alias="NewsVO" />
+		<typeAlias type="com.sist.match.dao.MatchVO" alias="MatchVO"/>
+		<typeAlias type="com.sist.match.dao.TeamVO" alias="TeamVO"/>
+		<typeAlias type="com.sist.match.dao.PlayerVO" alias="PlayerVO"/>
+	</typeAliases>
+	<!-- "(environment)+" -->
+	<environments default="development">
+		<!-- (transactionManager,dataSource) -->
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url"
+					value="jdbc:oracle:thin:@211.238.142.222:1521:ORCL" />
+				<property name="username" value="scott" />
+				<property name="password" value="tiger" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<!-- PreparedStatement,ResultSet -->
+		<mapper resource="com/sist/news/dao/news-mapper.xml" />
+		<mapper resource="com/sist/match/dao/Match-mapper.xml"/>
+	</mappers>
 </configuration>
 
 

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sist.news.dao.news-mapper">
+	<!-- 뉴스 표시 -->
+	<select id="newsListData" resultType="NewsVO" parameterType="java.util.Map">
+		SELECT
+		news_no,news_title,news_name,news_content,news_regdate,news_category,news_image,no
+		FROM (SELECT
+		news_no,news_title,news_name,news_content,news_regdate,news_category,news_image,rownum
+		as no
+		FROM (SELECT
+		news_no,news_title,news_name,news_content,news_regdate,news_category,news_image
+		FROM gggl_news ORDER BY news_regdate ASC ))
+	</select>
+	<!-- 뉴스의 페이지 갯수 계산 -->
+	<select id="newsTotalPage" resultType="int">
+		SELECT CEIL(COUNT(*)/10) FROM gggl_news
+	</select>
+	<!-- 뉴스의 총 갯수 계산 -->
+	<select id="newsTotalCount" resultType="int">
+		select * from gggl_news;
+	</select>
+	<!-- 상세보기 -->
+	<select id="newsDetailData" resultType="NewsVO" parameterType="int">
+		SELECT
+		news_no,news_title,news_name,news_content,news_regdate,news_category,news_image
+		FROM gggl_news
+		WHERE news_no=#{news_no}
+	</select>
+
+	<!-- 찾기 find
+	<select id="boardFindData" resultType="BoardVO" parameterType="java.util.Map">
+		SELECT no,subject,name,regdate,hit
+		FROM gggl_news
+		WHERE ${fs} LIKE '%'||#{ss}||'%'
+	</select> -->
+</mapper>
+
+
+
+
+
+
+
+
+

@@ -360,19 +360,19 @@ $(function () {
 						<h4><%=threedaybefore %></h4>	<!-- 12.18(월) -->
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
+				    			<th width=8% class="text-center qna-th">리그</th>
+				    			<th width=30% class="text-center qna-th">대회명</th>
 				    			<th width=10% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 				    		
-				    		<c:forEach var="vo" items="${list}">
+				    		<c:forEach var="vo" items="${list}" varStatus="status">
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">${vo.match_league }</td>
-				    			<td width=23% class="text-center qna-th">${vo.match_name }</td>
+				    			<td width=8% class="text-center qna-th">${vo.match_league }</td>
+				    			<td width=30% class="text-center qna-th">${vo.match_name }</td>
 				    			<td width=10% class="text-center qna-th">${vo.match_day }</td>
-				    			<td width=37% class="text-center qna-th">${vo.home_name }<img src="" height="28">VS<img src="" height="28">${vo.away_name }</td>
+				    			<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;<img src="${list1[status.index].team_icon }" height="28">&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;<img src="" height="28">&nbsp;&nbsp;${vo.away_name }</td>
 				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		</c:forEach>
@@ -420,15 +420,11 @@ $(function () {
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		<%
-				    			for(int i=1;i<=4;i++) {
-				    		%>
-				    				<tr>
-						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
-						    		</tr>
-				    		<%
-				    			}
-				    		%>
+				    		
+		    				<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    		</tr>
+				    		
 				    		
 				    	</table>
 						<br>
@@ -482,15 +478,10 @@ $(function () {
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		<%
-				    			for(int i=1;i<=4;i++) {
-				    		%>
-				    				<tr>
-						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
-						    		</tr>
-				    		<%
-				    			}
-				    		%>
+				    		
+		    				<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    		</tr>
 				    		
 				    	</table>
 				    	<br>
@@ -544,15 +535,10 @@ $(function () {
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		<%
-				    			for(int i=1;i<=4;i++) {
-				    		%>
-				    				<tr>
-						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
-						    		</tr>
-				    		<%
-				    			}
-				    		%>
+				    		
+		    				<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+				    		</tr>
 				    		
 				    	</table>
 				    	<br>

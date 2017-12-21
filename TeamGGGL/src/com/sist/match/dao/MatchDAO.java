@@ -25,11 +25,11 @@ public class MatchDAO {
 		}
 	}
 	
-	public static List<MatchVO> matchList(Map map) {
+	public static List<MatchVO> matchList(String match_day) {
 		List<MatchVO> list = new ArrayList<MatchVO>();
 		SqlSession session = ssf.openSession();
 		try {
-			list = session.selectList("matchList", map);
+			list = session.selectList("matchList", match_day);
 		} catch (Exception e) {
 			System.out.println("matchList : "+e.getMessage());
 		} finally {
