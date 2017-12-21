@@ -10,7 +10,7 @@
 		<servlet-class>com.sist.controller.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>C:\Users\Jieun\git\TeamGGGL\TeamGGGL\WebContent\WEB-INF\application-context.xml</param-value>
+			<param-value>C:\TeamP\GGGL1\TeamGGGL\WebContent\WEB-INF\application-context.xml</param-value>
 
 		</init-param>
 	</servlet>
