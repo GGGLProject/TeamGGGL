@@ -31,7 +31,9 @@ public class ScheduleModel {
 //	return list;
 //	}
 	public String schedule_main(HttpServletRequest req, HttpServletResponse res) {
-
+		Map map = new HashMap();
+		List<MatchVO> list = MatchDAO.matchList(map);
+		req.setAttribute("list", list);
 		req.setAttribute("main_jsp", "../gameSchedule/game_schedule.jsp");
 		return "gameMain/main.jsp";
 		

@@ -5,11 +5,11 @@
 
 <mapper namespace="com.sist.match.dao.Match-mapper">
 	<select id="matchList" resultType="MatchVO" parameterType="java.util.date">
-		SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,num
+		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,num
 		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,rownum as num 
 		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey 
 		FROM gggl_match ORDER BY match_no ASC ))
-		WHERE match_day=#{match_day}
+		WHERE TO_CHAR(match_day,'MM.DD(DY)')=#{match_day}
 	</select>
 	<!-- <select id="movieTotalPage" resultType="int">
 		SELECT CEIL(COUNT(*)/12) FROM movie

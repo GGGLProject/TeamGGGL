@@ -3,69 +3,73 @@ package com.sist.match.dao;
 import java.util.*;
 
 public class MatchVO {
-	private int matchno;
-	private Date matchdate;
-	private String matchleague;
-	private String matchname;
-	private String homename;
-	private int homescore;
-	private String awayname;
-	private int awayscore;
-	private String videokey;
-	public int getMatchno() {
-		return matchno;
+	private int match_no;
+	private Date match_day;
+	private String match_league;
+	private String match_name;
+	private String home_name;
+	private int home_score;
+	private String away_name;
+	private int away_score;
+	private String match_videokey;
+	
+	public int getMatch_no() {
+		return match_no;
 	}
-	public void setMatchno(int matchno) {
-		this.matchno = matchno;
+	public void setMatch_no(int match_no) {
+		this.match_no = match_no;
 	}
-	public Date getMatchdate() {
-		return matchdate;
+	public Date getMatch_day() {
+		return match_day;
 	}
-	public void setMatchdate(Date matchdate) {
-		this.matchdate = matchdate;
+	public void setMatch_day(Date match_day) {
+		this.match_day = match_day;
 	}
-	public String getMatchleague() {
-		return matchleague;
+	public String getMatch_league() {
+		return match_league;
 	}
-	public void setMatchleague(String matchleague) {
-		this.matchleague = matchleague;
+	public void setMatch_league(String match_league) {
+		this.match_league = match_league;
 	}
-	public String getMatchname() {
-		return matchname;
+	public String getMatch_name() {
+		return match_name;
 	}
-	public void setMatchname(String matchname) {
-		this.matchname = matchname;
+	public void setMatch_name(String match_name) {
+		this.match_name = match_name;
 	}
-	public String getHomename() {
-		return homename;
+	public String getHome_name() {
+		return home_name;
 	}
-	public void setHomename(String homename) {
-		this.homename = homename;
+	public void setHome_name(String home_name) {
+		this.home_name = home_name;
 	}
-	public int getHomescore() {
-		return homescore;
+	public int getHome_score() {
+		return home_score;
 	}
-	public void setHomescore(int homescore) {
-		this.homescore = homescore;
+	public void setHome_score(int home_score) {
+		this.home_score = home_score;
 	}
-	public String getAwayname() {
-		return awayname;
+	public String getAway_name() {
+		return away_name;
 	}
-	public void setAwayname(String awayname) {
-		this.awayname = awayname;
+	public void setAway_name(String away_name) {
+		this.away_name = away_name;
 	}
-	public int getAwayscore() {
-		return awayscore;
+	public int getAway_score() {
+		return away_score;
 	}
-	public void setAwayscore(int awayscore) {
-		this.awayscore = awayscore;
+	public void setAway_score(int away_score) {
+		this.away_score = away_score;
 	}
-	public String getVideokey() {
-		return videokey;
+	public String getMatch_videokey() {
+		return match_videokey;
 	}
-	public void setVideokey(String videokey) {
-		this.videokey = videokey;
+	public void setMatch_videokey(String match_videokey) {
+		this.match_videokey = match_videokey;
 	}
+	
+	
+	
 	
 	
 

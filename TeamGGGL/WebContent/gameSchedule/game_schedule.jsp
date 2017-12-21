@@ -357,7 +357,7 @@ $(function () {
 			<!-- All -->
 				<div id="tab1" class="middle_tab_content">
 					<div class="row qnarow gametable">
-						<h4><%=threedaybefore %></h4>
+						<h4><%=threedaybefore %></h4>	<!-- 12.18(월) -->
 				    	<table class="table">
 				    		<tr>
 				    			<th width=15% class="text-center qna-th">리그</th>
@@ -369,10 +369,10 @@ $(function () {
 				    		
 				    		<c:forEach var="vo" items="${list}">
 				    		<tr>
-				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">${vo.matchleague }</td>
-				    			<td width=23% class="text-center qna-th">${vo.matchname }</td>
-				    			<td width=10% class="text-center qna-th">${vo.matchdate }</td>
-				    			<td width=37% class="text-center qna-th">${vo.homename }<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">${vo.awayname }</td>
+				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">${vo.match_league }</td>
+				    			<td width=23% class="text-center qna-th">${vo.match_name }</td>
+				    			<td width=10% class="text-center qna-th">${vo.match_day }</td>
+				    			<td width=37% class="text-center qna-th">${vo.home_name }<img src="" height="28">VS<img src="" height="28">${vo.away_name }</td>
 				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
 				    		</tr>
 				    		</c:forEach>
@@ -403,33 +403,28 @@ $(function () {
 				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
-<<<<<<< HEAD
-				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
-				    		</tr> -->
-=======
 				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
 				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
-				    		</tr>
->>>>>>> branch '1.2' of https://github.com/GGGLProject/TeamGGGL.git
-				    			    		
+
+				    			
+				    		</tr> -->
+	
 				    	</table>
 				    	<br>
 				    	<h4><%=twodaybefore %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=10% class="text-center qna-th">종목</th>
-				    			<th width=20% class="text-center qna-th">대회명</th>
+				    			<th width=15% class="text-center qna-th">리그</th>
+				    			<th width=23% class="text-center qna-th">대회명</th>
 				    			<th width=10% class="text-center qna-th">시간</th>
-				    			<th width=30% class="text-center qna-th">경기일정 및 결과</th>
-				    			<th width=15% class="text-center qna-th">장소</th>
+				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 				    		<%
 				    			for(int i=1;i<=4;i++) {
 				    		%>
 				    				<tr>
-						    			<td colspan="6"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 						    		</tr>
 				    		<%
 				    			}
@@ -481,18 +476,17 @@ $(function () {
 				    	<h4><%=today %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=10% class="text-center qna-th">종목</th>
-				    			<th width=20% class="text-center qna-th">대회명</th>
+				    			<th width=15% class="text-center qna-th">리그</th>
+				    			<th width=23% class="text-center qna-th">대회명</th>
 				    			<th width=10% class="text-center qna-th">시간</th>
-				    			<th width=30% class="text-center qna-th">경기일정 및 결과</th>
-				    			<th width=15% class="text-center qna-th">장소</th>
+				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 				    		<%
 				    			for(int i=1;i<=4;i++) {
 				    		%>
 				    				<tr>
-						    			<td colspan="6"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 						    		</tr>
 				    		<%
 				    			}
@@ -544,18 +538,17 @@ $(function () {
 				    	<h4><%=twodayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=10% class="text-center qna-th">종목</th>
-				    			<th width=20% class="text-center qna-th">대회명</th>
+				    			<th width=15% class="text-center qna-th">리그</th>
+				    			<th width=23% class="text-center qna-th">대회명</th>
 				    			<th width=10% class="text-center qna-th">시간</th>
-				    			<th width=30% class="text-center qna-th">경기일정 및 결과</th>
-				    			<th width=15% class="text-center qna-th">장소</th>
+				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 				    		<%
 				    			for(int i=1;i<=4;i++) {
 				    		%>
 				    				<tr>
-						    			<td colspan="6"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 						    		</tr>
 				    		<%
 				    			}
