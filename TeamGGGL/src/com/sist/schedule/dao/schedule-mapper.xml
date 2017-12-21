@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+     (cache-ref | cache | resultMap* | 
+ parameterMap* | sql* | insert* | update* | delete* | select*)+
+ 
+ EmpVO empno,ename,job
+ DeptVO dname,loc
+   public class EmpVO
+   {
+      int empno;
+      String ename;
+      String job;
+      DeptVO dvo=new DeptVO(); 
+   }
+   public class DeptVO
+   {
+       String dname;
+       String loc;
+   }
+   dvo.dname / dname
+   dvo.loc
+ -->
+<!-- XML:namespace = JAVA:package 
+     namespace="com"
+     selectList("com.id")
+-->
+<mapper namespace="com.sist.movie.dao.movie-mapper">
+  <select id="movieListData12" resultType="MovieVO" 
+   parameterType="java.util.Map">
+   SELECT mno,title,poster,story,actor,director,num 
+   FROM (SELECT mno,title,poster,story,actor,director,rownum as num 
+   FROM (SELECT mno,title,poster,story,actor,director 
+   FROM movie ORDER BY mno ASC ))
+   WHERE num BETWEEN #{start} AND #{end}
+  </select>
+  <select id="movieTotalPage" resultType="int">
+    SELECT CEIL(COUNT(*)/12) FROM movie
+  </select>
+  <!-- 상세보기 -->
+  <select id="movieDetailData" resultType="MovieVO" 
+    parameterType="int">
+   SELECT mno,title,poster,director,actor,genre,grade,
+   regdate,time,story
+   FROM movie
+   WHERE mno=#{mno}
+  </select>
+  <select id="movieAllTitle" resultType="String">
+    SELECT title FROM movie
+    WHERE LENGTH(title)>=2
+  </select>
+  <select id="movieGetPoster" resultType="String" parameterType="String">
+  	SELECT poster FROM movie 
+  	WHERE title = #{title} 
+  </select>
+</mapper>
+
+
+
+
+
+
+
+
+

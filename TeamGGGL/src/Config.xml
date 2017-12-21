@@ -65,7 +65,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   </environments>
   <mappers>
      <!-- PreparedStatement,ResultSet -->
-     <mapper resource="com/sist/movie/dao/movie-mapper.xml"/>
+     <mapper resource="com/sist/movie/dao/news-mapper.xml"/>
   </mappers>
 </configuration>
 
