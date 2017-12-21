@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ page import="java.util.*, java.text.*"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%
 	 java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("MM.dd(E)");
 	 String today = formatter.format(new java.util.Date());
@@ -49,6 +51,12 @@ $(function () {
     });
 });
 </script>
+<style type="text/css">
+.leaguechoice {
+	text-align: center;
+	color: white;
+}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -67,6 +75,7 @@ $(function () {
 		<div class="tab-content">
 			<div id="home" class="tab-pane fade">
 				<div class="row">
+				
 					<div class="col-md-3 gameover">
 						<div class="leaguelogo"><img src="gameSchedule/image/lck.png">LCK</div>
 						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
@@ -79,6 +88,7 @@ $(function () {
 						<div class="game_time">종료</div>
 						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
+					
 					<div class="col-md-3 gameover">
 						<div class="leaguelogo"><img src="gameSchedule/image/na-lcs.png">NA LCS</div>
 						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
@@ -324,7 +334,7 @@ $(function () {
 			
 		</div>
 	
-		<br><br><br><br><br><br><br>
+		<br><br><br><br><br>
 
 
 
@@ -335,6 +345,7 @@ $(function () {
 
 
 		<div id="middle_nav_menu">
+			<h3 class="leaguechoice">리그별 경기일정</h3><hr>
 			<ul class="middle_nav_tabs">
 				<li class="active2" rel="tab1">ALL</li>
 				<li rel="tab2"><img src="gameSchedule/image/lck.png">LCK</li>
@@ -356,6 +367,17 @@ $(function () {
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 				    		
+				    		<c:forEach var="vo" items="${list}">
+				    		<tr>
+				    			<td width=15% class="text-center qna-th"><img src="../gameSchedule/image/lck.png" height="32" style="margin-right: 10px">${vo.matchleague }</td>
+				    			<td width=23% class="text-center qna-th">${vo.matchname }</td>
+				    			<td width=10% class="text-center qna-th">${vo.matchdate }</td>
+				    			<td width=37% class="text-center qna-th">${vo.homename }<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">${vo.awayname }</td>
+				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    		</tr>
+				    		</c:forEach>
+				    		
+			   				<!-- 
 			   				<tr>
 				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
@@ -381,9 +403,15 @@ $(function () {
 				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
 				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
 				    			<td width=10% class="text-center qna-th">18:00</td>
+<<<<<<< HEAD
+				    			<td width=37% class="text-center qna-th">fnatic<img src="../gameSchedule/image/fnatic.png" height="28">VS<img src="../gameSchedule/image/faZe.png" height="28">faZe</td>
+				    			<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    		</tr> -->
+=======
 				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
 				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
 				    		</tr>
+>>>>>>> branch '1.2' of https://github.com/GGGLProject/TeamGGGL.git
 				    			    		
 				    	</table>
 				    	<br>

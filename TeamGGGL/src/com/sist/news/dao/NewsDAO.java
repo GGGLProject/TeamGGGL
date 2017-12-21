@@ -23,17 +23,17 @@ public class NewsDAO {
 			   System.out.println(ex.getMessage());
 		   }
 	   }
-	   public static List<NewsVO> newsListData12(Map map)
+	   public static List<NewsVO> newsListData(Map map)
 	   {
 		   List<NewsVO> list = new ArrayList<NewsVO>();
 		   SqlSession session = ssf.openSession();
 		   try
 		   {
-			   list = session.selectList("newsListData12", map);			   
+			   list = session.selectList("newsListData", map);			   
 		   }
 		   catch(Exception e)
 		   {
-			   System.out.println("NewsDAO:newsListData12 : "+e.getMessage());
+			   System.out.println("NewsDAO:newsListData : "+e.getMessage());
 		   }
 		   finally
 		   {
@@ -41,5 +41,26 @@ public class NewsDAO {
 				   session.close();
 		   }
 		   return list;
+	   }
+	   public static int newsTotalPage()
+	   {
+		   int total=0;
+		   SqlSession session=null;
+		   try
+		   {
+			   // session : connection
+			   session=ssf.openSession();//autocommit(false)
+			   total=session.selectOne("newsTotalPage");
+		   }catch(Exception ex)
+		   {
+			   System.out.println(ex.getMessage());
+		   }
+		   finally
+		   {
+			   //¹ÝÈ¯
+			   if(session!=null)
+				   session.close();
+		   }
+		   return total;
 	   }
 }

@@ -11,6 +11,7 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>C:\Users\Jieun\git\TeamGGGL\TeamGGGL\WebContent\WEB-INF\application-context.xml</param-value>
+
 		</init-param>
 	</servlet>
 	<servlet-mapping>
