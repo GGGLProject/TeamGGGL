@@ -10,7 +10,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.sist.match.dao.MatchVO" alias="MatchVO"/>
 		<typeAlias type="com.sist.match.dao.TeamVO" alias="TeamVO"/>
 		<typeAlias type="com.sist.match.dao.PlayerVO" alias="PlayerVO"/>
-	</typeAliases>
+   		<typeAlias type="com.sist.event.dao.EventVO" alias="EventVO"/>
+	</typeAliases> 
 	<!-- "(environment)+" -->
 	<environments default="development">
 		<!-- (transactionManager,dataSource) -->
@@ -29,6 +30,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<!-- PreparedStatement,ResultSet -->
 		<mapper resource="com/sist/news/dao/news-mapper.xml" />
 		<mapper resource="com/sist/match/dao/Match-mapper.xml"/>
+    	<mapper resource="com/sist/event/dao/event-mapper.xml"/>
 	</mappers>
 </configuration>
 

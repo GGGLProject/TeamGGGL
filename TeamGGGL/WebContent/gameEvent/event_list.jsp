@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,19 +29,36 @@
 						<th class="text-center" width="5%">조회수</th>
 					</tr>
 				
-					<c:forEach var="i" begin="1" end="10">
+					<c:forEach var="vo" items="${list }">
 						<tr class ="text-link">
-							<td  class="text-center td-top">${i }</td>
-							<td class="text-center td-top">PUBG</td>
-							<td class="text-center"><a href="event_content.do"><img src="image/posterImage.png" width=100 height=50></a></td>
-							<td class="text-center td-top"><a href="event_content.do">[신촌] 신촌역 3POP PC방 배틀그라운드 듀오 대회</a></td>
-							<td class="text-center td-top">2017.10.20</td>
-							<td class="text-center td-top">신촌 3POP PC방</td>
-							<td class="text-center td-top">임도진</td>
-							<td class="text-center td-top">hit</td>
+							<td  class="text-center td-top">${vo.event_no }</td>
+							<td class="text-center td-top">${vo.event_category }</td>
+							<td class="text-center"><a href="event_content.do"><img src="${vo.event_image }" width=100 height=50></a></td>
+							<td class="text-center td-top"><a href="event_content.do">${vo.event_title }</a></td>
+							<td class="text-center td-top"><fmt:formatDate
+								value="${vo.event_day }" pattern="yyyy-MM-dd" /></td>
+							<td class="text-center td-top">${vo.event_place }</td>
+							<td class="text-center td-top">${vo.event_id }</td>
+							<td class="text-center td-top">${vo.event_hit }</td>
 						</tr>
 					</c:forEach>
 				</table>
+				<center>
+			<table>
+			<tr>
+			<td class="text-left"></td>
+			<td class="text-right">
+			<a href="event_list.do?page=${curpage>1?curpage-1:curpage }" class="btn btn-primary">◀</a>&nbsp;
+			<c:forEach var="i" begin="1" end="${totalpage }">
+			<a href="event_list.do?page=${i }" class="btn btn-primary">${i }</a>&nbsp;
+			</c:forEach>
+			<a href="event_list.do?page=${curpage<totalpage?curpage+1:curpage }" class="btn btn-primary">▶</a>&nbsp;&nbsp;
+			${curpage }page / ${totalpage } pages
+			</td>
+			
+			</tr>
+			
+			</table></center>
 			</div>
 		</div>
 		<div class="text-right">
