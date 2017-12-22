@@ -34,7 +34,6 @@ public class TeamDAO {
 		} finally {
 			if(session!=null)
 				session.close(); //¹ÝÈ¯
-			
 		}
 		return list;
 	}

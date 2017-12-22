@@ -27,15 +27,13 @@ public class ScheduleModel {
 		
 		Date date=new Date();
 		SimpleDateFormat sdf=new SimpleDateFormat("yy/MM/dd");
-		String match_day =sdf.format(date);
+		String match_day = sdf.format(date);
+		String home_name = (String) req.getAttribute("home_name");
 		
 		
+		//String team_icon = TeamDAO.TeamImageData(team_name);
 		
-		
-		
-		String team_name = "OMG";
-		
-		
+
 		List<MatchVO> list_3 = MatchDAO.matchList_3(match_day);
 		List<MatchVO> list_2 = MatchDAO.matchList_2(match_day);
 		List<MatchVO> list_1 = MatchDAO.matchList_1(match_day);
@@ -43,7 +41,7 @@ public class ScheduleModel {
 		List<MatchVO> list__1 = MatchDAO.matchList__1(match_day);
 		List<MatchVO> list__2 = MatchDAO.matchList__2(match_day);
 		List<MatchVO> list__3 = MatchDAO.matchList__3(match_day);
-		List<TeamVO> list1 = TeamDAO.TeamImageData(team_name);
+		List<TeamVO> iconlist = TeamDAO.TeamImageData(home_name);
 		req.setAttribute("list_3", list_3);
 		req.setAttribute("list_2", list_2);
 		req.setAttribute("list_1", list_1);
@@ -51,7 +49,7 @@ public class ScheduleModel {
 		req.setAttribute("list__1", list__1);
 		req.setAttribute("list__2", list__2);
 		req.setAttribute("list__3", list__3);
-		req.setAttribute("list1", list1); 
+		req.setAttribute("iconlist", iconlist); 
 		req.setAttribute("main_jsp", "../gameSchedule/game_schedule.jsp");
 		return "gameMain/main.jsp";
 		

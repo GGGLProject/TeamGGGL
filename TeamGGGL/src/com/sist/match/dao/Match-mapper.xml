@@ -5,60 +5,50 @@
 
 <mapper namespace="com.sist.match.dao.Match-mapper">
 	<select id="matchList_3" resultType="MatchVO" parameterType="String">
-		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,num
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,rownum as num 
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey 
-		FROM gggl_match ORDER BY match_no ASC ))
+		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_time,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey
+		FROM gggl_match
 		WHERE match_day BETWEEN TRUNC(SYSDATE-3) AND TRUNC(SYSDATE-3)
 	</select>
 	<select id="matchList_2" resultType="MatchVO" parameterType="String">
-		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,num
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,rownum as num 
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey 
-		FROM gggl_match ORDER BY match_no ASC ))
+		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_time,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey
+		FROM gggl_match
 		WHERE match_day BETWEEN TRUNC(SYSDATE-2) AND TRUNC(SYSDATE-2)
 	</select>
 	<select id="matchList_1" resultType="MatchVO" parameterType="String">
-		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,num
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,rownum as num 
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey 
-		FROM gggl_match ORDER BY match_no ASC ))
+		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_time,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey
+		FROM gggl_match
 		WHERE match_day BETWEEN TRUNC(SYSDATE-1) AND TRUNC(SYSDATE-1)
 	</select>
 	<select id="matchList" resultType="MatchVO" parameterType="String">
-		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,num
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,rownum as num 
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey 
-		FROM gggl_match ORDER BY match_no ASC ))
+		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_time,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey
+		FROM gggl_match
 		WHERE match_day BETWEEN TRUNC(SYSDATE) AND TRUNC(SYSDATE)
 	</select>
 	<select id="matchList__1" resultType="MatchVO" parameterType="String">
-		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,num
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,rownum as num 
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey 
-		FROM gggl_match ORDER BY match_no ASC ))
+		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_time,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey
+		FROM gggl_match
 		WHERE match_day BETWEEN TRUNC(SYSDATE+1) AND TRUNC(SYSDATE+1)
 	</select>
 	<select id="matchList__2" resultType="MatchVO" parameterType="String">
-		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,num
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,rownum as num 
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey 
-		FROM gggl_match ORDER BY match_no ASC ))
+		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_time,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey
+		FROM gggl_match
 		WHERE match_day BETWEEN TRUNC(SYSDATE+2) AND TRUNC(SYSDATE+2)
 	</select>
 	<select id="matchList__3" resultType="MatchVO" parameterType="String">
-		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,num
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey,rownum as num 
-		FROM (SELECT match_no,match_day,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey 
-		FROM gggl_match ORDER BY match_no ASC ))
+		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_time,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey
+		FROM gggl_match
 		WHERE match_day BETWEEN TRUNC(SYSDATE+3) AND TRUNC(SYSDATE+3)
 	</select>
+	
 	<select id="TeamImageData" resultType="TeamVO" parameterType="String">
-		SELECT team_name,team_icon,team_league,num
-		FROM (SELECT team_name,team_icon,team_league,rownum as num 
-		FROM (SELECT team_name,team_icon,team_league 
-		FROM gggl_team))
-		WHERE team_name=#{team_name}
+		SELECT team_name, team_icon FROM gggl_team
+		WHERE team_name = #{team_name}
+	</select>
+	
+	<select id="match_lck" resultType="MatchVO" parameterType="String">
+		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_time,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey
+		FROM gggl_match
+		WHERE match_league = 'LCK'
 	</select>
 	<!-- <select id="movieTotalPage" resultType="int">
 		SELECT CEIL(COUNT(*)/12) FROM movie

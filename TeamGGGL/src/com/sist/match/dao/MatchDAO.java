@@ -122,6 +122,5 @@ public class MatchDAO {
 		}
 		return list;
 	}
-	
 
 }

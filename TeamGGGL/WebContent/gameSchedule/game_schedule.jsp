@@ -26,6 +26,8 @@
 	 
 	 day.add(Calendar.DATE , +1);
 	 String threedayafter = new java.text.SimpleDateFormat("MM.dd(E)").format(day.getTime());
+	 
+	//String home_name = request.setAttribute("home_name", "${vo.home_name }");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -75,260 +77,134 @@ $(function () {
 		<div class="tab-content">
 			<div id="home" class="tab-pane fade">
 				<div class="row">
-				
+					<c:forEach var="vo" items="${list_3}" varStatus="status">
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="gameSchedule/image/lck.png">LCK</div>
+						<div class="leaguelogo">${vo.match_league }</div>
 						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="firstteam_score">1</div>
+						<div class="firstteam_name">${vo.home_name }</div>
+						<div class="firstteam_score">${vo.home_score }</div>
 						<div class="vsvs">:</div>
-						<div class="lastteam_score">2</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
+						<div class="lastteam_score">${vo.away_score }</div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
+						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
 						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
+					</c:forEach>
 					
-					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="gameSchedule/image/na-lcs.png">NA LCS</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="firstteam_score">1</div>
-						<div class="vsvs">:</div>
-						<div class="lastteam_score">1</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
-					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="gameSchedule/image/eu-lcs.png">EU LCS</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">18:00</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
-					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="gameSchedule/image/cblol.png">CBLOL</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">18:00</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
 				</div>
 			</div>
 			<div id="menu1" class="tab-pane fade">
 				<div class="row">
-					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					<c:forEach var="vo" items="${list_2}" varStatus="status">
+					<div class="col-md-3 gameover">
+						<div class="leaguelogo">${vo.match_league }</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
+						<div class="firstteam_name">${vo.home_name }</div>
+						<div class="firstteam_score">${vo.home_score }</div>
+						<div class="vsvs">:</div>
+						<div class="lastteam_score">${vo.away_score }</div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
+						<div class="lastteam_name">${vo.away_name }</div>
+						<div class="game_time">종료</div>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
+					</div>
+					</c:forEach>
+					
+					<%-- <c:choose>
+						<c:when test="${vo.match_league empty '개발자'}"></c:when>
+					</c:choose> --%>
 				</div>
 			</div>
 			<div id="menu2" class="tab-pane fade">
 				<div class="row">
+					<c:forEach var="vo" items="${list_1}" varStatus="status">
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="gameSchedule/image/lck.png">LCK</div>
+						<div class="leaguelogo">${vo.match_league }</div>
 						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="firstteam_score">1</div>
+						<div class="firstteam_name">${vo.home_name }</div>
+						<div class="firstteam_score">${vo.home_score }</div>
 						<div class="vsvs">:</div>
-						<div class="lastteam_score">2</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
+						<div class="lastteam_score">${vo.away_score }</div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
+						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
 						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
-					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="gameSchedule/image/na-lcs.png">NA LCS</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="firstteam_score">1</div>
-						<div class="vsvs">:</div>
-						<div class="lastteam_score">1</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
-					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="gameSchedule/image/eu-lcs.png">EU LCS</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">18:00</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
-					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="gameSchedule/image/cblol.png">CBLOL</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">18:00</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
+					</c:forEach>
 				</div>
 			</div>
 			<div id="menu3" class="tab-pane fade in active">
 				<div class="row">
+					<c:forEach var="vo" items="${list}" varStatus="status">
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="gameSchedule/image/lck.png">LCK</div>
+						<div class="leaguelogo">${vo.match_league }</div>
 						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="firstteam_score">1</div>
+						<div class="firstteam_name">${vo.home_name }</div>
+						<div class="firstteam_score">${vo.home_score }</div>
 						<div class="vsvs">:</div>
-						<div class="lastteam_score">2</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
+						<div class="lastteam_score">${vo.away_score }</div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
+						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
 						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
-					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="gameSchedule/image/na-lcs.png">NA LCS</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="firstteam_score">1</div>
-						<div class="vsvs">:</div>
-						<div class="lastteam_score">1</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
-					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="gameSchedule/image/eu-lcs.png">EU LCS</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">18:00</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
-					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="gameSchedule/image/cblol.png">CBLOL</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">18:00</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
+					</c:forEach>
 				</div>
 			</div>
 			<div id="menu4" class="tab-pane fade">
 				<div class="row">
+					<c:forEach var="vo" items="${list__1}" varStatus="status">
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="gameSchedule/image/lck.png">LCK</div>
+						<div class="leaguelogo">${vo.match_league }</div>
 						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="firstteam_score">1</div>
+						<div class="firstteam_name">${vo.home_name }</div>
+						<div class="firstteam_score">${vo.home_score }</div>
 						<div class="vsvs">:</div>
-						<div class="lastteam_score">2</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
+						<div class="lastteam_score">${vo.away_score }</div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
+						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
 						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
-					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="gameSchedule/image/na-lcs.png">NA LCS</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="firstteam_score">1</div>
-						<div class="vsvs">:</div>
-						<div class="lastteam_score">1</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
-					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="gameSchedule/image/eu-lcs.png">EU LCS</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">18:00</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
-					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="gameSchedule/image/cblol.png">CBLOL</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">18:00</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
+					</c:forEach>
 				</div>
 			</div>
 			<div id="menu5" class="tab-pane fade">
 				<div class="row">
-					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
-					<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					<!-- <div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div> -->
+					<c:forEach var="vo" items="${list__2}" varStatus="status">
+					<div class="col-md-3 gameover">
+						<div class="leaguelogo">${vo.match_league }</div>
+						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
+						<div class="firstteam_name">${vo.home_name }</div>
+						<div class="firstteam_score">${vo.home_score }</div>
+						<div class="vsvs">:</div>
+						<div class="lastteam_score">${vo.away_score }</div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
+						<div class="lastteam_name">${vo.away_name }</div>
+						<div class="game_time">종료</div>
+						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
+					</div>
+					</c:forEach>
 				</div>
 			</div>
 			<div id="menu6" class="tab-pane fade">
 				<div class="row">
+					<c:forEach var="vo" items="${list__3}" varStatus="status">
 					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="gameSchedule/image/lck.png">LCK</div>
+						<div class="leaguelogo">${vo.match_league }</div>
 						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="firstteam_score">1</div>
+						<div class="firstteam_name">${vo.home_name }</div>
+						<div class="firstteam_score">${vo.home_score }</div>
 						<div class="vsvs">:</div>
-						<div class="lastteam_score">2</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
+						<div class="lastteam_score">${vo.away_score }</div>
+						<div class="lastteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
+						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
 						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
-					<div class="col-md-3 gameover">
-						<div class="leaguelogo"><img src="gameSchedule/image/na-lcs.png">NA LCS</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="firstteam_score">1</div>
-						<div class="vsvs">:</div>
-						<div class="lastteam_score">1</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
-					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="gameSchedule/image/eu-lcs.png">EU LCS</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">18:00</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
-					<div class="col-md-3 gameready">
-						<div class="leaguelogo"><img src="gameSchedule/image/cblol.png">CBLOL</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
-						<div class="firstteam_name">fnatic</div>
-						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/faZe.png"></div>
-						<div class="lastteam_name">faZe</div>
-						<div class="game_time">18:00</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
-					</div>
+					</c:forEach>
 				</div>
 			</div>
 			
@@ -366,16 +242,29 @@ $(function () {
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
+				
 				    		<c:forEach var="vo" items="${list_3}" varStatus="status">
+				    			
+				 
 				    			<tr>
 				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
+				    				
 				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_day }</td>
-				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;<img src="${list1[status.index].team_icon }" height="28">&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;<img src="" height="28">&nbsp;&nbsp;${vo.away_name }</td>
+				    				
+				    				
+				    				
+				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp; 
+
+				    				<img src="${iconlist[status.index].team_icon }" height="28">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${iconlist[status.index].team_icon }" height="28">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
 				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
 				    			</tr>
+				    			
 				    		</c:forEach>
+				    	
 				    	</table>
 				    	<br>
 				    	<h4><%=twodaybefore %></h4>
@@ -392,7 +281,7 @@ $(function () {
 				    			<tr>
 				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
 				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_day }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;<img src="${list1[status.index].team_icon }" height="28">&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;<img src="" height="28">&nbsp;&nbsp;${vo.away_name }</td>
 				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
 				    			</tr>
@@ -414,7 +303,7 @@ $(function () {
 				    			<tr>
 				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
 				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_day }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;<img src="${list1[status.index].team_icon }" height="28">&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;<img src="" height="28">&nbsp;&nbsp;${vo.away_name }</td>
 				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
 				    			</tr>
@@ -435,7 +324,7 @@ $(function () {
 				    			<tr>
 				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
 				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_day }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;<img src="${list1[status.index].team_icon }" height="28">&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;<img src="" height="28">&nbsp;&nbsp;${vo.away_name }</td>
 				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
 				    			</tr>
@@ -456,7 +345,7 @@ $(function () {
 				    			<tr>
 				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
 				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_day }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;<img src="${list1[status.index].team_icon }" height="28">&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;<img src="" height="28">&nbsp;&nbsp;${vo.away_name }</td>
 				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
 				    			</tr>
@@ -477,7 +366,7 @@ $(function () {
 				    			<tr>
 				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
 				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_day }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;<img src="${list1[status.index].team_icon }" height="28">&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;<img src="" height="28">&nbsp;&nbsp;${vo.away_name }</td>
 				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
 				    			</tr>
@@ -498,7 +387,7 @@ $(function () {
 				    			<tr>
 				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
 				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_day }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;<img src="${list1[status.index].team_icon }" height="28">&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;<img src="" height="28">&nbsp;&nbsp;${vo.away_name }</td>
 				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
 				    			</tr>
