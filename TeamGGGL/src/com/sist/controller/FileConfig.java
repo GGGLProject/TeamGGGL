@@ -9,7 +9,7 @@ public class FileConfig {
 	public List<String> componentScan(String pack) {
 		List<String> list = new ArrayList<String>();
 		try {
-			String path = "C:\\Users\\Jieun\\git\\TeamGGGL\\TeamGGGL\\src\\";
+			String path = "C:\\Users\\user\\git\\TeamGGGL\\TeamGGGL\\src\\";
 
 
 			path = path + pack.replace(".", "\\");
@@ -24,7 +24,7 @@ public class FileConfig {
 					String str = pack + "." + name.substring(0, name.lastIndexOf("."));
 					list.add(str);
 				}
-			}
+			} 
 		} catch (Exception ex) {
 			System.out.println("FileConfig : " + ex.getMessage());
 		}
