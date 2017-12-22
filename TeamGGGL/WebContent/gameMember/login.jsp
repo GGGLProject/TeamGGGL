@@ -6,69 +6,83 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="css/gameGallery.css" rel="stylesheet" type="text/css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="css/member.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+function showPassword() {
+    
+    var key_attr = $('#key').attr('type');
+    
+    if(key_attr != 'text') {
+        
+        $('.checkbox').addClass('show');
+        $('#key').attr('type', 'text');
+        
+    } else {
+        
+        $('.checkbox').removeClass('show');
+        $('#key').attr('type', 'password');
+        
+    }
+    
+}
+</script>
 
 </head>
 <body>
-	<section>
-	<div class="panel panel-primary">
-		<div class="panel-heading">Login</div>
-		<div class="panel-body">
+	<section id="login">
+    <div class="allbox container">
+    	<div class="row">
+    	    <div class="col-xs-12">
+        	    <div class="form-wrap">
+                <h1>로그인</h1>
+                    <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="key" class="sr-only">Password</label>
+                            <input type="password" name="key" id="key" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <span class="character-checkbox" onclick="showPassword()"></span>
+                            <span class="label">Show password</span>
+                        </div>
+                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
+                    </form>
+                    <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
+                    <hr>
+        	    </div>
+    		</div> <!-- /.col-xs-12 -->
+    	</div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section>
 
-			Login Form
-			<form role="form">
+<div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">×</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title">Recovery password</h4>
+			</div>
+			<div class="modal-body">
+				<p>Type your email account</p>
+				<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-custom">Recovery</button>
+			</div>
+		</div> <!-- /.modal-content -->
+	</div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
 
-				Username Field
-				<div class="row">
-					<div class="form-group col-xs-12">
-						<label for="username"><span class="text-danger"
-							style="margin-right: 5px;">*</span>Username:</label>
-						<div class="input-group">
-							<input class="form-control" id="username" type="text"
-								name="username" placeholder="Username" required /> 
-								<span class="input-group-btn"> 
-								<label class="btn btn-primary">
-							<span class="glyphicon glyphicon-user" aria-hidden="true">
-								</label>
-							</span>
-							</span>
-						</div>
-					</div>
-				</div>
-
-				Content Field
-				<div class="row">
-					<div class="form-group col-xs-12">
-						<label for="password"><span class="text-danger"
-							style="margin-right: 5px;">*</span>Password:</label>
-						<div class="input-group">
-							<input class="form-control" id="password" type="password"
-								name="password" placeholder="Password" required /> <span
-								class="input-group-btn"> <label class="btn btn-primary"><span
-									class="glyphicon glyphicon-lock" aria-hidden="true"></label>
-							</span> </span>
-						</div>
-					</div>
-				</div>
-
-				Login Button
-				<div class="row">
-					<div class="form-group col-xs-4">
-						<button class="btn btn-primary" type="submit">Submit</button>
-					</div>
-				</div>
-
-			</form>
-			End of Login Form
-
-		</div>
-	</div>
-	</section>
 </body>
 </html>

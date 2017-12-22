@@ -37,6 +37,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="newsImageUrl" resultType="String" parameterType="int">
 		select news_image from gggl_news where news_no=#{news_no}
 	</select>
+		<select id="newsReccomandData" resultType="NewsVO" parameterType="int">
+		SELECT
+		news_no,news_title from gggl_news where news_no=#{news_no}
+	</select>
 	<!-- 찾기 find
 	<select id="boardFindData" resultType="BoardVO" parameterType="java.util.Map">
 		SELECT no,subject,name,regdate,hit
