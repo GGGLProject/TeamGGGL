@@ -32,7 +32,7 @@ public class ScheduleModel {
 		List<MatchVO> list = MatchDAO.matchList(match_day);
 		//List<TeamVO> list1 = TeamDAO.TeamImageData(team_name);
 		req.setAttribute("list", list);
-		//req.setAttribute("list1", list1);
+		//req.setAttribute("list1", list1); 
 		req.setAttribute("main_jsp", "../gameSchedule/game_schedule.jsp");
 		return "gameMain/main.jsp";
 		
