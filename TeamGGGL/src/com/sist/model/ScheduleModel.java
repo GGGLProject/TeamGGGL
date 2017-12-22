@@ -28,8 +28,10 @@ public class ScheduleModel {
 		Date date=new Date();
 		SimpleDateFormat sdf=new SimpleDateFormat("yy/MM/dd");
 		String match_day = sdf.format(date);
-		String home_name = (String) req.getAttribute("home_name");
 		
+		//String home_name = (String) req.getAttribute("home_name");
+		
+		String home_name = "OMG";
 		
 		//String team_icon = TeamDAO.TeamImageData(team_name);
 		

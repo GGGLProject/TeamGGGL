@@ -96,6 +96,7 @@ $(function () {
 			</div>
 			<div id="menu1" class="tab-pane fade">
 				<div class="row">
+					<c:set var="count" value="1"/>
 					<c:forEach var="vo" items="${list_2}" varStatus="status">
 					<div class="col-md-3 gameover">
 						<div class="leaguelogo">${vo.match_league }</div>
@@ -109,8 +110,15 @@ $(function () {
 						<div class="game_time">종료</div>
 						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
 					</div>
+					<c:set var="count" value="${status.index+1 }"/>
 					</c:forEach>
-					
+					<c:if test="${count==3 }">
+						<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					</c:if>
+					<c:if test="${count==2 }">
+						<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+						<div class="col-md-3 nogame"><img src="gameSchedule/image/excla.png"><p>경기가 없습니다.</p></div>
+					</c:if>
 					<%-- <c:choose>
 						<c:when test="${vo.match_league empty '개발자'}"></c:when>
 					</c:choose> --%>

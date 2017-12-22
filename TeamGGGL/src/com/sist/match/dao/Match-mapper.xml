@@ -41,7 +41,8 @@
 	</select>
 	
 	<select id="TeamImageData" resultType="TeamVO" parameterType="String">
-		SELECT team_name, team_icon FROM gggl_team
+		SELECT team_name, team_icon 
+		FROM gggl_team
 		WHERE team_name = #{team_name}
 	</select>
 	
