@@ -14,6 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM (SELECT
 		news_no,news_title,news_name,news_content,news_regdate,news_category,news_image
 		FROM gggl_news ORDER BY news_regdate ASC ))
+		WHERE no BETWEEN #{start} AND #{end}
 	</select>
 	<!-- 뉴스의 페이지 갯수 계산 -->
 	<select id="newsTotalPage" resultType="int">
@@ -21,7 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<!-- 뉴스의 총 갯수 계산 -->
 	<select id="newsTotalCount" resultType="int">
-		select * from gggl_news;
+		select count(*) from gggl_news
 	</select>
 	<!-- 상세보기 -->
 	<select id="newsDetailData" resultType="NewsVO" parameterType="int">
@@ -30,7 +31,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM gggl_news
 		WHERE news_no=#{news_no}
 	</select>
-
+	<select id="newsImageNo" resultType="int" parameterType="int">
+		select news_no from gggl_news where news_no=#{news_no}
+	</select>
+	<select id="newsImageUrl" resultType="String" parameterType="int">
+		select news_image from gggl_news where news_no=#{news_no}
+	</select>
 	<!-- 찾기 find
 	<select id="boardFindData" resultType="BoardVO" parameterType="java.util.Map">
 		SELECT no,subject,name,regdate,hit

@@ -11,13 +11,13 @@
 		FROM gggl_match ORDER BY match_no ASC ))
 		WHERE TO_CHAR(match_day,'MM.DD(DY)')=#{match_day}
 	</select>
-	<select id="TeamImageData" resultType="TeamVO" parameterType="String">
+<!-- 	<select id="TeamImageData" resultType="TeamVO" parameterType="String">
 		SELECT team_name,team_icon,team_league,num
 		FROM (SELECT team_name,team_icon,team_league,rownum as num 
 		FROM (SELECT team_name,team_icon,team_league 
 		FROM gggl_team))
 		WHERE team_name=#{team_name}
-	</select>
+	</select> -->
 	<!-- <select id="movieTotalPage" resultType="int">
 		SELECT CEIL(COUNT(*)/12) FROM movie
 	</select>

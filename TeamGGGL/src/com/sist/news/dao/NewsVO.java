@@ -17,9 +17,15 @@ public class NewsVO {
 	private String news_title;
 	private String news_name;
 	private String news_content;
-	private Date news_date;
+	private Date news_regdate;
 	private String news_category;
 	private String news_image="";
+	public Date getNews_regdate() {
+		return news_regdate;
+	}
+	public void setNews_regdate(Date news_regdate) {
+		this.news_regdate = news_regdate;
+	}
 	public int getNews_no() {
 		return news_no;
 	}
@@ -43,12 +49,6 @@ public class NewsVO {
 	}
 	public void setNews_content(String news_content) {
 		this.news_content = news_content;
-	}
-	public Date getNews_date() {
-		return news_date;
-	}
-	public void setNews_date(Date news_date) {
-		this.news_date = news_date;
 	}
 	public String getNews_category() {
 		return news_category;

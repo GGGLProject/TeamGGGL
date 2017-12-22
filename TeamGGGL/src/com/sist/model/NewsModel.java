@@ -18,7 +18,12 @@ public class NewsModel {
 	@RequestMapping("news_detail.do")
 	public String news_detail(HttpServletRequest req, HttpServletResponse res) {
 		req.setAttribute("main_jsp", "../gameNews/news_detail.jsp");
+		String no=req.getParameter("no");
+		
+		NewsVO vo = NewsDAO.newsDetailData(Integer.parseInt(no));
+		req.setAttribute("vo", vo);
 		//NewsVO vo = NewsDAO.newsDetailData(Integer.parseInt(arg0))
+		req.setAttribute("main_jsp", "../gameNews/news_detail.jsp");
 		return "gameMain/main.jsp";	}
 	
 	@RequestMapping("news_main.do")
@@ -37,12 +42,13 @@ public class NewsModel {
 		String category = req.getParameter("category");
 		
 		List<NewsVO> list = NewsDAO.newsListData(map);
-		
+		int newsTotalCount = NewsDAO.newsTotalCount();
+		int totalpage = NewsDAO.newsTotalPage();
 		req.setAttribute("category", category);
 		req.setAttribute("list", list);
-		req.setAttribute("curpage", curpage);
-		int totalpage = NewsDAO.newsTotalPage();
+		req.setAttribute("curpage", curpage);		
 		req.setAttribute("totalpage", totalpage);
+		req.setAttribute("newsTotalCount", newsTotalCount);
 		req.setAttribute("main_jsp", "../gameNews/news_main.jsp");
 		return "gameMain/main.jsp";
 	}
