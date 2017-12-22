@@ -5,68 +5,79 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="css/newmember.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
-            <legend><a href="http://www.jquery2dotnet.com"><i class="glyphicon glyphicon-globe"></i></a> 로그인</legend>
-            <form action="#" method="post" class="form" role="form">
-            <div class="row">
-                <div class="col-xs-6 col-md-6">
-                    <input class="form-control" name="firstname" placeholder="아이디" type="text"
-                        required autofocus />
-                </div>
-                <div class="col-xs-6 col-md-6">
-                    <input class="form-control" name="lastname" placeholder="비밀번호" type="password" required />
-                </div>
-            </div>
-            <input class="form-control" name="youremail" placeholder="이메일" type="email" />
-            <input class="form-control" name="reenteremail" placeholder="이름(별명)" type="text" />
-            
-            <label for="">
-                Birth Date</label>
-            <div class="row">
-                <div class="col-xs-4 col-md-4">
-                    <select class="form-control">
-                        <option value="Month">년도</option>
-                    </select>
-                </div>
-                <div class="col-xs-4 col-md-4">
-                    <select class="form-control">
-                        <option value="Day">월</option>
-                    </select>
-                </div>
-                <div class="col-xs-4 col-md-4">
-                    <select class="form-control">
-                        <option value="Year">일</option>
-                    </select>
-                </div>
-            </div>
-            <label class="radio-inline">
-                <input type="checkbox" name="team" id="inlineCheckbox1" value="male" />
-                LCK
-            </label>
-            <label class="radio-inline">
-                <input type="checkbox" name="team" id="inlineCheckbox2" value="female" />
-                NALCS
-            </label>
-            <label class="radio-inline">
-                <input type="checkbox" name="team" id="inlineCheckbox2" value="female" />
-                EULCS
-            </label>
-            <label class="radio-inline">
-                <input type="checkbox" name="team" id="inlineCheckbox2" value="female" />
-                CBLOL
-            </label>
-            <br />
-            <br />
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
-                회원가입</button>
-            </form>
+<article class="container">
+        <div class="page-header">
+          <h1>회원가입 <small></small></h1>
         </div>
-    </div>
-</div>
+        <div class="col-md-6 col-md-offset-3">
+          <form role="form">
+            <div class="form-group">
+              <label for="InputEmail">이메일 주소</label>
+              <input type="email" class="Email form-control" id="InputEmail" placeholder="이메일 주소">
+              <span class="input-group-btn">
+                  <button class="btn btn-success">인증번호 전송<i class="fa fa-mail-forward spaceLeft"></i></button>
+                </span>
+            </div>
+            <div class="form-group">
+              <label for="InputPassword1">비밀번호</label>
+              <input type="password" class="form-control" id="InputPassword1" placeholder="비밀번호">
+            </div>
+            <div class="form-group">
+              <label for="InputPassword2">비밀번호 확인</label>
+              <input type="password" class="form-control" id="InputPassword2" placeholder="비밀번호 확인">
+              <p class="help-block">비밀번호 확인을 위해 다시한번 입력 해 주세요</p>
+            </div>
+            <div class="form-group">
+              <label for="username">이름</label>
+              <input type="text" class="form-control" id="username" placeholder="이름을 입력해 주세요">
+            </div>
+            <div class="form-group">
+              <label for="username">휴대폰 인증</label>
+              <div class="input-group">
+                <input type="tel" class="form-control" id="username" placeholder="- 없이 입력해 주세요">
+         
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="username">인증번호 입력</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="username" placeholder="인증번호">
+                <span class="input-group-btn">
+                  <button class="btn btn-success">인증번호 입력<i class="fa fa-edit spaceLeft"></i></button>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+                <label>약관 동의</label>
+              <div data-toggle="buttons">
+              <label class="btn btn-primary active">
+                  <span class="fa fa-check"></span>
+                  <input id="agree" type="checkbox" autocomplete="off" checked>
+              </label>
+              <a href="#">이용약관</a>에 동의합니다.
+              </div>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-info">회원가입<i class="fa fa-check spaceLeft"></i></button>
+              <button type="submit" class="btn btn-warning">가입취소<i class="fa fa-times spaceLeft"></i></button>
+            </div>
+          </form>
+        </div>
+
+      </article>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </body>
 </html>
