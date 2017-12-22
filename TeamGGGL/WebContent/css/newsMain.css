@@ -36,7 +36,13 @@ body, a {
 a:hover {
 	color: #3ba0f7;
 }
-
+table, td
+{
+	width:60%;
+	height:100px;
+	margin: auto;
+	text-align:center
+}
 .news_writer, .news_date {
 	color: #dedee0;
 	font-size: 12px
@@ -46,7 +52,11 @@ a:hover {
 	text-decoration: none;
 	font-size: 15px;
 }
-
+.a img
+{
+	vertical-align:middle;
+	line-height: 200px;
+}
 hr {
 	margin: 10px;
 	height: 1px;
