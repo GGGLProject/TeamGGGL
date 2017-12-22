@@ -40,7 +40,8 @@
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control"
-					placeholder="${newsTotalCount }개 등록됨 (2017-05-01 ~ 2017-12-30)" size=70 readonly>
+					placeholder="${newsTotalCount }개 등록됨 (2017-05-01 ~ 2017-12-30)"
+					size=70 readonly>
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control" placeholder="뉴스 검색" size=30>
@@ -88,8 +89,8 @@
 				<div class="row">
 					<div class="row_img col-sm-3 col-md-2">
 						<div class="news_img">
-							<a href="news_detail.do?no=${vo.news_no }"> <img src="gameNews/image/${vo.news_no }.jpg"
-								width="100%">
+							<a href="news_detail.do?no=${vo.news_no }"> <img
+								src="gameNews/image/${vo.news_no }.jpg" width="100%">
 							</a>
 						</div>
 					</div>
@@ -97,16 +98,18 @@
 						<div class="row_newsTitle">
 							<h5>
 								<strong class="news_title"> <a
-									href="news_detail.do?no=${vo.news_no }"> ${vo.news_title } </a>
+									href="news_detail.do?no=${vo.news_no }"> ${vo.news_title }
+								</a>
 								</strong>
 							</h5>
 						</div>
 						<span class="news_writer">${vo.news_name}</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span
-							class="news_date"><fmt:formatDate value="${vo.news_regdate }" pattern="yyyy-MM-dd"/></span>
+							class="news_date"><fmt:formatDate
+								value="${vo.news_regdate }" pattern="yyyy-MM-dd" /></span>
 						<div class="news_content">
 							<p>
-								<a href="news_detail.do?no=${vo.news_no }">
-											<c:out value="${fn:substring(vo.news_content,0,240)}" />....
+								<a href="news_detail.do?no=${vo.news_no }"> <c:out
+										value="${fn:substring(vo.news_content,0,240)}" />....
 								</a>
 							</p>
 						</div>
@@ -121,10 +124,12 @@
 		<center>
 			<div class="pageNum">
 				<ul class="pagination">
-					
-					<li class="page-item"><a href="news_main.do?page=${curpage>1?curpage-1:curpage }"></a>이전</li>
-					<li class="page-item"><a href="news_main.do?page=${curpage<totalpage?curpage+1:curpage }"></a>다음</li>
-					
+
+					<li class="page-item"><a
+						href="news_main.do?page=${curpage>1?curpage-1:curpage }"></a>이전</li>
+					<li class="page-item"><a
+						href="news_main.do?page=${curpage<totalpage?curpage+1:curpage }"></a>다음</li>
+
 				</ul>
 				${curpage } page / ${totalpage } pages
 			</div>

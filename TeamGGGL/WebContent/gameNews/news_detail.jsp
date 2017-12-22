@@ -51,7 +51,7 @@
 			<br>
 			<div class="contentText">
 				
-				<table width="400" border=1>
+				<table width="800" >
 					<tr>
 						<td width="100%" style="word-break: break-all">${vo.news_content }</td>
 					</tr>
