@@ -27,7 +27,17 @@ body, a {
 .container-fluid-news .com_2 {
 	margin: 10px 0;
 }
-
+.contentText
+{
+	line-height: 1.64;
+	overflow: hidden;
+	width:650px;
+	display:inline;
+}
+.b-writer
+{
+	text-align:right;
+}
 hr {
 	height: 1px;
 	color: #dedee0;

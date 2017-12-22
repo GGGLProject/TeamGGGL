@@ -50,15 +50,9 @@
 			</div>
 			<br>
 			<div class="contentText">
-				
-				<table width="800" >
-					<tr>
-						<td width="100%" style="word-break: break-all">${vo.news_content }</td>
-					</tr>
-				</table>
-				
-
-				<br> <span class="b-writer">${vo.news_name }</span>
+						${vo.news_content }
+				 <div class="b-writer"><span>${vo.news_name }</span></div>
+				 
 			</div>
 			<hr>
 		</div>

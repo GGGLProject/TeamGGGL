@@ -58,12 +58,11 @@
 						<strong><a href="#">HOT 뉴스</a></strong>
 					</h5>
 					<ul>
-						<c:forEach var="i" begin="1" end="3">
-							<li>&nbsp;&nbsp; <a href="#"><span>고려대 모상현, "지난
-										시즌 아쉬워.. 이번엔 꼭 우승까지"</span></a></li>
-							<li>&nbsp;&nbsp; <a href="#"><span>서울 다이너스티, 뉴욕과
-										프리시즌 최고의 명승부 끝에 승리</span></a></li>
-						</c:forEach>
+						<li>&nbsp;&nbsp; <a href="#"><span>${newsRecommandData }</span></a></li>
+						<li>&nbsp;&nbsp; <a href="#"><span>${newsRecommandData2 }</span></a></li>
+						<li>&nbsp;&nbsp; <a href="#"><span>${newsRecommandData3 }</span></a></li>
+						<li>&nbsp;&nbsp; <a href="#"><span>${newsRecommandData4 }</span></a></li>
+						<li>&nbsp;&nbsp; <a href="#"><span>${newsRecommandData5 }</span></a></li>
 					</ul>
 				</div>
 			</div>

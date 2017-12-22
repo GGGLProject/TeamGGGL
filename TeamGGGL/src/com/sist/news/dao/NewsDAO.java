@@ -18,8 +18,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class NewsDAO {
 	private static SqlSessionFactory ssf;
-	public static void main(String args[])
-	{
+
+	public static void main(String args[]) {
 		NewsDAO nd = new NewsDAO();
 		try {
 			nd.imageDown();
@@ -27,8 +27,9 @@ public class NewsDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-				
+
 	}
+
 	// XML 파싱내용을 전송
 	static {
 		try {
@@ -40,6 +41,81 @@ public class NewsDAO {
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
+	}
+
+	public static List<NewsVO> newsRecommandData() {
+		List<NewsVO> list = new ArrayList<NewsVO>();
+		SqlSession session = ssf.openSession();
+		int no = (int) (Math.random() * 70) + 1;
+		try {
+			list = session.selectList("newsListData", no);
+		} catch (Exception e) {
+			System.out.println("NewsDAO:newsRecommandData" + e.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+		return list;
+	}
+
+	public static List<NewsVO> newsRecommandData2() {
+		List<NewsVO> list = new ArrayList<NewsVO>();
+		SqlSession session = ssf.openSession();
+		int no = (int) (Math.random() * 70) + 1;
+		try {
+			list = session.selectList("newsListData", no);
+		} catch (Exception e) {
+			System.out.println("NewsDAO:newsRecommandData" + e.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+		return list;
+	}
+
+	public static List<NewsVO> newsRecommandData3() {
+		List<NewsVO> list = new ArrayList<NewsVO>();
+		SqlSession session = ssf.openSession();
+		int no = (int) (Math.random() * 70) + 1;
+		try {
+			list = session.selectList("newsListData", no);
+		} catch (Exception e) {
+			System.out.println("NewsDAO:newsRecommandData" + e.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+		return list;
+	}
+
+	public static List<NewsVO> newsRecommandData4() {
+		List<NewsVO> list = new ArrayList<NewsVO>();
+		SqlSession session = ssf.openSession();
+		int no = (int) (Math.random() * 70) + 1;
+		try {
+			list = session.selectList("newsListData", no);
+		} catch (Exception e) {
+			System.out.println("NewsDAO:newsRecommandData" + e.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+		return list;
+	}
+
+	public static List<NewsVO> newsRecommandData5() {
+		List<NewsVO> list = new ArrayList<NewsVO>();
+		SqlSession session = ssf.openSession();
+		int no = (int) (Math.random() * 70) + 1;
+		try {
+			list = session.selectList("newsListData", no);
+		} catch (Exception e) {
+			System.out.println("NewsDAO:newsRecommandData" + e.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+		return list;
 	}
 
 	public static List<NewsVO> newsListData(Map map) {
@@ -105,29 +181,25 @@ public class NewsDAO {
 			// session : connection
 			session = ssf.openSession();// autocommit(false)
 			for (int i = 385; i <= 400; i++) {
-				
-				String imgUrl = ""; 
+
+				String imgUrl = "";
 				imgUrl = session.selectOne("newsImageUrl", i);
-				if(imgUrl.equals(""))
-				{
+				if (imgUrl.equals("")) {
 					System.out.println("널값들어옴");
-				}
-				else	
-				{
+				} else {
 					URL url = new URL(imgUrl);
-					
+
 					String fileName = Integer.toString(i); // 이미지 파일명 추출
 					BufferedImage img = ImageIO.read(url);
-					
 
-					ImageIO.write(img, "jpg", new File("c:/saveImage/"+fileName));
-					System.out.println(fileName+".jpg 저장");
+					ImageIO.write(img, "jpg", new File("c:/saveImage/" + fileName));
+					System.out.println(fileName + ".jpg 저장");
 				}
-				
+
 			}
 
 		} catch (Exception e) {
-			System.out.println("에러이유 : "+e.getMessage());
+			System.out.println("에러이유 : " + e.getMessage());
 		} finally {
 			if (session != null)
 				session.close();
