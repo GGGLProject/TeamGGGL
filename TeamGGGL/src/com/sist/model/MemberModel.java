@@ -13,7 +13,7 @@ public class MemberModel {
 	public String login(HttpServletRequest req, HttpServletResponse res) {
 		req.setAttribute("main_jsp", "../gameMember/login.jsp");
 		return "gameMain/main.jsp";
-	}
+	} 
 	
 	@RequestMapping("new_member.do")
 	public String new_member(HttpServletRequest req, HttpServletResponse res) {
