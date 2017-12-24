@@ -13,6 +13,7 @@ public class MatchVO {
 	private String away_name;
 	private int away_score;
 	private String match_videokey;
+	private String team_icon;
 	
 	public int getMatch_no() {
 		return match_no;
@@ -74,6 +75,12 @@ public class MatchVO {
 	}
 	public void setMatch_videokey(String match_videokey) {
 		this.match_videokey = match_videokey;
+	}
+	public String getTeam_icon() {
+		return team_icon;
+	}
+	public void setTeam_icon(String team_icon) {
+		this.team_icon = team_icon;
 	}
 	
 	

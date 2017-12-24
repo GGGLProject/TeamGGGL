@@ -39,6 +39,8 @@ public class MatchDAO {
 		return list;
 	}
 	
+	
+	
 	public static List<MatchVO> matchList_2(String match_day) {
 		List<MatchVO> list = new ArrayList<MatchVO>();
 		SqlSession session = ssf.openSession();

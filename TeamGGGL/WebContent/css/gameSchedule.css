@@ -37,7 +37,7 @@ h2 {
 	border: 1px solid rgb(215, 215, 215);
 	background-color: rgba(0, 0, 0, 0.5);
 	text-align: center;
-	line-height: 230px;
+	/* line-height: 230px; */
 	padding-top: 10px;
 }
 
@@ -94,7 +94,6 @@ h2 {
 	line-height: 30px;
 	font-size: 20px;
 	margin-top: 10px;
-	margin-left: 0px;
 	text-align: center;
 	position: relative;
 }
@@ -128,7 +127,7 @@ h2 {
 	line-height: 30px;
 	font-size: 20px;
 	margin-top: 10px;
-	padding-left: 190px;
+	padding-left: 180px;
 	position: relative;
 }
 
@@ -237,7 +236,7 @@ h2 {
 	line-height: 30px;
 	font-size: 20px;
 	margin-top: 10px;
-	padding-left: 190px;
+	padding-left: 180px;
 	text-align: center;
 	position: relative;
 }
