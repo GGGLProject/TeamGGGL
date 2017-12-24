@@ -9,6 +9,41 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="css/newmember.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	$('#checkBtn').click(function(){
+		var id=$('#id').val();
+		alert(id)
+		if(id.trim()=="")
+		{
+			$('#id').focus();
+			return;
+		}
+		$.ajax({
+			type:'POST',
+			url:'checkmember.do',
+			data:{"id":id},
+			success:function(response)
+			{
+	
+				var count=data.trim();
+				if(result==0)
+				{
+					alert("사용")
+				}
+				else
+				{
+					alert("불가")
+				}
+			}
+		});
+	});
+});
+</script>
+
+
 
 </head>
 <body>
@@ -19,42 +54,78 @@
         </div>
         <div class="col-md-6 col-md-offset-3">
           <form role="form">
+          <!--  이름 닉네임 입력 부분 -->
             <div class="form-group">
-              <label for="InputEmail">이메일 주소</label>
-              <input type="email" class="Email form-control" id="InputEmail" placeholder="이메일 주소">
-              <span class="input-group-btn">
-                  <button class="btn btn-success">인증번호 전송<i class="fa fa-mail-forward spaceLeft"></i></button>
-                </span>
-            </div>
-            <div class="form-group">
-              <label for="InputPassword1">비밀번호</label>
-              <input type="password" class="form-control" id="InputPassword1" placeholder="비밀번호">
-            </div>
-            <div class="form-group">
-              <label for="InputPassword2">비밀번호 확인</label>
-              <input type="password" class="form-control" id="InputPassword2" placeholder="비밀번호 확인">
-              <p class="help-block">비밀번호 확인을 위해 다시한번 입력 해 주세요</p>
-            </div>
-            <div class="form-group">
-              <label for="username">이름</label>
-              <input type="text" class="form-control" id="username" placeholder="이름을 입력해 주세요">
-            </div>
-            <div class="form-group">
-              <label for="username">휴대폰 인증</label>
+              <label for="username">이름(닉네임)</label>
               <div class="input-group">
-                <input type="tel" class="form-control" id="username" placeholder="- 없이 입력해 주세요">
+                <input type="text" class="form-control" id="id" placeholder="이름(닉네임)">
+                <span class="input-group-btn">
+                  <button class="btn btn-success" id="checkBtn">중복확인</button>
+                </span>
+              </div>
+            </div>
+            
+            <!-- 이메일 입력 -->
+           <div class="form-group">
+              <label for="username">이메일</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="username" placeholder="이름(닉네임)">
+                <span class="input-group-btn">
+                  <button class="btn btn-success">중복확인<i class="fa fa-edit spaceLeft"></i></button>
+                </span>
+              </div>
+            </div>
+            
+            
+            <div class="form-group">
+              <label for="username">비밀번호</label>
+              <input type="password" class="form-control" id="username">
+            </div>
+            <div class="form-group">
+              <label for="username">휴대폰 번호</label>
+              <div class="input-group">
+                <input type="tel" class="form-control" id="username" placeholder="- 삽입하고 입력해 주세요">
          
               </div>
             </div>
-            <div class="form-group">
-              <label for="username">인증번호 입력</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="username" placeholder="인증번호">
-                <span class="input-group-btn">
-                  <button class="btn btn-success">인증번호 입력<i class="fa fa-edit spaceLeft"></i></button>
-                </span>
-              </div>
+            <label for="">
+                생년월일</label>
+            <div class="row">
+                <div class="col-xs-4 col-md-4">
+                    <select class="form-control">
+                        <option value="Month">Month</option>
+                    </select>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <select class="form-control">
+                        <option value="Day">Day</option>
+                    </select>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <select class="form-control">
+                        <option value="Year">Year</option>
+                    </select>
+                </div>
             </div>
+            <div><label for="">
+                관심리그</label></div>
+             <label class="radio-inline">
+                <input type="checkbox" name="LCK" id="inlineCheckbox1" value="male" />
+                LCK
+            </label>
+            <label class="radio-inline">
+                <input type="checkbox" name="NALCS" id="inlineCheckbox2" value="female" />
+                NALCS
+            </label>
+            <label class="radio-inline">
+                <input type="checkbox" name="EULCS" id="inlineCheckbox2" value="female" />
+                EULCS
+            </label>
+            <label class="radio-inline">
+                <input type="checkbox" name="CBLOL" id="inlineCheckbox2" value="female" />
+                CBLOL
+            </label>
+            
             <div class="form-group">
                 <label>약관 동의</label>
               <div data-toggle="buttons">
