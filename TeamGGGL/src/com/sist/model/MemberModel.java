@@ -25,10 +25,14 @@ public class MemberModel {
 	}
 	@RequestMapping("checkmember.do")
 	public String nickCheck(HttpServletRequest req, HttpServletResponse res) {
+		MemberVO vo = new MemberVO();
 		String id = req.getParameter("id");
-		MemberVO vo= MemberDAO.memberidcheck(id);
+		vo = MemberDAO.memberidcheck(id);
+		vo.setMember_id(id);
+		System.out.println("MemberModel = > " + vo.getCount() + " : " + vo.getMember_id());
+		req.setAttribute("count", vo.getCount() );
 		req.setAttribute("vo", vo);
-		return "gameMember/idcheck.jsp";
+		return "gameMain/idcheck.jsp";
 		
 	}
 }

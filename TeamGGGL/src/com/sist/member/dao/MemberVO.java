@@ -3,6 +3,7 @@ package com.sist.member.dao;
 import java.sql.Date;
 
 public class MemberVO {
+	private int count;
 	private String member_id;
 	private String member_pwd;
 	private int member_no;
@@ -68,6 +69,10 @@ public class MemberVO {
 	public void setMember_birthday(String member_birthday) {
 		this.member_birthday = member_birthday;
 	}
-	
-	
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
 }

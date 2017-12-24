@@ -27,15 +27,20 @@ $(function(){
 			data:{"id":id},
 			success:function(response)
 			{
-	
-				var count=data.trim();
-				if(result==0)
+				alert("!!!RESULT!!!");
+			 	alert(JSON.stringify(response));
+				var count=response.trim();
+				if(count==0)
 				{
 					alert("사용")
+					$("#checkBtn").text('사용가능');
+					$(".id").text(id);
 				}
 				else
 				{
 					alert("불가")
+					$("#checkBtn").prop('class', 'btn btn-warning');
+					$("#checkBtn").text('사용불가');
 				}
 			}
 		});
@@ -58,7 +63,8 @@ $(function(){
             <div class="form-group">
               <label for="username">이름(닉네임)</label>
               <div class="input-group">
-                <input type="text" class="form-control" id="id" placeholder="이름(닉네임)">
+                <input type="text" class="form-control" id="id" placeholder="이름(닉네임)" value="${vo.member_id }">
+                <input type="hidden" class="form-control" id="idCheck" placeholder="이름(닉네임)">
                 <span class="input-group-btn">
                   <button class="btn btn-success" id="checkBtn">중복확인</button>
                 </span>
@@ -78,13 +84,13 @@ $(function(){
             
             
             <div class="form-group">
-              <label for="username">비밀번호</label>
-              <input type="password" class="form-control" id="username">
+              <label for="password">비밀번호</label>
+              <input type="password" class="form-control" id="password">
             </div>
             <div class="form-group">
-              <label for="username">휴대폰 번호</label>
+              <label for="telnumber">휴대폰 번호</label>
               <div class="input-group">
-                <input type="tel" class="form-control" id="username" placeholder="- 삽입하고 입력해 주세요">
+                <input type="tel" class="form-control" id="telnumber" placeholder="- 삽입하고 입력해 주세요">
          
               </div>
             </div>
@@ -118,11 +124,11 @@ $(function(){
                 NALCS
             </label>
             <label class="radio-inline">
-                <input type="checkbox" name="EULCS" id="inlineCheckbox2" value="female" />
+                <input type="checkbox" name="EULCS" id="inlineCheckbox3" value="female" />
                 EULCS
             </label>
             <label class="radio-inline">
-                <input type="checkbox" name="CBLOL" id="inlineCheckbox2" value="female" />
+                <input type="checkbox" name="CBLOL" id="inlineCheckbox4" value="female" />
                 CBLOL
             </label>
             
@@ -149,6 +155,6 @@ $(function(){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-  </body>
+<jsp:include page="idcheck.jsp"></jsp:include>
 </body>
 </html>

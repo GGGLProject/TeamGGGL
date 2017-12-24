@@ -30,7 +30,9 @@ public static MemberVO memberidcheck(String id) {
 	MemberVO vo = new MemberVO();
 	SqlSession session=ssf.openSession();
 	try {
-		vo=session.selectOne("memberIdCheck",id);
+		
+		vo.setCount(session.selectOne("memberIdCheck",id));
+		System.out.println("MemberDAO = > " + vo.getCount());
 	}catch(Exception ex) {
 		System.out.println("memberidcheck : "+ex.getMessage());
 	}finally {
