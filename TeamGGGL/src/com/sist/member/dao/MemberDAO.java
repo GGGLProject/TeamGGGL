@@ -41,4 +41,19 @@ public static MemberVO memberidcheck(String id) {
 	}
 	return vo;
 }
+
+public MemberVO isLogin(String id,String pwd) {
+	MemberVO vo=new MemberVO();
+	SqlSession session=ssf.openSession();
+try {
+		
+		
+	}catch(Exception ex) {
+		System.out.println("isLogin : "+ex.getMessage());
+	}finally {
+		if(session!=null)
+			session.close();
+	}
+	return vo;
+}
 }

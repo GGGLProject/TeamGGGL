@@ -14,39 +14,39 @@
 <script type="text/javascript">
 $(function(){
 	$('#checkBtn').click(function(){
-		var id=$('#id').val();
-		alert(id)
+	 	var id=$('#id').val();
+		alert("1");
 		if(id.trim()=="")
 		{
 			$('#id').focus();
 			return;
-		}
-		$.ajax({
-			type:'POST',
+		} 
+	 	$.ajax({
+			type:'post',
 			url:'checkmember.do',
 			data:{"id":id},
-			success:function(data)
+			success:function(res)
 			{
-			 	console.log(JSON.stringify(data));
-			 	
-				var count=data.trim();
-				if(count==0)
+				var count=res.trim();
+				alert(count);
+				 if(count==0)
 				{
-					alert("사용")
-					$("#checkBtn").text('사용가능');
-					$(".id").text(id);
+					alert("사용가능");
+					$("#checkBtn").prop('class', 'btn btn-success');
+				 	$("#checkBtn").text('사용가능');
 				}
 				else
 				{
-					alert("불가")
+					alert("불가");
 					$("#checkBtn").prop('class', 'btn btn-warning');
 					$("#checkBtn").text('사용불가');
-				}
+				}   
 			},
 			error:function(error) {
-				alert("!!AJAX FAIL!!");
-			}
-		});
+				alert(data)
+				alert("!!AJAX FAIL"); 
+		 	} 
+		}); 
 	});
 });
 </script>
@@ -61,21 +61,21 @@ $(function(){
           <h1>회원가입 <small></small></h1>
         </div>
         <div class="col-md-6 col-md-offset-3">
-          <form role="form">
+         <!--  <form role="form">  이색기쓰면 새로운 창으로 바뀜 시발색기임 -->
           <!--  이름 닉네임 입력 부분 -->
-            <div class="form-group">
+          
+           <div class="name form-group">
               <label for="username">이름(닉네임)</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="id" placeholder="이름(닉네임)" value="${vo.member_id }">
-                <input type="hidden" class="form-control" id="idCheck" placeholder="이름(닉네임)">
+              <div class="input-group"> 
+                <input type="text" class="form-control" id="id" placeholder="이름(닉네임)">
                 <span class="input-group-btn">
                   <button class="btn btn-success" id="checkBtn">중복확인</button>
                 </span>
-              </div>
+             </div>
             </div>
             
             <!-- 이메일 입력 -->
-           <div class="form-group">
+            <div class="form-group">
               <label for="username">이메일</label>
               <div class="input-group">
                 <input type="text" class="form-control" id="username" placeholder="이름(닉네임)">
@@ -142,7 +142,7 @@ $(function(){
                   <span class="fa fa-check"></span>
                   <input id="agree" type="checkbox" autocomplete="off" checked>
               </label>
-              <a href="#">이용약관</a>에 동의합니다.
+              <a href="http://www.law.go.kr/lsInfoP.do?lsiSeq=173223&efYd=20150724#0000">이용약관</a>에 동의합니다.
               </div>
             </div>
             <div class="form-group text-center">
@@ -151,13 +151,12 @@ $(function(){
             </div>
           </form>
         </div>
-
+ 
       </article>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-<jsp:include page="idcheck.jsp"></jsp:include>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    Include all compiled plugins (below), or include individual files as needed
+    <script src="js/bootstrap.min.js"></script>  
 </body>
 </html>
