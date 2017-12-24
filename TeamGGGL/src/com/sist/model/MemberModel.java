@@ -30,9 +30,7 @@ public class MemberModel {
 		vo = MemberDAO.memberidcheck(id);
 		vo.setMember_id(id);
 		System.out.println("MemberModel = > " + vo.getCount() + " : " + vo.getMember_id());
-		req.setAttribute("count", vo.getCount() );
 		req.setAttribute("vo", vo);
-		return "gameMain/idcheck.jsp";
-		
+		return "gameMember/new_member.jsp";
 	}
 }

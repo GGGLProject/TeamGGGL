@@ -25,11 +25,11 @@ $(function(){
 			type:'POST',
 			url:'checkmember.do',
 			data:{"id":id},
-			success:function(response)
+			success:function(data)
 			{
-				alert("!!!RESULT!!!");
-			 	alert(JSON.stringify(response));
-				var count=response.trim();
+			 	console.log(JSON.stringify(data));
+			 	
+				var count=data.trim();
 				if(count==0)
 				{
 					alert("사용")
@@ -42,6 +42,9 @@ $(function(){
 					$("#checkBtn").prop('class', 'btn btn-warning');
 					$("#checkBtn").text('사용불가');
 				}
+			},
+			error:function(error) {
+				alert("!!AJAX FAIL!!");
 			}
 		});
 	});
