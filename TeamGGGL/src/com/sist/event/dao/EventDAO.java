@@ -34,7 +34,7 @@ public class EventDAO {
 	public static EventVO eventContentData(int no)
 	{
 		SqlSession session = ssf.openSession();
-		session.update("eventdHitIncrement", no);
+		session.update("eventHitIncrement", no);
 		session.commit();
 		EventVO vo = session.selectOne("eventContentData",no);
 		session.close();

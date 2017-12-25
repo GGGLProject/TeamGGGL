@@ -41,9 +41,12 @@
 							<td class="text-center td-top">${vo.event_category }</td>
 							<td class="text-center"><a href="event_content.do"><img
 									src="${vo.event_image }" width=100 height=50></a></td>
-							<td class="text-center td-top"><a href="event_content.do">${vo.event_title }</a></td>
-							<td class="text-center td-top"><fmt:formatDate
-									value="${vo.event_day }" pattern="yyyy-MM-dd" /></td>
+							<td class="text-center td-top"><a href="event_content.do?no=${vo.event_no }">${vo.event_title }</a></td>
+							<td class="text-center td-top"><%-- <fmt:parseDate var="parsedDate" value="${vo.event_day }" pattern="yyy-MM-dd" />
+							<fmt:formatDate var="newFormattedDateString" value="${parseDate }" pattern="yyy-MM-dd" /> --%>
+							<fmt:formatDate value="${vo.event_day}" pattern="yyyy.MM.dd(E)" />
+							</td>
+							<!--<fmt:formatDate	value="${vo.event_day }"  type="date" dateStyle="full" /></td>-->
 							<td class="text-center td-top">${vo.event_place }</td>
 							<td class="text-center td-top">${vo.event_id }</td>
 							<td class="text-center td-top">${vo.event_hit }</td>
