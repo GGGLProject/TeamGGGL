@@ -20,7 +20,7 @@
 		<div class="row">
 			<div class="col">
 				<h2 class="text-center">
-					<strong>이벤트 게시판</strong>
+					<strong>EVENT</strong>
 				</h2>
 				<br>
 				<table class="table table-hover">
