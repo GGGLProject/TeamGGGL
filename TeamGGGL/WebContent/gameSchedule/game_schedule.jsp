@@ -137,7 +137,7 @@ $(function () {
 						<div class="lastteam_logo"><img src="${list_3_[status.index].team_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<c:set var="count" value="${status.index+1 }"/>
 					</c:forEach>

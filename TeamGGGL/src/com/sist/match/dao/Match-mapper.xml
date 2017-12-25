@@ -5,7 +5,7 @@
 
 <mapper namespace="com.sist.match.dao.Match-mapper">
 	<select id="matchList_3" resultType="MatchVO" >
-		SELECT TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
+		SELECT match_no, TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
 		FROM gggl_match m
         INNER JOIN gggl_team t
         ON m.home_name = t.team_name
@@ -13,14 +13,14 @@
 		ORDER BY match_no
 	</select>
 	<select id="matchList_3_" resultType="TeamVO" >
-		SELECT m.away_name,t.team_icon
+		SELECT match_no, m.away_name,t.team_icon
 		FROM gggl_match m INNER JOIN GGGL_TEAM t
 		ON m.away_name = t.team_name
 		WHERE match_day BETWEEN TRUNC(SYSDATE-3) AND TRUNC(SYSDATE-3)
 		ORDER BY match_no
 	</select>
 	<select id="matchList_2" resultType="MatchVO">
-		SELECT TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
+		SELECT match_no, TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
 		FROM gggl_match m
         INNER JOIN gggl_team t
         ON m.home_name = t.team_name
@@ -28,14 +28,14 @@
 		ORDER BY match_no
 	</select>
 	<select id="matchList_2_" resultType="TeamVO" >
-		SELECT m.away_name,t.team_icon
+		SELECT match_no, m.away_name,t.team_icon
 		FROM gggl_match m INNER JOIN GGGL_TEAM t
 		ON m.away_name = t.team_name
 		WHERE match_day BETWEEN TRUNC(SYSDATE-2) AND TRUNC(SYSDATE-2)
 		ORDER BY match_no
 	</select>
 	<select id="matchList_1" resultType="MatchVO">
-		SELECT TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
+		SELECT match_no, TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
 		FROM gggl_match m
         INNER JOIN gggl_team t
         ON m.home_name = t.team_name
@@ -43,14 +43,14 @@
 		ORDER BY match_no
 	</select>
 	<select id="matchList_1_" resultType="TeamVO" >
-		SELECT m.away_name,t.team_icon
+		SELECT match_no, m.away_name,t.team_icon
 		FROM gggl_match m INNER JOIN GGGL_TEAM t
 		ON m.away_name = t.team_name
 		WHERE match_day BETWEEN TRUNC(SYSDATE-1) AND TRUNC(SYSDATE-1)
 		ORDER BY match_no
 	</select>
 	<select id="matchList" resultType="MatchVO">
-		SELECT TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
+		SELECT match_no, TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
 		FROM gggl_match m
         INNER JOIN gggl_team t
         ON m.home_name = t.team_name
@@ -58,14 +58,14 @@
 		ORDER BY match_no
 	</select>
 	<select id="matchList_" resultType="TeamVO" >
-		SELECT m.away_name,t.team_icon
+		SELECT match_no, m.away_name,t.team_icon
 		FROM gggl_match m INNER JOIN GGGL_TEAM t
 		ON m.away_name = t.team_name
 		WHERE match_day BETWEEN TRUNC(SYSDATE) AND TRUNC(SYSDATE)
 		ORDER BY match_no
 	</select>
 	<select id="matchList__1" resultType="MatchVO">
-		SELECT TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
+		SELECT match_no, TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
 		FROM gggl_match m
         INNER JOIN gggl_team t
         ON m.home_name = t.team_name
@@ -73,14 +73,14 @@
 		ORDER BY match_no
 	</select>
 	<select id="matchList__1_" resultType="TeamVO" >
-		SELECT m.away_name,t.team_icon
+		SELECT match_no, m.away_name,t.team_icon
 		FROM gggl_match m INNER JOIN GGGL_TEAM t
 		ON m.away_name = t.team_name
 		WHERE match_day BETWEEN TRUNC(SYSDATE+1) AND TRUNC(SYSDATE+1)
 		ORDER BY match_no
 	</select>
 	<select id="matchList__2" resultType="MatchVO">
-		SELECT TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
+		SELECT match_no, TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
 		FROM gggl_match m
         INNER JOIN gggl_team t
         ON m.home_name = t.team_name
@@ -88,14 +88,14 @@
 		ORDER BY match_no
 	</select>
 	<select id="matchList__2_" resultType="TeamVO" >
-		SELECT m.away_name,t.team_icon
+		SELECT match_no, m.away_name,t.team_icon
 		FROM gggl_match m INNER JOIN GGGL_TEAM t
 		ON m.away_name = t.team_name
 		WHERE match_day BETWEEN TRUNC(SYSDATE+2) AND TRUNC(SYSDATE+2)
 		ORDER BY match_no
 	</select>
 	<select id="matchList__3" resultType="MatchVO">
-		SELECT TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
+		SELECT match_no, TO_CHAR(m.match_day,'MM.DD(DY)'),m.match_time,m.match_league,m.match_name,m.home_name,t.TEAM_ICON,m.home_score,m.away_name,m.away_score,m.match_videokey
 		FROM gggl_match m
         INNER JOIN gggl_team t
         ON m.home_name = t.team_name
@@ -103,7 +103,7 @@
 		ORDER BY match_no
 	</select>
 	<select id="matchList__3_" resultType="TeamVO" >
-		SELECT m.away_name,t.team_icon
+		SELECT match_no, m.away_name,t.team_icon
 		FROM gggl_match m INNER JOIN GGGL_TEAM t
 		ON m.away_name = t.team_name
 		WHERE match_day BETWEEN TRUNC(SYSDATE+3) AND TRUNC(SYSDATE+3)
@@ -120,6 +120,29 @@
 		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_time,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey
 		FROM gggl_match
 		WHERE match_league = 'LCK'
+	</select>
+	<!-- <select id="match_detail" resultType="MatchVO" parameterType="int">
+		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)'),match_time,match_league,match_name,home_name,home_score,away_name,away_score,match_videokey
+		FROM gggl_match
+		WHERE match_no=#{match_no}
+	</select> -->
+	<select id="match_detail_h" resultType="MatchVO" parameterType="int">
+		SELECT match_no, TO_CHAR(match_day,'MM.DD'), m.match_time, m.match_league, m.match_name, m.home_name, m.home_score, m.away_name, m.away_score, m.match_videokey, t.team_icon, p.player_name, p.player_pic
+		FROM gggl_match m
+		JOIN gggl_team t
+		ON t.team_name = m.home_name
+		JOIN gggl_player p
+		ON t.team_name = p.player_team
+		WHERE match_no = #{match_no}
+	</select>
+	<select id="match_detail_a" resultType="MatchVO" parameterType="int">
+		SELECT match_no, TO_CHAR(match_day,'MM.DD'), m.match_time, m.match_league, m.match_name, m.home_name, m.home_score, m.away_name, m.away_score, m.match_videokey, t.team_icon, p.player_name, p.player_pic
+		FROM gggl_match m
+		JOIN gggl_team t
+		ON t.team_name = m.away_name
+		JOIN gggl_player p
+		ON t.team_name = p.player_team
+		WHERE match_no = #{match_no}
 	</select>
 	<!-- <select id="movieTotalPage" resultType="int">
 		SELECT CEIL(COUNT(*)/12) FROM movie

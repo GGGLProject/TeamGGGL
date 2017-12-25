@@ -17,6 +17,13 @@ import com.sist.match.dao.*;
 public class ScheduleModel {
 	@RequestMapping("game_detail.do")
 	public String schedule_detail(HttpServletRequest req, HttpServletResponse res) {
+		/*String match_no = req.getParameter("match_no");
+		MatchVO vo = (MatchVO) MatchDAO.match_detail_h(Integer.parseInt(match_no));
+		req.setAttribute("vo", vo);*/
+		
+		String match_no = req.getParameter("match_no");
+		List<MatchVO> h_list = MatchDAO.match_detail_h(Integer.parseInt(match_no));
+		req.setAttribute("h_list", h_list);
 		req.setAttribute("main_jsp", "../gameDetail/game_detail.jsp");
 		return "gameMain/main.jsp";
 	}
@@ -30,11 +37,8 @@ public class ScheduleModel {
 		String match_day = sdf.format(date);
 		
 		//String home_name = (String) req.getAttribute("home_name");
-		
 		//String team_name = req.getParameter("team_name");
-		
 		//String team_icon = TeamDAO.TeamImageData(team_name);
-		
 
 		List<MatchVO> list_3 = MatchDAO.matchList_3(match_day);
 		List<TeamVO> list_3_ = TeamDAO.matchList_3_(match_day);

@@ -80,17 +80,20 @@ $(function () {
 			<div class="row">
 				<div class="col-sm-4 text-center">
 					<p>
-						<strong class="h_teamName">FNATIC</strong><br>HOME TEAM
+						<strong class="h_teamName">홈팀이름</strong><br>HOME TEAM
+						<%-- <strong class="h_teamName">${vo.home_name }</strong><br>HOME TEAM --%>
 					</p>
 					<br>
 					<a href="#demo" data-toggle="collapse">
-						<img src="gameDetail/image/team.png" alt="Random Name" width="255" height="255">
+						<img src="#" alt="Random Name" width="255" height="255">
+						<%-- <img src="${vo.team_icon }" alt="Random Name" width="255" height="255"> --%>
 					</a>
 				</div>
 				<div class="col-sm-4 text-center">
 					<h4>
 						<p>
-							<strong> 12월 5일 17시 30분</strong>
+							<strong>날짜</strong>&nbsp;<strong>시간</strong>
+							<%-- <strong>${vo.match_day }</strong>&nbsp;<strong>${vo.match_day }</strong> --%>
 						</p>
 					</h4>
 					<br>
@@ -102,25 +105,30 @@ $(function () {
 				</div>
 				<div class="col-sm-4 text-center">
 					<p>
-						<strong class="a_teamName">Complexity</strong><br>AWAY TEAM
+						<strong class="a_teamName">어팀이름</strong><br>AWAY TEAM
+						<%-- <strong class="a_teamName">${vo.away_name }</strong><br>AWAY TEAM --%>
 					</p>
 					<br>
 					<a href="#demo3" data-toggle="collapse">
-						<img src="gameDetail/image/team.png" Random Name" width="255" height="255">
+						<img src="#" alt="Random Name" width="255" height="255">
+						<%-- <img src="${vo.team_icon }" alt="Random Name" width="255" height="255"> --%>
 					</a>
 				</div>
 			</div>
 		</div>
 		
 		<div class="player_vs text-center">	
+			<%-- <c:forEach var="vo" items="${h_list }"> --%>
 			<div class="row">
 				<div class="col-sm-2">
-					<img src="gameDetail/image/player.png">
+					<img src="#">홈팀선수사진
+					<%-- <img src="${vo.player_pic }"> --%>
 				</div>
 
 				<div class="h_player1name col-sm-2">
 					<div class="player1name">
-						<img src="gameDetail/image/nicname.png"> 도진상 <br>
+						<img src="gameDetail/image/nicname.png">홈팀선수이름<br>
+						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
 					</div>
 				</div>
 
@@ -128,59 +136,16 @@ $(function () {
 				<div class="col-sm-2"></div>
 				<div class="col-sm-2">
 					<div class="a_player1name">
-						<img src="gameDetail/image/nicname.png"> 도진상 <br>
+						<img src="gameDetail/image/nicname.png">어팀선수이름<br>
+						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
 					</div>
 				</div>
 				<div class="col-sm-2">
-					<img src="gameDetail/image/player.png">
+					<img src="#">어팀선수사진
+					<%-- <img src="${vo.player_pic }"> --%>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-sm-2">
-					<img src="gameDetail/image/player.png">
-				</div>
-
-				<div class="h_player1name col-sm-2">
-					<div class="player1name">
-						<img src="gameDetail/image/nicname.png"> 도진상 <br>
-					</div>
-				</div>
-				<div class="vs col-sm-4">
-					<img src="gameDetail/image/vs_icon.png" style="height: 130px;">
-				</div>
-				<div class="col-sm-2">
-					<div class="a_player1name">
-						<img src="gameDetail/image/nicname.png"> 도진상 <br>
-					</div>
-				</div>
-				<div class="col-sm-2">
-					<img src="gameDetail/image/player.png">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-2">
-					<img src="gameDetail/image/player.png">
-				</div>
-
-				<div class="h_player1name col-sm-2">
-					<div class="player1name">
-						<img src="gameDetail/image/nicname.png"> 도진상 <br>
-					</div>
-				</div>
-
-				<div class="col-sm-2"></div>
-				<div class="col-sm-2"></div>
-				<div class="col-sm-2">
-					<div class="a_player1name">
-						<img src="gameDetail/image/nicname.png"> 도진상 <br>
-					</div>
-				</div>
-				<div class="col-sm-2">
-					<img src="gameDetail/image/player.png">
-				</div>
-			</div>
+			<%-- </c:forEach> --%>
 		</div>
 
 			<h3 class="text-center"><strong>경기 영상</strong></h3>
@@ -201,7 +166,7 @@ $(function () {
 				</div>
 			</div>
 
-		<div class="container-fluid-news container-fluid col-md-12 ">
+		<div class="container-fluid-game container-fluid col-md-12 ">
 			<div class="comment_Total col-md-12">
 				<h4>
 					<span class="com_title"><b>Comment</b></span>
