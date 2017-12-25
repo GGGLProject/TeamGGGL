@@ -4,7 +4,7 @@
 }
 
 .table tbody tr td, tbody tr th{
-	vertical-align: middle;
+vertical-align: middle !important;
 }
 
 h2 {
@@ -27,4 +27,17 @@ body {
 .text-link td>a {
 	color:white;
 	text-decoration:none;
+}
+
+.container {
+	padding : 80px 0px 0px 0px;
+	
+}
+
+.pagination-centered {
+	display: inline-block;
+	
+}
+.btn-sub {
+	margin: 20px;	
 }
