@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -99,6 +100,38 @@ $(function(){
 });
 </script>
 
+<!-- 동의 버튼 -->
+<script type="text/javascript">
+$(function(){
+	$('.ya').click(function(){
+		$(".ya").prop('class', 'btn btn-success');
+	});
+	
+});
+</script>
+<!-- 회원가입 완료 버튼 script  -->
+<script type="text/javascript">
+$(function(){
+
+	$('#join').click(function(){
+	 	var id=$('#id').val();
+	 	var useremail=$('#useremail').val();
+	 	var password=${'#password'}.val();
+	 	/*var telnumber=${'#telnumber'}.val();
+	 	var year=${'#year'}.val(); */
+	 	
+	 	alert(id);
+	 	alert(useremail);
+	 	alert(password);
+	 	/*alert(telnumber);
+	 	alert(year); */
+	 	 
+	 	
+		
+	});
+});
+</script>
+
 </head>
 <body>
 
@@ -154,18 +187,36 @@ $(function(){
                 생년월일</label>
             <div class="row">
                 <div class="col-xs-4 col-md-4">
-                    <select class="form-control">
-                        <option value="Month">Month</option>
+                
+                <!-- 년도 옵션 박스 -->
+                    <select class="form-control" id="year">
+                    <option>년도</option>
+          			 <c:forEach var="i" begin="1950" end="2020" step="1" >
+						
+                        <option value="${i}" <c:if test="${i == (now.year + 1900)}">selected</c:if> >${i}년</option>
+
+                 	  </c:forEach>
+
+                    </select>
+                    
+                </div>
+                <!-- 월 옵션 박스 -->
+                <div class="col-xs-4 col-md-4">
+                    <select class="form-control" id="month">
+                        <option value="Day">월</option>
+                         <c:forEach var="i" begin="1" end="12" step="1" >
+                        <option value="${i}">${i}월</option>
+                 	  </c:forEach>
                     </select>
                 </div>
+                
+                <!-- 일 옵션 박스 -->
                 <div class="col-xs-4 col-md-4">
-                    <select class="form-control">
-                        <option value="Day">Day</option>
-                    </select>
-                </div>
-                <div class="col-xs-4 col-md-4">
-                    <select class="form-control">
-                        <option value="Year">Year</option>
+                    <select class="form-control" id="day">
+                        <option value="day">일</option>
+                         <c:forEach var="i" begin="1" end="31" step="1" >
+                        <option value="${i}">${i}일</option>
+                        </c:forEach>
                     </select>
                 </div>
             </div>
@@ -199,11 +250,10 @@ $(function(){
             <div class="form-group">
                 <label>약관 동의</label>
               <div data-toggle="buttons">
-              <label class="btn btn-primary active">
-                  <span class="fa fa-check"></span>
-                  <input id="agree" type="checkbox" autocomplete="off" checked>
-              </label>
-              <a href="http://www.law.go.kr/lsInfoP.do?lsiSeq=173223&efYd=20150724#0000">이용약관</a>에 동의합니다.
+              <button class="ya btn btn-primary active">
+                  V
+              </button>
+              <a target="_black" href="http://www.law.go.kr/lsInfoP.do?lsiSeq=173223&efYd=20150724#0000">(개인정보보호법 보기)</a>이용약관에 동의합니다.
               </div>
             </div>
             
@@ -211,8 +261,8 @@ $(function(){
             
             <!-- 회원가입, 취소 버튼 -->
             <div class="form-group text-center">
-              <button type="submit" class="btn btn-info">회원가입<i class="fa fa-check spaceLeft"></i></button>
-              <button type="submit" class="btn btn-warning">가입취소<i class="fa fa-times spaceLeft"></i></button>
+              <button type="submit" class="btn btn-info" id="join">회원가입</button>
+              <a href="main.do"><button type="submit" class="btn btn-warning" >가입취소<i class="fa fa-times spaceLeft"></i></button></a>
             </div>
           </form>
         </div>
@@ -221,7 +271,6 @@ $(function(){
 
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    Include all compiled plugins (below), or include individual files as needed
     <script src="js/bootstrap.min.js"></script>  
 </body>
 </html>
