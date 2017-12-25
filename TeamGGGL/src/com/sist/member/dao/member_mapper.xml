@@ -9,9 +9,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	parameterType="String">
 	 SELECT COUNT(*)
 	 FROM GGGL_member
-	 WHERE member_id=#{memberIdCheck}
+	 WHERE member_nickname=#{memberIdCheck}
 	</select>
-
+	
+	<select id="memberEmailCheck" resultType="int"
+	parameterType="String">
+	 SELECT COUNT(*)
+	 FROM GGGL_member
+	 WHERE member_id=#{memberEmailCheck}
+	</select>
 	
 </mapper>
 

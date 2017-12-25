@@ -32,6 +32,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="com/sist/match/dao/Match-mapper.xml"/>
     	<mapper resource="com/sist/event/dao/event-mapper.xml"/>
     	<mapper resource="com/sist/member/dao/member_mapper.xml"/>
+  
 	</mappers>
 </configuration>
 

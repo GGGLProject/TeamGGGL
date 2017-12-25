@@ -32,7 +32,23 @@ public static MemberVO memberidcheck(String id) {
 	try {
 		
 		vo.setCount(session.selectOne("memberIdCheck",id));
-		System.out.println("MemberDAO = > " + vo.getCount());
+		
+	}catch(Exception ex) {
+		System.out.println("memberidcheck : "+ex.getMessage());
+	}finally {
+		if(session!=null)
+			session.close();
+	}
+	return vo;
+}
+
+public static MemberVO memberEmailCheck(String email) {
+	MemberVO vo = new MemberVO();
+	SqlSession session=ssf.openSession();
+	try {
+		
+		vo.setCount(session.selectOne("memberIdCheck",email));
+		
 	}catch(Exception ex) {
 		System.out.println("memberidcheck : "+ex.getMessage());
 	}finally {

@@ -10,12 +10,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="css/newmember.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-
+<!-- 이름 닉네임 체크 부분  -->
 <script type="text/javascript">
 $(function(){
 	$('#checkBtn').click(function(){
 	 	var id=$('#id').val();
-		alert("1");
 		if(id.trim()=="")
 		{
 			$('#id').focus();
@@ -28,18 +27,18 @@ $(function(){
 			success:function(res)
 			{
 				var count=res.trim();
-				alert(count);
 				 if(count==0)
 				{
-					alert("사용가능");
+					
 					$("#checkBtn").prop('class', 'btn btn-success');
 				 	$("#checkBtn").text('사용가능');
 				}
 				else
 				{
-					alert("불가");
+					
 					$("#checkBtn").prop('class', 'btn btn-warning');
 					$("#checkBtn").text('사용불가');
+					
 				}   
 			},
 			error:function(error) {
@@ -51,7 +50,44 @@ $(function(){
 });
 </script>
 
-
+<script type="text/javascript">
+$(function(){
+	$('#emailcheckBtn').click(function(){
+	 	var id=$('#useremail').val();
+		if(id.trim()=="")
+		{
+			$('#useremail').focus();
+			return;
+		} 
+	 	$.ajax({
+			type:'post',
+			url:'checkmember.do',
+			data:{"useremail":usereamil},
+			success:function(res)
+			{
+				var count=res.trim();
+				 if(count==0)
+				{
+					
+					$("#emailcheckBtn").prop('class', 'btn btn-success');
+				 	$("#emailcheckBtn").text('사용가능');
+				}
+				else
+				{
+					
+					$("#emailcheckBtn").prop('class', 'btn btn-warning');
+					$("#emailcheckBtn").text('사용불가');
+					
+				}   
+			},
+			error:function(error) {
+				alert(data)
+				alert("!!AJAX FAIL"); 
+		 	} 
+		}); 
+	});
+});
+</script>
 
 </head>
 <body>
@@ -62,25 +98,26 @@ $(function(){
         </div>
         <div class="col-md-6 col-md-offset-3">
          <!--  <form role="form">  이색기쓰면 새로운 창으로 바뀜 시발색기임 -->
+         
+         
           <!--  이름 닉네임 입력 부분 -->
-          
            <div class="name form-group">
               <label for="username">이름(닉네임)</label>
               <div class="input-group"> 
                 <input type="text" class="form-control" id="id" placeholder="이름(닉네임)">
                 <span class="input-group-btn">
-                  <button class="btn btn-success" id="checkBtn">중복확인</button>
+                  <button class="btn btn-primary" id="checkBtn">중복확인</button>
                 </span>
              </div>
             </div>
             
             <!-- 이메일 입력 -->
-            <div class="form-group">
+            <div class="email form-group">
               <label for="username">이메일</label>
               <div class="input-group">
-                <input type="text" class="form-control" id="username" placeholder="이름(닉네임)">
+                <input type="text" class="form-control" id="useremail" placeholder="ex)admin@GGGL.com">
                 <span class="input-group-btn">
-                  <button class="btn btn-success">중복확인<i class="fa fa-edit spaceLeft"></i></button>
+                  <button class="btn btn-primary" id="emailcheckBtn">중복확인</button>
                 </span>
               </div>
             </div>

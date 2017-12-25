@@ -23,6 +23,7 @@ public class MemberModel {
 		return "gameMain/main.jsp";
 		
 	}
+//	아이디 체크 부분
 	@RequestMapping("checkmember.do")
 	public String nickCheck(HttpServletRequest req, HttpServletResponse res) {
 		
@@ -32,4 +33,15 @@ public class MemberModel {
 		System.out.println("MemberModel = > " + vo.getCount() );		
 		return "gameMember/idcheck.jsp";
 	}
+	
+	@RequestMapping("emailCheck.do")
+	public String emailCheck(HttpServletRequest req, HttpServletResponse res) {
+		
+		String email = req.getParameter("useremail");
+		MemberVO vo =MemberDAO.memberidcheck(email);
+		req.setAttribute("vo", vo);
+		System.out.println("MemberModel = > " + vo.getCount() );		
+		return "gameMember/emailcheck.jsp";
+	}
+	
 }
