@@ -28,6 +28,7 @@ function showPassword() {
         
     }
     
+    
 }
 </script>
 
@@ -52,9 +53,10 @@ function showPassword() {
                             <span class="character-checkbox" onclick="showPassword()"></span>
                             <span class="label">Show password</span>
                         </div>
-                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
+                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="로그인">
                     </form>
-                    <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
+                   
+                    <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">비밀번호 찾기</a>
                     <hr>
         	    </div>
     		</div> <!-- /.col-xs-12 -->
@@ -70,19 +72,20 @@ function showPassword() {
 					<span aria-hidden="true">×</span>
 					<span class="sr-only">Close</span>
 				</button>
-				<h4 class="modal-title">Recovery password</h4>
+				<h4 class="modal-title">비밀번호 찾기</h4>
 			</div>
 			<div class="modal-body">
-				<p>Type your email account</p>
+				<p>이메일을 입력해주세요</p>
 				<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-				<button type="button" class="btn btn-custom">Recovery</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+				<button type="button" class="btn btn-custom">비밀번호 찾기</button>
 			</div>
 		</div> <!-- /.modal-content -->
 	</div> <!-- /.modal-dialog -->
 </div> <!-- /.modal -->
+
 
 </body>
 </html>

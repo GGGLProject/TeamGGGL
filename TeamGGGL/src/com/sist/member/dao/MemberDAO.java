@@ -1,0 +1,65 @@
+package com.sist.member.dao;
+
+import java.io.*;
+import java.util.*;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class MemberDAO {
+
+	
+private static SqlSessionFactory ssf;
+static {
+	try {
+		//XML 읽기
+		Reader reader=Resources.getResourceAsReader("Config.xml");
+		
+		//XML 파싱
+		ssf=new SqlSessionFactoryBuilder().build(reader);
+	}catch(Exception ex) {
+		System.out.println("SqlSessionFactory : "+ex.getMessage());
+	}
+}
+
+
+// 아이디 체크 SQL 연결 카운트가져오는 부분
+public static MemberVO memberidcheck(String id) {
+	MemberVO vo = new MemberVO();
+	SqlSession session=ssf.openSession();
+	try {
+		
+		vo.setCount(session.selectOne("memberIdCheck",id));
+		
+	}catch(Exception ex) {
+		System.out.println("memberidcheck : "+ex.getMessage());
+	}finally {
+		if(session!=null)
+			session.close();
+	}
+	return vo;
+}
+
+
+// 이메일 체크 SQL 연결 카운트가져오는 부분
+public static MemberVO memberEmailCheck(String email) {
+	MemberVO vo = new MemberVO();
+	SqlSession session=ssf.openSession();
+	try {
+		
+		vo.setCount(session.selectOne("memberEmailCheck",email));
+		
+	}catch(Exception ex) {
+		System.out.println("memberEmailCheck : "+ex.getMessage());
+	}finally {
+		if(session!=null)
+			session.close();
+	}
+	return vo;
+}
+
+}

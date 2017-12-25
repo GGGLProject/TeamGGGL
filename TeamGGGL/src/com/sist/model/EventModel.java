@@ -1,5 +1,6 @@
 package com.sist.model;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +22,7 @@ public class EventModel {
 	@RequestMapping("event_list.do")
 	public String event_list(HttpServletRequest req, HttpServletResponse res) throws Throwable {
 		// TODO Auto-generated method stub
+		req.setCharacterEncoding("EUC-KR");
 		String page= req.getParameter("page");
 		// request => 기존요청값 + 추가 (setAttribute())
 		if(page==null)
@@ -32,7 +34,21 @@ public class EventModel {
 		Map map = new HashMap();
 		map.put("start", start);
 		map.put("end", end);
+		
+
 		List<EventVO> list = EventDAO.eventListData(map);
+//		String event_day;
+//		String[] event_days = new String [list.size()];
+//		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+//		for (int i =0; i<list.size(); i++)
+//		{	event_day=list.get(i).getEvent_day();
+//			event_days[i] = sdf.format(event_day);
+//		}
+//		req.setAttribute("event_day", event_days);
+		for (int i =0; i<list.size(); i++) {
+		System.out.println("event_day:"+list.get(i).getEvent_day());
+		System.out.println("regdate:"+list.get(i).getEvnet_regdate());
+		}
 		req.setAttribute("list", list);
 		req.setAttribute("curpage", curpage);
 		int totalpage= EventDAO.eventTotalPage();
@@ -43,6 +59,12 @@ public class EventModel {
 	
 	@RequestMapping("event_content.do")
 	public String event_content(HttpServletRequest req, HttpServletResponse res) {
+		String no = req.getParameter("no");
+		int event_no=Integer.parseInt(no);
+		EventVO vo = EventDAO.eventContentData(event_no);
+		req.setAttribute("vo", vo);
+		
+		
 		req.setAttribute("main_jsp", "../gameEvent/event_content.jsp");
 		return "gameMain/main.jsp";
 	}

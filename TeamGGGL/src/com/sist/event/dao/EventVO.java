@@ -1,6 +1,7 @@
 package com.sist.event.dao;
 
-import java.util.*;
+
+import java.util.Date;
 
 public class EventVO { 
 	//TABLE gggl_event!
@@ -24,6 +25,18 @@ public class EventVO {
 	
 	public int getEvent_hit() {
 		return event_hit;
+	}
+	public Date getEvent_day() {
+		return event_day;
+	}
+	public void setEvent_day(Date event_day) {
+		this.event_day = event_day;
+	}
+	public Date getEvnet_regdate() {
+		return evnet_regdate;
+	}
+	public void setEvnet_regdate(Date evnet_regdate) {
+		this.evnet_regdate = evnet_regdate;
 	}
 	public void setEvent_hit(int event_hit) {
 		this.event_hit = event_hit;
@@ -58,18 +71,7 @@ public class EventVO {
 	public void setEvent_content(String event_content) {
 		this.event_content = event_content;
 	}
-	public Date getEvent_day() {
-		return event_day;
-	}
-	public void setEvent_day(Date event_day) {
-		this.event_day = event_day;
-	}
-	public Date getEvnet_regdate() {
-		return evnet_regdate;
-	}
-	public void setEvnet_regdate(Date evnet_regdate) {
-		this.evnet_regdate = evnet_regdate;
-	}
+
 	public String getEvent_place() {
 		return event_place;
 	}

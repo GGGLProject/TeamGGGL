@@ -23,9 +23,9 @@
 							<td class="text-center" colspan=2>이벤트 / 대회</td>
 						</tr>
 						<tr>
-							<td width=20% class="text-center">이벤트 일정</td>
+							<td width=20% class="text-center">이벤트 일자</td>
 							<td width=30% class="text-center">
-							<input class="input" type=date name="day" size=30>~<input class="input" type=date name="day" size=30></td>
+							<input class="input" type=date name="day" size=30></td>
 						</tr>
 						<tr>
 							<td width=20% class="text-center">이벤트 장소</td>
