@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,10 +11,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="css/newmember.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+
+
+
 <!-- 이름 닉네임 체크 부분  -->
 <script type="text/javascript">
 $(function(){
-	$('#checkBtn').click(function(){
+	 $('#checkBtn').click(function(){
 	 	var id=$('#id').val();
 		if(id.trim()=="")
 		{
@@ -45,24 +49,30 @@ $(function(){
 				alert(data)
 				alert("!!AJAX FAIL"); 
 		 	} 
+			
+			
 		}); 
 	});
 });
 </script>
-
+<!-- 이메일 체크 부분  -->
 <script type="text/javascript">
 $(function(){
+
 	$('#emailcheckBtn').click(function(){
-	 	var id=$('#useremail').val();
-		if(id.trim()=="")
+	 	var useremail=$('#useremail').val();
+	 	
+		if(useremail.trim()=="")
 		{
 			$('#useremail').focus();
 			return;
 		} 
+
 	 	$.ajax({
 			type:'post',
-			url:'checkmember.do',
-			data:{"useremail":usereamil},
+			url:'emailCheck.do',
+			data:{"useremail":useremail},
+		
 			success:function(res)
 			{
 				var count=res.trim();
@@ -122,11 +132,13 @@ $(function(){
               </div>
             </div>
             
-            
+            <!-- 비밀번호 입력 -->
             <div class="form-group">
               <label for="password">비밀번호</label>
               <input type="password" class="form-control" id="password">
             </div>
+            
+            <!-- 휴대폰 번호 입력  -->
             <div class="form-group">
               <label for="telnumber">휴대폰 번호</label>
               <div class="input-group">
@@ -134,6 +146,10 @@ $(function(){
          
               </div>
             </div>
+            
+            
+            
+            <!-- 생년월일 입력 -->
             <label for="">
                 생년월일</label>
             <div class="row">
@@ -153,6 +169,10 @@ $(function(){
                     </select>
                 </div>
             </div>
+            
+            
+            
+            <!-- 관심리그 입력 -->
             <div><label for="">
                 관심리그</label></div>
              <label class="radio-inline">
@@ -172,6 +192,10 @@ $(function(){
                 CBLOL
             </label>
             
+            
+            
+            
+            <!-- 약관 동의서  -->
             <div class="form-group">
                 <label>약관 동의</label>
               <div data-toggle="buttons">
@@ -182,6 +206,10 @@ $(function(){
               <a href="http://www.law.go.kr/lsInfoP.do?lsiSeq=173223&efYd=20150724#0000">이용약관</a>에 동의합니다.
               </div>
             </div>
+            
+            
+            
+            <!-- 회원가입, 취소 버튼 -->
             <div class="form-group text-center">
               <button type="submit" class="btn btn-info">회원가입<i class="fa fa-check spaceLeft"></i></button>
               <button type="submit" class="btn btn-warning">가입취소<i class="fa fa-times spaceLeft"></i></button>

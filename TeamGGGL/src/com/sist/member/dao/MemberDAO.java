@@ -26,6 +26,8 @@ static {
 	}
 }
 
+
+// 아이디 체크 SQL 연결 카운트가져오는 부분
 public static MemberVO memberidcheck(String id) {
 	MemberVO vo = new MemberVO();
 	SqlSession session=ssf.openSession();
@@ -42,15 +44,17 @@ public static MemberVO memberidcheck(String id) {
 	return vo;
 }
 
+
+// 이메일 체크 SQL 연결 카운트가져오는 부분
 public static MemberVO memberEmailCheck(String email) {
 	MemberVO vo = new MemberVO();
 	SqlSession session=ssf.openSession();
 	try {
 		
-		vo.setCount(session.selectOne("memberIdCheck",email));
+		vo.setCount(session.selectOne("memberEmailCheck",email));
 		
 	}catch(Exception ex) {
-		System.out.println("memberidcheck : "+ex.getMessage());
+		System.out.println("memberEmailCheck : "+ex.getMessage());
 	}finally {
 		if(session!=null)
 			session.close();
@@ -58,18 +62,4 @@ public static MemberVO memberEmailCheck(String email) {
 	return vo;
 }
 
-public MemberVO isLogin(String id,String pwd) {
-	MemberVO vo=new MemberVO();
-	SqlSession session=ssf.openSession();
-try {
-		
-		
-	}catch(Exception ex) {
-		System.out.println("isLogin : "+ex.getMessage());
-	}finally {
-		if(session!=null)
-			session.close();
-	}
-	return vo;
-}
 }

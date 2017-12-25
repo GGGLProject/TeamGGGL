@@ -30,15 +30,15 @@ public class MemberModel {
 		String id = req.getParameter("id");
 		MemberVO vo =MemberDAO.memberidcheck(id);
 		req.setAttribute("vo", vo);
-		System.out.println("MemberModel = > " + vo.getCount() );		
+		//System.out.println("MemberModel = > " + vo.getCount() );		
 		return "gameMember/idcheck.jsp";
 	}
-	
+//	이메일 체크 부분
 	@RequestMapping("emailCheck.do")
 	public String emailCheck(HttpServletRequest req, HttpServletResponse res) {
-		
+		System.out.println("aaa");
 		String email = req.getParameter("useremail");
-		MemberVO vo =MemberDAO.memberidcheck(email);
+		MemberVO vo =MemberDAO.memberEmailCheck(email);
 		req.setAttribute("vo", vo);
 		System.out.println("MemberModel = > " + vo.getCount() );		
 		return "gameMember/emailcheck.jsp";

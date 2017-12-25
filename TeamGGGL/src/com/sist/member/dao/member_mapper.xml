@@ -4,14 +4,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.sist.member.dao.member_mapper">
-	
+	<!-- 아이디 체크 SQL -->
 	<select id="memberIdCheck" resultType="int"
 	parameterType="String">
 	 SELECT COUNT(*)
 	 FROM GGGL_member
 	 WHERE member_nickname=#{memberIdCheck}
 	</select>
-	
+	<!-- 이메일 체크 SQL -->
 	<select id="memberEmailCheck" resultType="int"
 	parameterType="String">
 	 SELECT COUNT(*)
