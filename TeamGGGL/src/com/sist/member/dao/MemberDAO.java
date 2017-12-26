@@ -62,4 +62,19 @@ public static MemberVO memberEmailCheck(String email) {
 	return vo;
 }
 
+public static MemberVO memberJoin(MemberVO vo) {
+	MemberVO vo1 = new MemberVO();
+	SqlSession session=ssf.openSession();
+	try {
+		
+		vo1.setCount(session.selectOne("memberJoin",vo));
+		
+	}catch(Exception ex) {
+		System.out.println("memberEmailCheck : "+ex.getMessage());
+	}finally {
+		if(session!=null)
+			session.close();
+	}
+	return vo1;
+}
 }

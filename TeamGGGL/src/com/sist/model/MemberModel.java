@@ -41,5 +41,11 @@ public class MemberModel {
 		req.setAttribute("vo", vo);	
 		return "gameMember/emailcheck.jsp";
 	}
-	
+// 총회원가입 버튼 부분
+	@RequestMapping("memberJoin.do")
+	public String memberJoin(HttpServletRequest req, HttpServletResponse res) {
+		String id = req.getParameter("id");
+		System.out.println(id);
+		return "gameMember/memberJoin.jsp";
+	}
 }

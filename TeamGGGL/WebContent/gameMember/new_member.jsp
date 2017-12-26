@@ -116,18 +116,26 @@ $(function(){
 	$('#join').click(function(){
 	 	var id=$('#id').val();
 	 	var useremail=$('#useremail').val();
-	 	var password=${'#password'}.val();
-	 	/*var telnumber=${'#telnumber'}.val();
-	 	var year=${'#year'}.val(); */
-	 	
-	 	alert(id);
-	 	alert(useremail);
-	 	alert(password);
-	 	/*alert(telnumber);
-	 	alert(year); */
-	 	 
-	 	
-		
+	 	var Mpassword=$('#Mpassword').val();
+	 	var telnumber=$('#telnumber').val();
+	 	var year=$('#year').val();
+	 	var month=$('#month').val();
+		var day=$('#day').val();
+	 	var LCK=$('#inlineCheckbox1').is(":checked");
+		var NALCS=$('#inlineCheckbox2').is(":checked");
+	 	var EULCS=$('#inlineCheckbox3').is(":checked");
+	 	var CBLOL$('#inlineCheckbox4').is(":checked");
+	 	$.ajax({
+	 		type:'post',
+			url:'memberJoin.do',
+			data:{"id":id,"useremail":useremail
+			,"Mpassword":Mpassword,"telnumber":telnumber,"year":year,"month":month
+			,"day":day,"LCK":LCK,"NALCS":NALCS,"EULCS":EULCS,"CBLOL":CBLOL
+			},
+			success:function(res){
+				
+			}
+	 	})
 	});
 });
 </script>
@@ -168,7 +176,7 @@ $(function(){
             <!-- 비밀번호 입력 -->
             <div class="form-group">
               <label for="password">비밀번호</label>
-              <input type="password" class="form-control" id="password">
+              <input type="password" class="form-control" id="Mpassword">
             </div>
             
             <!-- 휴대폰 번호 입력  -->
@@ -227,19 +235,19 @@ $(function(){
             <div><label for="">
                 관심리그</label></div>
              <label class="radio-inline">
-                <input type="checkbox" name="LCK" id="inlineCheckbox1" value="male" />
+                <input type="checkbox" name="LCK" id="inlineCheckbox1" value="LCK" />
                 LCK
             </label>
             <label class="radio-inline">
-                <input type="checkbox" name="NALCS" id="inlineCheckbox2" value="female" />
+                <input type="checkbox" name="NALCS" id="inlineCheckbox2" value="NALCS" />
                 NALCS
             </label>
             <label class="radio-inline">
-                <input type="checkbox" name="EULCS" id="inlineCheckbox3" value="female" />
+                <input type="checkbox" name="EULCS" id="inlineCheckbox3" value="EULCS" />
                 EULCS
             </label>
             <label class="radio-inline">
-                <input type="checkbox" name="CBLOL" id="inlineCheckbox4" value="female" />
+                <input type="checkbox" name="CBLOL" id="inlineCheckbox4" value="CBLOL" />
                 CBLOL
             </label>
             
