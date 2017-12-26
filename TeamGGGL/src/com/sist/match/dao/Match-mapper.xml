@@ -127,13 +127,15 @@
 		WHERE match_no=#{match_no}
 	</select> -->
 	<select id="match_detail_h" resultType="MatchVO" parameterType="int">
-		SELECT match_no, TO_CHAR(match_day,'MM.DD'), m.match_time, m.match_league, m.match_name, m.home_name, m.home_score, m.away_name, m.away_score, m.match_videokey, t.team_icon, p.player_name, p.player_pic
+		SELECT match_no, t.team_name, TO_CHAR(match_day,'MM.DD'), m.match_time, m.match_league, m.match_name, m.home_name, m.home_score, m.away_name, m.away_score, m.match_videokey, t.team_icon, p.player_name, p.player_pic
 		FROM gggl_match m
 		JOIN gggl_team t
-		ON t.team_name = m.home_name
+		ON t.team_name = m.home_name 
+        OR t.team_name = m.away_name 
 		JOIN gggl_player p
 		ON t.team_name = p.player_team
 		WHERE match_no = #{match_no}
+        ORDER BY team_name DESC
 	</select>
 	<select id="match_detail_a" resultType="MatchVO" parameterType="int">
 		SELECT match_no, TO_CHAR(match_day,'MM.DD'), m.match_time, m.match_league, m.match_name, m.home_name, m.home_score, m.away_name, m.away_score, m.match_videokey, t.team_icon, p.player_name, p.player_pic

@@ -73,47 +73,51 @@ $(function () {
 <body class="body">
 	<!-- Container (The Match Section) -->
 	<div id="band" class="container">
-		<h1 class="text-center"><strong>THE BIG MATCH WILL START</strong></h1>
-		<p class="text-center"><em>Coming soon...</em></p>
+		<h1 class="text-center"><strong>2017 롤드컵 예선</strong></h1>
+		<p class="text-center"><strong>날짜</strong>&nbsp;<strong>시간</strong></p>
 		<br>
 		<div class="team_vs">
 			<div class="row">
-				<div class="col-sm-4 text-center">
+			<c:set var="doneLoop" value="false"/>
+						<c:forEach var="vo" items="${h_list }" varStatus="status">
+							<c:if test="${not doneLoop}">
+				<div class="col-sm-3 text-center">
 					<p>
-						<strong class="h_teamName">홈팀이름</strong><br>HOME TEAM
-						<%-- <strong class="h_teamName">${vo.home_name }</strong><br>HOME TEAM --%>
+						<strong class="h_teamName">${vo.home_name }</strong><br>	
 					</p>
 					<br>
 					<a href="#demo" data-toggle="collapse">
-						<img src="#" alt="Random Name" width="255" height="255">
-						<%-- <img src="${vo.team_icon }" alt="Random Name" width="255" height="255"> --%>
+						<img src="${vo.team_icon }" alt="Random Name" width="180" height="180">
 					</a>
 				</div>
-				<div class="col-sm-4 text-center">
-					<h4>
-						<p>
-							<strong>날짜</strong>&nbsp;<strong>시간</strong>
-							<%-- <strong>${vo.match_day }</strong>&nbsp;<strong>${vo.match_day }</strong> --%>
-						</p>
-					</h4>
-					<br>
-
-					<div>
+				
+				<div class="col-sm-2 text-center">
+					<h1>${vo.home_score }</h1>
+				</div>
+				<div class="col-sm-2 text-center">
+					<!-- <div>
 						<h2 style="margin:15px 0">종료된 경기 입니다.</h2>
-					</div>
+					</div> -->
 					<img src="gameDetail/image/vs_icon.png" alt="Random Name" width="155" height="155">
 				</div>
-				<div class="col-sm-4 text-center">
+				<div class="col-sm-2 text-center">
+					<h1>${vo.away_score }</h1>
+				</div>
+				
+				<div class="col-sm-3 text-center">
 					<p>
-						<strong class="a_teamName">어팀이름</strong><br>AWAY TEAM
-						<%-- <strong class="a_teamName">${vo.away_name }</strong><br>AWAY TEAM --%>
+						<strong class="a_teamName">${vo.away_name }</strong><br>
 					</p>
 					<br>
 					<a href="#demo3" data-toggle="collapse">
-						<img src="#" alt="Random Name" width="255" height="255">
-						<%-- <img src="${vo.team_icon }" alt="Random Name" width="255" height="255"> --%>
+						 <img src="${h_list[status.index eq end].team_icon }" alt="Random Name" width="180" height="180">
 					</a>
 				</div>
+				<c:if test="${status.count == 1}">
+				     <c:set var="doneLoop" value="true"/>
+				</c:if>
+				</c:if>
+				</c:forEach>
 			</div>
 		</div>
 		
