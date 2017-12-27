@@ -19,7 +19,9 @@ public class ScheduleModel {
 	public String schedule_detail(HttpServletRequest req, HttpServletResponse res) {
 		String match_no = req.getParameter("match_no");
 		List<MatchVO> h_list = MatchDAO.match_detail_h(Integer.parseInt(match_no));
+		List<MatchVO> a_list = MatchDAO.match_detail_a(Integer.parseInt(match_no));
 		req.setAttribute("h_list", h_list);
+		req.setAttribute("a_list", a_list);
 		req.setAttribute("main_jsp", "../gameDetail/game_detail.jsp");
 		return "gameMain/main.jsp";
 	}

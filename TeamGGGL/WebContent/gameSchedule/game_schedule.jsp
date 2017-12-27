@@ -76,7 +76,7 @@ $(function () {
 	text-align: center;
 }
 .tab-content .tab-pane .row .gameready .detail_button {
-	margin-top: 55px;
+	margin-top: 61px;
 }
 .tab-content .tab-pane .row .gameover .firstteam_logo img {
 	padding-top: -5px;
@@ -84,9 +84,7 @@ $(function () {
 	height: 46px;
 	margin-left: 12px;
 }
-.tab-content .tab-pane .row .col-md-3 {
-	text-align: center !important;
-}
+
 .tab-content .tab-pane .row .gameover .firstteam_logo {
 	margin-top: 10px;
 }
@@ -106,7 +104,7 @@ $(function () {
 	text-align: center !important;
 }
 .tab-content .tab-pane .row .gameover .detail_button {
-	margin-top: 55px;
+	margin-top: 61px;
 }
 </style>
 </head>
@@ -167,7 +165,7 @@ $(function () {
 						<div class="lastteam_logo"><img src="${list_2a[status.index].away_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<c:set var="count" value="${status.index+1 }"/>
 					</c:forEach>
@@ -194,7 +192,7 @@ $(function () {
 						<div class="lastteam_logo"><img src="${list_1a[status.index].away_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<c:set var="count" value="${status.index+1 }"/>
 					</c:forEach>
@@ -221,7 +219,7 @@ $(function () {
 						<div class="lastteam_logo"><img src="${list_a[status.index].away_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<%-- <div class="col-md-3 gameready">
 						<div class="leaguelogo">${vo.match_league }</div>
@@ -258,7 +256,7 @@ $(function () {
 						<div class="lastteam_logo"><img src="${list__1a[status.index].away_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<c:set var="count" value="${status.index+1 }"/>
 					</c:forEach>
@@ -285,7 +283,7 @@ $(function () {
 						<div class="lastteam_logo"><img src="${list__2a[status.index].away_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<c:set var="count" value="${status.index+1 }"/>
 					</c:forEach>
@@ -312,7 +310,7 @@ $(function () {
 						<div class="lastteam_logo"><img src="${list__3a[status.index].away_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<c:set var="count" value="${status.index+1 }"/>
 					</c:forEach>
@@ -366,7 +364,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_3a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 				    		</c:forEach>
 				    	
@@ -391,7 +389,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
 				    				<img src="${list_2a[status.index].away_icon }" height="28">
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 				    		</c:forEach>
 				    		
@@ -417,7 +415,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
 				    				<img src="${list_1a[status.index].away_icon }" height="28">
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 				    		</c:forEach>
 				    			    		
@@ -442,7 +440,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
 				    				<img src="${list_a[status.index].away_icon }" height="28">
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 				    		</c:forEach>
 				    		
@@ -467,7 +465,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
 				    				<img src="${list__1a[status.index].away_icon }" height="28">
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 				    		</c:forEach>
 				    			    		
@@ -492,7 +490,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
 				    				<img src="${list__2a[status.index].away_icon }" height="28">
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 				    		</c:forEach>
 				    		
@@ -517,7 +515,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
 				    				<img src="${list__3a[status.index].away_icon }" height="28">
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 				    		</c:forEach>
 				    			    		
@@ -548,7 +546,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_3a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -580,7 +578,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_2a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -612,7 +610,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_1a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -644,7 +642,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -676,7 +674,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__1a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -708,7 +706,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__2a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -740,7 +738,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__3a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -777,7 +775,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_3a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -809,7 +807,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_2a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -841,7 +839,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_1a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -873,7 +871,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -905,7 +903,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__1a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -937,7 +935,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__2a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -969,7 +967,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__3a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1006,7 +1004,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_3a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1038,7 +1036,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_2a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1070,7 +1068,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_1a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1102,7 +1100,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1134,7 +1132,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__1a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1166,7 +1164,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__2a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1198,7 +1196,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__3a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1235,7 +1233,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_3a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1271,7 +1269,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_2a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1307,7 +1305,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_1a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1343,7 +1341,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list_a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1379,7 +1377,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__1a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1415,7 +1413,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__2a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>
@@ -1451,7 +1449,7 @@ $(function () {
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
 				    				<img src="${list__3a[status.index].away_icon }" height="28px">	
 				    				&nbsp;&nbsp;${vo.away_name }</td>
-				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    				<td width=15% class="text-center qna-th"><a href="game_detail.do?match_no=${vo.match_no }"><div>상세보기 ></div></a></td>
 				    			</tr>
 							</c:if>
 				    		</c:forEach>

@@ -28,6 +28,7 @@ ul.comment_nav_tabs li {
 	float: inherit;
 	text-align: center;
 	cursor: pointer;
+	
 	width: 19%;
 	height: 60px;
 	border: 1px solid white;
@@ -55,6 +56,10 @@ ul.comment_nav_tabs li.active2 {
 	height: auto;
 	display: none;
 }
+
+.a_player1name {
+	margin-left: 0px !important;
+}
 </style>
 <script type="text/javascript">
 $(function () {
@@ -73,21 +78,22 @@ $(function () {
 <body class="body">
 	<!-- Container (The Match Section) -->
 	<div id="band" class="container">
-		<h1 class="text-center"><strong>2017 롤드컵 예선</strong></h1>
-		<p class="text-center"><strong>날짜</strong>&nbsp;<strong>시간</strong></p>
+		<c:set var="doneLoop" value="false"/>
+			<c:forEach var="vo" items="${h_list }" varStatus="status">
+				<c:if test="${not doneLoop}">
+		<h1 class="text-center"><strong>${vo.match_name }</strong></h1>
+		<p class="text-center"><strong>${vo.match_day }</strong>&nbsp;<strong>${vo.match_time }</strong></p>
 		<br>
 		<div class="team_vs">
 			<div class="row">
-			<c:set var="doneLoop" value="false"/>
-						<c:forEach var="vo" items="${h_list }" varStatus="status">
-							<c:if test="${not doneLoop}">
+			
 				<div class="col-sm-3 text-center">
 					<p>
 						<strong class="h_teamName">${vo.home_name }</strong><br>	
 					</p>
 					<br>
 					<a href="#demo" data-toggle="collapse">
-						<img src="${vo.team_icon }" alt="Random Name" width="180" height="180">
+						<img src="${vo.tvo.team_icon }" alt="Random Name" width="180" height="180">
 					</a>
 				</div>
 				
@@ -95,9 +101,9 @@ $(function () {
 					<h1>${vo.home_score }</h1>
 				</div>
 				<div class="col-sm-2 text-center">
-					<!-- <div>
-						<h2 style="margin:15px 0">종료된 경기 입니다.</h2>
-					</div> -->
+					<div>
+						<h2 style="margin:15px 0">경기 종료</h2>
+					</div>
 					<img src="gameDetail/image/vs_icon.png" alt="Random Name" width="155" height="155">
 				</div>
 				<div class="col-sm-2 text-center">
@@ -110,64 +116,72 @@ $(function () {
 					</p>
 					<br>
 					<a href="#demo3" data-toggle="collapse">
-						 <img src="${h_list[status.index eq end].team_icon }" alt="Random Name" width="180" height="180">
+						 <img src="${a_list[status.index].away_icon }" alt="Random Name" width="180" height="180">
 					</a>
+				</div>
+				
+			</div>
+		</div>
+		<c:if test="${status.count == 1}">
+				     <c:set var="doneLoop" value="true"/>
+				</c:if>
+				</c:if>
+				</c:forEach>
+		
+		<div class="player_vs text-center">	
+			<c:set var="doneLoop" value="false"/>
+			<c:forEach var="vo" items="${h_list }" varStatus="status">
+				<c:if test="${not doneLoop}">
+			<div class="row">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-3">
+					<img src="${vo.pvo.player_pic }" width="250">
+					<%-- <img src="${vo.player_pic }"> --%>
+				</div>
+
+				<div class="h_player1name col-sm-1">
+					<div class="player1name">
+						${vo.pvo.player_name }<br>
+						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
+					</div>
+				</div>
+
+				<div class="col-sm-2"></div>
+				<div class="col-sm-1">
+					<div class="a_player1name">
+						${a_list[status.index].a_player_name }<br>
+						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<img src="${a_list[status.index].a_player_pic }" width="250">
+					<%-- <img src="${vo.player_pic }"> --%>
+				</div>
+				<div class="col-sm-1"></div>
+			</div>
+			<c:if test="${status.count == 5}">
+				     <c:set var="doneLoop" value="true"/>
+				</c:if>
+				</c:if>
+				</c:forEach>
+		</div>
+
+			<h3 class="text-center"><strong>경기 영상</strong></h3>
+			<hr>
+			<div class="col-lg-12 text-center">
+			<c:set var="doneLoop" value="false"/>
+			<c:forEach var="vo" items="${h_list }" varStatus="status">
+				<c:if test="${not doneLoop}">
+				<div class="hi">
+					<iframe width="600" height="450"
+						src="https://www.youtube.com/embed/${vo.match_videokey }" frameborder="0"
+						gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 				</div>
 				<c:if test="${status.count == 1}">
 				     <c:set var="doneLoop" value="true"/>
 				</c:if>
 				</c:if>
 				</c:forEach>
-			</div>
-		</div>
-		
-		<div class="player_vs text-center">	
-			<%-- <c:forEach var="vo" items="${h_list }"> --%>
-			<div class="row">
-				<div class="col-sm-2">
-					<img src="#">홈팀선수사진
-					<%-- <img src="${vo.player_pic }"> --%>
-				</div>
-
-				<div class="h_player1name col-sm-2">
-					<div class="player1name">
-						<img src="gameDetail/image/nicname.png">홈팀선수이름<br>
-						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
-					</div>
-				</div>
-
-				<div class="col-sm-2"></div>
-				<div class="col-sm-2"></div>
-				<div class="col-sm-2">
-					<div class="a_player1name">
-						<img src="gameDetail/image/nicname.png">어팀선수이름<br>
-						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
-					</div>
-				</div>
-				<div class="col-sm-2">
-					<img src="#">어팀선수사진
-					<%-- <img src="${vo.player_pic }"> --%>
-				</div>
-			</div>
-			<%-- </c:forEach> --%>
-		</div>
-
-			<h3 class="text-center"><strong>경기 영상</strong></h3>
-			<hr>
-			<div class="col-lg-6 text-center">
-				<div class="hi">
-					<iframe width="460" height="315"
-						src="https://www.youtube.com/embed/m2OEEfkIYgg" frameborder="0"
-						gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-				</div>
-			</div>
-
-			<div class="col-lg-6 text-center">
-				<div class="hi">
-					<iframe class="hi2" width="460" height="315"
-						src="https://www.youtube.com/embed/m2OEEfkIYgg" frameborder="0"
-						gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-				</div>
 			</div>
 
 		<div class="container-fluid-game container-fluid col-md-12 ">

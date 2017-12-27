@@ -16,9 +16,23 @@ public class MatchVO {
 	private PlayerVO pvo = new PlayerVO();
 	private TeamVO tvo = new TeamVO();
 	private String away_icon;
+	private String a_player_name;
+	private String a_player_pic;
 	
 	
 	
+	public String getA_player_name() {
+		return a_player_name;
+	}
+	public void setA_player_name(String a_player_name) {
+		this.a_player_name = a_player_name;
+	}
+	public String getA_player_pic() {
+		return a_player_pic;
+	}
+	public void setA_player_pic(String a_player_pic) {
+		this.a_player_pic = a_player_pic;
+	}
 	public String getAway_icon() {
 		return away_icon;
 	}
