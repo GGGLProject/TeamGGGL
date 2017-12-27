@@ -35,5 +35,21 @@
    <delete id="eventDelete">
    DELETE FROM board WHERE no=#{no}
    </delete>
- 
+   <!-- 글쓰기 -->
+  <insert id="eventInsert" parameterType="EventVO">
+      <!-- 자동 증가번호(sequence)에 사용, BEFORE: 먼저 사용(insert보다 먼저 사용됨) -->
+      <selectKey keyProperty="event_no" resultType="int" order="BEFORE">
+         SELECT NVL(MAX(event_no)+1, 1) as event_no FROM gggl_event 
+         <!-- 
+            -> 함수가 나올땐 컬럼명을 잡고 들어간다.
+            int no = rs.getInt("no") 
+          -->
+      </selectKey>
+      INSERT INTO gggl_event VALUES(
+         #{event_no}, #{event_title}, #{event_id}, #{event_content}, #{event_day}, SYSDATE, #{event_place}, #{event_category}, #{event_city}, 0, #{event_image}
+      )
+      <!-- 
+         ps.setInt() 
+       -->
+   </insert>
  </mapper>

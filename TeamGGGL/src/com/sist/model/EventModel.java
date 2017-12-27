@@ -1,6 +1,7 @@
 package com.sist.model;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sist.controller.Controller;
 import com.sist.controller.RequestMapping;
+
 import com.sist.event.dao.EventDAO;
 import com.sist.event.dao.EventVO;
 @Controller
@@ -74,4 +76,38 @@ public class EventModel {
 		req.setAttribute("main_jsp", "../gameEvent/event_write.jsp");
 		return "gameMain/main.jsp";
 	}
+	@RequestMapping("event_insert_ok.do")
+	public String event_insert_ok(HttpServletRequest req, HttpServletResponse res) throws Throwable {
+		// TODO Auto-generated method stub
+		req.setCharacterEncoding("EUC-KR");
+//		String event_id=req.getParameter("name");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD");
+	
+		String day=req.getParameter("day");
+		Date event_day = sdf.parse(day);
+		
+		String event_place=req.getParameter("place");
+		String event_image=req.getParameter("upload");
+		String event_category=req.getParameter("category");
+		
+		String event_city=req.getParameter("city");
+		String event_title=req.getParameter("subject");
+		String event_content=req.getParameter("content");
+
+		EventVO vo =new EventVO();
+		vo.setEvent_id("운영진-테스트");
+		vo.setEvent_day(event_day);
+		vo.setEvent_place(event_place);
+		vo.setEvent_image(event_image);
+		vo.setEvent_category(event_category);
+		vo.setEvent_city(event_city);
+		vo.setEvent_title(event_title);
+		vo.setEvent_content(event_content);
+
+		EventDAO.eventInsert(vo);
+		
+		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
+		return "gameMain/main.jsp";
+	}
+	
 }

@@ -73,7 +73,7 @@ $(function(){
 			<br>
 			
 			<div class="col">
-			<form method="post" action="insert_ok.do" id=frm>
+			<form method="post" action="event_insert_ok.do" id=frm>
 				<div class="col-lg-6">
 					 
 					<table class="table table-hover">
