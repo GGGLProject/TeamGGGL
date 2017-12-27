@@ -17,8 +17,8 @@
 </head>
 <body>
 	<!-- Slideshow -->
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		<!-- Indicators -->
+	<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+		Indicators
 		<ol class="carousel-indicators">
 			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 			<li data-target="#myCarousel" data-slide-to="1"></li>
@@ -27,7 +27,7 @@
 			<li data-target="#myCarousel" data-slide-to="4"></li>
 		</ol>
 
-		<!-- Wrapper for slides -->
+		Wrapper for slides
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
 				<img src="gameMain/image/lol-1.jpg" alt="New York" width="1200"
@@ -50,18 +50,25 @@
 					height="700">
 			</div>
 
-		</div>
+		</div> -->
 
-		<!-- Left and right controls -->
-		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+	<!-- 		<!-- Left and right controls -->
+	<!-- 		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left"></span> <span
 			class="sr-only">Previous</span>
 		</a> <a class="right carousel-control" href="#myCarousel"
 			data-slide="next"> <span
 			class="glyphicon glyphicon-chevron-right"></span> <span
 			class="sr-only">Next</span>
-		</a>
+		</a> -->
+	-->
+	<div class="row">
+		<div class="col-md-12 padding-0"
+			style="background: url(gameMain/image/maingif_1.gif) no repeat center center">
+			<img src="gameMain/image/maingif_1.gif" width="100%">
+		</div>
 	</div>
+
 	<!-- Container (The Match Section) -->
 	<div class="bg-1">
 		<div class="container text-center">
@@ -146,13 +153,15 @@
 			<h3 class="margin">League of Legends Streaming</h3>
 			<br>
 			<div class="col-sm-4">
-				<p> KT T1 Faker Live Stream LOL - 27/12 Translation EN | Hide on bush | SK텔레콤 T1 / SK Telecom T1</p>
+				<p>KT T1 Faker Live Stream LOL - 27/12 Translation EN | Hide on
+					bush | SK텔레콤 T1 / SK Telecom T1</p>
 				<iframe width="260" src="https://www.youtube.com/embed/ot3wAWjCVsM"
 					frameborder="0" gesture="media" allow="encrypted-media"
 					allowfullscreen></iframe>
 			</div>
 			<div class="col-sm-4">
-				<p>SKT T1 Bang Live Stream LOL 27/12 | Best ADC | SK텔레콤 T1 / SK Telecom T</p>
+				<p>SKT T1 Bang Live Stream LOL 27/12 | Best ADC | SK텔레콤 T1 / SK
+					Telecom T</p>
 				<iframe width="260" src="https://www.youtube.com/embed/ExAOyavrXeA"
 					frameborder="0" gesture="media" allow="encrypted-media"
 					allowfullscreen></iframe>
@@ -174,20 +183,20 @@
 					<em>대회에 참여하여 상금을 쟁취하세요!</em>
 				</p>
 				<div class="row text-center">
-				<c:forEach var="vo" items="${elist }">
-					<div class="col-sm-3">
-						<div class="thumbnail"
-							style="max-height: 600px; position: relative; vertical-align: middle">
-							<a href="event_content.do?no=${vo.event_no }"><img
-								class="img-responsive" src="${vo.event_image }"
-								id="img_a"></a> <br>
-							<p>
-								<a href="event_content.do?no=${vo.event_no }">${vo.event_title }</a>
-							</p>
+					<c:forEach var="vo" items="${elist }">
+						<div class="col-sm-3">
+							<div class="thumbnail"
+								style="max-height: 600px; position: relative; vertical-align: middle">
+								<a href="event_content.do?no=${vo.event_no }"><img
+									class="img-responsive" src="${vo.event_image }" id="img_a"></a>
+								<br>
+								<p>
+									<a href="event_content.do?no=${vo.event_no }">${vo.event_title }</a>
+								</p>
+							</div>
 						</div>
-					</div>
-				</c:forEach>
-			</div>
+					</c:forEach>
+				</div>
 			</div>
 		</div>
 	</div>

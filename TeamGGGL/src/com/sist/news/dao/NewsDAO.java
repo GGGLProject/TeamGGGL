@@ -44,7 +44,7 @@ public class NewsDAO {
 		SqlSession session = ssf.openSession();
 		int rint[] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 19, 41, 42, 45, 49, 50, 89, 94, 103, 230, 235, 381, 384,
 				373, 370 };
-		System.out.println(rint.length);
+	
 		int rintNum[] = new int[5];
 		for (int i = 0; i < 5; i++) {
 			rintNum[i] = (int) ((Math.random() * 26) + 1);
