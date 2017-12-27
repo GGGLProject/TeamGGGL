@@ -1,39 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!--  
-	PreparedStatement, ResultSet
- -->
- <mapper namespace="com.sist.event.dao.event-mapper">
-  <!--  반복적인 SQL 문장	 -->
-  <select id="eventListData" resultType="EventVO" parameterType="java.util.Map">
-	SELECT event_no,event_category,event_image,event_title,event_day,event_place,event_id,event_hit,num
-	FROM (SELECT event_no,event_category,event_image,event_title,event_day,event_place,event_id,event_hit,rownum as num
-	FROM (SELECT event_no,event_category,event_image,event_title,event_day,event_place,event_id,event_hit
-	FROM gggl_event ORDER BY event_no DESC))
-    WHERE num BETWEEN #{start} AND #{end}
-    <!-- 
-         map.get("start") => map.put("start",1)
-         map.get("end") => map.put("end",10)
-     -->
-  </select>
-      <!-- Content(내용보기) -->
-   <select id="eventContentData" resultType="EventVO" parameterType="int">
-      SELECT event_no,event_category,event_image,event_title,event_content,event_day,event_place,event_id,event_city,event_hit <!--  미수정부분 //승구 -->
-      FROM gggl_event
-      WHERE event_no = #{event_no}
-   </select>
-   <update id="eventHitIncrement" parameterType="int">
-      UPDATE gggl_event SET 
-      event_hit = event_hit + 1 
-      WHERE event_no = #{event_no}
-   </update>
+<!-- PreparedStatement, ResultSet -->
+<mapper namespace="com.sist.event.dao.event-mapper">
+	<!-- 반복적인 SQL 문장 -->
+	<select id="eventListData" resultType="EventVO" parameterType="java.util.Map">
+		SELECT
+		event_no,event_category,event_image,event_title,event_day,event_place,event_id,event_hit,num
+		FROM (SELECT
+		event_no,event_category,event_image,event_title,event_day,event_place,event_id,event_hit,rownum
+		as num
+		FROM (SELECT
+		event_no,event_category,event_image,event_title,event_day,event_place,event_id,event_hit
+		FROM gggl_event ORDER BY event_no DESC))
+		WHERE num BETWEEN #{start} AND
+		#{end}
+		<!-- map.get("start") => map.put("start",1) map.get("end") => map.put("end",10) -->
+	</select>
+	<!-- Content(내용보기) -->
+	<select id="eventContentData" resultType="EventVO"
+		parameterType="int">
+		SELECT
+		event_no,event_category,event_image,event_title,event_content,event_day,event_place,event_id,event_city,event_hit <!-- 
+			미수정부분 //승구 -->
+		FROM gggl_event
+		WHERE event_no = #{event_no}
+	</select>
+	<update id="eventHitIncrement" parameterType="int">
+		UPDATE gggl_event
+		SET
+		event_hit = event_hit + 1
+		WHERE event_no = #{event_no}
+	</update>
 	<!-- 총페이지 -->
-   <select id="eventTotalPage" resultType="int">
-     SELECT CEIL(COUNT(*)/10) FROM gggl_event
-   </select>
-   <delete id="eventDelete">
-   DELETE FROM board WHERE no=#{no}
-   </delete>
- 
- </mapper>
+	<select id="eventTotalPage" resultType="int">
+		SELECT CEIL(COUNT(*)/10)
+		FROM gggl_event
+	</select>
+	<delete id="eventDelete">
+		DELETE FROM board WHERE no=#{no}
+	</delete>
+	<select id="recommandEventList" resultType="EventVO">
+		SELECT * from (select
+		event_no,event_title,event_image from gggl_event order by event_hit desc) where
+		rownum &lt;=4
+	</select>
+</mapper>

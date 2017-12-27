@@ -52,8 +52,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		news_no=#{news_no}
 	</select>
 	<select id="newsUpdateListData" resultType="NewsVO">
-
-
 		select * from (select
 		news_no, news_title from gggl_news order by
 		news_regdate desc) where

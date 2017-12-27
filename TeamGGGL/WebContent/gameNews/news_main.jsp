@@ -30,8 +30,8 @@
 		<h1 class="news_head">
 			<strong>NEWS</strong>
 		</h1>
-		<form method="post" class="form-inline text-center" action="news_main.do"
-			style="padding: 10px;" id="frm">
+		<form method="post" class="form-inline text-center"
+			action="news_main.do" style="padding: 10px;" id="frm">
 
 			<div class="form-group">
 
@@ -133,12 +133,25 @@
 				<ul class="pagination">
 
 					<li class="page-item"><a
-						href="news_main.do?page=${curpage>1?curpage-1:curpage }"></a>이전</li>
+						href="news_main.do?page=${curpage>1?curpage-1:curpage }">이전</a></li>
 					<li class="page-item"><a
-						href="news_main.do?page=${curpage<totalpage?curpage+1:curpage }"></a>다음</li>
-
+						href="news_main.do?page=${curpage<totalpage?curpage+1:curpage }">다음</a></li>
 				</ul>
-				${curpage } page / ${totalpage } pages
+				<br>
+				<c:choose>
+					<c:when test="${curpage == 1}">
+						<a href="news_main.do?page=${curpage }">${curpage }</a> || <a
+							href="news_main.do?page=${curpage+1 }">${curpage+1 }</a> || <a
+							href="news_main.do?page=${curpage+2 }">${curpage+2 }</a>
+
+					</c:when>
+					<c:otherwise>
+						<a href="news_main.do?page=${curpage-1 }">${curpage-1 }</a> || <a
+							href="news_main.do?page=${curpage }">${curpage }</a> || <a
+							href="news_main.do?page=${curpage+1 }">${curpage+1 }</a>
+					</c:otherwise>
+				</c:choose>
+				<br>${totalpage } pages
 			</div>
 		</center>
 		<!-- /.pageNum-->

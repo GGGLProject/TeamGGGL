@@ -16,17 +16,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import sun.net.NetworkServer;
+
 public class NewsDAO {
 	private static SqlSessionFactory ssf;
 
 	public static void main(String args[]) {
-		NewsDAO nd = new NewsDAO();
-		try {
-			nd.imageDown();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		newsRecommandData();
 
 	}
 
@@ -46,16 +42,54 @@ public class NewsDAO {
 	public static List<NewsVO> newsRecommandData() {
 
 		SqlSession session = ssf.openSession();
+		int rint[] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 19, 41, 42, 45, 49, 50, 89, 94, 103, 230, 235, 381, 384,
+				373, 370 };
+		System.out.println(rint.length);
+		int rintNum[] = new int[5];
+		for (int i = 0; i < 5; i++) {
+			rintNum[i] = (int) ((Math.random() * 26) + 1);
+			for (int j = 0; j < i; j++) {
+				if (rintNum[i] == rintNum[j]) {
+					rintNum[i] = (int) ((Math.random() * 26) + 1);
+					i--;
+				}
+			}
+		}
 		List<NewsVO> rlist = new ArrayList<>();
 		// no = (int) ((Math.random() * 70) + 1);
 		for (int i = 0; i < 5; i++) {
-			int no = (int) ((Math.random() * 70) + 1);
-			rlist.add(session.selectOne("newsRecommandData", no));
+
+			rlist.add(session.selectOne("newsRecommandData", rint[rintNum[i]]));
 		}
 
 		return rlist;
 	}
-	
+
+	public static List<NewsVO> mainNewsRecommandData() {
+
+		SqlSession session = ssf.openSession();
+		int rint[] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 19, 41, 42, 45, 49, 50, 89, 94, 103, 230, 235, 381, 384,
+				373, 370 };
+		System.out.println(rint.length);
+		int rintNum[] = new int[4];
+		for (int i = 0; i < 4; i++) {
+			rintNum[i] = (int) ((Math.random() * 26) + 1);
+			for (int j = 0; j < i; j++) {
+				if (rintNum[i] == rintNum[j]) {
+					rintNum[i] = (int) ((Math.random() * 26) + 1);
+					i--;
+				}
+			}
+		}
+		List<NewsVO> rlist = new ArrayList<>();
+		// no = (int) ((Math.random() * 70) + 1);
+		for (int i = 0; i < 4; i++) {
+
+			rlist.add(session.selectOne("newsRecommandData", rint[rintNum[i]]));
+		}
+
+		return rlist;
+	}
 
 	public static List<NewsVO> newsListData(Map map) {
 		List<NewsVO> list = new ArrayList<NewsVO>();
@@ -70,6 +104,7 @@ public class NewsDAO {
 		}
 		return list;
 	}
+
 	public static List<NewsVO> newsUpdateListData() {
 		List<NewsVO> list = new ArrayList<NewsVO>();
 		SqlSession session = ssf.openSession();
@@ -83,7 +118,7 @@ public class NewsDAO {
 		}
 		return list;
 	}
-	
+
 	public static NewsVO newsDetailData(int no) {
 		SqlSession session = ssf.openSession();
 		NewsVO vo = session.selectOne("newsDetailData", no);

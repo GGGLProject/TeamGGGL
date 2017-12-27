@@ -31,6 +31,14 @@ public class EventDAO {
 		session.close();
 		return list;
 	}
+	public static List<EventVO> recommandEventListData()
+	{
+		SqlSession session = ssf.openSession();
+		List<EventVO> list = session.selectList("recommandEventList");
+		session.close();
+		return list;
+	}
+	
 	public static EventVO eventContentData(int no)
 	{
 		SqlSession session = ssf.openSession();
