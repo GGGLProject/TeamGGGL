@@ -2,6 +2,7 @@ package com.sist.model;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sist.controller.Controller;
 import com.sist.controller.RequestMapping;
@@ -42,10 +43,38 @@ public class MemberModel {
 		return "gameMember/emailcheck.jsp";
 	}
 // 총회원가입 버튼 부분
-	@RequestMapping("memberJoin.do")
-	public String memberJoin(HttpServletRequest req, HttpServletResponse res) {
-		String id = req.getParameter("id");
-		System.out.println(id);
-		return "gameMember/memberJoin.jsp";
+// 로그인부분
+	@RequestMapping("login2.do")
+	public String memberlogin(HttpServletRequest req,HttpServletResponse res) {
+		HttpSession session=req.getSession();
+		
+		String email=req.getParameter("email");
+		String pwd=req.getParameter("Password");
+		
+		int count=MemberDAO.memberEmailCount(email);
+		String result="";
+		
+		if(count==0) {
+			result="NOID";
+		}else {
+			MemberVO vo=MemberDAO.memberGetPassword(email);
+			if(pwd.equals(vo.getMember_pwd())) {
+				result="OK";
+				session.setAttribute("email", email);
+				session.setAttribute("name", vo.getMember_nickname());
+				session.setAttribute("admin", vo.getMember_grade());
+			}
+			else {
+				result="NOPWD";
+			}
+		}
+		req.setAttribute("result", result);
+		return "gameMember/login_ok.jsp";
+	}
+	@RequestMapping("logout.do")
+	public String memberLogout(HttpServletRequest req,HttpServletResponse res) {
+		HttpSession session=req.getSession();
+		session.invalidate();
+		return "gameMember/logout_ok.jsp";
 	}
 }

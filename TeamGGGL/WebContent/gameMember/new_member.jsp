@@ -110,7 +110,7 @@ $(function(){
 });
 </script>
 <!-- 회원가입 완료 버튼 script  -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(function(){
 
 	$('#join').click(function(){
@@ -138,7 +138,7 @@ $(function(){
 	 	})
 	});
 });
-</script>
+</script> -->
 
 </head>
 <body>
@@ -157,7 +157,7 @@ $(function(){
               <div class="input-group"> 
                 <input type="text" class="form-control" id="id" placeholder="이름(닉네임)">
                 <span class="input-group-btn">
-                  <button class="btn btn-primary" id="checkBtn">중복확인</button>
+                  <button class="btn btn-info" id="checkBtn">중복확인</button>
                 </span>
              </div>
             </div>
@@ -168,7 +168,7 @@ $(function(){
               <div class="input-group">
                 <input type="text" class="form-control" id="useremail" placeholder="ex)admin@GGGL.com">
                 <span class="input-group-btn">
-                  <button class="btn btn-primary" id="emailcheckBtn">중복확인</button>
+                  <button class="btn btn-info" id="emailcheckBtn">중복확인</button>
                 </span>
               </div>
             </div>
@@ -270,7 +270,7 @@ $(function(){
             <!-- 회원가입, 취소 버튼 -->
             <div class="form-group text-center">
               <button type="submit" class="btn btn-info" id="join">회원가입</button>
-              <a href="main.do"><button type="submit" class="btn btn-warning" >가입취소<i class="fa fa-times spaceLeft"></i></button></a>
+              <a href="main.do"><button type="submit" class="btn btn-default" >가입취소<i class="fa fa-times spaceLeft"></i></button></a>
             </div>
           </form>
         </div>

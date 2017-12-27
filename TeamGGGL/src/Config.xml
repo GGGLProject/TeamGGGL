@@ -11,6 +11,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.sist.match.dao.TeamVO" alias="TeamVO"/>
 		<typeAlias type="com.sist.match.dao.PlayerVO" alias="PlayerVO"/>
 		<typeAlias type="com.sist.event.dao.EventVO" alias="EventVO"/>
+		
 	</typeAliases> 
 	<!-- "(environment)+" -->
 	<environments default="development">

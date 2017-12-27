@@ -18,9 +18,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 FROM GGGL_member
 	 WHERE member_id=#{memberEmailCheck}
 	</select>
-	<select id="memberJoin" resultType="MemberVO" parameterType="String">
-	  INSERT INTO GGGL_member
-	  VALUES(#{})
+	
+	<select id="memberEmailCount" parameterType="String" resultType="int">
+	SELECT COUNT(*) FROM GGGL_member
+	WHERE member_id=#{email}
+	</select>
+	
+	<select id="memberGetPassword" parameterType="String" resultType="com.sist.member.dao.MemberVO">
+	SELECT member_pwd,member_nickname,member_grade FROM GGGL_member
+	WHERE member_id=#{email}
 	</select>
 </mapper>
 

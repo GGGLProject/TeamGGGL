@@ -40,15 +40,17 @@ function showPassword() {
     	    <div class="col-xs-12">
         	    <div class="form-wrap">
                 <h1>·Î±×ÀÎ</h1>
-                    <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+                    <form role="form" action="login2.do" method="post" id="login-form" autocomplete="off">
                         <div class="form-group">
+                        
                             <label for="email" class="sr-only">Email</label>
                             <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
                         </div>
                         <div class="form-group">
                             <label for="key" class="sr-only">Password</label>
-                            <input type="password" name="key" id="key" class="form-control" placeholder="Password">
+                            <input type="password" name="Password" id="Password" class="form-control" placeholder="Password">
                         </div>
+                        
                         <div class="checkbox">
                             <span class="character-checkbox" onclick="showPassword()"></span>
                             <span class="label">Show password</span>

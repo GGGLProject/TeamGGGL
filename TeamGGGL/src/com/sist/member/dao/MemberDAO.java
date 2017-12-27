@@ -62,19 +62,35 @@ public static MemberVO memberEmailCheck(String email) {
 	return vo;
 }
 
-public static MemberVO memberJoin(MemberVO vo) {
-	MemberVO vo1 = new MemberVO();
+// 로그인처리
+//아이디 가져오기
+public static int memberEmailCount(String email) {
+	int count=0;
 	SqlSession session=ssf.openSession();
 	try {
-		
-		vo1.setCount(session.selectOne("memberJoin",vo));
-		
+		count=session.selectOne("memberEmailCount",email);
 	}catch(Exception ex) {
-		System.out.println("memberEmailCheck : "+ex.getMessage());
+		System.out.println("memberEmailCount "+ex.getMessage());
 	}finally {
 		if(session!=null)
 			session.close();
 	}
-	return vo1;
+	return count;
+}
+
+// id가 가지고있는 값을 가져온다
+// 비밀번호가져오는곳
+public static MemberVO memberGetPassword(String email) {
+	MemberVO vo=new MemberVO();
+	SqlSession session=ssf.openSession();
+	try {
+		vo=session.selectOne("memberGetPassword",email);
+	}catch(Exception ex) {
+		System.out.println("memberGetPassword "+ex.getMessage());
+	}finally {
+		if(session!=null)
+			session.close();
+	}
+	return vo;
 }
 }
