@@ -42,7 +42,9 @@ font-color:white;
                <li><a href="game_schedule.do">일정 / 결과</a></li>
                <li><a href="gallery.do">갤러리</a></li>
                <li><a href="event_list.do">이벤트</a></li>
+               <c:if test="${sessionScope.email!=null}">
                <li><a href="#">마이페이지</a></li>
+               </c:if>
          </ul>
          <c:if test="${sessionScope.email==null }">
          <form method=post action="login.do">
