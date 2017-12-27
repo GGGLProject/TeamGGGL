@@ -1,14 +1,15 @@
 package com.sist.model;
 
+import java.io.*;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.sist.controller.Controller;
 import com.sist.controller.RequestMapping;
 
@@ -73,6 +74,31 @@ public class EventModel {
 	
 	@RequestMapping("event_write.do")
 	public String event_write(HttpServletRequest req, HttpServletResponse res) {
+		 
+		 String realFolder = "";
+		 String filename1 = "";
+		 int maxSize = 1024*1024*5;
+		 String encType = "euc-kr";
+		 String savefile = "WebContent\\WEB-INF\\image";
+//		 ServletContext scontext = getServletContext();
+		 realFolder = req.getServletContext().getRealPath(savefile);
+		 
+		 try{
+			 req.setCharacterEncoding("euc-kr");
+		  MultipartRequest multi=new MultipartRequest(req, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+
+		  Enumeration<?> files = multi.getFileNames();
+		     String file1 = (String)files.nextElement();
+		     filename1 = multi.getFilesystemName(file1);
+		 } catch(Exception ex) {
+			 System.out.println("이미지업로드(event_write.do):"+ex.getMessage());
+		 }
+		 
+		 String fullpath = realFolder + "\\" + filename1;
+	
+		System.out.println(fullpath);
+		
+		
 		req.setAttribute("main_jsp", "../gameEvent/event_write.jsp");
 		return "gameMain/main.jsp";
 	}

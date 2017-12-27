@@ -73,7 +73,7 @@ $(function(){
 			<br>
 			
 			<div class="col">
-			<form method="post" action="event_insert_ok.do" id=frm enctype="multipart/form-data">
+			<form method="post" action="event_modify_ok.do" id=frm>
 				<div class="col-lg-6">
 					 
 					<table class="table table-hover">
@@ -146,22 +146,7 @@ $(function(){
 							<td width=10% class="text-right qna-td" valign="top">내용</td>
 							<td width=90% class="text-left qna-td">
 								<textarea class="input" rows="20" cols="65" name=content id="content">
-								
-								
-	타이틀 : 
-
-	대회소개 : 
-
-	■ 대회 날짜 :
-
-	■ 지역 안내 :
-
-	■ 참가 신청 :
-
-	■ 참가 방법 :
-
-
-	■ 대회 상품 :
+								${vo.event_content }
 								</textarea>
 							</td>
 						</tr>
