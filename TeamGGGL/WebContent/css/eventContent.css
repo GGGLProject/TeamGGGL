@@ -1,8 +1,18 @@
 body {
 	background-image: url('../image/lol_back1.jpg');
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 	color: #dedee0;
 }
+
+.comment {
+	background-color: rgba(0,0,0,0.8);
+}
+
+/* .comment_list, .comment_nav_tabs, .active2 {
+	background-color: rgba(0,0,0,0.8);
+	
+} */
 
 .input {
 	background-color: rgba(0,0,0,0.8);
@@ -35,4 +45,106 @@ pre {
 
 .table {
 	 background-color: rgba(0,0,0,0.9);
+}
+
+
+.contentImage {
+	padding-top: 10px;
+}
+
+.container-fluid-news {
+		 background-color: rgba(0,0,0,0.9);
+	
+	border: 1px solid #dedee0;
+	padding: 10px 0;
+}
+
+.container-fluid-news .com_2 {
+	margin: 10px 0;
+}
+.contentText
+{
+	line-height: 1.64;
+	overflow: hidden;
+	width:650px;
+	display:inline;
+}
+.b-writer
+{
+	text-align:right;
+}
+hr {
+	height: 1px;
+	color: #dedee0;
+	background-color: #dedee0;
+	border: none
+}
+
+.contentText {
+	padding: 10px;
+}
+
+.comment_form {
+	border-bottom: 1px solid #dedee0;
+	margin-bottom: 20px;
+	padding : 0 10px 10px 10px;
+}
+
+.writer_img {
+	text-align: center;
+	margin: auto 10px;	
+}
+
+.comment_content {
+	margin-left : 110px;
+}
+
+.comment_content .writer_info .w_nickName {
+	color: #3d9eed
+}
+
+/* Ãß°¡ */
+ul.comment_nav_tabs {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 60px;
+	opacity: 1;
+	width: 80%;
+	font-size: 16px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+ul.comment_nav_tabs li {
+	float: inherit;
+	text-align: center;
+	cursor: pointer;
+	width: 19%;
+	height: 60px;
+	border: 1px solid white;
+	margin: 0 5.7px 0px 5.7px;
+	color: white;
+	line-height: 60px;
+	font-weight: bold;
+	overflow: hidden;
+	position: relative;
+}
+
+ul.comment_nav_tabs li img {
+	height: 42px;
+	margin-right: 20px;
+}
+
+ul.comment_nav_tabs li.active2 {
+	border: 1px solid white;
+	color: black;
+	background-color: white;
+	opacity: 0.9;
+}
+
+.comment_tab_content {
+	height: auto;
+	display: none;
 }
