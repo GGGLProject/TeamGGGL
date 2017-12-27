@@ -97,8 +97,10 @@ $(function () {
 					</a>
 				</div>
 				
+				<c:choose>
+				<c:when test="${vo.home_score > vo.away_score }">
 				<div class="col-sm-2 text-center">
-					<h1>${vo.home_score }</h1>
+					<h1 style="color: blue">${vo.home_score }</h1>
 				</div>
 				<div class="col-sm-2 text-center">
 					<div>
@@ -107,8 +109,25 @@ $(function () {
 					<img src="gameDetail/image/vs_icon.png" alt="Random Name" width="155" height="155">
 				</div>
 				<div class="col-sm-2 text-center">
-					<h1>${vo.away_score }</h1>
+					<h1 style="color: red">${vo.away_score }</h1>
 				</div>
+				</c:when>
+				
+				<c:otherwise>
+				<div class="col-sm-2 text-center">
+					<h1 style="color: red">${vo.home_score }</h1>
+				</div>
+				<div class="col-sm-2 text-center">
+					<div>
+						<h2 style="margin:15px 0">경기 종료</h2>
+					</div>
+					<img src="gameDetail/image/vs_icon.png" alt="Random Name" width="155" height="155">
+				</div>
+				<div class="col-sm-2 text-center">
+					<h1 style="color: blue">${vo.away_score }</h1>
+				</div>
+				</c:otherwise>
+				</c:choose>
 				
 				<div class="col-sm-3 text-center">
 					<p>
@@ -134,12 +153,12 @@ $(function () {
 				<c:if test="${not doneLoop}">
 			<div class="row">
 				<div class="col-sm-1"></div>
-				<div class="col-sm-3">
+				<div class="col-sm-3 p_img">
 					<img src="${vo.pvo.player_pic }" width="250">
 					<%-- <img src="${vo.player_pic }"> --%>
 				</div>
 
-				<div class="h_player1name col-sm-1">
+				<div class="col-sm-1 h_player1name">
 					<div class="player1name">
 						${vo.pvo.player_name }<br>
 						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
@@ -153,7 +172,7 @@ $(function () {
 						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
 					</div>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-3 p_img">
 					<img src="${a_list[status.index].a_player_pic }" width="250">
 					<%-- <img src="${vo.player_pic }"> --%>
 				</div>
