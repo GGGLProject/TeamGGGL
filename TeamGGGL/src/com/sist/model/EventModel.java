@@ -81,11 +81,12 @@ public class EventModel {
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("EUC-KR");
 //		String event_id=req.getParameter("name");
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	
 		String day=req.getParameter("day");
+		System.out.println("day1:"+day);
 		Date event_day = sdf.parse(day);
-		
+		System.out.println("event_day:"+event_day);
 		String event_place=req.getParameter("place");
 		String event_image=req.getParameter("upload");
 		String event_category=req.getParameter("category");
@@ -106,8 +107,9 @@ public class EventModel {
 
 		EventDAO.eventInsert(vo);
 		
+		
 		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
-		return "gameMain/main.jsp";
+		return "event_list.do";
 	}
 	
 }
