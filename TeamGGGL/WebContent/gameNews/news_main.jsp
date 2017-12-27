@@ -7,6 +7,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script type="text/javascript">
+	$(function() {
+		$('#category').change(function() {
+			$('#frm').submit();
+		});
+	});
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>LOL 뉴스 - GG GL</title>
 <link rel="stylesheet"
@@ -23,19 +30,22 @@
 		<h1 class="news_head">
 			<strong>NEWS</strong>
 		</h1>
-		<form method="post" class="form-inline text-center"
-			style="padding: 10px;">
+		<form method="post" class="form-inline text-center" action="news_main.do"
+			style="padding: 10px;" id="frm">
+
 			<div class="form-group">
-				<select class="form-control" name="category">
-					<option value="news">뉴스</option>
-					<option value="cover">취재</option>
-					<option value="info">정보</option>
-					<option value="patch">패치</option>
-					<option value="interview">인터뷰</option>
-					<option value="guide">가이드</option>
-					<option value="target">공략</option>
-					<option value="column">칼럼</option>
-					<option value="planning">기획</option>
+
+				<select class="form-control" name="category" id="category">
+					<option>전체</option>
+					<option>뉴스</option>
+					<option>취재</option>
+					<option>정보</option>
+					<option>패치</option>
+					<option>인터뷰</option>
+					<option>가이드</option>
+					<option>공략</option>
+					<option>칼럼</option>
+					<option>기획</option>
 				</select>
 			</div>
 			<div class="form-group">
@@ -58,11 +68,10 @@
 						<strong><a href="#">HOT 뉴스</a></strong>
 					</h5>
 					<ul>
-						<li>&nbsp;&nbsp; <a href="#"><span>${newsRecommandData }</span></a></li>
-						<li>&nbsp;&nbsp; <a href="#"><span>${newsRecommandData2 }</span></a></li>
-						<li>&nbsp;&nbsp; <a href="#"><span>${newsRecommandData3 }</span></a></li>
-						<li>&nbsp;&nbsp; <a href="#"><span>${newsRecommandData4 }</span></a></li>
-						<li>&nbsp;&nbsp; <a href="#"><span>${newsRecommandData5 }</span></a></li>
+						<c:forEach var="rlist" items="${rlist }">
+							<li>&nbsp;&nbsp; <a
+								href="news_detail.do?no=${rlist.news_no }"><span>${rlist.news_title }</span></a></li>
+						</c:forEach>
 					</ul>
 				</div>
 			</div>
@@ -72,11 +81,10 @@
 						<strong><a href="#">이달의 NEW UPDATE 뉴스</a></strong>
 					</h5>
 					<ul>
-						<c:forEach var="i" begin="1" end="3">
-							<li>&nbsp;&nbsp; <a href="#"><span>디펜딩 챔피언 '우지',
-										'프레이'의 3연 조이 꺾고 결승 진출</span></a></li>
-							<li>&nbsp;&nbsp; <a href="#"><span>러스 퓨얼, 플로리다
-										메이헴에 1패 후 3연승 거둬</span></a></li>
+						<c:forEach var="ulist" items="${ulist }">
+							<li>&nbsp;&nbsp; <a
+								href="news_detail.do?no=${ulist.news_no }"><span>${ulist.news_title }</span></a></li>
+
 						</c:forEach>
 					</ul>
 				</div>

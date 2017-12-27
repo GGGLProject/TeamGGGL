@@ -124,5 +124,33 @@ public class MatchDAO {
 		}
 		return list;
 	}
+	
+	public static List<MatchVO> match_detail_h(int match_no) {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("match_detail_h", match_no);
+		} catch (Exception e) {
+			System.out.println("match_detail_h : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}
+	
+	public static List<MatchVO> match_detail_a(int match_no) {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("match_detail_a", match_no);
+		} catch (Exception e) {
+			System.out.println("match_detail_a : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}	
 
 }

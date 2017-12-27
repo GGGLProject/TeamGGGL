@@ -104,8 +104,7 @@
       <div class="container">
          <h3 class="text-center">e-Sport NEWS</h3>
          <p class="text-center">
-            Lorem ipsum we'll play you some music.<br> Remember to book
-            your tickets!
+            	최신늬우스
          </p>
 
          <div class="row text-center">

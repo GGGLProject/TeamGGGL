@@ -125,7 +125,7 @@ $(function () {
 		<div class="tab-content">
 			<div id="home" class="tab-pane fade">
 				<div class="row">
-					<c:set var="count" value="1"/>	
+					<c:set var="count" value="1"/>
 					<c:forEach var="vo" items="${list_3}" varStatus="status">
 					<div class="col-md-3 gameover">
 						<div class="leaguelogo">${vo.match_league }</div>
@@ -137,7 +137,7 @@ $(function () {
 						<div class="lastteam_logo"><img src="${list_3_[status.index].team_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">종료</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<c:set var="count" value="${status.index+1 }"/>
 					</c:forEach>
@@ -347,20 +347,17 @@ $(function () {
 						<h4><%=threedaybefore %></h4>	<!-- 12.18(월) -->
 				    	<table class="table">
 				    		<tr>
-				    			<th width=8% class="text-center qna-th">리그</th>
-				    			<th width=30% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				
 				    		<c:forEach var="vo" items="${list_3}" varStatus="status">
-				    			
-				 
 				    			<tr>
-				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>				    				
-				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>				    				
-				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
 				    				<img src="${vo.team_icon }" height="28px">
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
@@ -368,7 +365,6 @@ $(function () {
 				    				&nbsp;&nbsp;${vo.away_name }</td>
 				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
 				    			</tr>
-				    			
 				    		</c:forEach>
 				    	
 				    	</table>
@@ -376,18 +372,17 @@ $(function () {
 				    	<h4><%=twodaybefore %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
 		    				<c:forEach var="vo" items="${list_2}" varStatus="status">
 				    			<tr>
-				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
-				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
 				    				<img src="${vo.team_icon }" height="28">
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
@@ -403,17 +398,17 @@ $(function () {
 				    	<h4><%=onedaybefore %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 				    		<c:forEach var="vo" items="${list_1}" varStatus="status">
 				    			<tr>
-				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
-				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
 				    				<img src="${vo.team_icon }" height="28">
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
@@ -428,17 +423,17 @@ $(function () {
 				    	<h4><%=today %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>				    		
 		    				<c:forEach var="vo" items="${list}" varStatus="status">
 				    			<tr>
-				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
-				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
 				    				<img src="${vo.team_icon }" height="28">
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
@@ -453,17 +448,17 @@ $(function () {
 				    	<h4><%=onedayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 				    		<c:forEach var="vo" items="${list__1}" varStatus="status">
 				    			<tr>
-				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
-				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
 				    				<img src="${vo.team_icon }" height="28">
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
@@ -478,17 +473,17 @@ $(function () {
 				    	<h4><%=twodayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 				    		<c:forEach var="vo" items="${list__2}" varStatus="status">
 				    			<tr>
-				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
-				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
 				    				<img src="${vo.team_icon }" height="28">
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
@@ -503,17 +498,17 @@ $(function () {
 				    	<h4><%=threedayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
 				    		<c:forEach var="vo" items="${list__3}" varStatus="status">
 				    			<tr>
-				    				<td width=8% class="text-center qna-th">${vo.match_league }</td>
-				    				<td width=30% class="text-center qna-th">${vo.match_name }</td>
-				    				<td width=10% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
 				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
 				    				<img src="${vo.team_icon }" height="28">
 				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;
@@ -533,125 +528,224 @@ $(function () {
 						<h4><%=threedaybefore %></h4>
 				    	<table class="table table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list_3}" varStatus="status">
+				    		<c:if test="${vo.match_league=='LCK' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_3_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    			    		
 				    	</table>
 				    	<br>
 				    	<h4><%=twodaybefore %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
+				    		<c:forEach var="vo" items="${list_2}" varStatus="status">
+				    		<c:if test="${vo.match_league=='LCK' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_2_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
 				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 						<br>
 				    	<h4><%=onedaybefore %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list_1}" varStatus="status">
+				    		<c:if test="${vo.match_league=='LCK' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_1_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=today %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
+				    		<c:forEach var="vo" items="${list}" varStatus="status">
+				    		<c:if test="${vo.match_league=='LCK' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
 				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=onedayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list__1}" varStatus="status">
+				    		<c:if test="${vo.match_league=='LCK' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__1_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=twodayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
+				    		<c:forEach var="vo" items="${list__2}" varStatus="status">
+				    		<c:if test="${vo.match_league=='LCK' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__2_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
 				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=threedayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/lck.png" height="32" style="margin-right: 10px">LCK</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list__3}" varStatus="status">
+				    		<c:if test="${vo.match_league=='LCK' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__3_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 					</div>
@@ -663,125 +757,224 @@ $(function () {
 						<h4><%=threedaybefore %></h4>
 				    	<table class="table table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list_3}" varStatus="status">
+				    		<c:if test="${vo.match_league=='NA LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_3_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    			    		
 				    	</table>
 				    	<br>
 				    	<h4><%=twodaybefore %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
+				    		<c:forEach var="vo" items="${list_2}" varStatus="status">
+				    		<c:if test="${vo.match_league=='NA LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_2_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
 				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 						<br>
 				    	<h4><%=onedaybefore %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list_1}" varStatus="status">
+				    		<c:if test="${vo.match_league=='NA LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_1_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=today %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
+				    		<c:forEach var="vo" items="${list}" varStatus="status">
+				    		<c:if test="${vo.match_league=='NA LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
 				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=onedayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list__1}" varStatus="status">
+				    		<c:if test="${vo.match_league=='NA LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__1_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=twodayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
+				    		<c:forEach var="vo" items="${list__2}" varStatus="status">
+				    		<c:if test="${vo.match_league=='NA LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__2_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
 				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=threedayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/na-lcs.png" height="32" style="margin-right: 10px">NA LCS</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list__3}" varStatus="status">
+				    		<c:if test="${vo.match_league=='NA LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__3_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 					</div>
@@ -793,255 +986,481 @@ $(function () {
 						<h4><%=threedaybefore %></h4>
 				    	<table class="table table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list_3}" varStatus="status">
+				    		<c:if test="${vo.match_league=='EU LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_3_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    			    		
 				    	</table>
 				    	<br>
 				    	<h4><%=twodaybefore %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
+				    		<c:forEach var="vo" items="${list_2}" varStatus="status">
+				    		<c:if test="${vo.match_league=='EU LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_2_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
 				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 						<br>
 				    	<h4><%=onedaybefore %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list_1}" varStatus="status">
+				    		<c:if test="${vo.match_league=='EU LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_1_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=today %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
+				    		<c:forEach var="vo" items="${list}" varStatus="status">
+				    		<c:if test="${vo.match_league=='EU LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
 				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=onedayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list__1}" varStatus="status">
+				    		<c:if test="${vo.match_league=='EU LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__1_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=twodayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
+				    		<c:forEach var="vo" items="${list__2}" varStatus="status">
+				    		<c:if test="${vo.match_league=='EU LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__2_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
 				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=threedayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/eu-lcs.png" height="32" style="margin-right: 10px">EU LCS</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
+				    		<c:forEach var="vo" items="${list__3}" varStatus="status">
+				    		<c:if test="${vo.match_league=='EU LCS' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__3_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:if test="${vo.match_league==null }">
+							<tr>
+				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
 				    		</tr>
+				    		</c:if>
 				    		
 				    	</table>
 					</div>
 				</div>
 				
-			<!-- CBLOL -->
+			<!-- Worlds -->
 				<div id="tab5" class="middle_tab_content">
 					<div class="row qnarow gametable">
 						<h4><%=threedaybefore %></h4>
 				    	<table class="table table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
-				    		</tr>
+				    		<c:forEach var="vo" items="${list_3}" varStatus="status">
+				    		<c:if test="${vo.match_league=='Worlds' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_3_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:set var="doneLoop" value="false"/>
+				    		<c:forEach var="vo" items="${list_3}" varStatus="status">
+					    		<c:if test="${vo.match_league==null }">
+									<tr>
+						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    		</tr>
+						    		<c:set var="doneLoop" value="true"/>
+					    		</c:if>
+					    	</c:forEach>
 				    			    		
 				    	</table>
 				    	<br>
 				    	<h4><%=twodaybefore %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
-				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
-				    		</tr>
+				    		<c:forEach var="vo" items="${list_2}" varStatus="status">
+				    		<c:if test="${vo.match_league=='Worlds' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_2_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:set var="doneLoop" value="false"/>
+				    		<c:forEach var="vo" items="${list_2}" varStatus="status">
+					    		<c:if test="${vo.match_league==null }">
+									<tr>
+						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    		</tr>
+						    		<c:set var="doneLoop" value="true"/>
+					    		</c:if>
+					    	</c:forEach>
 				    		
 				    	</table>
 						<br>
 				    	<h4><%=onedaybefore %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
-				    		</tr>
+				    		<c:forEach var="vo" items="${list_1}" varStatus="status">
+				    		<c:if test="${vo.match_league=='Worlds' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_1_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:set var="doneLoop" value="false"/>
+				    		<c:forEach var="vo" items="${list_1}" varStatus="status">
+					    		<c:if test="${vo.match_league==null }">
+									<tr>
+						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    		</tr>
+						    		<c:set var="doneLoop" value="true"/>
+					    		</c:if>
+					    	</c:forEach>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=today %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
-				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
-				    		</tr>
+				    		<c:forEach var="vo" items="${list}" varStatus="status">
+				    		<c:if test="${vo.match_league=='Worlds' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:set var="doneLoop" value="false"/>
+				    		<c:forEach var="vo" items="${list}" varStatus="status">
+					    		<c:if test="${vo.match_league==null }">
+									<tr>
+						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    		</tr>
+						    		<c:set var="doneLoop" value="true"/>
+					    		</c:if>
+					    	</c:forEach>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=onedayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
-				    		</tr>
+				    		<c:forEach var="vo" items="${list__1}" varStatus="status">
+				    		<c:if test="${vo.match_league=='Worlds' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__1_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:set var="doneLoop" value="false"/>
+				    		<c:forEach var="vo" items="${list__1}" varStatus="status">
+					    		<c:if test="${vo.match_league==null }">
+									<tr>
+						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    		</tr>
+						    		<c:set var="doneLoop" value="true"/>
+					    		</c:if>
+					    	</c:forEach>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=twodayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-		    				<tr>
-				    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
-				    		</tr>
+				    		<c:forEach var="vo" items="${list__2}" varStatus="status">
+				    		<c:if test="${vo.match_league=='Worlds' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__2_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:set var="doneLoop" value="false"/>
+				    		<c:forEach var="vo" items="${list__2}" varStatus="status">
+					    		<c:if test="${vo.match_league==null }">
+									<tr>
+						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    		</tr>
+						    		<c:set var="doneLoop" value="true"/>
+					    		</c:if>
+					    	</c:forEach>
 				    		
 				    	</table>
 				    	<br>
 				    	<h4><%=threedayafter %></h4>
 				    	<table class="table">
 				    		<tr>
-				    			<th width=15% class="text-center qna-th">리그</th>
-				    			<th width=23% class="text-center qna-th">대회명</th>
-				    			<th width=10% class="text-center qna-th">시간</th>
+				    			<th width=10% class="text-center qna-th">리그</th>
+				    			<th width=29% class="text-center qna-th">대회명</th>
+				    			<th width=9% class="text-center qna-th">시간</th>
 				    			<th width=37% class="text-center qna-th">경기일정 및 결과</th>
 				    			<th width=15% class="text-center qna-th">상세보기</th>
 				    		</tr>
-				    		
-			   				<tr>
-				    			<td width=15% class="text-center qna-th"><img src="gameSchedule/image/cblol.png" height="32" style="margin-right: 10px">CBLOL</td>
-				    			<td width=23% class="text-center qna-th">LOL World Cup</td>
-				    			<td width=10% class="text-center qna-th">18:00</td>
-				    			<td width=37% class="text-center qna-th">fnatic<img src="gameSchedule/image/fnatic.png" height="28">VS<img src="gameSchedule/image/faZe.png" height="28">faZe</td>
-				    			<td width=15% class="text-center qna-th"><a href="game_detail.do"><div>상세보기 ></div></a></td>
-				    		</tr>
+				    		<c:forEach var="vo" items="${list__3}" varStatus="status">
+				    		<c:if test="${vo.match_league=='Worlds' }">
+				    			<tr>
+				    				<td width=10% class="text-center qna-th">${vo.match_league }</td>				    				
+				    				<td width=29% class="text-center qna-th">${vo.match_name }</td>				    				
+				    				<td width=9% class="text-center qna-th">${vo.match_time }</td>
+				    				<td width=37% class="text-center qna-th">${vo.home_name }&nbsp;&nbsp;
+				    				<img src="${vo.team_icon }" height="28px">
+				    				&nbsp;&nbsp;&nbsp;${vo.home_score }&nbsp;:&nbsp;${vo.away_score }&nbsp;&nbsp;&nbsp;	
+				    				<img src="${list__3_[status.index].team_icon }" height="28px">	
+				    				&nbsp;&nbsp;${vo.away_name }</td>
+				    				<td width=15% class="text-center qna-th"><a href="#"><div>상세보기 ></div></a></td>
+				    			</tr>
+							</c:if>
+				    		</c:forEach>
+				    		<c:set var="doneLoop" value="false"/>
+				    		<c:forEach var="vo" items="${list__3}" varStatus="status">
+					    		<c:if test="${vo.match_league==null }">
+									<tr>
+						    			<td colspan="5"><img src="gameSchedule/image/excla.png" height="16">　경기가 없습니다.</td>
+						    		</tr>
+						    		<c:set var="doneLoop" value="true"/>
+					    		</c:if>
+					    	</c:forEach>
 				    		
 				    	</table>
 					</div>
