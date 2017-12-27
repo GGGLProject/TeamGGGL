@@ -110,27 +110,35 @@ $(function(){
 });
 </script>
 <!-- 회원가입 완료 버튼 script  -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(function(){
 
 	$('#join').click(function(){
 	 	var id=$('#id').val();
 	 	var useremail=$('#useremail').val();
-	 	var password=${'#password'}.val();
-	 	/*var telnumber=${'#telnumber'}.val();
-	 	var year=${'#year'}.val(); */
-	 	
-	 	alert(id);
-	 	alert(useremail);
-	 	alert(password);
-	 	/*alert(telnumber);
-	 	alert(year); */
-	 	 
-	 	
-		
+	 	var Mpassword=$('#Mpassword').val();
+	 	var telnumber=$('#telnumber').val();
+	 	var year=$('#year').val();
+	 	var month=$('#month').val();
+		var day=$('#day').val();
+	 	var LCK=$('#inlineCheckbox1').is(":checked");
+		var NALCS=$('#inlineCheckbox2').is(":checked");
+	 	var EULCS=$('#inlineCheckbox3').is(":checked");
+	 	var CBLOL$('#inlineCheckbox4').is(":checked");
+	 	$.ajax({
+	 		type:'post',
+			url:'memberJoin.do',
+			data:{"id":id,"useremail":useremail
+			,"Mpassword":Mpassword,"telnumber":telnumber,"year":year,"month":month
+			,"day":day,"LCK":LCK,"NALCS":NALCS,"EULCS":EULCS,"CBLOL":CBLOL
+			},
+			success:function(res){
+				
+			}
+	 	})
 	});
 });
-</script>
+</script> -->
 
 </head>
 <body>
@@ -149,7 +157,7 @@ $(function(){
               <div class="input-group"> 
                 <input type="text" class="form-control" id="id" placeholder="이름(닉네임)">
                 <span class="input-group-btn">
-                  <button class="btn btn-primary" id="checkBtn">중복확인</button>
+                  <button class="btn btn-info" id="checkBtn">중복확인</button>
                 </span>
              </div>
             </div>
@@ -160,7 +168,7 @@ $(function(){
               <div class="input-group">
                 <input type="text" class="form-control" id="useremail" placeholder="ex)admin@GGGL.com">
                 <span class="input-group-btn">
-                  <button class="btn btn-primary" id="emailcheckBtn">중복확인</button>
+                  <button class="btn btn-info" id="emailcheckBtn">중복확인</button>
                 </span>
               </div>
             </div>
@@ -168,7 +176,7 @@ $(function(){
             <!-- 비밀번호 입력 -->
             <div class="form-group">
               <label for="password">비밀번호</label>
-              <input type="password" class="form-control" id="password">
+              <input type="password" class="form-control" id="Mpassword">
             </div>
             
             <!-- 휴대폰 번호 입력  -->
@@ -227,19 +235,19 @@ $(function(){
             <div><label for="">
                 관심리그</label></div>
              <label class="radio-inline">
-                <input type="checkbox" name="LCK" id="inlineCheckbox1" value="male" />
+                <input type="checkbox" name="LCK" id="inlineCheckbox1" value="LCK" />
                 LCK
             </label>
             <label class="radio-inline">
-                <input type="checkbox" name="NALCS" id="inlineCheckbox2" value="female" />
+                <input type="checkbox" name="NALCS" id="inlineCheckbox2" value="NALCS" />
                 NALCS
             </label>
             <label class="radio-inline">
-                <input type="checkbox" name="EULCS" id="inlineCheckbox3" value="female" />
+                <input type="checkbox" name="EULCS" id="inlineCheckbox3" value="EULCS" />
                 EULCS
             </label>
             <label class="radio-inline">
-                <input type="checkbox" name="CBLOL" id="inlineCheckbox4" value="female" />
+                <input type="checkbox" name="CBLOL" id="inlineCheckbox4" value="CBLOL" />
                 CBLOL
             </label>
             
@@ -262,7 +270,7 @@ $(function(){
             <!-- 회원가입, 취소 버튼 -->
             <div class="form-group text-center">
               <button type="submit" class="btn btn-info" id="join">회원가입</button>
-              <a href="main.do"><button type="submit" class="btn btn-warning" >가입취소<i class="fa fa-times spaceLeft"></i></button></a>
+              <a href="main.do"><button type="submit" class="btn btn-default" >가입취소<i class="fa fa-times spaceLeft"></i></button></a>
             </div>
           </form>
         </div>

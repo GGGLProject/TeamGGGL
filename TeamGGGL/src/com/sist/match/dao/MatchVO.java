@@ -13,8 +13,30 @@ public class MatchVO {
 	private String away_name;
 	private int away_score;
 	private String match_videokey;
-	private String team_icon;
+	private PlayerVO pvo = new PlayerVO();
+	private TeamVO tvo = new TeamVO();
+	private String away_icon;
 	
+	
+	
+	public String getAway_icon() {
+		return away_icon;
+	}
+	public void setAway_icon(String away_icon) {
+		this.away_icon = away_icon;
+	}
+	public PlayerVO getPvo() {
+		return pvo;
+	}
+	public void setPvo(PlayerVO pvo) {
+		this.pvo = pvo;
+	}
+	public TeamVO getTvo() {
+		return tvo;
+	}
+	public void setTvo(TeamVO tvo) {
+		this.tvo = tvo;
+	}
 	public int getMatch_no() {
 		return match_no;
 	}
@@ -75,12 +97,6 @@ public class MatchVO {
 	}
 	public void setMatch_videokey(String match_videokey) {
 		this.match_videokey = match_videokey;
-	}
-	public String getTeam_icon() {
-		return team_icon;
-	}
-	public void setTeam_icon(String team_icon) {
-		this.team_icon = team_icon;
 	}
 	
 	

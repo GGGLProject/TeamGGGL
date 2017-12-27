@@ -17,10 +17,6 @@ import com.sist.match.dao.*;
 public class ScheduleModel {
 	@RequestMapping("game_detail.do")
 	public String schedule_detail(HttpServletRequest req, HttpServletResponse res) {
-		/*String match_no = req.getParameter("match_no");
-		MatchVO vo = (MatchVO) MatchDAO.match_detail_h(Integer.parseInt(match_no));
-		req.setAttribute("vo", vo);*/
-		
 		String match_no = req.getParameter("match_no");
 		List<MatchVO> h_list = MatchDAO.match_detail_h(Integer.parseInt(match_no));
 		req.setAttribute("h_list", h_list);
@@ -36,40 +32,37 @@ public class ScheduleModel {
 		SimpleDateFormat sdf=new SimpleDateFormat("yy/MM/dd");
 		String match_day = sdf.format(date);
 		
-		//String home_name = (String) req.getAttribute("home_name");
-		//String team_name = req.getParameter("team_name");
-		//String team_icon = TeamDAO.TeamImageData(team_name);
+		
 
-		List<MatchVO> list_3 = MatchDAO.matchList_3(match_day);
-		List<TeamVO> list_3_ = TeamDAO.matchList_3_(match_day);
-		List<MatchVO> list_2 = MatchDAO.matchList_2(match_day);
-		List<TeamVO> list_2_ = TeamDAO.matchList_2_(match_day);
-		List<MatchVO> list_1 = MatchDAO.matchList_1(match_day);
-		List<TeamVO> list_1_ = TeamDAO.matchList_1_(match_day);
-		List<MatchVO> list = MatchDAO.matchList(match_day);
-		List<TeamVO> list_ = TeamDAO.matchList_(match_day);
-		List<MatchVO> list__1 = MatchDAO.matchList__1(match_day);
-		List<TeamVO> list__1_ = TeamDAO.matchList__1_(match_day);
-		List<MatchVO> list__2 = MatchDAO.matchList__2(match_day);
-		List<TeamVO> list__2_ = TeamDAO.matchList__2_(match_day);
-		List<TeamVO> list__3_ = TeamDAO.matchList__3_(match_day);
-		List<MatchVO> list__3 = MatchDAO.matchList__3(match_day);
-		//List<TeamVO> iconlist = TeamDAO.TeamImageData(team_name);
-		req.setAttribute("list_3", list_3);
-		req.setAttribute("list_3_", list_3_);
-		req.setAttribute("list_2", list_2);
-		req.setAttribute("list_2_", list_2_);
-		req.setAttribute("list_1", list_1);
-		req.setAttribute("list_1_", list_1_);
-		req.setAttribute("list", list);
-		req.setAttribute("list_", list_);
-		req.setAttribute("list__1", list__1);
-		req.setAttribute("list__1_", list__1_);
-		req.setAttribute("list__2", list__2);
-		req.setAttribute("list__2_", list__2_);
-		req.setAttribute("list__3", list__3);
-		req.setAttribute("list__3_", list__3_);
-		//req.setAttribute("iconlist", iconlist); 
+		List<MatchVO> list_3h = MatchDAO.matchList_3h(match_day);
+		List<MatchVO> list_3a = MatchDAO.matchList_3a(match_day);
+		List<MatchVO> list_2h = MatchDAO.matchList_2h(match_day);
+		List<MatchVO> list_2a = MatchDAO.matchList_2a(match_day);
+		List<MatchVO> list_1h = MatchDAO.matchList_1h(match_day);
+		List<MatchVO> list_1a = MatchDAO.matchList_1a(match_day);
+		List<MatchVO> list_h = MatchDAO.matchList_h(match_day);
+		List<MatchVO> list_a = MatchDAO.matchList_a(match_day);
+		List<MatchVO> list__1h = MatchDAO.matchList__1h(match_day);
+		List<MatchVO> list__1a = MatchDAO.matchList__1a(match_day);
+		List<MatchVO> list__2h = MatchDAO.matchList__2h(match_day);
+		List<MatchVO> list__2a = MatchDAO.matchList__2a(match_day);
+		List<MatchVO> list__3h = MatchDAO.matchList__3h(match_day);
+		List<MatchVO> list__3a = MatchDAO.matchList__3a(match_day);
+
+		req.setAttribute("list_3h", list_3h);
+		req.setAttribute("list_3a", list_3a);
+		req.setAttribute("list_2h", list_2h);
+		req.setAttribute("list_2a", list_2a);
+		req.setAttribute("list_1h", list_1h);
+		req.setAttribute("list_1a", list_1a);
+		req.setAttribute("list_h", list_h);
+		req.setAttribute("list_a", list_a);
+		req.setAttribute("list__1h", list__1h);
+		req.setAttribute("list__1a", list__1a);
+		req.setAttribute("list__2h", list__2h);
+		req.setAttribute("list__2a", list__2a);
+		req.setAttribute("list__3h", list__3h);
+		req.setAttribute("list__3a", list__3a); 
 		req.setAttribute("main_jsp", "../gameSchedule/game_schedule.jsp");
 		return "gameMain/main.jsp";
 		

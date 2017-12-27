@@ -19,6 +19,14 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+
+<style type="text/css">
+.log {
+	margin-left: 1100px;
+	margin-top: 7px;
+	font-color: white;
+}
+</style>
 </head>
 <body class="body-main" data-spy="scroll" data-target=".navbar"
 	data-offset="50">
@@ -39,15 +47,29 @@
 				<li><a href="game_schedule.do">일정 / 결과</a></li>
 				<li><a href="gallery.do">갤러리</a></li>
 				<li><a href="event_list.do">이벤트</a></li>
+				<c:if test="${sessionScope.email!=null}">
+					<li><a href="#">마이페이지</a></li>
+				</c:if>
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="new_member.do"><span
-						class="glyphicon glyphicon-user"></span> 회원가입</a></li>
-				<li><a href="login.do"><span
-						class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
-			</ul>
-			<!--                <li><a href="reserve.do">영화예매</a></li>
-                                   <li><a href="recommand.do">추천영화</a></li> -->
+			<c:if test="${sessionScope.email==null }">
+				<form method=post action="login.do">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="new_member.do"><span
+								class="glyphicon glyphicon-user"></span> 회원가입</a></li>
+						<li><a href="login.do"><span
+								class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
+					</ul>
+				</form>
+			</c:if>
+
+			<c:if test="${sessionScope.email!=null }">
+				<form method=post action="logout.do">
+					<div class="log">
+						<span style="color: white;"> ${sessionScope.name }님 로그인중입니다
+						</span> <input type=submit value="로그아웃" class="button button-info">
+					</div>
+				</form>
+			</c:if>
 		</div>
 	</div>
 	</nav>
