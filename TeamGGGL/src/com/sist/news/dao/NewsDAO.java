@@ -44,79 +44,18 @@ public class NewsDAO {
 	}
 
 	public static List<NewsVO> newsRecommandData() {
-		List<NewsVO> list = new ArrayList<NewsVO>();
-		SqlSession session = ssf.openSession();
-		int no = (int) (Math.random() * 70) + 1;
-		try {
-			list = session.selectList("newsListData", no);
-		} catch (Exception e) {
-			System.out.println("NewsDAO:newsRecommandData" + e.getMessage());
-		} finally {
-			if (session != null)
-				session.close();
-		}
-		return list;
-	}
 
-	public static List<NewsVO> newsRecommandData2() {
-		List<NewsVO> list = new ArrayList<NewsVO>();
 		SqlSession session = ssf.openSession();
-		int no = (int) (Math.random() * 70) + 1;
-		try {
-			list = session.selectList("newsListData", no);
-		} catch (Exception e) {
-			System.out.println("NewsDAO:newsRecommandData" + e.getMessage());
-		} finally {
-			if (session != null)
-				session.close();
+		List<NewsVO> rlist = new ArrayList<>();
+		// no = (int) ((Math.random() * 70) + 1);
+		for (int i = 0; i < 5; i++) {
+			int no = (int) ((Math.random() * 70) + 1);
+			rlist.add(session.selectOne("newsRecommandData", no));
 		}
-		return list;
-	}
 
-	public static List<NewsVO> newsRecommandData3() {
-		List<NewsVO> list = new ArrayList<NewsVO>();
-		SqlSession session = ssf.openSession();
-		int no = (int) (Math.random() * 70) + 1;
-		try {
-			list = session.selectList("newsListData", no);
-		} catch (Exception e) {
-			System.out.println("NewsDAO:newsRecommandData" + e.getMessage());
-		} finally {
-			if (session != null)
-				session.close();
-		}
-		return list;
+		return rlist;
 	}
-
-	public static List<NewsVO> newsRecommandData4() {
-		List<NewsVO> list = new ArrayList<NewsVO>();
-		SqlSession session = ssf.openSession();
-		int no = (int) (Math.random() * 70) + 1;
-		try {
-			list = session.selectList("newsListData", no);
-		} catch (Exception e) {
-			System.out.println("NewsDAO:newsRecommandData" + e.getMessage());
-		} finally {
-			if (session != null)
-				session.close();
-		}
-		return list;
-	}
-
-	public static List<NewsVO> newsRecommandData5() {
-		List<NewsVO> list = new ArrayList<NewsVO>();
-		SqlSession session = ssf.openSession();
-		int no = (int) (Math.random() * 70) + 1;
-		try {
-			list = session.selectList("newsListData", no);
-		} catch (Exception e) {
-			System.out.println("NewsDAO:newsRecommandData" + e.getMessage());
-		} finally {
-			if (session != null)
-				session.close();
-		}
-		return list;
-	}
+	
 
 	public static List<NewsVO> newsListData(Map map) {
 		List<NewsVO> list = new ArrayList<NewsVO>();
@@ -131,7 +70,20 @@ public class NewsDAO {
 		}
 		return list;
 	}
-
+	public static List<NewsVO> newsUpdateListData() {
+		List<NewsVO> list = new ArrayList<NewsVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("newsUpdateListData");
+		} catch (Exception e) {
+			System.out.println("NewsDAO:newsListData : " + e.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+		return list;
+	}
+	
 	public static NewsVO newsDetailData(int no) {
 		SqlSession session = ssf.openSession();
 		NewsVO vo = session.selectOne("newsDetailData", no);

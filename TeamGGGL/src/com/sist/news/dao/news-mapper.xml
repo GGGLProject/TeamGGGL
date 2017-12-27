@@ -13,16 +13,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		as no
 		FROM (SELECT
 		news_no,news_title,news_name,news_content,news_regdate,news_category,news_image
-		FROM gggl_news ORDER BY news_regdate ASC ))
-		WHERE no BETWEEN #{start} AND #{end}
+		FROM gggl_news
+	   <if test="category!='all'">
+		  WHERE news_category=#{category}
+		</if> 		
+		ORDER BY news_regdate ASC ))
+		WHERE no BETWEEN #{start}
+		AND #{end}
 	</select>
 	<!-- 뉴스의 페이지 갯수 계산 -->
 	<select id="newsTotalPage" resultType="int">
-		SELECT CEIL(COUNT(*)/10) FROM gggl_news
+		SELECT CEIL(COUNT(*)/10)
+		FROM gggl_news
 	</select>
 	<!-- 뉴스의 총 갯수 계산 -->
 	<select id="newsTotalCount" resultType="int">
-		select count(*) from gggl_news
+		select count(*) from
+		gggl_news
 	</select>
 	<!-- 상세보기 -->
 	<select id="newsDetailData" resultType="NewsVO" parameterType="int">
@@ -32,21 +39,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE news_no=#{news_no}
 	</select>
 	<select id="newsImageNo" resultType="int" parameterType="int">
-		select news_no from gggl_news where news_no=#{news_no}
+		select
+		news_no from gggl_news where news_no=#{news_no}
 	</select>
 	<select id="newsImageUrl" resultType="String" parameterType="int">
 		select news_image from gggl_news where news_no=#{news_no}
 	</select>
-		<select id="newsReccomandData" resultType="NewsVO" parameterType="int">
+	<select id="newsRecommandData" resultType="NewsVO"
+		parameterType="int">
 		SELECT
-		news_no,news_title from gggl_news where news_no=#{news_no}
+		news_no,news_title from gggl_news where
+		news_no=#{news_no}
 	</select>
-	<!-- 찾기 find
-	<select id="boardFindData" resultType="BoardVO" parameterType="java.util.Map">
-		SELECT no,subject,name,regdate,hit
-		FROM gggl_news
-		WHERE ${fs} LIKE '%'||#{ss}||'%'
-	</select> -->
+	<select id="newsUpdateListData" resultType="NewsVO">
+
+
+		select * from (select
+		news_no, news_title from gggl_news order by
+		news_regdate desc) where
+		rownum &lt;= 5
+
+	</select>
+	<!-- 찾기 find <select id="boardFindData" resultType="BoardVO" parameterType="java.util.Map"> 
+		SELECT no,subject,name,regdate,hit FROM gggl_news WHERE ${fs} LIKE '%'||#{ss}||'%' 
+		</select> -->
 </mapper>
 
 
