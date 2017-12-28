@@ -12,30 +12,30 @@
 <link href="css/member.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript">
-function showPassword() {
-    
-    var key_attr = $('#key').attr('type');
-    
+$(function(){
+    $('.character-checkbox').click(function(){
+    var key_attr = $('#Password').attr('type');
+   
     if(key_attr != 'text') {
         
         $('.checkbox').addClass('show');
-        $('#key').attr('type', 'text');
+        $('#Password').attr('type', 'text');
         
     } else {
         
         $('.checkbox').removeClass('show');
-        $('#key').attr('type', 'password');
+        $('#Password').attr('type', 'password');
         
     }
+    });
     
-    
-}
+});
 </script>
 
 </head>
 <body>
 	<section id="login">
-    <div class="allbox container">
+    <div class="container">
     	<div class="row">
     	    <div class="col-xs-12">
         	    <div class="form-wrap">
@@ -50,11 +50,12 @@ function showPassword() {
                             <label for="key" class="sr-only">Password</label>
                             <input type="password" name="Password" id="Password" class="form-control" placeholder="Password">
                         </div>
-                        
+                         
                         <div class="checkbox">
-                            <span class="character-checkbox" onclick="showPassword()"></span>
-                            <span class="label">Show password</span>
+                            <a herf="" class="character-checkbox"></a>
+                            <a class="label">Show password</a>
                         </div>
+                        
                         <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="·Î±×ÀÎ">
                     </form>
                    
