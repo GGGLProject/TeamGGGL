@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.sist.match.dao.TeamVO" alias="TeamVO"/>
 		<typeAlias type="com.sist.match.dao.PlayerVO" alias="PlayerVO"/>
 		<typeAlias type="com.sist.event.dao.EventVO" alias="EventVO"/>
-		
+		<typeAlias type="com.sist.gallery.dao.GalleryVO" alias="GalleryVO"/>
 	</typeAliases> 
 	<!-- "(environment)+" -->
 	<environments default="development">
@@ -33,7 +33,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="com/sist/match/dao/Match-mapper.xml"/>
     	<mapper resource="com/sist/event/dao/event-mapper.xml"/>
     	<mapper resource="com/sist/member/dao/member_mapper.xml"/>
-  
+  		<mapper resource="com/sist/gallery/dao/gallery-mapper.xml"/>
 	</mappers>
 </configuration>
 
