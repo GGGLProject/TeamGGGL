@@ -18,15 +18,32 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 FROM GGGL_member
 	 WHERE member_id=#{memberEmailCheck}
 	</select>
-	
+	<!-- 아이디가 있는지 체크 -->
 	<select id="memberEmailCount" parameterType="String" resultType="int">
 	SELECT COUNT(*) FROM GGGL_member
 	WHERE member_id=#{email}
 	</select>
-	
+	<!-- 아이디가 비밀번호와 일치하는지 체크 -->
 	<select id="memberGetPassword" parameterType="String" resultType="com.sist.member.dao.MemberVO">
 	SELECT member_pwd,member_nickname,member_grade FROM GGGL_member
 	WHERE member_id=#{email}
 	</select>
+	
+	<insert id="memberJoin">
+	<!-- 자동 증가번호(sequence)에 사용, BEFORE: 먼저 사용(insert보다 먼저 사용됨) 
+      <selectKey keyProperty="event_no" resultType="int" order="BEFORE">
+         SELECT NVL(MAX(event_no)+1, 1) as event_no FROM gggl_event 
+        
+            -> 함수가 나올땐 컬럼명을 잡고 들어간다.
+            int no = rs.getInt("no") 
+          -->
+     <selectKey keyProperty="member_no" resultType="int" order="BEFORE">
+     	SELECT NVL(MAX(member_no)+1,1) as member_no FROM GGGL_member
+     </selectKey>
+	<!-- INSERT INTO GGGL_member VALUES('dogin@naver.com','1234',3,'dogin','LCK','010-1111-2222','1',SYSDATE,'1993-01-01'); -->
+	INSERT INTO GGGL_member VALUES(#{member_id},#{member_pwd},#{member_no},#{member_nickname},#{member_favor},#{member_phone},'2',SYSDATE,#{member_birthday})
+	</insert>
+	
+	
 </mapper>
 

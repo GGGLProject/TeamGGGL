@@ -12,12 +12,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="css/newmember.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>  
 
 
 <!-- 이름 닉네임 체크 부분  -->
 <script type="text/javascript">
-$(function(){
+$(function emailCheckfunction(){
 	 $('#checkBtn').click(function(){
 	 	var id=$('#id').val();
 		if(id.trim()=="")
@@ -109,36 +111,8 @@ $(function(){
 	
 });
 </script>
-<!-- 회원가입 완료 버튼 script  -->
-<!-- <script type="text/javascript">
-$(function(){
 
-	$('#join').click(function(){
-	 	var id=$('#id').val();
-	 	var useremail=$('#useremail').val();
-	 	var Mpassword=$('#Mpassword').val();
-	 	var telnumber=$('#telnumber').val();
-	 	var year=$('#year').val();
-	 	var month=$('#month').val();
-		var day=$('#day').val();
-	 	var LCK=$('#inlineCheckbox1').is(":checked");
-		var NALCS=$('#inlineCheckbox2').is(":checked");
-	 	var EULCS=$('#inlineCheckbox3').is(":checked");
-	 	var CBLOL$('#inlineCheckbox4').is(":checked");
-	 	$.ajax({
-	 		type:'post',
-			url:'memberJoin.do',
-			data:{"id":id,"useremail":useremail
-			,"Mpassword":Mpassword,"telnumber":telnumber,"year":year,"month":month
-			,"day":day,"LCK":LCK,"NALCS":NALCS,"EULCS":EULCS,"CBLOL":CBLOL
-			},
-			success:function(res){
-				
-			}
-	 	})
-	});
-});
-</script> -->
+
 
 </head>
 <body>
@@ -148,16 +122,19 @@ $(function(){
           <h1>회원가입 <small></small></h1>
         </div>
         <div class="col-md-6 col-md-offset-3">
-         <!--  <form role="form">  이색기쓰면 새로운 창으로 바뀜 시발색기임 -->
+          
          
-         
+          <form method="post" action="memberJoin.do">
           <!--  이름 닉네임 입력 부분 -->
            <div class="name form-group">
               <label for="username">이름(닉네임)</label>
               <div class="input-group"> 
-                <input type="text" class="form-control" id="id" placeholder="이름(닉네임)">
+              
+                <input type="text" class="form-control" name="id" id="id" placeholder="이름(닉네임)">
+              
                 <span class="input-group-btn">
-                  <button class="btn btn-info" id="checkBtn">중복확인</button>
+        
+                  <a href="#" class="btn btn-info" onClick="emailCheckfunction();" id="checkBtn">중복확인</a>
                 </span>
              </div>
             </div>
@@ -166,9 +143,11 @@ $(function(){
             <div class="email form-group">
               <label for="username">이메일</label>
               <div class="input-group">
-                <input type="text" class="form-control" id="useremail" placeholder="ex)admin@GGGL.com">
+             
+                <input type="text" class="form-control" name="email" id="useremail" placeholder="ex)admin@GGGL.com">
+             
                 <span class="input-group-btn">
-                  <button class="btn btn-info" id="emailcheckBtn">중복확인</button>
+                  <a href="#" class="btn btn-info" id="emailcheckBtn">중복확인</a>
                 </span>
               </div>
             </div>
@@ -176,15 +155,18 @@ $(function(){
             <!-- 비밀번호 입력 -->
             <div class="form-group">
               <label for="password">비밀번호</label>
-              <input type="password" class="form-control" id="Mpassword">
+              
+              <input type="password" name="Mpassword" class="form-control" id="Mpassword">
+      
             </div>
             
             <!-- 휴대폰 번호 입력  -->
             <div class="form-group">
               <label for="telnumber">휴대폰 번호</label>
               <div class="input-group">
-                <input type="tel" class="form-control" id="telnumber" placeholder="- 삽입하고 입력해 주세요">
-         
+            
+                <input type="tel" class="form-control" name="telnumber" id="telnumber" placeholder="- 삽입하고 입력해 주세요">
+         	
               </div>
             </div>
             
@@ -197,12 +179,13 @@ $(function(){
                 <div class="col-xs-4 col-md-4">
                 
                 <!-- 년도 옵션 박스 -->
-                    <select class="form-control" id="year">
+              
+                    <select class="form-control" name="year" id="year">
                     <option>년도</option>
           			 <c:forEach var="i" begin="1950" end="2020" step="1" >
 						
                         <option value="${i}" <c:if test="${i == (now.year + 1900)}">selected</c:if> >${i}년</option>
-
+						
                  	  </c:forEach>
 
                     </select>
@@ -210,47 +193,52 @@ $(function(){
                 </div>
                 <!-- 월 옵션 박스 -->
                 <div class="col-xs-4 col-md-4">
-                    <select class="form-control" id="month">
+                    <select class="form-control" name="month" id="month">
                         <option value="Day">월</option>
                          <c:forEach var="i" begin="1" end="12" step="1" >
+                         
                         <option value="${i}">${i}월</option>
+                        
                  	  </c:forEach>
                     </select>
                 </div>
                 
                 <!-- 일 옵션 박스 -->
                 <div class="col-xs-4 col-md-4">
-                    <select class="form-control" id="day">
+                    <select class="form-control" name="day" id="day">
                         <option value="day">일</option>
                          <c:forEach var="i" begin="1" end="31" step="1" >
+                         
                         <option value="${i}">${i}일</option>
+                        
                         </c:forEach>
                     </select>
                 </div>
             </div>
-            
+         
             
             
             <!-- 관심리그 입력 -->
+           
             <div><label for="">
                 관심리그</label></div>
              <label class="radio-inline">
-                <input type="checkbox" name="LCK" id="inlineCheckbox1" value="LCK" />
+                <input type="checkbox" name="favor" id="Checkbox1" value="LCK" />
                 LCK
             </label>
             <label class="radio-inline">
-                <input type="checkbox" name="NALCS" id="inlineCheckbox2" value="NALCS" />
+                <input type="checkbox" name="favor" id="Checkbox2" value="NALCS" />
                 NALCS
             </label>
             <label class="radio-inline">
-                <input type="checkbox" name="EULCS" id="inlineCheckbox3" value="EULCS" />
+                <input type="checkbox" name="favor" id="Checkbox3" value="EULCS" />
                 EULCS
             </label>
             <label class="radio-inline">
-                <input type="checkbox" name="CBLOL" id="inlineCheckbox4" value="CBLOL" />
+                <input type="checkbox" name="favor" id="Checkbox4" value="CBLOL" />
                 CBLOL
             </label>
-            
+        
             
             
             
@@ -269,16 +257,16 @@ $(function(){
             
             <!-- 회원가입, 취소 버튼 -->
             <div class="form-group text-center">
-              <button type="submit" class="btn btn-info" id="join">회원가입</button>
+           
+              <input type="submit" class="btn btn-info" id="join" value="회원가입"/>
+            
               <a href="main.do"><button type="submit" class="btn btn-default" >가입취소<i class="fa fa-times spaceLeft"></i></button></a>
             </div>
-          </form>
+              </form>
         </div>
- 
+		
       </article>
 
-     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>  
+
 </body>
 </html>

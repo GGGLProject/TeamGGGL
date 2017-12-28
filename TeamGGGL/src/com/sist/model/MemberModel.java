@@ -77,4 +77,37 @@ public class MemberModel {
 		session.invalidate();
 		return "gameMember/logout_ok.jsp";
 	}
+	@RequestMapping("memberJoin.do")
+	public String memberJoin(HttpServletRequest req,HttpServletResponse res) {
+		String id =req.getParameter("id");
+		String email=req.getParameter("email");
+		String pwd=req.getParameter("Mpassword");
+		String telnumber=req.getParameter("telnumber");
+		String year=req.getParameter("year");
+		String month=req.getParameter("month");
+		String day=req.getParameter("day");
+		String birthday=year+"-"+month+"-"+day;
+		
+		String[] favors= req.getParameterValues("favor");
+		
+		String favor="";
+		for(String s:favors) {
+			
+			favor+=s+",";
+		}
+		
+		MemberVO vo=new MemberVO();
+		vo.setMember_nickname(id);
+		vo.setMember_id(email);
+		vo.setMember_pwd(pwd);
+		vo.setMember_phone(telnumber);
+		vo.setMember_birthday(birthday);
+		vo.setMember_favor(favor);
+		
+		req.setAttribute("vo", vo);
+		MemberDAO.memberJoin(vo);
+		req.setAttribute("main_jsp", "../gameMain/main.jsp");
+		return "main.do";
+	}
+	
 }
