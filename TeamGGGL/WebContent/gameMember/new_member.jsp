@@ -108,7 +108,9 @@ $(function(){
 	$('.ya').click(function(){
 		$(".ya").prop('class', 'btn btn-success');
 	});
-	
+	$('#join').click(function(){
+		
+	})
 });
 </script>
 
@@ -259,14 +261,14 @@ $(function(){
             <div class="form-group text-center">
            
               <input type="submit" class="btn btn-info" id="join" value="회원가입"/>
+            	
+              <a href="main.do" type="submit" class="btn btn-default" >가입취소</a>
             
-              <a href="main.do"><button type="submit" class="btn btn-default" >가입취소<i class="fa fa-times spaceLeft"></i></button></a>
-            </div>
               </form>
         </div>
 		
       </article>
-
+      
 
 </body>
 </html>
