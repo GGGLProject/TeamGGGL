@@ -24,9 +24,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		as num
 		FROM (SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path
-		FROM gggl_gallery ORDER BY gallery_title ASC ))
+		FROM gggl_gallery 
+		WHERE gallery_category='TOP' 
+		ORDER BY gallery_title ASC ))
 		WHERE num BETWEEN #{start} AND #{end}
-		AND gallery_category='TOP'
 	</select>
 	<select id="galleryListMid" resultType="GalleryVO" parameterType="java.util.Map">
 		SELECT
@@ -36,9 +37,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		as num
 		FROM (SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path
-		FROM gggl_gallery ORDER BY gallery_title ASC ))
+		FROM gggl_gallery 
+		WHERE gallery_category='MID'
+		ORDER BY gallery_title ASC ))
 		WHERE num BETWEEN #{start} AND #{end}
-		AND gallery_category='MID'
+		
 	</select>
 	<select id="galleryListJungle" resultType="GalleryVO" parameterType="java.util.Map">
 		SELECT
@@ -48,9 +51,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		as num
 		FROM (SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path
-		FROM gggl_gallery ORDER BY gallery_title ASC ))
+		FROM gggl_gallery 
+		WHERE gallery_category='JUNGLE'
+		ORDER BY gallery_title ASC ))
 		WHERE num BETWEEN #{start} AND #{end}
-		AND gallery_category='JUNGLE'
+		
 	</select>
 	<select id="galleryListBottom" resultType="GalleryVO" parameterType="java.util.Map">
 		SELECT
@@ -60,9 +65,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		as num
 		FROM (SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path
-		FROM gggl_gallery ORDER BY gallery_title ASC ))
+		FROM gggl_gallery 
+		WHERE gallery_category='BOTTOM'
+		ORDER BY gallery_title ASC ))
 		WHERE num BETWEEN #{start} AND #{end}
-		AND gallery_category='BOTTOM'
+		
 	</select>
 	<select id="galleryListSupport" resultType="GalleryVO" parameterType="java.util.Map">
 		SELECT
@@ -72,9 +79,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		as num
 		FROM (SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path
-		FROM gggl_gallery ORDER BY gallery_title ASC ))
+		FROM gggl_gallery 
+		WHERE gallery_category='SUPPORT'
+		ORDER BY gallery_title ASC ))
 		WHERE num BETWEEN #{start} AND #{end}
-		AND gallery_category='SUPPORT'
+		
 	</select>
 	<!-- 총페이지 -->
 	<select id="galleryTotalPage" resultType="int">
