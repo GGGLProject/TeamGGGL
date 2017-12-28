@@ -71,38 +71,82 @@ public class EventModel {
 		req.setAttribute("main_jsp", "../gameEvent/event_content.jsp");
 		return "gameMain/main.jsp";
 	}
-	
 	@RequestMapping("event_write.do")
 	public String event_write(HttpServletRequest req, HttpServletResponse res) {
-		 
-		 String realFolder = "";
+		req.setAttribute("main_jsp", "../gameEvent/event_write.jsp");
+		return "gameMain/main.jsp";
+	}
+	@RequestMapping("event_insert_ok.do")
+	public String event_insert_ok(HttpServletRequest req, HttpServletResponse res) throws Throwable {
+	
+		String realFolder = "";
 		 String filename1 = "";
-		 int maxSize = 1024*1024*5;
-		 String encType = "euc-kr";
-		 String savefile = "WebContent\\WEB-INF\\image";
+		 int maxSize = 400*400*10;
+		 String encType = "EUC-KR";
+		 String savefile = "image";
 //		 ServletContext scontext = getServletContext();
-		 realFolder = req.getServletContext().getRealPath(savefile);
-		 
+		 realFolder = "C:\\git\\TeamGGGL\\TeamGGGL\\WebContent\\image";
+		 	
+		 //선언부 
+		 String day="";
+		 Date event_day = new Date();
+		 String event_place="";
+		 String event_category="";
+		 String event_city="";
+		 String event_title="";
+		 String event_content="";
+		 String image_path="image";
 		 try{
-			 req.setCharacterEncoding("euc-kr");
+			 req.setCharacterEncoding("EUC-KR");
 		  MultipartRequest multi=new MultipartRequest(req, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
 
 		  Enumeration<?> files = multi.getFileNames();
 		     String file1 = (String)files.nextElement();
 		     filename1 = multi.getFilesystemName(file1);
+		     day=multi.getParameter("day");
+		     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		     event_day = sdf.parse(day);
+		     event_place=multi.getParameter("place");
+		     event_category=multi.getParameter("category");
+			 event_city=multi.getParameter("city");
+			 event_title=multi.getParameter("subject");
+			 event_content=multi.getParameter("content");
 		 } catch(Exception ex) {
-			 System.out.println("이미지업로드(event_write.do):"+ex.getMessage());
+			 System.out.println("이미지업로드(event_insert_ok.do):"+ex.getMessage());
 		 }
 		 
-		 String fullpath = realFolder + "\\" + filename1;
+		 String fullpath = image_path + "/" + filename1;
+		 System.out.println(fullpath);
+		 String event_image = fullpath;
+//			String event_id=req.getParameter("name");
+			
+//			System.out.println("day1:"+day);
+			
+//			System.out.println("event_day:"+event_day);
+//			String event_image=req.getParameter("upload");
 	
-		System.out.println(fullpath);
+			System.out.println("vo이전 try이전:"+event_place + " / " +event_city);
+		 
+		 
+		 
+		EventVO vo =new EventVO();
+		vo.setEvent_id("이미지-테스트");
+		vo.setEvent_day(event_day);
+		vo.setEvent_place(event_place);
+		vo.setEvent_image(event_image);
+		vo.setEvent_category(event_category);
+		vo.setEvent_city(event_city);
+		vo.setEvent_title(event_title);
+		vo.setEvent_content(event_content);
+		
+		System.out.println("vo이후 :"+event_place + " / " +event_city);
+		EventDAO.eventInsert(vo);
 		
 		
-		req.setAttribute("main_jsp", "../gameEvent/event_write.jsp");
-		return "gameMain/main.jsp";
+		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
+		return "event_list.do";
 	}
-	@RequestMapping("event_insert_ok.do")
+/*	@RequestMapping("event_insert_ok.do")
 	public String event_insert_ok(HttpServletRequest req, HttpServletResponse res) throws Throwable {
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("EUC-KR");
@@ -136,6 +180,6 @@ public class EventModel {
 		
 		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
 		return "event_list.do";
-	}
+	}*/
 	
 }

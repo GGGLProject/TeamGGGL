@@ -4,7 +4,9 @@ body {
 	background-attachment: fixed;
 	color: #dedee0;
 }
-
+.content_board {
+	background-color: rgba(0,0,0,0.8);
+}
 .comment {
 	background-color: rgba(0,0,0,0.8);
 }
@@ -14,8 +16,13 @@ body {
 	
 } */
 
-.input {
+.table th {
 	background-color: rgba(0,0,0,0.8);
+	
+}
+
+.input {
+	
 }
 
 h2 {
@@ -39,12 +46,12 @@ h2 {
 }
 
 pre {
-	background-color: rgba(0,0,0,0.8);
-	color:white
+	background-color: rgba(0,0,0,0.5);
+	color:white;
 }
 
 .table {
-	 background-color: rgba(0,0,0,0.9);
+	 
 }
 
 

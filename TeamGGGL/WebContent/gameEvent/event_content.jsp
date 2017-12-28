@@ -30,31 +30,31 @@
 		<div class="row">
 			<h2 class="text-center"><strong>이벤트 게시판</strong></h2>
 			<br>
-			<div class="col">
+			<div class="col content_board">
 				<div class="col-lg-6">
 					<table class="table">
 						<tr>
-							<td class="text-center" colspan=2>이벤트 / 대회</td>
+							<th class="text-center" colspan=2>이벤트 / 대회</th>
 						</tr>
 						<tr>
-							<td width=20% class="text-center">이벤트 일정</td>
+							<th width=20% class="text-center">이벤트 일정</th>
 							<td width=30% class="text-center"><fmt:formatDate value="${vo.event_day}" pattern="yyyy.MM.dd(E)" /></td>
 						<tr>
-							<td width=20% class="text-center">이벤트 장소</td>
+							<th width=20% class="text-center">이벤트 장소</th>
 							<td width=30% class="text-center">${vo.event_place }</td>
 						</tr>
 						<tr>
-							<td class="text-center" colspan=2>대표 포스터</td>
+							<th class="text-center" colspan=2>대표 포스터</th>
 						</tr>
 						<tr>
 							<td class="text-center" colspan=2>
-								<img src="${vo.event_image }" class="event-img" height=350>
+								<img src="${vo.event_image }" class="event-img" height=320>
 							</td>
 						</tr>
 						<tr>
-							<td class="text-center" colspan=2>
-								<center>${vo.event_place } / ${vo.event_category } 대회 </center>
-							</td>
+							<th class="text-center" colspan=2>
+								<center> 주최자 : ${vo.event_id } / 대회 ${vo.event_category }  </center>
+							</th>
 						</tr>
 					</table>
 				</div>
@@ -62,22 +62,23 @@
 				<div class="col-lg-6">
 					<table class="table event-table">
 						<tr>
-							<td width=10% class="text-right">분류</td>
-							<td width=40% class="text-left">
+							<th width=15% class="text-right">분류</th>
+							<td width=35% class="text-left">
 									${vo.event_category }		
 							</td>
 						</tr>
 						<tr>
-							<td width=10% class="text-right">지역</td>
-							<td width=40% class="text-left" >${vo.event_city }</td>
+							<th width=15% class="text-right">지역</th>
+							<td width=35% class="text-left" >${vo.event_city }</td>
 						</tr>
 						<tr>
-							<td width=10% class="text-right qna-td">제목</td>
-							<td class="text" width=40% class="text-left qna-td">${vo.event_title }</td>
+							<th width=15% class="text-right qna-td">제목</th>
+							<td class="text" width=35% class="text-left qna-td">${vo.event_title }</td>
 						</tr>						
 						<tr>
-							<td class="text-right qna-td" valign="top">내용</td>
-							<td class="input text-left qna-td">
+							<th class="text-right qna-td" valign="top">내용</th>
+							<td class="input text-left qna-td" align="left" valign="top"
+            height="400">
 								<pre class="input">
 		
 		
