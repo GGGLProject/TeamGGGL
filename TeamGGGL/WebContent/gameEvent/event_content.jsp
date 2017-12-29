@@ -226,10 +226,16 @@
 		</div>
 		<!--코멘트끝  -->
 		<p>
+	
 			<div class="text-right">
+				<c:if test="${sessionScope.email!=vo.event_id }">	
+					<a href="event_list.do"><input type="button" class="btn btn-nm btn-success" value="목록"></a>
+						</c:if>
+				<c:if test="${sessionScope.email==vo.event_id }">
 					<input type="button" value="수정" class="btn btn-nm btn-info">
 					<a href="event_list.do"><input type="button" class="btn btn-nm btn-success" value="목록"></a>
 						<input type="button" value="삭제" class="btn btn-nm btn-danger">
+				</c:if>
 				</div>
 		</div>
 

@@ -158,9 +158,11 @@
 
 							<li><a href="event_list.do?page=${curpage<=totalpage-10?curpage+10:curpage}">&raquo;</a></li>
 						</ul>
+						<c:if test="${sessionScope.email!=null }">
+						<%-- <c:if test="${sessionScope.admin<3 } "> --%>
 						<a href="event_write.do" style="float: right;"
 						class="btn btn-danger btn-nm btn-sub">µî·Ï</a>
-						
+						</c:if>
 						</center>
 						
 			</div>

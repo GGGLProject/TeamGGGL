@@ -103,6 +103,7 @@
 									<center>
 										<input type="file" name=upload id="upload"
 											onchange="document.getElementById('img').src = window.URL.createObjectURL(this.files[0])">
+											
 									</center>
 								</td>
 							</tr>
@@ -166,11 +167,16 @@
 								</textarea></td>
 							</tr>
 						</table>
+						
 				</form>
 			</div>
+			
 			<div class="text-right">
+			<c:if test="${sessionScope.email!=null }">
 				<input type="button" value="등록" class="btn btn-nm btn-danger"
-					id="writeBtn"> <input type="button"
+					id="writeBtn">
+					</c:if>
+					 <input type="button"
 					class="btn btn-nm btn-success" value="취소"
 					onclick="javascript:history.back()">
 			</div>

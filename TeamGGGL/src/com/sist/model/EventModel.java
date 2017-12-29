@@ -7,6 +7,7 @@ import java.util.*;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -27,6 +28,7 @@ public class EventModel {
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("EUC-KR");
 		String page= req.getParameter("page");
+		
 		// request => 기존요청값 + 추가 (setAttribute())
 		if(page==null)
 			page="1";
@@ -49,11 +51,11 @@ public class EventModel {
 //		{	event_day=list.get(i).getEvent_day();
 //			event_days[i] = sdf.format(event_day);
 //		}
-//		req.setAttribute("event_day", event_days);
-		for (int i =0; i<list.size(); i++) {
-		System.out.println("event_day:"+list.get(i).getEvent_day());
-		System.out.println("regdate:"+list.get(i).getEvnet_regdate());
-		}
+//		req.setAttribute("event_day", event_days);\
+		
+		
+//		HttpSession session=req.getSession();
+//		String id = (String) session.getAttribute("admin");
 		req.setAttribute("list", list);
 		req.setAttribute("curpage", curpage);
 		int totalpage= EventDAO.eventTotalPage();
@@ -81,7 +83,7 @@ public class EventModel {
 	}
 	@RequestMapping("event_insert_ok.do")
 	public String event_insert_ok(HttpServletRequest req, HttpServletResponse res) throws Throwable {
-	
+		HttpSession session=req.getSession();
 		String realFolder = "";
 		 String filename1 = "";
 		 int maxSize = 400*400*10;
@@ -121,19 +123,13 @@ public class EventModel {
 		 String fullpath = image_path + "/" + filename1;
 		 System.out.println(fullpath);
 		 String event_image = fullpath;
-//			String event_id=req.getParameter("name");
-			
-//			System.out.println("day1:"+day);
-			
-//			System.out.println("event_day:"+event_day);
-//			String event_image=req.getParameter("upload");
-	
-			System.out.println("vo이전 try이전:"+event_place + " / " +event_city);
-		 
-		 
+		
+		 String id = (String)session.getAttribute("name");
+
+			System.out.println(id);
 		 
 		EventVO vo =new EventVO();
-		vo.setEvent_id("이미지-테스트");
+		vo.setEvent_id(id);
 		vo.setEvent_day(event_day);
 		vo.setEvent_place(event_place);
 		vo.setEvent_image(event_image);
@@ -142,7 +138,7 @@ public class EventModel {
 		vo.setEvent_title(event_title);
 		vo.setEvent_content(event_content);
 		
-		System.out.println("vo이후 :"+event_place + " / " +event_city);
+//		System.out.println("vo이후 :"+event_place + " / " +event_city);
 		EventDAO.eventInsert(vo);
 		
 		
