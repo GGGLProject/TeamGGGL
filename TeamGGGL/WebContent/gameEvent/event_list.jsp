@@ -34,8 +34,27 @@
 						<th class="text-center" width="10%">게시자</th>
 						<th class="text-center" width="5%">조회수</th>
 					</tr>
-
+					
 					<c:forEach var="vo" items="${list }">
+						<c:if test="${vo.event_day<today }">
+						<tr class="text-link" style="background-color: rgba(0,0,0,0.9); color:gray; opacity:0.5;">
+							<td class="text-center td-top">${vo.event_no }</td>
+							<td class="text-center td-top">종료</td>
+							<td class="text-center"><a href="event_content.do"><img
+									src="${vo.event_image }" width=100 height=50></a></td>
+							<td class="text-center td-top"><a href="event_content.do?no=${vo.event_no }" style="background-color: rgba(0,0,0,0.9); color:gray;">${vo.event_title }</a></td>
+							<td class="text-center td-top"><%-- <fmt:parseDate var="parsedDate" value="${vo.event_day }" pattern="yyy-MM-dd" />
+							<fmt:formatDate var="newFormattedDateString" value="${parseDate }" pattern="yyy-MM-dd" /> --%>
+							<fmt:formatDate value="${vo.event_day}" pattern="yyyy.MM.dd(E)" />
+							</td>
+							<!--<fmt:formatDate	value="${vo.event_day }"  type="date" dateStyle="full" /></td>-->
+							<td class="text-center td-top">${vo.event_place }</td>
+							<td class="text-center td-top">${vo.event_id }</td>
+							<td class="text-center td-top">${vo.event_hit }</td>
+						</tr>
+						
+						</c:if>
+						<c:if test="${vo.event_day>=today }">
 						<tr class="text-link">
 							<td class="text-center td-top">${vo.event_no }</td>
 							<td class="text-center td-top">${vo.event_category }</td>
@@ -51,6 +70,7 @@
 							<td class="text-center td-top">${vo.event_id }</td>
 							<td class="text-center td-top">${vo.event_hit }</td>
 						</tr>
+						</c:if>
 					</c:forEach>
 				</table>
 	

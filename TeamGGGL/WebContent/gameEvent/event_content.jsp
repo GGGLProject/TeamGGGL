@@ -62,31 +62,28 @@
 				<div class="col-lg-6">
 					<table class="table event-table">
 						<tr>
-							<th width=15% class="text-right">분류</th>
-							<td width=35% class="text-left">
+							<th width=20% class="text-right">분류</th>
+							<td width=30% class="text-left">
 									${vo.event_category }		
 							</td>
 						</tr>
 						<tr>
-							<th width=15% class="text-right">지역</th>
-							<td width=35% class="text-left" >${vo.event_city }</td>
+							<th width=20% class="text-right">지역</th>
+							<td width=30% class="text-left" >${vo.event_city }</td>
 						</tr>
 						<tr>
-							<th width=15% class="text-right qna-td">제목</th>
-							<td class="text" width=35% class="text-left qna-td">${vo.event_title }</td>
+							<th width=20% class="text-right qna-td">제목</th>
+							<td class="text" width=30% class="text-left qna-td">${vo.event_title }</td>
 						</tr>						
 						<tr>
-							<th class="text-right qna-td" valign="top">내용</th>
-							<td class="input text-left qna-td" align="left" valign="top"
-            height="400">
-								<pre class="input">
-		
-		
+							<th class="input text-left qna-td" valign="top">내용</th>
+															<td width=30% class="text-left qna-td"><pre class="input"><textarea
+										class="input" rows="15" cols="65" name=content id="content">
+										
  ${vo.event_content }
 
+								</textarea> </pre></td>
 
-								</pre>
-							</td>
 						</tr>
 					</table>
 				

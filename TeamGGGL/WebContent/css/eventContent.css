@@ -20,10 +20,14 @@ body {
 	background-color: rgba(0,0,0,0.8);
 	
 }
-
 .input {
-	
+	background-color: rgba(0,0,0,0.1);
 }
+
+.event-img {
+	border: 1px solid black;
+}
+
 
 h2 {
 	padding-top: 40px;

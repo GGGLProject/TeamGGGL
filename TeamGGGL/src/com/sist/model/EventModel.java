@@ -37,7 +37,9 @@ public class EventModel {
 		Map map = new HashMap();
 		map.put("start", start);
 		map.put("end", end);
-		
+		Date date = new Date();
+		SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
+		String today = sdf.format(date);
 
 		List<EventVO> list = EventDAO.eventListData(map);
 //		String event_day;
@@ -56,6 +58,7 @@ public class EventModel {
 		req.setAttribute("curpage", curpage);
 		int totalpage= EventDAO.eventTotalPage();
 		req.setAttribute("totalpage", totalpage);
+		req.setAttribute("today", date);
 		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
 		return "gameMain/main.jsp";
 	}
