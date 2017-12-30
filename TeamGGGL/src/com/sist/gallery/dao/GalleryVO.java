@@ -9,6 +9,8 @@ public class GalleryVO {
 	private Date gallery_regdate;
 	private String gallery_category;
 	private String gallery_path;
+	private String gallery_img;
+	
 	
 	public int getGallery_no() {
 		return gallery_no;
@@ -45,6 +47,12 @@ public class GalleryVO {
 	}
 	public void setGallery_path(String gallery_path) {
 		this.gallery_path = gallery_path;
+	}
+	public String getGallery_img() {
+		return gallery_img;
+	}
+	public void setGallery_img(String gallery_img) {
+		this.gallery_img = gallery_img;
 	}
 	
 

@@ -11,7 +11,7 @@
 <link href="css/gameGallery.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
+<!-- <script>
 	var modalImg = document.getElementById("img01");
 	var captionText = document.getElementById("caption");
 	// Get the modal
@@ -40,6 +40,9 @@
 	$(".hover").mouseleave(function() {
 		$(this).removeClass("hover");
 	});
+</script> -->
+<script type="text/javascript">
+
 </script>
 <script type="text/javascript">
 $(function () {
@@ -81,7 +84,7 @@ $(function () {
 					<!-- <div class="row qnarow gametable text-center"> -->
 							<c:forEach var="vo" items="${list_all}">
 								<figure class="snip1200" id="myImg1"> <img id="modal1"
-									src="${vo.gallery_path }" alt="lol" /> <figcaption>
+									src="gameGallery/image/${vo.gallery_img }.jpg" alt="lol" /> <figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading">
 									<h2>
@@ -112,7 +115,6 @@ $(function () {
 						</ul>
 					</center>
 				
-
 				</div>
 				<!-- middle_tab_content -->
 				
@@ -123,7 +125,7 @@ $(function () {
 						<div class="row text-center">
 							<c:forEach var="vo" items="${list_t}">
 								<figure class="snip1200" id="myImg1"> <img id="modal1"
-									src="${vo.gallery_path }" alt="lol" /> <figcaption>
+									src="gameGallery/image/${vo.gallery_img }.jpg" alt="lol" /> <figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading">
 									<h2>
@@ -136,25 +138,7 @@ $(function () {
 						<!-- //row text-center -->
 					</div>
 					<!-- //row qnarow gametable -->
-					<center>
-						<ul class="pagination pagination-centered">
-							<li><a href="gallery.do?page=${curpage<11?curpage:curpage-10}">&laquo;</a></li>
-							<fmt:parseNumber var="num" value="${curpage/10}" integerOnly="true" />
-							<c:set var="num" value="${num<=0?1:num*10}" />
-							<c:forEach var="i" begin="${num}" end="${num==1?num+8:num+9}">
-								<c:choose>
-									<c:when test="${i > totalpage }"></c:when>
-									<c:when test="${i==curpage}">
-										<li class="active"><a href="gallery.do?page=${i}">${i}</a></li>
-									</c:when>
-									<c:when test="${i <= totalpage}">
-										<li><a href="gallery.do?page=${i }">${i}</a></li>
-									</c:when>
-								</c:choose>
-							</c:forEach>
-							<li><a href="gallery.do?page=${curpage<=totalpage-10?curpage+10:curpage}">&raquo;</a></li>
-						</ul>
-					</center>
+					
 				</div>
 				<!-- middle_tab_content -->
 				
@@ -164,7 +148,7 @@ $(function () {
 						<div class="row text-center">
 							<c:forEach var="vo" items="${list_m}">
 								<figure class="snip1200" id="myImg1"> <img id="modal1"
-									src="${vo.gallery_path }" alt="lol" /> <figcaption>
+									src="gameGallery/image/${vo.gallery_img }.jpg" alt="lol" /> <figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading">
 									<h2>
@@ -187,7 +171,7 @@ $(function () {
 						<div class="row text-center">
 							<c:forEach var="vo" items="${list_j}">
 								<figure class="snip1200" id="myImg1"> <img id="modal1"
-									src="${vo.gallery_path }" alt="lol" /> <figcaption>
+									src="gameGallery/image/${vo.gallery_img }.jpg" alt="lol" /> <figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading">
 									<h2>
@@ -211,7 +195,7 @@ $(function () {
 						<div class="row text-center">
 							<c:forEach var="vo" items="${list_b}">
 								<figure class="snip1200" id="myImg1"> <img id="modal1"
-									src="${vo.gallery_path }" alt="lol" /> <figcaption>
+									src="gameGallery/image/${vo.gallery_img }.jpg" alt="lol" /> <figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading">
 									<h2>
@@ -235,7 +219,7 @@ $(function () {
 						<div class="row text-center">
 							<c:forEach var="vo" items="${list_s}">
 								<figure class="snip1200" id="myImg1"> <img id="modal1"
-									src="${vo.gallery_path }" alt="lol" /> <figcaption>
+									src="gameGallery/image/${vo.gallery_img }.jpg" alt="lol" /> <figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading">
 									<h2>
@@ -257,11 +241,11 @@ $(function () {
 		<!-- //middle_nav_menu -->
 	</div>
 	
-	<div id="myModal" class="modal">
+	<!-- <div id="myModal" class="modal">
 		<span class="close">&times;</span> <img class="modal-content"
 			id="img01">
 		<div id="caption"></div>
-	</div>
+	</div> -->
 
 
 	
