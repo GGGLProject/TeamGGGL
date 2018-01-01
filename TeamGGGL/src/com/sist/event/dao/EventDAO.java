@@ -79,6 +79,14 @@ public class EventDAO {
 		session.insert("eventModify",vo);
 		session.close();
 	}
+	public static void eventModifytest(EventVO vo) 
+	{
+		SqlSession session= ssf.openSession(true);
+		session.insert("eventModifytest",vo);
+		session.close();
+	}
+	
+	
 	public static void eventDelete(int no)
 	{
 		SqlSession session= ssf.openSession(true);

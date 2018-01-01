@@ -174,6 +174,8 @@ public class EventModel {
 	}
 	@RequestMapping("event_modify_ok.do")
 	public String event_modify_ok(HttpServletRequest req, HttpServletResponse res) throws Throwable {
+		String no = req.getParameter("no");
+		int event_no=Integer.parseInt(no);
 		HttpSession session=req.getSession();
 		String realFolder = "";
 		 String filename1 = "";
@@ -207,7 +209,7 @@ public class EventModel {
 			 event_title=multi.getParameter("subject");
 			 event_content=multi.getParameter("content");
 		 } catch(Exception ex) {
-			 System.out.println("이미지업로드(event_insert_ok.do):"+ex.getMessage());
+			 System.out.println("이미지업로드(event_modify_ok.do):"+ex.getMessage());
 		 }
 		 
 		 String fullpath = image_path + "/" + filename1;
@@ -219,7 +221,6 @@ public class EventModel {
 			System.out.println(id);
 		 
 		EventVO vo =new EventVO();
-		vo.setEvent_id(id);
 		vo.setEvent_day(event_day);
 		vo.setEvent_place(event_place);
 		vo.setEvent_image(event_image);
@@ -227,12 +228,10 @@ public class EventModel {
 		vo.setEvent_city(event_city);
 		vo.setEvent_title(event_title);
 		vo.setEvent_content(event_content);
-		
-		
-		// 세션상 아이디와 작성자 아이디와 일치할때만 수정(안전장치)
-		if (id.equals(vo.getEvent_id()))
-		EventDAO.eventModify(vo);
-		
+		vo.setEvent_no(event_no);
+//		EventDAO.eventModify(vo);
+		EventDAO.eventModifytest(vo);
+		System.out.println("테스트끝");
 		
 		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
 		return "event_list.do";

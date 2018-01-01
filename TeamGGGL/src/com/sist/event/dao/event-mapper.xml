@@ -60,11 +60,19 @@
    </insert>
    
    <!--글 수정  -->
+   <update id="eventModifytest" parameterType="EventVO">
+   UPDATE gggl_event
+   SET
+   event_title = #{event_title}, event_content = #{event_content}, event_day = #{event_day}, event_place = #{event_place}, event_category = #{event_category}, 
+   event_city = #{event_city}
+   WHERE event_no = #{event_no}
+   </update>
    <update id="eventModify" parameterType="EventVO">
    UPDATE gggl_event
    SET
    event_title = #{event_title}, event_content = #{event_content}, event_day = #{event_day}, event_place = #{event_place}, event_category = #{event_category}, 
    event_city = #{event_city}, event_image = {event_image}
+   WHERE event_no = #{event_no}
    </update>
    
    	<!--글 삭제  -->

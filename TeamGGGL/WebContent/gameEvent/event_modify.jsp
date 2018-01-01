@@ -14,6 +14,7 @@
 <script type="text/javascript">
 $(function(){
 	$('#writeBtn').click(function(){
+		alert("수정ㄱ")
 /* 		var name=$('#name').val();
 		if(name.trim()=="")
 		{
@@ -63,12 +64,13 @@ $(function(){
 			return;
 		}
 		$('#frm').submit();
+		
 	});
 });
 
-$(document).ready(function(){
+/* $(document).ready(function(){
 
-	  $(#category option).each(function(){
+	  $(셀렉트박스 option).each(function(){
 
 	    if($(this).val()=="${vo.event_category}"){
 
@@ -89,7 +91,7 @@ $(document).ready(function(){
 
 		  });
 
-	});
+	}); */
 </script>
 </head>
 <body>
@@ -99,7 +101,7 @@ $(document).ready(function(){
 			<br>
 			
 			<div class="col">
-			<form method="post" action="event_modify_ok.do" id=frm>
+			<form method="post" action="event_modify_ok.do?no=${vo.event_no}" id=frm enctype="multipart/form-data">
 				<div class="col-lg-6">
 					 
 					<table class="table table-hover">
