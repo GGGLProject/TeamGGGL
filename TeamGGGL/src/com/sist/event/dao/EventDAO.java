@@ -72,4 +72,18 @@ public class EventDAO {
 	      }
 	      return total;
 	   }
+
+	public static void eventModify(EventVO vo) 
+	{
+		SqlSession session= ssf.openSession(true);
+		session.insert("eventModify",vo);
+		session.close();
+	}
+	public static void eventDelete(int no)
+	{
+		SqlSession session= ssf.openSession(true);
+		session.insert("eventDelete",no);
+		session.close();
+	}
+	   
 }

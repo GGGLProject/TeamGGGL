@@ -228,13 +228,13 @@
 		<p>
 	
 			<div class="text-right">
-				<c:if test="${sessionScope.email!=vo.event_id }">	
+				<c:if test="${sessionScope.name!=vo.event_id }">	
 					<a href="event_list.do"><input type="button" class="btn btn-nm btn-success" value="목록"></a>
 						</c:if>
-				<c:if test="${sessionScope.email==vo.event_id }">
-					<input type="button" value="수정" class="btn btn-nm btn-info">
+				<c:if test="${sessionScope.name==vo.event_id }">
+					<a href="event_modify.do?no=${vo.event_no }"><input type="button" value="수정" class="btn btn-nm btn-info"></a>
 					<a href="event_list.do"><input type="button" class="btn btn-nm btn-success" value="목록"></a>
-						<input type="button" value="삭제" class="btn btn-nm btn-danger">
+					<a href="event_delete.do?no=${vo.event_no }"><input type="button" value="삭제" class="btn btn-nm btn-danger"></a>
 				</c:if>
 				</div>
 		</div>

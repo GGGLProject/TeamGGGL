@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -116,9 +117,11 @@
 								<td width=10% class="text-right">분류</td>
 								<td class="category" width=40% class="text-left"><select
 									name=category id="category">
-										<option value="일반">일반</option>
-										<option value="일정">일정</option>
-										<option value="결과">결과</option>
+									<option value="일반">일반</option>
+									<option value="PC방">PC방</option>
+									<option value="공식">공식</option>
+									<option value="개인">개인</option>
+									<option value="이벤트">이벤트</option>
 								</select></td>
 							</tr>
 							<tr>
