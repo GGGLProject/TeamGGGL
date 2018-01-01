@@ -6,44 +6,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>갤러리 - GG GL</title>
+<title>갤러리</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="css/gameGallery.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- <script>
-	var modalImg = document.getElementById("img01");
-	var captionText = document.getElementById("caption");
-	// Get the modal
-	var modal = document.getElementById('myModal');
 
-	// Get the image and insert it inside the modal - use its "alt" text as a caption
-	//1page
-	var img = document.getElementById('myImg1');
-
-	var modal1 = document.getElementById("modal1");
-
-	img.onclick = function() {
-		modal.style.display = "block";
-		modalImg.src = modal1.src;
-		captionText.innerHTML = this.alt;
-	}
-
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-		modal.style.display = "none";
-	}
-	/* Demo purposes only */
-	$(".hover").mouseleave(function() {
-		$(this).removeClass("hover");
-	});
-</script> -->
-<script type="text/javascript">
-
-</script>
 <script type="text/javascript">
 $(function () {
 
@@ -81,42 +49,43 @@ $(function () {
 
 				<!-- All -->
 				<div class="middle_tab_content" id="tab1">
-					<!-- <div class="row qnarow gametable text-center"> -->
-							<c:forEach var="vo" items="${list_all}">
-								<figure class="snip1200" id="myImg1"> <img id="modal1"
-									src="gameGallery/image/${vo.gallery_img }.jpg" alt="lol" /> <figcaption>
+					<c:forEach var="vo" items="${list_all}">
+						<figure class="snip1200" id="myImg"> 
+							<img id="Imgg" src="gameGallery/image/${vo.gallery_img }.jpg" > 
+							<figcaption>
 								<p>${vo.gallery_content }</p>
-								<div class="heading">
-									<h2>
-										<span>${vo.gallery_title }</span>
-									</h2>
-								</div>
-								</figcaption> <a href="#"></a> </figure>
-							</c:forEach>
-					<!-- </div> -->
-					<!-- //row qnarow gametable -->
-					<center>
-						<ul class="pagination pagination-centered">
-							<li><a href="gallery.do?page=${curpage<11?curpage:curpage-10}">&laquo;</a></li>
-							<fmt:parseNumber var="num" value="${curpage/10}" integerOnly="true" />
-							<c:set var="num" value="${num<=0?1:num*10}" />
-							<c:forEach var="i" begin="${num}" end="${num==1?num+8:num+9}">
-								<c:choose>
-									<c:when test="${i > totalpage }"></c:when>
-									<c:when test="${i==curpage}">
-										<li class="active"><a href="gallery.do?page=${i}">${i}</a></li>
-									</c:when>
-									<c:when test="${i <= totalpage}">
-										<li><a href="gallery.do?page=${i }">${i}</a></li>
-									</c:when>
-								</c:choose>
-							</c:forEach>
-							<li><a href="gallery.do?page=${curpage<=totalpage-10?curpage+10:curpage}">&raquo;</a></li>
-						</ul>
-					</center>
-				
+								<div class="heading"><h2><span>${vo.gallery_title }</span></h2></div>
+							</figcaption>
+							<a href="#"></a>
+						</figure>
+						<div id="myModal" class="modal">
+							<span class="close">&times;</span> 
+							<img class="modal-content" id="img01">
+							<div id="caption">
+								<h3>${vo.gallery_title }</h3>
+								<p>${vo.gallery_content }</p>
+							</div>
+						</div>
+					</c:forEach>
+					<!-- 페이지이동 -->
+					<ul class="pagination pagination-centered">
+						<li><a href="gallery.do?page=${curpage<11?curpage:curpage-10}">&laquo;</a></li>
+						<fmt:parseNumber var="num" value="${curpage/10}" integerOnly="true" />
+						<c:set var="num" value="${num<=0?1:num*10}" />
+						<c:forEach var="i" begin="${num}" end="${num==1?num+8:num+9}">
+							<c:choose>
+								<c:when test="${i > totalpage }"></c:when>
+								<c:when test="${i==curpage}">
+									<li class="active"><a href="gallery.do?page=${i}">${i}</a></li>
+								</c:when>
+								<c:when test="${i <= totalpage}">
+									<li><a href="gallery.do?page=${i }">${i}</a></li>
+								</c:when>
+							</c:choose>
+						</c:forEach>
+						<li><a href="gallery.do?page=${curpage<=totalpage-10?curpage+10:curpage}">&raquo;</a></li>
+					</ul>
 				</div>
-				<!-- middle_tab_content -->
 				
 				
 				<!-- TOP -->
@@ -241,14 +210,32 @@ $(function () {
 		<!-- //middle_nav_menu -->
 	</div>
 	
-	<!-- <div id="myModal" class="modal">
-		<span class="close">&times;</span> <img class="modal-content"
-			id="img01">
-		<div id="caption"></div>
-	</div> -->
-
-
 	
+
+
+	<script>
+	//Get the modal
+	var modal = document.getElementById('myModal');
+	
+	// Get the image and insert it inside the modal - use its "alt" text as a caption
+	var img = document.getElementById('myImg');
+	var modalImg = document.getElementById("img01");
+	var Imggg = document.getElementById('Imgg');
+	var captionText = document.getElementById("caption");
+	img.onclick = function(){
+	    modal.style.display = "block";
+	    modalImg.src = Imggg.src;
+	    /* captionText.innerHTML = this.alt; */
+	}
+	
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+	
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() { 
+	  modal.style.display = "none";
+	}
+	</script>
 
 
 </body>

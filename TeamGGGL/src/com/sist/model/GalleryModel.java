@@ -20,7 +20,7 @@ public class GalleryModel {
 		if(page==null)
 			page="1";
 		int curpage = Integer.parseInt(page);
-		int rowSize = 12;
+		int rowSize = 16;
 		int start = (rowSize*curpage)-(rowSize-1);
 		int end = rowSize*curpage;
 		Map map = new HashMap();
