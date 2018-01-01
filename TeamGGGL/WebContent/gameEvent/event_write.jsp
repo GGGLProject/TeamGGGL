@@ -151,8 +151,7 @@
 								<td width=10% class="text-right qna-td" valign="top">내용</td>
 								<td width=90% class="text-left qna-td"><textarea
 										class="input" rows="20" cols="65" name=content id="content">
-								
-								
+							
 	타이틀 : 
 
 	대회소개 : 

@@ -170,9 +170,7 @@ $(document).ready(function(){
 						<tr>
 							<td width=10% class="text-right qna-td" valign="top">³»¿ë</td>
 							<td width=90% class="text-left qna-td">
-								<textarea class="input" rows="20" cols="65" name=content id="content">
-								${vo.event_content }
-								</textarea>
+								<textarea class="input" rows="20" cols="65" name=content id="content">${vo.event_content }</textarea>
 							</td>
 						</tr>
 					</table>

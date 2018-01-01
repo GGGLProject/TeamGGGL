@@ -71,7 +71,7 @@
    SET
    event_title = #{event_title}, event_content = #{event_content}, event_day = #{event_day}, event_place = #{event_place}, event_category = #{event_category}, 
    event_city = #{event_city} 
-   <if test ="#{event_city}!=null">
+   <if test ="event_image!=null">
    , event_image = #{event_image}
    </if>
    WHERE event_no = #{event_no}

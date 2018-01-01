@@ -212,10 +212,16 @@ public class EventModel {
 			 System.out.println("이미지업로드(event_modify_ok.do):"+ex.getMessage());
 		 }
 		 
+		 String event_image="";
+		 if(filename1!=null) {	
 		 String fullpath = image_path + "/" + filename1;
-		 System.out.println(fullpath);
-		 String event_image = fullpath;
-		
+		 event_image = fullpath;
+		 }
+		 else {
+		 event_image = filename1;
+		 }
+		 System.out.println(event_image);
+		 
 		 String id = (String)session.getAttribute("name");
 
 			System.out.println(id);
