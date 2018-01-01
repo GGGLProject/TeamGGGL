@@ -65,6 +65,31 @@ $(function(){
 		$('#frm').submit();
 	});
 });
+
+$(document).ready(function(){
+
+	  $(#category option).each(function(){
+
+	    if($(this).val()=="${vo.event_category}"){
+
+	      $(this).prop("selected","selected"); // attr적용안될경우 prop으로 
+
+	    }
+
+	  });
+});
+$(document).ready(function(){
+	  $(city.option).each(function(){
+
+		    if($(this).val()=="${vo.event_city}"){
+
+		      $(this).attr("selected","selected"); // attr적용안될경우 prop으로 
+
+		    }
+
+		  });
+
+	});
 </script>
 </head>
 <body>
@@ -114,11 +139,11 @@ $(function(){
 							<td width=10% class="text-right">분류</td>
 							<td class="category" width=40% class="text-left">
 								<select name=category id="category">
-									<option value="일반" <c:if test="${vo.event_category == 일반}">selected="selected"</c:if>>일반</option>
-									<option value="PC방" <c:if test="${vo.event_category == PC방}">selected="selected"</c:if>>PC방</option>
-									<option value="공식" <c:if test="${vo.event_category == 공식}">selected="selected"</c:if>>공식</option>
-									<option value="개인" <c:if test="${vo.event_category == 개인}">selected="selected"</c:if>>개인</option>
-									<option value="이벤트" <c:if test="${vo.event_category == 이벤트}">selected="selected"</c:if>>이벤트</option>
+							<option value="일반">일반</option>
+									<option value="PC방">PC방</option>
+									<option value="공식">공식</option>
+									<option value="개인">개인</option>
+									<option value="이벤트">이벤트</option>
 								</select>
 							</td>
 						</tr>
@@ -126,18 +151,18 @@ $(function(){
 							<td width=10% class="text-right">지역</td>
 							<td class="category" width=40% class="text-left" >
 								<select name=city id="city">
-									<option value="서울" <c:if test="${vo.event_city == 서울}">selected="selected"</c:if>>서울</option>
-									<option value="경기" <c:if test="${vo.event_city == 경기}">selected="selected"</c:if> >경기</option>
-									<option value="인천" <c:if test="${vo.event_city == 인천}">selected="selected"</c:if>>인천</option>
-									<option value="강원" <c:if test="${vo.event_city == 강원}">selected="selected"</c:if>>강원</option>
-									<option value="충북" <c:if test="${vo.event_city == 충북}">selected="selected"</c:if>>충북</option>
-									<option value="충남" <c:if test="${vo.event_city == 충남}">selected="selected"</c:if>>충남</option>
-									<option value="전북" <c:if test="${vo.event_city == 전북}">selected="selected"</c:if>>전북</option>
-									<option value="전남" <c:if test="${vo.event_city == 전남}">selected="selected"</c:if>>전남</option>
-									<option value="경북" <c:if test="${vo.event_city == 경북}">selected="selected"</c:if>>경북</option>
-									<option value="경남" <c:if test="${vo.event_city == 경남}">selected="selected"</c:if>>경남</option>
-									<option value="제주" <c:if test="${vo.event_city == 제주}">selected="selected"</c:if>>제주</option>
-									<option value="기타" <c:if test="${vo.event_city == 기타}">selected="selected"</c:if>>기타</option>		
+										<option value="서울">서울</option>
+										<option value="경기">경기</option>
+										<option value="인천">인천</option>
+										<option value="강원">강원</option>
+										<option value="충북">충북</option>
+										<option value="충남">충남</option>
+										<option value="전북">전북</option>
+										<option value="전남">전남</option>
+										<option value="경북">경북</option>
+										<option value="경남">경남</option>
+										<option value="제주">제주</option>
+										<option value="기타">기타</option>
 								</select>
 							</td>
 						</tr>
