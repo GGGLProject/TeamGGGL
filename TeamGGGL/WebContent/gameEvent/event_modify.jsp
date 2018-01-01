@@ -33,12 +33,6 @@ $(function(){
 			$('#place').focus();
 			return;
 		}
-		var subject=$('#upload').val();
-		if(subject.trim()=="")
-		{
-			$('#upload').focus();
-			return;
-		}
 		var subject=$('#category').val();
 		if(subject.trim()=="")
 		{
@@ -129,7 +123,7 @@ $(document).ready(function(){
 						<tr>
 							<td class="text-center" colspan=2>
 								<center><input type="file" name=upload id="upload"
-											onchange="document.getElementById('img').src = window.URL.createObjectURL(this.files[0])"></center>
+								 value="${vo.event_image }"	onchange="document.getElementById('img').src = window.URL.createObjectURL(this.files[0])"></center>
 							</td>
 						</tr>
 					</table>

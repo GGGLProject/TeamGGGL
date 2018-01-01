@@ -229,8 +229,8 @@ public class EventModel {
 		vo.setEvent_title(event_title);
 		vo.setEvent_content(event_content);
 		vo.setEvent_no(event_no);
-//		EventDAO.eventModify(vo);
-		EventDAO.eventModifytest(vo);
+		EventDAO.eventModify(vo);
+//		EventDAO.eventModifytest(vo);
 		System.out.println("테스트끝");
 		
 		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
