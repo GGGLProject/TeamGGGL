@@ -8,63 +8,55 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/moment.js"></script>
+<script type="text/javascript" src="js/moment-timezone-with-data.js"></script>
+<script type="text/javascript" src="js/timer.js"></script>
 <style type="text/css">
 #img_a {
 	width: 400px;
 	height: 300px;
 }
+
+.start_box h3 {
+	font-size: 3em;
+	margin: 35px 0;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	color: #fff;
+	font-weight: 800;
+	text-shadow: 2px 2px 3px rgb(12, 12, 12);
+}
+
+.timer {
+	font-size: 80px;
+	font-weight: 600;
+	display: inline-block;
+	vertical-align: top;
+	color: #fff;
+}
+
+.clock .column {
+	float: left;
+	width: 20%;
+}
+
+.clock {
+	margin-left: 16%;
+	margin-top: 20px;
+}
+
+.main_teamN {
+	font-size: 24px;
+}
+
+.clock .column .text {
+	font-size: 14px;
+}
 </style>
 </head>
 <body>
-	<!-- Slideshow -->
-	<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
-		Indicators
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1"></li>
-			<li data-target="#myCarousel" data-slide-to="2"></li>
-			<li data-target="#myCarousel" data-slide-to="3"></li>
-			<li data-target="#myCarousel" data-slide-to="4"></li>
-		</ol>
-
-		Wrapper for slides
-		<div class="carousel-inner" role="listbox">
-			<div class="item active">
-				<img src="gameMain/image/lol-1.jpg" alt="New York" width="1200"
-					height="700">
-			</div>
-			<div class="item">
-				<img src="gameMain/image/lol-2.jpg" alt="New York" width="1200"
-					height="700">
-			</div>
-			<div class="item">
-				<img src="gameMain/image/lol-3.jpg" alt="New York" width="1200"
-					height="700">
-			</div>
-			<div class="item">
-				<img src="gameMain/image/lol-4.jpg" alt="New York" width="1200"
-					height="700">
-			</div>
-			<div class="item">
-				<img src="gameMain/image/lol-5.jpg" alt="New York" width="1200"
-					height="700">
-			</div>
-
-		</div> -->
-
-	<!-- 		<!-- Left and right controls -->
-	<!-- 		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left"></span> <span
-			class="sr-only">Previous</span>
-		</a> <a class="right carousel-control" href="#myCarousel"
-			data-slide="next"> <span
-			class="glyphicon glyphicon-chevron-right"></span> <span
-			class="sr-only">Next</span>
-		</a> -->
-	-->
 	<div class="row">
-		<div class="col-md-12 padding-0"
-			style="background: url(gameMain/image/maingif_1.gif) no repeat center center">
+		<div class="col-md-12 padding-0" style="background: url(gameMain/image/maingif_1.gif) no repeat center center">
 			<img src="gameMain/image/maingif_1.gif" width="100%">
 		</div>
 	</div>
@@ -72,57 +64,83 @@
 	<!-- Container (The Match Section) -->
 	<div class="bg-1">
 		<div class="container text-center">
-			<h1>THE BIG MATCH WILL START</h1>
-			<p>
-				<em>Coming soon...</em>
-			</p>
-			<br>
-			<div class="row">
-				<div class="col-sm-4">
-					<p class="text-center">
-						<strong>FNATIC</strong><br>HOME TEAM
-					</p>
-					<br> <a href="#demo" data-toggle="collapse"> <img
-						src="https://www.fnatic.com/build/images/logos/fnatic.png"
-						alt="Random Name" width="255" height="255">
-					</a>
-					<div id="demo" class="collapse">
-						<p>Fnatic Gaming</p>
-						<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
-						<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
-						<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
+			<c:set var="doneLoop" value="false" />
+			<c:forEach var="vo" items="${list__1h }" varStatus="status">
+				<c:if test="${not doneLoop}">
+					<div class="start_box">
+						<h3>THE BIG MATCH WILL START</h3>
 					</div>
-				</div>
-				<div class="col-sm-4">
-					<h5>
-						<p class="text-center">
-							<strong>12월 5일 17시 30분</strong>
-						</p>
-					</h5>
-					<br>
-					<div>
-						<p>CSGOROLL Asian Masters</p>
-					</div>
-					<div>가능하면 여기 시간 카운터가 들어간다면 정말 멋질텐데</div>
-					<img
-						src="https://static.comicvine.com/uploads/original/11111/111119495/3299555-kickass12.png"
-						alt="Random Name" width="155" height="155">
-				</div>
-				<div class="col-sm-4">
 					<p class="text-center">
-						<strong>Complexity</strong><br>AWAY TEAM
-					</p>
-					<br> <a href="#demo3" data-toggle="collapse"> <img
-						src="http://wiki.teamliquid.net/commons/images/thumb/f/f4/Col_big_logo.png/600px-Col_big_logo.png"
-						alt="Random Name" width="255" height="255">
-					</a>
-					<div id="demo3" class="collapse">
-						<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
-						<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
-						<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
+						<h2>
+							<strong>${vo.match_name }</strong>
+						</h2>
+					</p><br>
+					<div class="row">
+						<div class="col-sm-4">
+							<p class="text-center main_teamN">
+								<strong>${vo.home_name }</strong>
+							</p><br> 
+							<a href="#demo" data-toggle="collapse"> 
+								<img src="${vo.tvo.team_icon }" alt="Random Name" width="255" height="255">
+							</a>
+							<div id="demo" class="collapse">
+								<p>홈팀 정보</p>
+								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
+								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
+								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<h4>
+								<strong>${vo.match_day }</strong>&nbsp;<strong>${vo.match_time }</strong>
+							</h4><br> 
+							<img src="https://static.comicvine.com/uploads/original/11111/111119495/3299555-kickass12.png"
+								alt="Random Name" width="155" height="155" style="margin-top: 30px">
+						</div>
+						<div class="col-sm-4">
+							<p class="text-center main_teamN">
+								<strong>${vo.away_name }</strong>
+							</p>
+							<br> <a href="#demo3" data-toggle="collapse"> <img
+								src="${list__1a[status.index].away_icon }" alt="Random Name"
+								width="255" height="255">
+							</a>
+							<div id="demo3" class="collapse">
+								<p>어웨이팀 정보</p>
+								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
+								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
+								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
+							</div>
+						</div>
+					</div>
+					<c:if test="${status.count == 1}">
+						<c:set var="doneLoop" value="true" />
+					</c:if>
+				</c:if>
+			</c:forEach>
+			<div class="wrapper agileinfo text-center">
+				<div class="clock">
+					<div class="column w3l days" style="display: inline-block;">
+						<div class="timer w3" id="days">31</div>
+						<div class="aits text">DAYS</div>
+					</div>
+					<div class="column w3">
+						<div class="timer w3layouts" id="hours">24</div>
+						<div class="agileits text">HOURS</div>
+					</div>
+
+					<div class="column wthree">
+						<div class="timer w3las" id="minutes">60</div>
+						<div class="text aits">MINUTES</div>
+					</div>
+
+					<div class="column siteliga">
+						<div class="timer stuoyal3w" id="seconds">60</div>
+						<div class="text wthree">SECONDS</div>
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 	<div>
