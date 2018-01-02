@@ -24,7 +24,11 @@ public class MemberModel {
 	public String new_member(HttpServletRequest req, HttpServletResponse res) {
 		req.setAttribute("main_jsp", "../gameMember/new_member.jsp");
 		return "gameMain/main.jsp";
-		
+	}
+	@RequestMapping("MyPage.do")
+	public String MyPage(HttpServletRequest req, HttpServletResponse res) {
+		req.setAttribute("main_jsp", "../gameMyPage/MyPage.jsp");
+		return "gameMain/main.jsp";
 	}
 //	아이디 체크 부분
 	@RequestMapping("checkmember.do")
@@ -116,6 +120,15 @@ public class MemberModel {
 		MemberDAO.memberJoin(vo);
 		req.setAttribute("main_jsp", "../gameMain/main.jsp");
 		return "main.do";
+	}
+	// 비밀번호찾기 부분
+	@RequestMapping("passwordEmailCheck.do")
+	public String passwordemailCheck(HttpServletRequest req, HttpServletResponse res) {
+		String recoveryEmail = req.getParameter("recoveryEmail");
+		MemberVO vo =MemberDAO.passwordEmailCheck(recoveryEmail);
+		System.out.println();
+		req.setAttribute("vo", vo);	
+		return "gameMember/recoveryEmail.jsp";
 	}
 	
 }

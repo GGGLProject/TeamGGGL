@@ -44,6 +44,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	INSERT INTO GGGL_member VALUES(#{member_id},#{member_pwd},#{member_no},#{member_nickname},#{member_favor},#{member_phone},'2',SYSDATE,#{member_birthday})
 	</insert>
 	
+	<select id="passwordSelect">
+	 SELECT member_pwd FROM GGGL_member WHERE member_id=#{email};
+	</select>
+	 
+	 
+	 <select id="passwordEmailCheck" resultType="String"
+	parameterType="String" >
+	 SELECT member_pwd
+	 FROM GGGL_member
+	 WHERE member_id=#{recoveryEmail}
+	</select>
 	
 </mapper>
 

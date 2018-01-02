@@ -99,5 +99,34 @@ public static void memberJoin(MemberVO vo) {
 	session.insert("memberJoin",vo);
 	session.close();
 }
+public static MemberVO passwordSelect(String recovery) {
+	MemberVO vo=new MemberVO();
+	SqlSession session=ssf.openSession();
+	try {
+		vo=session.selectOne("passwordSelect",recovery);
+	}catch(Exception ex) {
+		System.out.println("passwordSelect "+ex.getMessage());
+	}finally {
+		if(session!=null)
+			session.close();
+	}
+	return vo;
+}
+//비밀번호찾기 이메일 체크
+public static MemberVO passwordEmailCheck(String recoveryEmail) {
+	MemberVO vo = new MemberVO();
+	SqlSession session=ssf.openSession();
+	try {
+		
+		vo.setMember_pwd(session.selectOne("passwordEmailCheck",recoveryEmail));
+		
+	}catch(Exception ex) {
+		System.out.println("passwordEmailCheck : "+ex.getMessage());
+	}finally {
+		if(session!=null)
+			session.close();
+	}
+	return vo;
+}
 
 }
