@@ -10,7 +10,7 @@ public class MemberVO {
 	private String member_nickname;
 	private String member_favor;
 	private String member_phone;
-	private char member_grade;
+	private String member_grade;
 	private Date member_regdate;
 	private String member_birthday;
 	
@@ -51,11 +51,11 @@ public class MemberVO {
 	public void setMember_phone(String member_phone) {
 		this.member_phone = member_phone;
 	}
-	public char getMember_grade() {
+	public String getMember_grade() {
 		return member_grade;
 	}
-	public void setMember_grade(char member_grade) {
-		this.member_grade = member_grade;
+	public void setMember_grade(String grade) {
+		this.member_grade = grade;
 	}
 	public Date getMember_regdate() {
 		return member_regdate;

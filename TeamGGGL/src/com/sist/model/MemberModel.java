@@ -1,5 +1,7 @@
 package com.sist.model;
 
+import java.io.UnsupportedEncodingException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -62,7 +64,7 @@ public class MemberModel {
 				result="OK";
 				session.setAttribute("email", email);
 				session.setAttribute("name", vo.getMember_nickname());
-				session.setAttribute("admin", vo.getMember_grade());
+				session.setAttribute("grade", vo.getMember_grade().trim());
 			}
 			else {
 				result="NOPWD";
@@ -79,6 +81,11 @@ public class MemberModel {
 	}
 	@RequestMapping("memberJoin.do")
 	public String memberJoin(HttpServletRequest req,HttpServletResponse res) {
+		try {
+			req.setCharacterEncoding("EUC-KR");
+		} catch (Exception ex) {
+			System.out.println("memberJoin :" + ex.getMessage());
+		}
 		String id =req.getParameter("id");
 		String email=req.getParameter("email");
 		String pwd=req.getParameter("Mpassword");
@@ -87,6 +94,7 @@ public class MemberModel {
 		String month=req.getParameter("month");
 		String day=req.getParameter("day");
 		String birthday=year+"-"+month+"-"+day;
+		String grade = req.getParameter("grade");
 		
 		String[] favors= req.getParameterValues("favor");
 		
@@ -103,7 +111,7 @@ public class MemberModel {
 		vo.setMember_phone(telnumber);
 		vo.setMember_birthday(birthday);
 		vo.setMember_favor(favor);
-		
+		vo.setMember_grade(grade);
 		req.setAttribute("vo", vo);
 		MemberDAO.memberJoin(vo);
 		req.setAttribute("main_jsp", "../gameMain/main.jsp");

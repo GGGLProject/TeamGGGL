@@ -65,7 +65,16 @@
 			<c:if test="${sessionScope.email!=null }">
 				<form method=post action="logout.do">
 					<div class="log">
-						<span style="color: white;"> ${sessionScope.name }님 로그인중입니다
+						<span style="color: white;"> ${sessionScope.name } 
+						<c:if test="${sessionScope.grade==1 }">
+						(관리자)님 로그인중입니다.	
+						</c:if>
+						<c:if test="${sessionScope.grade==2 }">
+						(일반사용자)님 로그인중입니다.	
+						</c:if>
+						<c:if test="${sessionScope.grade==3 }">
+						(이벤트등록회원)님 로그인중입니다.	
+						</c:if>
 						</span> <input type=submit value="로그아웃" class="button button-info">
 					</div>
 				</form>
