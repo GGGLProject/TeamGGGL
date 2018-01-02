@@ -95,7 +95,7 @@ $(document).ready(function(){
 			<br>
 			
 			<div class="col">
-			<form method="post" action="event_modify_ok.do?no=${vo.event_no}" id=frm enctype="multipart/form-data">
+			<form method="post" action="event_modify_ok.do" id=frm enctype="multipart/form-data">
 				<div class="col-lg-6">
 					 
 					<table class="table table-hover">
@@ -105,7 +105,9 @@ $(document).ready(function(){
 						<tr>
 							<td width=20% class="text-center">이벤트 일자</td>
 							<td width=30% class="text-center">
-							<input class="input" type=date name=day id=day size=30 value="${vo.event_day } "></td>
+							<input class="input" type=date name=day id=day size=30 value="${vo.event_day } ">
+							<input type=hidden name=no value="${vo.event_no }">
+							</td>
 						</tr>
 						<tr>
 							<td width=20% class="text-center">이벤트 장소</td>

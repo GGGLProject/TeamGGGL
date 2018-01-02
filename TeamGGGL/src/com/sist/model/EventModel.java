@@ -16,6 +16,7 @@ import com.sist.controller.RequestMapping;
 
 import com.sist.event.dao.EventDAO;
 import com.sist.event.dao.EventVO;
+import com.sun.org.apache.bcel.internal.generic.MULTIANEWARRAY;
 @Controller
 public class EventModel {
 	@RequestMapping("event_list_old.do")
@@ -174,17 +175,20 @@ public class EventModel {
 	}
 	@RequestMapping("event_modify_ok.do")
 	public String event_modify_ok(HttpServletRequest req, HttpServletResponse res) throws Throwable {
-		String no = req.getParameter("no");
-		int event_no=Integer.parseInt(no);
+		
+		
 		HttpSession session=req.getSession();
 		String realFolder = "";
 		 String filename1 = "";
 		 int maxSize = 400*400*10;
+		 
 		 String encType = "EUC-KR";
 		 String savefile = "image";
 		 realFolder = "C:\\git\\TeamGGGL\\TeamGGGL\\WebContent\\image";
 		 	
 		 //¼±¾ðºÎ 
+		 String no ="";
+		 int event_no=0;
 		 String day="";
 		 Date event_day = new Date();
 		 String event_place="";
@@ -202,6 +206,8 @@ public class EventModel {
 		     filename1 = multi.getFilesystemName(file1);
 		     day=multi.getParameter("day");
 		     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		     no =multi.getParameter("no");
+		     event_no = Integer.parseInt(no);
 		     event_day = sdf.parse(day);
 		     event_place=multi.getParameter("place");
 		     event_category=multi.getParameter("category");
