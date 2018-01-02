@@ -7,11 +7,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<!-- XML = type(클래스 선언) -->
 		<typeAlias type="com.sist.news.dao.NewsVO" alias="NewsVO" />
+		<typeAlias type="com.sist.news.dao.NewsReplyVO" alias="NewsReplyVO"/>
 		<typeAlias type="com.sist.match.dao.MatchVO" alias="MatchVO"/>
 		<typeAlias type="com.sist.match.dao.TeamVO" alias="TeamVO"/>
 		<typeAlias type="com.sist.match.dao.PlayerVO" alias="PlayerVO"/>
 		<typeAlias type="com.sist.event.dao.EventVO" alias="EventVO"/>
 		<typeAlias type="com.sist.gallery.dao.GalleryVO" alias="GalleryVO"/>
+		
 	</typeAliases> 
 	<!-- "(environment)+" -->
 	<environments default="development">
