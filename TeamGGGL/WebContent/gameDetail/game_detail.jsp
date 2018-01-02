@@ -109,7 +109,7 @@ $(function () {
 				</div>
 
 				<div class="col-sm-1 h_player1name"; >
-					<div class="player1name;" style="font-size:20px; margin-top: 100px; text-align: left; margin-left-31px;">
+					<div class="player1name;" style="font-size:20px; margin-top: 100px; text-align: left; margin-left:-31px">
 						${vo.pvo.player_name }<br>
 						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
 					</div>
@@ -117,7 +117,7 @@ $(function () {
 
 				<div class="col-sm-2"></div>
 				<div class="col-sm-1">
-					<div class="a_player1name"  style="font-size:20px; margin-top: 100px; text-align: right;" >
+					<div class="a_player1name"  style="font-size:20px; margin-top: 100px; text-align: right; padding-right:5px" >
 						${a_list[status.index].a_player_name }<br>
 						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
 					</div>
