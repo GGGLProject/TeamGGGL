@@ -48,7 +48,7 @@
 				<li><a href="gallery.do">갤러리</a></li>
 				<li><a href="event_list.do">이벤트</a></li>
 				<c:if test="${sessionScope.email!=null}">
-					<li><a href="#">마이페이지</a></li>
+					<li><a href="MyPage.do">마이페이지</a></li>
 				</c:if>
 			</ul>
 			<c:if test="${sessionScope.email==null }">
@@ -65,7 +65,16 @@
 			<c:if test="${sessionScope.email!=null }">
 				<form method=post action="logout.do">
 					<div class="log">
-						<span style="color: white;"> ${sessionScope.name }님 로그인중입니다
+						<span style="color: white;"> ${sessionScope.name } 
+						<c:if test="${sessionScope.grade==1 }">
+						(관리자)님 로그인중입니다.	
+						</c:if>
+						<c:if test="${sessionScope.grade==2 }">
+						(일반사용자)님 로그인중입니다.	
+						</c:if>
+						<c:if test="${sessionScope.grade==3 }">
+						(이벤트등록회원)님 로그인중입니다.	
+						</c:if>
 						</span> <input type=submit value="로그아웃" class="button button-info">
 					</div>
 				</form>

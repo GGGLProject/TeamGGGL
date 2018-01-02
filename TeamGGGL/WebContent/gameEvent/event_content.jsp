@@ -13,6 +13,23 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(function() {
+		//수정버튼
+		$('#modifyBtn').click(function(){
+						$('#modf').submit();
+				});
+		//삭제버튼
+		$('#deleteBtn').click(function(){
+			var result = confirm('정말 삭제 하시겠습니까?'); 
+					if(result) 
+					{
+						$('#delf').submit();
+					} 
+					else 
+					{ 
+						return;
+					}
+				});
+		//코멘트
 		$(".comment_tab_content").hide();
 		$(".comment_tab_content:first").show();
 		$("ul.comment_nav_tabs li").click(function() {
@@ -23,6 +40,8 @@
 			$("#" + activeTab).fadeIn();
 		});
 	});
+	
+
 </script>
 </head>
 <body>
@@ -230,11 +249,19 @@
 			<div class="text-right">
 				<c:if test="${sessionScope.name!=vo.event_id }">	
 					<a href="event_list.do"><input type="button" class="btn btn-nm btn-success" value="목록"></a>
-						</c:if>
-				<c:if test="${sessionScope.name==vo.event_id }">
-					<a href="event_modify.do?no=${vo.event_no }"><input type="button" value="수정" class="btn btn-nm btn-info"></a>
-					<a href="event_list.do"><input type="button" class="btn btn-nm btn-success" value="목록"></a>
-					<a href="event_delete.do?no=${vo.event_no }"><input type="button" value="삭제" class="btn btn-nm btn-danger"></a>
+						</c:if>	
+				<c:if test="${sessionScope.name==vo.event_id }" >
+					<form method=post action="event_modify.do" id=modf style="display:inline-block;">
+					<input type=hidden name=no value="${vo.event_no }">
+					<input type=hidden name=id value="${vo.event_id }">
+					<input type="button" value="수정" class="btn btn-nm btn-info" id="modifyBtn">
+					</form>
+					<a href="event_list.do"><input type="button" class="btn btn-nm btn-success" value="목록" ></a>
+					<form method=post action="event_delete.do" id=delf style="display:inline-block;">
+					<input type=hidden name=no value="${vo.event_no }">
+					<input type=hidden name=id value="${vo.event_id }">
+					<input type="button" value="삭제" class="btn btn-nm btn-danger" id="deleteBtn">
+					</form>
 				</c:if>
 				</div>
 		</div>

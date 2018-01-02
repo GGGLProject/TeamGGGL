@@ -10,57 +10,7 @@
 <link href="css/gameDetail.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style type="text/css">
-ul.comment_nav_tabs {
-	margin: 0;
-	padding: 0;
-	float: left;
-	list-style: none;
-	height: 60px;
-	opacity: 1;
-	width: 80%;
-	font-size: 16px;
-	margin-top: 30px;
-	margin-bottom: 50px;
-}
 
-ul.comment_nav_tabs li {
-	float: inherit;
-	text-align: center;
-	cursor: pointer;
-	
-	width: 19%;
-	height: 60px;
-	border: 1px solid white;
-	margin: 0 5.7px 0px 5.7px;
-	color: white;
-	line-height: 60px;
-	font-weight: bold;
-	overflow: hidden;
-	position: relative;
-}
-
-ul.comment_nav_tabs li img {
-	height: 42px;
-	margin-right: 20px;
-}
-
-ul.comment_nav_tabs li.active2 {
-	border: 1px solid white;
-	color: black;
-	background-color: white;
-	opacity: 0.9;
-}
-
-.comment_tab_content {
-	height: auto;
-	display: none;
-}
-
-.a_player1name {
-	margin-left: 0px !important;
-}
-</style>
 <script type="text/javascript">
 $(function () {
     $(".comment_tab_content").hide();
@@ -81,7 +31,7 @@ $(function () {
 		<c:set var="doneLoop" value="false"/>
 			<c:forEach var="vo" items="${h_list }" varStatus="status">
 				<c:if test="${not doneLoop}">
-		<h1 class="text-center"><strong>${vo.match_name }</strong></h1>
+		<h2 class="text-center" style="font-size: 40px;">${vo.match_name }</h2>
 		<p class="text-center"><strong>${vo.match_day }</strong>&nbsp;<strong>${vo.match_time }</strong></p>
 		<br>
 		<div class="team_vs">
@@ -100,31 +50,31 @@ $(function () {
 				<c:choose>
 				<c:when test="${vo.home_score > vo.away_score }">
 				<div class="col-sm-2 text-center">
-					<h1 style="color: blue">${vo.home_score }</h1>
+					<h1 style="color: #FF4848; font-weight: bold;">${vo.home_score }</h1>
 				</div>
 				<div class="col-sm-2 text-center">
 					<div>
-						<h2 style="margin:15px 0">경기 종료</h2>
+						<h2 style="margin:10px 0">Game Over</h2>
 					</div>
-					<img src="gameDetail/image/vs_icon.png" alt="Random Name" width="155" height="155">
+					<img src="gameDetail/image/vs_icon.png" alt="Random Name" width="155" height="155" style="margin-top: 30px;">
 				</div>
-				<div class="col-sm-2 text-center">
-					<h1 style="color: red">${vo.away_score }</h1>
+				<div class="col-sm-2 text-center" >
+					<h1 style="color: #0054FF; font-weight: bold;">${vo.away_score }</h1>
 				</div>
 				</c:when>
 				
 				<c:otherwise>
 				<div class="col-sm-2 text-center">
-					<h1 style="color: red">${vo.home_score }</h1>
+					<h1 style="color: #FF4848; font-weight: bold;">${vo.home_score }</h1>
 				</div>
 				<div class="col-sm-2 text-center">
 					<div>
-						<h2 style="margin:15px 0">경기 종료</h2>
+						<h2 style="margin:10px 0">Game Over</h2>
 					</div>
-					<img src="gameDetail/image/vs_icon.png" alt="Random Name" width="155" height="155">
+					<img src="gameDetail/image/vs_icon.png" alt="Random Name" width="155" height="155" style="margin-top: 30px;">
 				</div>
 				<div class="col-sm-2 text-center">
-					<h1 style="color: blue">${vo.away_score }</h1>
+					<h1 style="color: #0054FF; font-weight: bold;">${vo.away_score }</h1>
 				</div>
 				</c:otherwise>
 				</c:choose>
@@ -158,8 +108,8 @@ $(function () {
 					<%-- <img src="${vo.player_pic }"> --%>
 				</div>
 
-				<div class="col-sm-1 h_player1name">
-					<div class="player1name">
+				<div class="col-sm-1 h_player1name"; >
+					<div class="player1name;" style="font-size:20px; margin-top: 100px; text-align: left; margin-left:-31px">
 						${vo.pvo.player_name }<br>
 						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
 					</div>
@@ -167,7 +117,7 @@ $(function () {
 
 				<div class="col-sm-2"></div>
 				<div class="col-sm-1">
-					<div class="a_player1name">
+					<div class="a_player1name"  style="font-size:20px; margin-top: 100px; text-align: right; padding-right:5px" >
 						${a_list[status.index].a_player_name }<br>
 						<%-- <img src="gameDetail/image/nicname.png">${vo.player_name }<br> --%>
 					</div>
@@ -192,7 +142,7 @@ $(function () {
 			<c:forEach var="vo" items="${h_list }" varStatus="status">
 				<c:if test="${not doneLoop}">
 				<div class="hi">
-					<iframe width="600" height="450"
+					<iframe width="800" height="450"
 						src="https://www.youtube.com/embed/${vo.match_videokey }" frameborder="0"
 						gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 				</div>

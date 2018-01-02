@@ -14,7 +14,8 @@
 <script type="text/javascript">
 $(function(){
 	$('#writeBtn').click(function(){
-		alert("수정ㄱ")
+
+
 /* 		var name=$('#name').val();
 		if(name.trim()=="")
 		{
@@ -57,8 +58,17 @@ $(function(){
 			$('#content').focus();
 			return;
 		}
-		$('#frm').submit();
 		
+		var result = confirm('정말 수정 하시겠습니까?'); 
+		if(result) 
+		{
+			$('#frm').submit();
+		} 
+		else 
+		{ 
+			return;
+		}
+
 	});
 });
 
@@ -95,7 +105,7 @@ $(document).ready(function(){
 			<br>
 			
 			<div class="col">
-			<form method="post" action="event_modify_ok.do?no=${vo.event_no}" id=frm enctype="multipart/form-data">
+			<form method="post" action="event_modify_ok.do" id=frm enctype="multipart/form-data">
 				<div class="col-lg-6">
 					 
 					<table class="table table-hover">
@@ -105,7 +115,9 @@ $(document).ready(function(){
 						<tr>
 							<td width=20% class="text-center">이벤트 일자</td>
 							<td width=30% class="text-center">
-							<input class="input" type=date name=day id=day size=30 value="${vo.event_day } "></td>
+							<input class="input" type=date name=day id=day size=30 value="${vo.event_day } ">
+							<input type=hidden name=no value="${vo.event_no }">
+							</td>
 						</tr>
 						<tr>
 							<td width=20% class="text-center">이벤트 장소</td>
@@ -177,7 +189,7 @@ $(document).ready(function(){
 					</form>
 				</div>
 				<div class="text-right">
-					<input type="button" value="등록" class="btn btn-nm btn-danger" id="writeBtn">
+					<input type="button" value="수정" class="btn btn-nm btn-danger" id="writeBtn">
 					<input type="button" class="btn btn-nm btn-success" value="취소"
 						onclick="javascript:history.back()">
 				</div>

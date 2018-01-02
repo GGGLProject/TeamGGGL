@@ -130,7 +130,7 @@ $(function(){
 
 <article class="container">
         <div class="page-header">
-          <h1>회원가입 <small></small></h1>
+          <h1>마이페이지 <small></small></h1>
         </div>
         <div class="col-md-6 col-md-offset-3">
           
@@ -141,12 +141,8 @@ $(function(){
               <label for="username">이름(닉네임)</label>
               <div class="input-group"> 
               
-                <input type="text" class="form-control" name="id" id="id" placeholder="이름(닉네임)">
+                <input type="text" class="form-control" name="id" id="id" size=100; placeholder="이름(닉네임)">
               
-                <span class="input-group-btn">
-        
-                  <a href="#" class="btn btn-info" onClick="emailCheckfunction();" id="checkBtn">중복확인</a>
-                </span>
              </div>
             </div>
             
@@ -155,11 +151,9 @@ $(function(){
               <label for="username">이메일</label>
               <div class="input-group">
              
-                <input type="text" class="form-control" name="email" id="useremail" placeholder="ex)admin@GGGL.com">
+                <input type="text" class="form-control" name="email" id="useremail" size=100; placeholder="ex)admin@GGGL.com">
              
-                <span class="input-group-btn">
-                  <a href="#" class="btn btn-info" id="emailcheckBtn">중복확인</a>
-                </span>
+                
               </div>
             </div>
             

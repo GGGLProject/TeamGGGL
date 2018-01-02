@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,7 +29,29 @@ $(function(){
         
     }
     });
-    
+    $('#passwordSelect').click(function(){
+    	var recoveryEmail = $('#recoveryEmail').val();
+    	
+    	 $.ajax({
+			type:'post',
+			url:'passwordEmailCheck.do',
+			data:{"recoveryEmail":recoveryEmail},
+		
+			success:function(res)
+			{
+				var member_pwd=res.trim();
+				if(member_pwd==""){
+					alert("아이디가 없습니다.");
+				}else{
+					alert("귀하의 비밀번호는 : (   "+member_pwd+"  )입니다");
+				}
+			},
+			error:function(error) {
+				alert(data)
+				alert("!!AJAX FAIL"); 
+		 	} 
+		});  
+    });
 });
 </script>
 
@@ -79,11 +102,11 @@ $(function(){
 			</div>
 			<div class="modal-body">
 				<p>이메일을 입력해주세요</p>
-				<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+				<input type="email" name="recovery-email" id="recoveryEmail" class="form-control" autocomplete="off">
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-				<button type="button" class="btn btn-custom">비밀번호 찾기</button>
+				<button type="button" class="btn btn-custom" id="passwordSelect">비밀번호 찾기</button>
 			</div>
 		</div> <!-- /.modal-content -->
 	</div> <!-- /.modal-dialog -->
