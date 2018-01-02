@@ -14,7 +14,8 @@
 <script type="text/javascript">
 $(function(){
 	$('#writeBtn').click(function(){
-		alert("수정ㄱ")
+
+
 /* 		var name=$('#name').val();
 		if(name.trim()=="")
 		{
@@ -57,8 +58,17 @@ $(function(){
 			$('#content').focus();
 			return;
 		}
-		$('#frm').submit();
 		
+		var result = confirm('정말 수정 하시겠습니까?'); 
+		if(result) 
+		{
+			$('#frm').submit();
+		} 
+		else 
+		{ 
+			return;
+		}
+
 	});
 });
 
@@ -179,7 +189,7 @@ $(document).ready(function(){
 					</form>
 				</div>
 				<div class="text-right">
-					<input type="button" value="등록" class="btn btn-nm btn-danger" id="writeBtn">
+					<input type="button" value="수정" class="btn btn-nm btn-danger" id="writeBtn">
 					<input type="button" class="btn btn-nm btn-success" value="취소"
 						onclick="javascript:history.back()">
 				</div>

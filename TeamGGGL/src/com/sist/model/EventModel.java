@@ -149,12 +149,12 @@ public class EventModel {
 	@RequestMapping("event_delete.do")
 	public String event_delete(HttpServletRequest req, HttpServletResponse res) {
 		String no = req.getParameter("no");
+		String id= req.getParameter("id");
 		HttpSession session=req.getSession();
 		int event_no=Integer.parseInt(no);
-		String id = (String)session.getAttribute("name");
-		EventVO vo = EventDAO.eventContentData(event_no);
+		String session_id = (String)session.getAttribute("name");
 		// 세션상 아이디와 작성자 아이디와 일치할때만 삭제
-		if (id.equals(vo.getEvent_id()))
+		if (session_id.equals(id))
 		EventDAO.eventDelete(event_no);
 		
 		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
@@ -165,10 +165,10 @@ public class EventModel {
 	@RequestMapping("event_modify.do")
 	public String event_modify(HttpServletRequest req, HttpServletResponse res) {
 		String no = req.getParameter("no");
+		String id= req.getParameter("id"); //쓸모없음..
 		int event_no=Integer.parseInt(no);
 		EventVO vo = EventDAO.eventContentData(event_no);
 		req.setAttribute("vo", vo);
-		
 		
 		req.setAttribute("main_jsp", "../gameEvent/event_modify.jsp");
 		return "gameMain/main.jsp";
