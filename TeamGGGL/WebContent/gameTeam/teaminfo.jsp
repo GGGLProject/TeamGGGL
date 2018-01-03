@@ -84,7 +84,7 @@ $(function(){
 						<img src="${vo.tvo.team_icon }">
 						<p>${vo.tvo.team_name }</p>
 					</div>
-				</c:forEach>
+				</c:forEach> 
 			</div>
 		</div>
 		<div class="leagueopen_team leagueopen_team_4" style="display: none;">
