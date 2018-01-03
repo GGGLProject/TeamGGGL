@@ -1,0 +1,46 @@
+body {
+	background-image: url('../image/lol_back1.jpg');
+	background-attachment: fixed;
+}
+
+.subject {
+	color: white;
+	margin: 40px 0 80px 0;
+}
+
+.leaguearea {
+	height: 250px;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.leaguearea img {
+	height: 200px;
+}
+
+.leaguearea p {
+	color: white;
+	font-size: 25px;
+	margin-top: 10px;
+}
+
+.leagueopen_team {
+	float: left;
+	height: 350px;
+	padding: 10px 50px 10px 50px;
+}
+
+.leagueopen_team img {
+	height: 80px;
+	margin: 20px 0 20px 0;
+}
+
+.leagueopen_show {
+	text-align: center;
+}
+
+.leagueopen_show p {
+	color: white;
+}
+
+

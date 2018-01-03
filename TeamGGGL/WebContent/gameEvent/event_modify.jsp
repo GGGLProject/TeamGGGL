@@ -130,7 +130,7 @@ $(document).ready(function(){
 
 						<tr>
 							<td class="text-center" colspan=2><img src="${vo.event_image }"
-								 id="img" class="event-img" height=320></td>
+								 id="img" class="event-img" height=320 width=320></td>
 						</tr>
 						<tr>
 							<td class="text-center" colspan=2>
