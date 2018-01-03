@@ -64,7 +64,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<insert id="replyNewInsert" parameterType="NewsReplyVO">
 		<selectKey keyProperty="no" resultType="int" order="BEFORE">
-			SELECT NVL(MAX(no)+1,1) as no FROM news_reply
+			SELECT
+			NVL(MAX(no)+1,1) as no FROM news_reply
 		</selectKey>
 		INSERT INTO news_reply(no,bno,id,name,msg)
 		VALUES(#{no},#{bno},#{id},#{name},#{msg})
@@ -74,6 +75,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT no, bno,id,name,msg,regdate from news_reply where
 		bno=#{no}
 	</select>
+	<update id="replyUpdate" parameterType="NewsReplyVO">
+		UPDATE news_reply SET
+		msg=#{msg}
+		WHERE no=#{no}
+	</update>
+	<delete id="replyDelete" parameterType="int">
+		DELETE FROM news_reply
+		WHERE
+		no=#{no}
+	</delete>
 	<!-- 댓글 추가(새로운) -->
 	<!-- 찾기 find <select id="boardFindData" resultType="BoardVO" parameterType="java.util.Map"> 
 		SELECT no,subject,name,regdate,hit FROM gggl_news WHERE ${fs} LIKE '%'||#{ss}||'%' 
