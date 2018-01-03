@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.sist.gallery.dao.gallery-mapper">
 	<select id="galleryListAll" resultType="GalleryVO"
-		parameterType="java.util.Map">
+		parameterType="GalleryVO">
 		SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path,gallery_img,num
 		FROM (SELECT
@@ -14,9 +14,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM (SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path,gallery_img
 		FROM gggl_gallery ORDER BY gallery_title ASC ))
-		WHERE num BETWEEN #{start} AND #{end}
+		
 	</select>
-	<select id="galleryListTop" resultType="GalleryVO" parameterType="java.util.Map">
+	<select id="galleryListTop" resultType="GalleryVO" parameterType="GalleryVO">
 		SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path,gallery_img,num
 		FROM (SELECT
@@ -27,9 +27,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM gggl_gallery 
 		WHERE gallery_category='TOP' 
 		ORDER BY gallery_title ASC ))
-		WHERE num BETWEEN #{start} AND #{end}
+	
 	</select>
-	<select id="galleryListMid" resultType="GalleryVO" parameterType="java.util.Map">
+	<select id="galleryListMid" resultType="GalleryVO" parameterType="GalleryVO">
 		SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path,gallery_img,num
 		FROM (SELECT
@@ -40,10 +40,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM gggl_gallery 
 		WHERE gallery_category='MID'
 		ORDER BY gallery_title ASC ))
-		WHERE num BETWEEN #{start} AND #{end}
+		
 		
 	</select>
-	<select id="galleryListJungle" resultType="GalleryVO" parameterType="java.util.Map">
+	<select id="galleryListJungle" resultType="GalleryVO" parameterType="GalleryVO">
 		SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path,gallery_img,num
 		FROM (SELECT
@@ -54,10 +54,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM gggl_gallery 
 		WHERE gallery_category='JUNGLE'
 		ORDER BY gallery_title ASC ))
-		WHERE num BETWEEN #{start} AND #{end}
+
 		
 	</select>
-	<select id="galleryListBottom" resultType="GalleryVO" parameterType="java.util.Map">
+	<select id="galleryListBottom" resultType="GalleryVO" parameterType="GalleryVO">
 		SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path,gallery_img,num
 		FROM (SELECT
@@ -68,10 +68,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM gggl_gallery 
 		WHERE gallery_category='BOTTOM'
 		ORDER BY gallery_title ASC ))
-		WHERE num BETWEEN #{start} AND #{end}
+		
 		
 	</select>
-	<select id="galleryListSupport" resultType="GalleryVO" parameterType="java.util.Map">
+	<select id="galleryListSupport" resultType="GalleryVO" parameterType="GalleryVO">
 		SELECT
 		gallery_no,gallery_title,gallery_content,gallery_regdate,gallery_category,gallery_path,gallery_img,num
 		FROM (SELECT
@@ -82,7 +82,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM gggl_gallery 
 		WHERE gallery_category='SUPPORT'
 		ORDER BY gallery_title ASC ))
-		WHERE num BETWEEN #{start} AND #{end}
+		
 		
 	</select>
 	<!-- 총페이지 -->
