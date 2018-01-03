@@ -19,14 +19,6 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
-
-<style type="text/css">
-.log {
-	margin-left: 1100px;
-	margin-top: 7px;
-	font-color: white;
-}
-</style>
 </head>
 <body class="body-main" data-spy="scroll" data-target=".navbar"
 	data-offset="50">
@@ -88,13 +80,40 @@
 	<jsp:include page="${main_jsp }"></jsp:include>
 
 	<!-- Footer -->
-	<footer class="text-center"> <a class="up-arrow"
-		href="#myPage" data-toggle="tooltip" title="TO TOP"> <span
-		class="glyphicon glyphicon-chevron-up"></span>
-	</a> <br>
-	<br>
-	<p>League of Legends에 관한 종합 사이트 입니다.</p>
-	<p>Made by 암튼 6명이서 만듬</p>
+	<footer>
+		<div class="text-center arrowdiv">
+			<a class="up-arrow text-center" href="#myPage" data-toggle="tooltip" title="TO TOP">
+				<span class="glyphicon glyphicon-chevron-up"></span>
+			</a>
+		</div>
+		
+		<div class="footer_menu">
+			<ul>
+				<li><a href="main.do">HOME</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
+				<li><a href="news_main.do">NEWS</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
+				<li><a href="game_schedule.do">MATCHES</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
+				<li><a href="gallery.do">GALLERY</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
+				<li><a href="event_list.do">EVENT</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
+				<li><a href="#">FREEBOARD</a></li>
+			</ul>
+		</div>
+		<div class="footer_txt">
+			<p>주소 : 서울특별시 마포구 월드컵북로 21 풍성빌딩 4층 쌍용강북교육센터 H CLASS | 대표 : 윤승구 | 사업자등록번호 : 123-45-67890</p>
+			<p>GGGL <a href="#">1:1 문의</a> | 경기상담(무료)010-9482-0971 | 갤러리상담(무료)010-2853-0928 | 가입문의(무료)010-2630-9375</p>
+			<p>Copyright 2018 GGGL. Co. Ltd., ALL Right Reserved.</p>
+		</div>
+		<div class="footer_sns">
+			<img src="gameMain/image/sns1.png">&nbsp;&nbsp;
+			<img src="gameMain/image/sns2.png">&nbsp;&nbsp;
+			<img src="gameMain/image/sns3.png">&nbsp;&nbsp;
+			<img src="gameMain/image/sns4.png">&nbsp;&nbsp;
+			<img src="gameMain/image/sns5.png">
+		</div>
+		<div class="footer_aboutus">
+			<p class="aboutus">About Us</p>
+			<p class="aboutname1">Seunggoo Yoon&nbsp;&nbsp;&nbsp;Jinhyeok Oh&nbsp;&nbsp;&nbsp;Bora Yang</p>
+			<p class="aboutname2">Jieun Bae&nbsp;&nbsp;&nbsp;Seungjae Moon&nbsp;&nbsp;&nbsp;Dojin Lim</p>
+		</div>
 	</footer>
 </body>
 </html>
