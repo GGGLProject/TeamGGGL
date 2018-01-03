@@ -228,7 +228,7 @@ snip1200 {
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
-#caption {
+#caption, .caption {
     margin: auto;
     display: block;
     width: 80%;
@@ -240,7 +240,7 @@ snip1200 {
 }
 
 /* Add Animation - Zoom in the Modal */
-.modal-content, #caption { 
+.modal-content, .caption { 
     animation-name: zoom;
     animation-duration: 0.6s;
 }
