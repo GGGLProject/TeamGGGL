@@ -58,7 +58,7 @@
 						<tr class="text-link">
 							<td class="text-center td-top">${vo.event_no }</td>
 							<td class="text-center td-top">${vo.event_category }</td>
-							<td class="text-center"><a href="event_content.do"><img
+							<td class="text-center"><a href="event_content.do?no=${vo.event_no }"><img
 									src="${vo.event_image }" width=100 height=50></a></td>
 							<td class="text-center td-top"><a href="event_content.do?no=${vo.event_no }">${vo.event_title }</a></td>
 							<td class="text-center td-top"><%-- <fmt:parseDate var="parsedDate" value="${vo.event_day }" pattern="yyy-MM-dd" />

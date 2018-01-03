@@ -13,11 +13,30 @@
 	rel="stylesheet" type="text/css">
 <link href="css/gameMain.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat"
-	rel="stylesheet" type="text/css">
+	rel="stylesheet" type="text/css">http://localhost:8080/TeamProject_update/gameMain/image/maingif_1.gif
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('#MOVE_TOP_BTN').fadeIn();
+            } else {
+                $('#MOVE_TOP_BTN').fadeOut();
+            }
+        });
+        
+        $("#MOVE_TOP_BTN").click(function() {
+            $('html, body').animate({
+                scrollTop : 0
+            }, 600);
+            return false;
+        });
+    });
+</script>
+d
 <title>Insert title here</title>
 </head>
 <body class="body-main" data-spy="scroll" data-target=".navbar"
@@ -87,7 +106,7 @@
 	<!-- Footer -->
 	<footer>
 		<div class="text-center arrowdiv">
-			<a class="up-arrow text-center" href="#top" data-toggle="tooltip" title="TO TOP">
+			<a class="up-arrow text-center" href="#" data-toggle="tooltip" title="TO TOP" id="MOVE_TOP_BTN">
 				<span class="glyphicon glyphicon-chevron-up"></span>
 			</a>
 		</div>
