@@ -134,5 +134,34 @@ public class MemberModel {
 		req.setAttribute("vo", vo);	
 		return "gameMember/recoveryEmail.jsp";
 	}
+	//수정하기
+	@RequestMapping("memberUpdate.do")
+	public String memberUpdate(HttpServletRequest req,HttpServletResponse res) {
+		try {
+			req.setCharacterEncoding("EUC-KR");
+		} catch (Exception ex) {
+			System.out.println("memberJoin :" + ex.getMessage());
+		}
+		String id =req.getParameter("id");
+		String email=req.getParameter("email");
+		String pwd=req.getParameter("Mpassword");
+		String telnumber=req.getParameter("telnumber");
+		String year=req.getParameter("year");
+		String month=req.getParameter("month");
+		String day=req.getParameter("day");
+		String birthday=year+"-"+month+"-"+day;
+		String grade = req.getParameter("grade");
+		
+		
+		MemberVO vo=new MemberVO();
+		vo.setMember_nickname(id);
+		vo.setMember_id(email);
+		vo.setMember_pwd(pwd);
+		vo.setMember_phone(telnumber);
+		vo.setMember_birthday(birthday);
+		req.setAttribute("vo", vo);
+		MemberDAO.memberUpdate(vo);
 	
+		return "gameMain/main.jsp";
+	}
 }

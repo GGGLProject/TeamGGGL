@@ -118,8 +118,15 @@ $(function(){
 	$('.ya').click(function(){
 		$(".ya").prop('class', 'btn btn-success');
 	});
-	$('#join').click(function(){
-		alert("회원가입이 완료 되었습니다.");
+	$('#update').click(function(){
+		var Mpassword=$('#Mpassword').val();
+		if(Mpassword.trim()=="")
+		{
+			alert("비밀번호를 입력하세요");
+			$('#Mpassword').focus();
+			return;
+		}
+		alert("수정이 완료 되었습니다.");
 	})
 });
 </script>
@@ -134,7 +141,7 @@ $(function(){
         <div class="col-md-6 col-md-offset-3">
           
          
-          <form method="post" action="memberJoin.do">
+          <form method="post" action="memberUpdate.do">
           <!--  이름 닉네임 입력 부분 -->
            <div class="name form-group">
               <label for="username">이름(닉네임)</label>
@@ -170,19 +177,7 @@ $(function(){
       
             </div>
            
-            <div class="form-group">
-              <label for="password">비밀번호 변경하기</label>
-              
-              <input type="password" name="Mpassword" class="form-control" id="Mpassword">
-      
-            </div>
             
-            <div class="form-group">
-              <label for="password">변경된 비밀번호 확인</label>
-              
-              <input type="password" name="Mpassword" class="form-control" id="Mpassword">
-      
-            </div>
             <!-- 휴대폰 번호 입력  -->
             <div class="form-group">
               <label for="telnumber">휴대폰 번호</label>
@@ -201,7 +196,7 @@ $(function(){
                 <!-- 년도 옵션 박스 -->
               
                     <select class="form-control" name="year" id="year">
-                    <option>${fn:substring(sessionScope.birthday,0,4) }년</option>
+                    <option>${fn:substring(sessionScope.birthday,0,4) }</option>
           			 <c:forEach var="i" begin="1950" end="2020" step="1" >
 						
                         <option value="${i}" <c:if test="${i == (now.year + 1900)}">selected</c:if> >${i}년</option>
@@ -214,7 +209,7 @@ $(function(){
                 <!-- 월 옵션 박스 -->
                 <div class="col-xs-4 col-md-4">
                     <select class="form-control" name="month" id="month">
-                        <option value="Day">${fn:substring(sessionScope.birthday,6,7) }월</option>
+                        <option >${fn:substring(sessionScope.birthday,5,7) }</option>
                          <c:forEach var="i" begin="1" end="12" step="1" >
                          
                         <option value="${i}">${i}월</option>
@@ -226,7 +221,7 @@ $(function(){
                 <!-- 일 옵션 박스 -->
                 <div class="col-xs-4 col-md-4">
                     <select class="form-control" name="day" id="day">
-                        <option value="day">${fn:substring(sessionScope.birthday,8,10) }일</option>
+                        <option>${fn:substring(sessionScope.birthday,8,10) }</option>
                          <c:forEach var="i" begin="1" end="31" step="1" >
                          
                         <option value="${i}">${i}일</option>
@@ -248,7 +243,7 @@ $(function(){
             <!-- 회원가입, 취소 버튼 -->
             <div class="form-group text-center">
            
-              <input type="submit" class="btn btn-info" id="join" value="수정확인"/>
+              <input type="submit" class="btn btn-info" id="update" value="수정확인"/>
             	
               <a href="main.do" type="submit" class="btn btn-default" >수정취소</a>
             

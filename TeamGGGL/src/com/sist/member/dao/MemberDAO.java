@@ -99,6 +99,12 @@ public static void memberJoin(MemberVO vo) {
 	session.insert("memberJoin",vo);
 	session.close();
 }
+public static void memberUpdate(MemberVO vo) {
+	SqlSession session=ssf.openSession();
+	session.update("mypage",vo);
+	session.commit();
+	session.close();
+}
 public static MemberVO passwordSelect(String recovery) {
 	MemberVO vo=new MemberVO();
 	SqlSession session=ssf.openSession();

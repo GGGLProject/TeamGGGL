@@ -13,6 +13,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.sist.match.dao.PlayerVO" alias="PlayerVO"/>
 		<typeAlias type="com.sist.event.dao.EventVO" alias="EventVO"/>
 		<typeAlias type="com.sist.gallery.dao.GalleryVO" alias="GalleryVO"/>
+		<typeAlias type="com.sist.member.dao.MemberVO" alias="MemberVO"/>
 		
 	</typeAliases> 
 	<!-- "(environment)+" -->
