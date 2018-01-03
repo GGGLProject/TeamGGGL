@@ -146,8 +146,7 @@ footer .up-arrow:hover {
    font-size: 15px !important;
    letter-spacing: 4px;
 }
-.navbar-inverse
-{
+.navbar-inverse {
 	border-style: none;
 }
 .navbar li a, .navbar .navbar-brand {
@@ -179,4 +178,85 @@ footer .up-arrow:hover {
 .carousel-inner img {
    width: 100%; /* Set width to 100% */
    margin: auto;
+}
+
+#img_a {
+	width: 400px;
+	height: 250px;
+}
+
+/* match ºÎºÐ */
+.start_box h3 {
+	font-size: 3.2em;
+	margin: 35px 0;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	color: #fff;
+	font-weight: 800;
+	text-shadow: 2px 2px 3px rgb(12, 12, 12);
+}
+
+.timer {
+	font-size: 80px;
+	font-weight: 600;
+	display: inline-block;
+	vertical-align: top;
+	color: #fff;
+}
+
+.clock .column {
+	float: left;
+	width: 20%;
+}
+
+.clock {
+	margin-left: 16%;
+	margin-top: 20px;
+}
+
+.main_teamN {
+	font-size: 24px;
+}
+
+.clock .column .text {
+	font-size: 14px;
+}
+
+.player_Img {
+	height: 80px;
+	width: 68px;
+	/*background-color: #f2f2f2;
+	border-bottom: 1px solid #cecece;
+	position: relative;
+	border: 2px solid #1e56b2*/
+}
+
+.detail-player-list__img {
+	width: 100%;
+	height: 100%;
+	/*position: absolute;*/
+}
+
+.event_box h3, .news_box h3 {
+	font-size: 2.3em;
+	margin: 10px 0;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	color: #000;
+	font-weight: 1000;
+	text-shadow: 2px 2px 3px rgb(149, 149, 149);
+}
+
+.video_box h3 {
+	font-size: 2.3em;
+	margin: 10px 0;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	color: #fff;
+	font-weight: 1000;
+	text-shadow: 2px 2px 3px rgb(12, 12, 12);
+}
+
+.main_video_box .main_video:hover {
+	border-color: #f8b700;
 }

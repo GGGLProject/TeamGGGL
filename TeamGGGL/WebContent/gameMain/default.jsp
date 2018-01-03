@@ -11,52 +11,11 @@
 <script type="text/javascript" src="js/moment.js"></script>
 <script type="text/javascript" src="js/moment-timezone-with-data.js"></script>
 <script type="text/javascript" src="js/timer.js"></script>
-<style type="text/css">
-#img_a {
-	width: 400px;
-	height: 300px;
-}
-
-.start_box h3 {
-	font-size: 3em;
-	margin: 35px 0;
-	text-transform: uppercase;
-	letter-spacing: 4px;
-	color: #fff;
-	font-weight: 800;
-	text-shadow: 2px 2px 3px rgb(12, 12, 12);
-}
-
-.timer {
-	font-size: 80px;
-	font-weight: 600;
-	display: inline-block;
-	vertical-align: top;
-	color: #fff;
-}
-
-.clock .column {
-	float: left;
-	width: 20%;
-}
-
-.clock {
-	margin-left: 16%;
-	margin-top: 20px;
-}
-
-.main_teamN {
-	font-size: 24px;
-}
-
-.clock .column .text {
-	font-size: 14px;
-}
-</style>
 </head>
 <body>
 	<div class="row">
-		<div class="col-md-12 padding-0" style="background: url(gameMain/image/maingif_1.gif) no repeat center center">
+		<div class="col-md-12 padding-0"
+			style="background: url(gameMain/image/maingif_1.gif) no repeat center center">
 			<img src="gameMain/image/maingif_1.gif" width="100%">
 		</div>
 	</div>
@@ -71,45 +30,70 @@
 						<h3>THE BIG MATCH WILL START</h3>
 					</div>
 					<p class="text-center">
-						<h2>
-							<strong>${vo.match_name }</strong>
-						</h2>
-					</p><br>
+					<h2>
+						<strong>${vo.match_name }</strong>
+					</h2>
+					</p>
+					<br>
 					<div class="row">
 						<div class="col-sm-4">
 							<p class="text-center main_teamN">
 								<strong>${vo.home_name }</strong>
 							</p><br> 
-							<a href="#demo" data-toggle="collapse"> 
-								<img src="${vo.tvo.team_icon }" alt="Random Name" width="255" height="255">
+							<a href="#demo" data-toggle="collapse">
+								<img src="${vo.tvo.team_icon }" alt="Random Name" width="290" height="275">
 							</a>
 							<div id="demo" class="collapse">
-								<p>홈팀 정보</p>
-								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
-								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
-								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
+								<p style="margin-top: 30px">${vo.home_name } 팀 선수</p>
+								<div class="detail_player_list">
+									<c:set var="doneLoop" value="false" />
+									<c:forEach var="vo" items="${h_list }" varStatus="s">
+										<c:if test="${not doneLoop}">
+											<div class="player_Img" style="float: left; margin-left: 5px">
+												<img src="${vo.pvo.player_pic }" class="detail-player-list__img">
+												<span>${vo.pvo.player_name }</span>
+											</div>
+											<c:if test="${s.count == 5}">
+												<c:set var="doneLoop" value="true" />
+											</c:if>
+										</c:if>
+									</c:forEach>
+								</div>
 							</div>
+
 						</div>
 						<div class="col-sm-4">
 							<h4>
-								<strong>${vo.match_day }</strong>&nbsp;<strong>${vo.match_time }</strong>
+								<strong>${list__1a[status.index].match_day }</strong>&nbsp;<strong>${list__1a[status.index].match_time }</strong>
 							</h4><br> 
 							<img src="https://static.comicvine.com/uploads/original/11111/111119495/3299555-kickass12.png"
 								alt="Random Name" width="155" height="155" style="margin-top: 30px">
 						</div>
 						<div class="col-sm-4">
 							<p class="text-center main_teamN">
-								<strong>${vo.away_name }</strong>
+								<strong>${list__1a[status.index].away_name }</strong>
 							</p>
 							<br> <a href="#demo3" data-toggle="collapse"> <img
 								src="${list__1a[status.index].away_icon }" alt="Random Name"
-								width="255" height="255">
+								width="290" height="275">
 							</a>
 							<div id="demo3" class="collapse">
-								<p>어웨이팀 정보</p>
-								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
-								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
-								<p>언제부터 시작되서 계속 우승했고 어쩌고 저쩌고~~~~~~</p>
+								<p style="margin-top: 30px">${list__1a[status.index].away_name } 팀 선수</p>
+								<div class="detail_player_list">
+									<c:set var="doneLoop" value="false" />
+									<c:forEach var="vo" items="${a_list }" varStatus="s">
+										<c:if test="${not doneLoop}">
+											<div class="player_Img" style="float: left; margin-left: 5px">
+												<img src="${vo.pvo.player_pic }" class="detail-player-list__img">
+												<br>
+												<span>${vo.pvo.player_name }</span>
+											</div>
+											<c:if test="${s.count == 5}">
+												<c:set var="doneLoop" value="true" />
+											</c:if>
+										</c:if>
+									</c:forEach>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -140,22 +124,24 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 	<div>
 		<div class="container">
-			<h3 class="text-center">e-Sport NEWS</h3>
-			<p class="text-center">최신 이스포츠 뉴스입니다</p>
+			<div class="news_box">
+				<h3 class="text-center">E스포츠 하이라이트 뉴스</h3>
+			</div>
+			<p class="text-center">
+				<a href="news_main.do"><em>뉴스 더 보기</em></a>
+			</p>
 
 			<div class="row text-center">
 				<c:forEach var="vo" items="${rlist }">
 					<div class="col-sm-3">
-						<div class="thumbnail"
-							style="max-height: 600px; position: relative; vertical-align: middle">
-							<a href="news_detail.do?no=${vo.news_no }"><img
-								class="img-responsive" src="gameNews/image/${vo.news_no }.jpg"
-								id="img_a"></a> <br>
+						<div class="thumbnail" style="max-height: 600px; position: relative; vertical-align: middle">
+							<a href="news_detail.do?no=${vo.news_no }">
+							<img class="img-responsive" src="gameNews/image/${vo.news_no }.jpg" id="img_a"></a> <br>
 							<p>
 								<a href="news_detail.do?no=${vo.news_no }">${vo.news_title }</a>
 							</p>
@@ -168,35 +154,32 @@
 	<!-- Video Section -->
 	<div class="bg-1">
 		<div class="text-center container">
-			<h3 class="margin">League of Legends Streaming</h3>
+			<div class="video_box">
+				<h3 class="text-center">경기 하이라이트 영상</h3>
+			</div>
 			<br>
-			<div class="col-sm-4">
-				<p>KT T1 Faker Live Stream LOL - 27/12 Translation EN | Hide on
-					bush | SK텔레콤 T1 / SK Telecom T1</p>
-				<iframe width="260" src="https://www.youtube.com/embed/ot3wAWjCVsM"
-					frameborder="0" gesture="media" allow="encrypted-media"
-					allowfullscreen></iframe>
-			</div>
-			<div class="col-sm-4">
-				<p>SKT T1 Bang Live Stream LOL 27/12 | Best ADC | SK텔레콤 T1 / SK
-					Telecom T</p>
-				<iframe width="260" src="https://www.youtube.com/embed/ExAOyavrXeA"
-					frameborder="0" gesture="media" allow="encrypted-media"
-					allowfullscreen></iframe>
-			</div>
-			<div class="col-sm-4">
-				<p>Imaqtpie Live Stream LoL 24/7 | Best adc NA | Funny LoL</p>
-				<iframe width="260" src="https://www.youtube.com/embed/mjxo1E6xlRM"
-					frameborder="0" gesture="media" allow="encrypted-media"
-					allowfullscreen></iframe>
-			</div>
+			<c:set var="doneLoop" value="false" />
+			<c:forEach var="vo" items="${list }" varStatus="status">
+				<c:if test="${not doneLoop}">
+					<div class="col-sm-4 main_video_box">
+						<iframe class="main_video" width="360" height="220" src="https://www.youtube.com/embed/${vo.match_videokey }"
+							frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+						<h4 style="margin-top: 20px"><p>${vo.match_name }</p></h4>
+					</div>
+					<c:if test="${status.count == 3}">
+						<c:set var="doneLoop" value="true" />
+					</c:if>
+				</c:if>
+			</c:forEach>
 		</div>
 	</div>
 	<!-- Container (Event Section) -->
 	<div>
 		<div class="container">
 			<div class="row">
-				<h3 class="text-center">Event</h3>
+				<div class="event_box">
+					<h3 class="text-center">Event</h3>
+				</div>
 				<p class="text-center">
 					<em>대회에 참여하여 상금을 쟁취하세요!</em>
 				</p>
