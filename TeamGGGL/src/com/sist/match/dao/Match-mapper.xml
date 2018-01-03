@@ -130,8 +130,6 @@
 	</select>
 	
 	
-	
-	
 	<!-- 상세보기 -->
 	<select id="match_detail_h" resultMap="MatchList" parameterType="int">
 		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)') as match_day,match_time,match_league,match_name,team_icon,home_name,home_score,away_name,away_score,match_videokey, player_name, player_pic
@@ -148,6 +146,38 @@
 		AND gggl_team.team_name = gggl_player.player_team
 		AND match_no = #{match_no}
         ORDER BY team_name
+	</select>
+	
+	<!-- 리그별팀정보 -->
+	<select id="league_lck" resultMap="MatchList">
+		SELECT team_name,team_icon FROM GGGL_TEAM WHERE team_league='LCK'
+	</select>
+	<select id="league_nalcs" resultMap="MatchList">
+		SELECT team_name,team_icon FROM GGGL_TEAM WHERE team_league='NA LCS'
+	</select>
+	<select id="league_eulcs" resultMap="MatchList">
+		SELECT team_name,team_icon FROM GGGL_TEAM WHERE team_league='EU LCS'
+	</select>
+	<select id="league_cblol" resultMap="MatchList">
+		SELECT team_name,team_icon FROM GGGL_TEAM WHERE team_league='CBLOL'
+	</select>
+	<select id="league_lms" resultMap="MatchList">
+		SELECT team_name,team_icon FROM GGGL_TEAM WHERE team_league='LMS'
+	</select>
+	<select id="league_nacs" resultMap="MatchList">
+		SELECT team_name,team_icon FROM GGGL_TEAM WHERE team_league='NA CS'
+	</select>
+	<select id="league_eucs" resultMap="MatchList">
+		SELECT team_name,team_icon FROM GGGL_TEAM WHERE team_league='EU CS'
+	</select>
+	<select id="league_lpl" resultMap="MatchList">
+		SELECT team_name,team_icon FROM GGGL_TEAM WHERE team_league='LPL'
+	</select>
+	<select id="league_opl" resultMap="MatchList">
+		SELECT team_name,team_icon FROM GGGL_TEAM WHERE team_league='OPL'
+	</select>
+	<select id="league_wcs" resultMap="MatchList">
+		SELECT team_name,team_icon FROM GGGL_TEAM WHERE team_league is null
 	</select>
 	
 	

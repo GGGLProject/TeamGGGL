@@ -36,6 +36,7 @@
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
 				<li><a href="news_main.do">뉴스</a></li>
+				<li><a href="teaminfo.do">팀/선수 정보</a></li>
 				<li><a href="game_schedule.do">일정 / 결과</a></li>
 				<li><a href="gallery.do">갤러리</a></li>
 				<li><a href="event_list.do">이벤트</a></li>
