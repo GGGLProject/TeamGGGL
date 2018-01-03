@@ -36,11 +36,15 @@
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
 				<li><a href="news_main.do">뉴스</a></li>
+				<li><a href="teaminfo.do">팀/선수 정보</a></li>
 				<li><a href="game_schedule.do">일정 / 결과</a></li>
 				<li><a href="gallery.do">갤러리</a></li>
 				<li><a href="event_list.do">이벤트</a></li>
 				<c:if test="${sessionScope.email!=null}">
 					<li><a href="MyPage.do">마이페이지</a></li>
+				</c:if>
+				<c:if test="${sessionScope.email!=null && sessionScope.grade==1 }">
+				<li><a href="MyPage.do">회원관리 창</a></li>
 				</c:if>
 			</ul>
 			<c:if test="${sessionScope.email==null }">
@@ -67,7 +71,8 @@
 						<c:if test="${sessionScope.grade==3 }">
 						(이벤트등록회원)님 로그인중입니다.	
 						</c:if>
-						</span> <input type=submit value="로그아웃" class="button button-info">
+						</span> 
+						<input type=submit value="로그아웃" >
 					</div>
 				</form>
 			</c:if>
@@ -82,7 +87,7 @@
 	<!-- Footer -->
 	<footer>
 		<div class="text-center arrowdiv">
-			<a class="up-arrow text-center" href="#myPage" data-toggle="tooltip" title="TO TOP">
+			<a class="up-arrow text-center" href="#top" data-toggle="tooltip" title="TO TOP">
 				<span class="glyphicon glyphicon-chevron-up"></span>
 			</a>
 		</div>

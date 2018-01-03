@@ -240,6 +240,149 @@ public class MatchDAO {
 		}
 		return list;
 	}
+	
+	public static List<MatchVO> league_lck() {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("league_lck");
+		} catch (Exception e) {
+			System.out.println("league_lck : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}
+	
+	public static List<MatchVO> league_nalcs() {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("league_nalcs");
+		} catch (Exception e) {
+			System.out.println("league_nalcs : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}
+	
+	public static List<MatchVO> league_eulcs() {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("league_eulcs");
+		} catch (Exception e) {
+			System.out.println("league_eulcs : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}
+	
+	public static List<MatchVO> league_cblol() {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("league_cblol");
+		} catch (Exception e) {
+			System.out.println("league_cblol : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}
+	
+	public static List<MatchVO> league_lms() {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("league_lms");
+		} catch (Exception e) {
+			System.out.println("league_lms : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}
+	
+	public static List<MatchVO> league_nacs() {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("league_nacs");
+		} catch (Exception e) {
+			System.out.println("league_nacs : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}
+	
+	public static List<MatchVO> league_eucs() {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("league_eucs");
+		} catch (Exception e) {
+			System.out.println("league_eucs : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}
+	
+	public static List<MatchVO> league_lpl() {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("league_lpl");
+		} catch (Exception e) {
+			System.out.println("league_lpl : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}
+	
+	public static List<MatchVO> league_opl() {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("league_opl");
+		} catch (Exception e) {
+			System.out.println("league_opl : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}
+	
+	public static List<MatchVO> league_wcs() {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("league_wcs");
+		} catch (Exception e) {
+			System.out.println("league_wcs : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // 반환
+		}
+		return list;
+	}
+	
+	
+	
 		
 
 }
