@@ -22,8 +22,9 @@ $(function(){
 			check = no;
 		} else {
 			$('.leagueopen_team').hide();
-			check = 1;
+			check = 0;
 		}
+		return false;
 	});
 });
 </script>
@@ -41,29 +42,31 @@ $(function(){
 			<a class="rok" href="#" value="2">
 				<div class="col-md-3 leaguearea">
 					<img class="ln" src="gameTeam/image/na-lcs.png" alt="nalcs">
-					<p>na-lcs</p>
+					<p>NA LCS</p>
 				</div>
 			</a>
 			<a class="rok" href="#" value="3">
 				<div class="col-md-3 leaguearea">
 					<img class="ln" src="gameTeam/image/eu-lcs.png" alt="eu-lcs">
-					<p>eu-lcs</p>
+					<p>EU LCS</p>
 				</div>
 			</a>
 			<a class="rok" href="#" value="4">
 				<div class="col-md-3 leaguearea">
 					<img class="ln" src="gameTeam/image/cblol.png" alt="cblol">
-					<p>cblol</p>
+					<p>CBLOL</p>
 				</div>
 			</a>
 		</div>
 		<div class="leagueopen_team leagueopen_team_1" style="display: none;">
 			<div class="row">
 				<c:forEach var="vo" items="${list_lck }" varStatus="status">
-					<div class="col-md-2 leagueopen_show">
-						<img src="${vo.tvo.team_icon }">
-						<p>${vo.tvo.team_name }</p>
-					</div>
+					<a href="teaminfo_detail.do?team_name=${vo.team_name }">
+						<div class="col-md-2 leagueopen_show">
+							<img src="${vo.tvo.team_icon }">
+							<p>${vo.tvo.team_name }</p>
+						</div>
+					</a>
 				</c:forEach>
 			</div>
 		</div>

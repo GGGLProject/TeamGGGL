@@ -40,5 +40,13 @@ public class TeamModel {
 		req.setAttribute("main_jsp", "../gameTeam/teaminfo.jsp");
 		return "gameMain/main.jsp";
 	}
+	
+	@RequestMapping("teaminfo_detail.do")
+	public String teaminfo_detail(HttpServletRequest req, HttpServletResponse res) {
+		String team_name = req.getParameter("team_name");
+		
+		req.setAttribute("main_jsp", "../gameTeam/teaminfo_detail.jsp");
+		return "gameMain/main.jsp";
+	}
 
 }
