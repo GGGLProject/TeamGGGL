@@ -13,6 +13,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(function(){
+	$('#category').val(vo.event_category);
+	$('#category > option[@value="vo.event_category"]').attr("selected","true");
+	
 	$('#writeBtn').click(function(){
 
 
@@ -101,7 +104,7 @@ $(document).ready(function(){
 <body>
 	<div class="container">
 		<div class="row">
-			<h2 class="text-center"><strong>이벤트 게시판</strong></h2>
+			<h2 class="text-center"><strong>EVENT</strong></h2>
 			<br>
 			
 			<div class="col">
@@ -144,12 +147,15 @@ $(document).ready(function(){
 				<div class="col-lg-6">
 					<table class="table event-table table-hover">
 						<tr>
+							
 							<td width=10% class="text-right">분류</td>
 							<td class="category" width=40% class="text-left">
 								<select name=category id="category">
+								<c:set var="cCheck" value="${vo.event_category }"/>
+								
 							<option value="일반">일반</option>
 									<option value="PC방">PC방</option>
-									<option value="공식">공식</option>
+									<option value="공식" >공식</option>
 									<option value="개인">개인</option>
 									<option value="이벤트">이벤트</option>
 								</select>

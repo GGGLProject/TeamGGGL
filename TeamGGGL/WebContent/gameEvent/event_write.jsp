@@ -68,7 +68,7 @@
 	<div class="container">
 		<div class="row">
 			<h2 class="text-center">
-				<strong>이벤트 게시판</strong>
+				<strong>EVENT</strong>
 			</h2>
 			<br>
 
