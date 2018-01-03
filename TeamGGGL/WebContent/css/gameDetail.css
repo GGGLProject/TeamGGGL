@@ -67,7 +67,7 @@ ul.comment_nav_tabs li.active2 {
 	padding: 10px 0;
 }
 
-.container-fluid-game .com_2 {
+.com_2 {
 	margin: 10px 0;
 }
 
@@ -103,7 +103,7 @@ h1 {
 .comment_form {
 	border-bottom: 1px solid #dedee0;
 	margin-bottom: 20px;
-	padding: 0 10px 10px 10px;
+	padding: 0 10px 15px 10px;
 }
 
 .writer_img {

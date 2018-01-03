@@ -129,7 +129,6 @@
 		ORDER BY match_no
 	</select>
 	
-	
 	<!-- 상세보기 -->
 	<select id="match_detail_h" resultMap="MatchList" parameterType="int">
 		SELECT match_no,TO_CHAR(match_day,'MM.DD(DY)') as match_day,match_time,match_league,match_name,team_icon,home_name,home_score,away_name,away_score,match_videokey, player_name, player_pic
@@ -179,6 +178,31 @@
 	<select id="league_wcs" resultMap="MatchList">
 		SELECT team_name,team_icon FROM GGGL_TEAM WHERE team_league is null
 	</select>
+	
+	<!-- 댓글 -->
+	<insert id="m_replyNewInsert" parameterType="MatchReplyVO">
+      <selectKey keyProperty="no" resultType="int" order="BEFORE">
+         SELECT
+         NVL(MAX(no)+1, 1) as no FROM match_reply
+      </selectKey>
+      INSERT INTO match_reply(no, bno, id, name, msg)
+      VALUES(#{no}, #{bno}, #{id}, #{name}, #{msg})
+   </insert>
+   <select id="m_replyListData" resultType="MatchReplyVO" parameterType="int">
+      SELECT no, bno, id, name, msg, regdate FROM match_reply 
+      WHERE bno = #{no}
+   </select>
+   <update id="m_replyUpdate" parameterType="MatchReplyVO">
+      UPDATE match_reply SET
+      msg = #{msg}
+      WHERE no = #{no}
+   </update>
+   <delete id="m_replyDelete" parameterType="int">
+      DELETE FROM match_reply
+      WHERE no = #{no}
+   </delete>
+   
+   
 	
 	
 </mapper>
