@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,7 +13,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="css/newmember.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>  
 
@@ -61,6 +61,7 @@ $(function emailCheckfunction(){
 	});
 });
 </script>
+
 <!-- 이메일 체크 부분  -->
 <script type="text/javascript">
 $(function(){
@@ -90,13 +91,13 @@ $(function(){
 				var count=res.trim();
 				 if(count==0)
 				{
-					
+					alert("사용가능한 이메일 입니다.");
 					$("#emailcheckBtn").prop('class', 'btn btn-success');
 				 	$("#emailcheckBtn").text('사용가능');
 				}
 				else
 				{
-					
+					alert("사용불가능한 이메일 입니다.");
 					$("#emailcheckBtn").prop('class', 'btn btn-warning');
 					$("#emailcheckBtn").text('사용불가');
 					
@@ -123,14 +124,12 @@ $(function(){
 });
 </script>
 
-
-
 </head>
 <body>
 
 <article class="container">
         <div class="page-header">
-          <h1>마이페이지 <small></small></h1>
+          <h1>회원가입 <small></small></h1>
         </div>
         <div class="col-md-6 col-md-offset-3">
           
@@ -141,8 +140,12 @@ $(function(){
               <label for="username">이름(닉네임)</label>
               <div class="input-group"> 
               
-                <input type="text" class="form-control" name="id" id="id" size=100; placeholder="이름(닉네임)">
+                <input type="text" class="form-control" name="id" id="id" value="${sessionScope.name }">
               
+                <span class="input-group-btn">
+        
+                  <a href="#" class="btn btn-info" onClick="emailCheckfunction();" id="checkBtn">중복확인</a>
+                </span>
              </div>
             </div>
             
@@ -151,9 +154,11 @@ $(function(){
               <label for="username">이메일</label>
               <div class="input-group">
              
-                <input type="text" class="form-control" name="email" id="useremail" size=100; placeholder="ex)admin@GGGL.com">
+                <input type="text" class="form-control" name="email" id="useremail" value="${sessionScope.email }">
              
-                
+                <span class="input-group-btn">
+                  <a href="#" class="btn btn-info" id="emailcheckBtn">중복확인</a>
+                </span>
               </div>
             </div>
             
@@ -164,20 +169,30 @@ $(function(){
               <input type="password" name="Mpassword" class="form-control" id="Mpassword">
       
             </div>
+           
+            <div class="form-group">
+              <label for="password">비밀번호 변경하기</label>
+              
+              <input type="password" name="Mpassword" class="form-control" id="Mpassword">
+      
+            </div>
             
+            <div class="form-group">
+              <label for="password">변경된 비밀번호 확인</label>
+              
+              <input type="password" name="Mpassword" class="form-control" id="Mpassword">
+      
+            </div>
             <!-- 휴대폰 번호 입력  -->
             <div class="form-group">
               <label for="telnumber">휴대폰 번호</label>
               <div class="input-group">
-            
-                <input type="tel" class="form-control" name="telnumber" id="telnumber" placeholder="- 삽입하고 입력해 주세요">
+          
+                <input type="tel" class="form-control" name="telnumber" id="telnumber" value="${sessionScope.phone }">
          	
               </div>
             </div>
-            
-            
-            
-            <!-- 생년월일 입력 -->
+         <!-- 생년월일 입력 -->
             <label for="">
                 생년월일</label>
             <div class="row">
@@ -186,7 +201,7 @@ $(function(){
                 <!-- 년도 옵션 박스 -->
               
                     <select class="form-control" name="year" id="year">
-                    <option>년도</option>
+                    <option>${fn:substring(sessionScope.birthday,0,4) }년</option>
           			 <c:forEach var="i" begin="1950" end="2020" step="1" >
 						
                         <option value="${i}" <c:if test="${i == (now.year + 1900)}">selected</c:if> >${i}년</option>
@@ -199,7 +214,7 @@ $(function(){
                 <!-- 월 옵션 박스 -->
                 <div class="col-xs-4 col-md-4">
                     <select class="form-control" name="month" id="month">
-                        <option value="Day">월</option>
+                        <option value="Day">${fn:substring(sessionScope.birthday,6,7) }월</option>
                          <c:forEach var="i" begin="1" end="12" step="1" >
                          
                         <option value="${i}">${i}월</option>
@@ -211,7 +226,7 @@ $(function(){
                 <!-- 일 옵션 박스 -->
                 <div class="col-xs-4 col-md-4">
                     <select class="form-control" name="day" id="day">
-                        <option value="day">일</option>
+                        <option value="day">${fn:substring(sessionScope.birthday,8,10) }일</option>
                          <c:forEach var="i" begin="1" end="31" step="1" >
                          
                         <option value="${i}">${i}일</option>
@@ -221,36 +236,21 @@ $(function(){
                 </div>
             </div>
          
-            
-            
-            <!-- 관심리그 입력 -->
+       
            
-            <div><label for="">
-                관심리그</label></div>
-             <label class="radio-inline">
-                <input type="checkbox" name="favor" id="Checkbox1" value="LCK" />
-                LCK
-            </label>
-            <label class="radio-inline">
-                <input type="checkbox" name="favor" id="Checkbox2" value="NALCS" />
-                NALCS
-            </label>
-            <label class="radio-inline">
-                <input type="checkbox" name="favor" id="Checkbox3" value="EULCS" />
-                EULCS
-            </label>
-            <label class="radio-inline">
-                <input type="checkbox" name="favor" id="Checkbox4" value="CBLOL" />
-                CBLOL
-            </label>
-        
+            <div><label>
+                
+                
+                </label></div>
+                <br>
+             
             
             <!-- 회원가입, 취소 버튼 -->
             <div class="form-group text-center">
            
-              <input type="submit" class="btn btn-info" id="join" value="회원가입"/>
+              <input type="submit" class="btn btn-info" id="join" value="수정확인"/>
             	
-              <a href="main.do" type="submit" class="btn btn-default" >가입취소</a>
+              <a href="main.do" type="submit" class="btn btn-default" >수정취소</a>
             
               </form>
         </div>

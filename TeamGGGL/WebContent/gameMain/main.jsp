@@ -50,6 +50,9 @@
 				<c:if test="${sessionScope.email!=null}">
 					<li><a href="MyPage.do">마이페이지</a></li>
 				</c:if>
+				<c:if test="${sessionScope.email!=null && sessionScope.grade==1 }">
+				<li><a href="MyPage.do">회원관리 창</a></li>
+				</c:if>
 			</ul>
 			<c:if test="${sessionScope.email==null }">
 				<form method=post action="login.do">
@@ -75,7 +78,8 @@
 						<c:if test="${sessionScope.grade==3 }">
 						(이벤트등록회원)님 로그인중입니다.	
 						</c:if>
-						</span> <input type=submit value="로그아웃" class="button button-info">
+						</span> 
+						<input type=submit value="로그아웃" >
 					</div>
 				</form>
 			</c:if>
