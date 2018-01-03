@@ -14,9 +14,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM (SELECT
 		news_no,news_title,news_name,news_content,news_regdate,news_category,news_image
 		FROM gggl_news
-	   <if test="category!='all'">
-		  WHERE news_category=#{category}
-		</if> 		
+		<if test="category!='all'">
+			WHERE news_category=#{category}
+		</if>
 		ORDER BY news_regdate ASC ))
 		WHERE no BETWEEN #{start}
 		AND #{end}
@@ -58,6 +58,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		rownum &lt;= 5
 
 	</select>
+	<select id="newsReplyCount" resultType="int" parameterType="int">
+		SELECT COUNT(*) FROM news_reply
+		WHERE bno=#{bno}
+	</select>
+	<insert id="replyNewInsert" parameterType="NewsReplyVO">
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			SELECT NVL(MAX(no)+1,1) as no FROM news_reply
+		</selectKey>
+		INSERT INTO news_reply(no,bno,id,name,msg)
+		VALUES(#{no},#{bno},#{id},#{name},#{msg})
+	</insert>
+	<select id="replyListData" resultType="NewsReplyVO"
+		parameterType="int">
+		SELECT no, bno,id,name,msg,regdate from news_reply where
+		bno=#{no}
+	</select>
+	<!-- 댓글 추가(새로운) -->
 	<!-- 찾기 find <select id="boardFindData" resultType="BoardVO" parameterType="java.util.Map"> 
 		SELECT no,subject,name,regdate,hit FROM gggl_news WHERE ${fs} LIKE '%'||#{ss}||'%' 
 		</select> -->

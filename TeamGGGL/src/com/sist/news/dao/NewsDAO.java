@@ -16,6 +16,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.sist.news.dao.*;
+
 import sun.net.NetworkServer;
 
 public class NewsDAO {
@@ -44,7 +46,7 @@ public class NewsDAO {
 		SqlSession session = ssf.openSession();
 		int rint[] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 19, 41, 42, 45, 49, 50, 89, 94, 103, 230, 235, 381, 384,
 				373, 370 };
-	
+
 		int rintNum[] = new int[5];
 		for (int i = 0; i < 5; i++) {
 			rintNum[i] = (int) ((Math.random() * 26) + 1);
@@ -194,4 +196,49 @@ public class NewsDAO {
 
 	}
 
+	public static int newsReplyCount(int bno) {
+		int count = 0;
+		SqlSession session = ssf.openSession();
+		try {
+			count = session.selectOne("newsReplyCount", bno);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+		return count;
+	}
+
+	public static List<NewsReplyVO> replyListData(int no) {
+		List<NewsReplyVO> list = new ArrayList<NewsReplyVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("replyListData", no);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+		return list;
+	}
+
+	// 새로운 댓글 올리기
+	public static void replyNewInsert(NewsReplyVO vo) {
+		SqlSession session = ssf.openSession(true);
+		System.out.println(vo.getBno());
+		System.out.println(vo.getId());
+		System.out.println(vo.getMsg());
+		System.out.println(vo.getName());
+		
+		try {
+			session.insert("replyNewInsert", vo);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+	}
 }

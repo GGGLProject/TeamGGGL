@@ -27,6 +27,23 @@
 		});
 	});
 </script>
+<script type="text/javascript">
+	$(function() {
+		var u = 0;
+		$('.reply_update').click(function() {
+			var no = $(this).attr("value");
+			if (u == 0) {
+				$(this).text("취소");
+				$('#up' + no).show();
+				u = 1;
+			} else {
+				$(this).text("수정");
+				$('#up' + no).hide();
+				u = 0;
+			}
+		});
+	});
+</script>
 </head>
 <body>
 	<div class="container">
@@ -50,9 +67,11 @@
 			</div>
 			<br>
 			<div class="contentText">
-						${vo.news_content }
-				 <div class="b-writer"><span>${vo.news_name }</span></div>
-				 
+				${vo.news_content }
+				<div class="b-writer">
+					<span>${vo.news_name }</span>
+				</div>
+
 			</div>
 			<hr>
 		</div>
@@ -62,14 +81,16 @@
 				<h4>
 					<span class="com_title"><b>Comment</b></span>
 				</h4>
+
 				<div class="reply_write">
-					<textarea class="com_2 form-control text-left"
-						placeholder="내용을 입력하세요." rows="3"></textarea>
+					<form method=post action="news_reply_new_insert.do">
+						<input type="hidden" name=bno value="${vo.news_no }">
+						<textarea rows="3" class="com_2 form-control text-left" name="msg"></textarea>
+						<input class="btn btn-primary btn-sm pull-right" type=submit
+							value="댓글달기">
+					</form>
 				</div>
-				<div class="reply_writer">
-					<button class="btn btn-primary btn-sm pull-right" type="submit">댓글
-						달기</button>
-				</div>
+
 			</div>
 		</div>
 
@@ -84,7 +105,8 @@
 				<div id="tab1" class="comment_tab_content">
 					<div class="row commentrow">
 						<div class="comment_list col-md-12">
-							<c:forEach var="i" begin="1" end="4">
+							<!-- COMMENT 반복문 -->
+							<c:forEach var="rvo" items="${replylist }">
 								<div class="comment_form">
 									<div class="writer_img pull-left">
 										<img src="image/co_user.png">
@@ -92,17 +114,26 @@
 									<div class="comment_content">
 										<div class="writer_info">
 											<div class="w_nickName">
-												<strong>ybr0971</strong>
+												<strong>${rvo.name }</strong>
 											</div>
-											<div class="w_time" style="font-size: 12px; color: #9f9fa0">2017.09.21
-												00:27</div>
+											<div class="w_time" style="font-size: 12px; color: #9f9fa0">${rvo.regdate }</div>
 										</div>
 										<div class="comment_body">
-											<p>
-												<br>추천순입니다. :-) <br> 감사합니다. 잘 쓰겠습니다. :-) <br>감사합니다.
-												잘 쓰겠습니다. :-)
-											</p>
+											<p>${rvo.msg }</p>
+											<form method=post action="reply_update.do">
+												<input type="hidden" name=bno value="${vo.news_no }">
+												<input type="hidden" id="up${rvo.no } name=no value="${rvo.no }">
+												<textarea style="display:none" id="up${rvo.no }" rows="3" cols="80" style="float: left" name="msg">${rvo.msg }</textarea>
+												<c:if test="${sessionScope.id==rvo.id }">
+													<input type=submit class="btn btn-primary btn-sm pull-right" value="수정하기">
+												</c:if>
+												
+											</form>
 										</div>
+										<a class="reply_update" value="${rvo.no }">수정</a>
+									</div>
+									<div class="comment_content">
+									<a href="reply_delete.do?no=${rvo.no }&bno=${vo.news_no}"></a>
 									</div>
 								</div>
 							</c:forEach>

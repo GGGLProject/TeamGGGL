@@ -138,20 +138,24 @@
 						href="news_main.do?page=${curpage<totalpage?curpage+1:curpage }">¥Ÿ¿Ω</a></li>
 				</ul>
 				<br>
-				<c:choose>
-					<c:when test="${curpage == 1}">
-						<a href="news_main.do?page=${curpage }">${curpage }</a> || <a
-							href="news_main.do?page=${curpage+1 }">${curpage+1 }</a> || <a
-							href="news_main.do?page=${curpage+2 }">${curpage+2 }</a>
-
-					</c:when>
-					<c:otherwise>
-						<a href="news_main.do?page=${curpage-1 }">${curpage-1 }</a> || <a
-							href="news_main.do?page=${curpage }">${curpage }</a> || <a
-							href="news_main.do?page=${curpage+1 }">${curpage+1 }</a>
-					</c:otherwise>
-				</c:choose>
-				<br>${totalpage } pages
+				
+				<ul class="pagination pagination-centered">
+						<li><a href="news_main.do?page=${curpage<11?curpage:curpage-10}">&laquo;</a></li>
+						<fmt:parseNumber var="num" value="${curpage/10}" integerOnly="true" />
+						<c:set var="num" value="${num<=0?1:num*10}" />
+						<c:forEach var="i" begin="${num}" end="${num==1?num+8:num+9}">
+							<c:choose>
+								<c:when test="${i > totalpage }"></c:when>
+								<c:when test="${i==curpage}">
+									<li class="active"><a href="news_main.do?page=${i}">${i}</a></li>
+								</c:when>
+								<c:when test="${i <= totalpage}">
+									<li><a href="news_main.do?page=${i }">${i}</a></li>
+								</c:when>
+							</c:choose>
+						</c:forEach>
+						<li><a href="news_main.do?page=${curpage<=totalpage-10?curpage+10:curpage}">&raquo;</a></li>
+					</ul>
 			</div>
 		</center>
 		<!-- /.pageNum-->
