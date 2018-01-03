@@ -134,5 +134,19 @@ public static MemberVO passwordEmailCheck(String recoveryEmail) {
 	}
 	return vo;
 }
+//admin DAO
+public static List<MemberVO> adminListData(){
+	List<MemberVO> list=new ArrayList<MemberVO>();
+	SqlSession session=ssf.openSession();
+	try {
+		list=session.selectList("adminpageListData");
+	}catch(Exception ex) {
+		System.out.println("adminListData"+ex.getMessage());
+	}finally {
+		if(session!=null)
+			session.close();
+	}
+	return list;
+}
 
 }

@@ -61,5 +61,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SET member_nickname=#{member_nickname},member_id=#{member_id},member_pwd=#{member_pwd},member_phone=#{member_phone},member_birthday=#{member_birthday}
 		WHERE member_pwd=#{member_pwd}
 	</update>
+	<!-- adminpage 체크 -->
+	<select id="adminpageListData" resultType="MemberVO">
+	SELECT member_id,member_pwd,member_no,member_nickname,member_favor,member_phone,member_garde,member_regdate,member_birthday
+	FROM GGGL_MEMBER
+	ORDER BY member_id ASC,member_regdate DESC
+	</select>
 </mapper>
 

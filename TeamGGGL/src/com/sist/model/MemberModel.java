@@ -1,6 +1,7 @@
 package com.sist.model;
 
 import java.io.UnsupportedEncodingException;
+import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -127,7 +128,7 @@ public class MemberModel {
 	}
 	// 비밀번호찾기 부분
 	@RequestMapping("passwordEmailCheck.do")
-	public String passwordemailCheck(HttpServletRequest req, HttpServletResponse res) {
+	public String passwordemailCheWck(HttpServletRequest req, HttpServletResponse res) {
 		String recoveryEmail = req.getParameter("recoveryEmail");
 		MemberVO vo =MemberDAO.passwordEmailCheck(recoveryEmail);
 		System.out.println();
@@ -163,5 +164,13 @@ public class MemberModel {
 		MemberDAO.memberUpdate(vo);
 	
 		return "gameMain/main.jsp";
+	}
+	// admin 페이지
+	@RequestMapping("adminpage.do")
+	public String adminpage(HttpServletRequest req,HttpServletResponse res) {
+		List<MemberVO> list=MemberDAO.adminListData();
+		req.setAttribute("list", list);
+		req.setAttribute("main_jsp", "../gameMyPage/adminpage.jsp");
+		return "main/main.jsp";
 	}
 }
