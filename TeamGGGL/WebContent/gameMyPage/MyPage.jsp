@@ -161,11 +161,10 @@ $(function(){
               <label for="username">이메일</label>
               <div class="input-group">
              
-                <input type="text" class="form-control" name="email" id="useremail" value="${sessionScope.email }">
+                <%-- <input type="text" class="form-control" name="email" id="useremail" value="${sessionScope.email }"> --%>
+                <p>${sessionScope.email }</p>
              
-                <span class="input-group-btn">
-                  <a href="#" class="btn btn-info" id="emailcheckBtn">중복확인</a>
-                </span>
+           
               </div>
             </div>
             
