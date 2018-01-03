@@ -61,7 +61,7 @@ $(function(){
 		<div class="leagueopen_team leagueopen_team_1" style="display: none;">
 			<div class="row">
 				<c:forEach var="vo" items="${list_lck }" varStatus="status">
-					<a href="teaminfo_detail.do?team_name=${vo.team_name }">
+					<a href="teaminfo_detail.do?team_name=${vo.tvo.team_name }">
 						<div class="col-md-2 leagueopen_show">
 							<img src="${vo.tvo.team_icon }">
 							<p>${vo.tvo.team_name }</p>
@@ -73,30 +73,36 @@ $(function(){
 		<div class="leagueopen_team leagueopen_team_2" style="display: none;">
 			<div class="row">
 				<c:forEach var="vo" items="${list_nalcs }" varStatus="status">
-					<div class="col-md-2 leagueopen_show">
-						<img src="${vo.tvo.team_icon }">
-						<p>${vo.tvo.team_name }</p>
-					</div>
+					<a href="teaminfo_detail.do?team_name=${vo.tvo.team_name }">
+						<div class="col-md-2 leagueopen_show">
+							<img src="${vo.tvo.team_icon }">
+							<p>${vo.tvo.team_name }</p>
+						</div>
+					</a>
 				</c:forEach>
 			</div>
 		</div>
 		<div class="leagueopen_team leagueopen_team_3" style="display: none;">
 			<div class="row">
 				<c:forEach var="vo" items="${list_eulcs }" varStatus="status">
-					<div class="col-md-2 leagueopen_show">
-						<img src="${vo.tvo.team_icon }">
-						<p>${vo.tvo.team_name }</p>
-					</div>
+					<a href="teaminfo_detail.do?team_name=${vo.tvo.team_name }">
+						<div class="col-md-2 leagueopen_show">
+							<img src="${vo.tvo.team_icon }">
+							<p>${vo.tvo.team_name }</p>
+						</div>
+					</a>
 				</c:forEach> 
 			</div>
 		</div>
 		<div class="leagueopen_team leagueopen_team_4" style="display: none;">
 			<div class="row">
 				<c:forEach var="vo" items="${list_cblol }" varStatus="status">
-					<div class="col-md-2 leagueopen_show">
-						<img src="${vo.tvo.team_icon }">
-						<p>${vo.tvo.team_name }</p>
-					</div>
+					<a href="teaminfo_detail.do?team_name=${vo.tvo.team_name }">
+						<div class="col-md-2 leagueopen_show">
+							<img src="${vo.tvo.team_icon }">
+							<p>${vo.tvo.team_name }</p>
+						</div>
+					</a>
 				</c:forEach>
 			</div>
 		</div>
@@ -130,40 +136,48 @@ $(function(){
 		<div class="leagueopen_team leagueopen_team_5" style="display: none;">
 			<div class="row">
 				<c:forEach var="vo" items="${list_lms }" varStatus="status">
-					<div class="col-md-2 leagueopen_show">
-						<img src="${vo.tvo.team_icon }">
-						<p>${vo.tvo.team_name }</p>
-					</div>
+					<a href="teaminfo_detail.do?team_name=${vo.tvo.team_name }">
+						<div class="col-md-2 leagueopen_show">
+							<img src="${vo.tvo.team_icon }">
+							<p>${vo.tvo.team_name }</p>
+						</div>
+					</a>
 				</c:forEach>
 			</div>
 		</div>
 		<div class="leagueopen_team leagueopen_team_6" style="display: none;">
 			<div class="row">
 				<c:forEach var="vo" items="${list_nacs }" varStatus="status">
-					<div class="col-md-2 leagueopen_show">
-						<img src="${vo.tvo.team_icon }">
-						<p>${vo.tvo.team_name }</p>
-					</div>
+					<a href="teaminfo_detail.do?team_name=${vo.tvo.team_name }">
+						<div class="col-md-2 leagueopen_show">
+							<img src="${vo.tvo.team_icon }">
+							<p>${vo.tvo.team_name }</p>
+						</div>
+					</a>
 				</c:forEach>
 			</div>
 		</div>
 		<div class="leagueopen_team leagueopen_team_7" style="display: none;">
 			<div class="row">
 				<c:forEach var="vo" items="${list_eucs }" varStatus="status">
-					<div class="col-md-2 leagueopen_show">
-						<img src="${vo.tvo.team_icon }">
-						<p>${vo.tvo.team_name }</p>
-					</div>
+					<a href="teaminfo_detail.do?team_name=${vo.tvo.team_name }">
+						<div class="col-md-2 leagueopen_show">
+							<img src="${vo.tvo.team_icon }">
+							<p>${vo.tvo.team_name }</p>
+						</div>
+					</a>
 				</c:forEach>
 			</div>
 		</div>
 		<div class="leagueopen_team leagueopen_team_8" style="display: none;">
 			<div class="row">
 				<c:forEach var="vo" items="${list_lpl }" varStatus="status">
-					<div class="col-md-2 leagueopen_show">
-						<img src="${vo.tvo.team_icon }">
-						<p>${vo.tvo.team_name }</p>
-					</div>
+					<a href="teaminfo_detail.do?team_name=${vo.tvo.team_name }">
+						<div class="col-md-2 leagueopen_show">
+							<img src="${vo.tvo.team_icon }">
+							<p>${vo.tvo.team_name }</p>
+						</div>
+					</a>
 				</c:forEach>
 			</div>
 		</div>
@@ -185,20 +199,24 @@ $(function(){
 		<div class="leagueopen_team leagueopen_team_9" style="display: none;">
 			<div class="row">
 				<c:forEach var="vo" items="${list_opl }" varStatus="status">
-					<div class="col-md-2 leagueopen_show">
-						<img src="${vo.tvo.team_icon }">
-						<p>${vo.tvo.team_name }</p>
-					</div>
+					<a href="teaminfo_detail.do?team_name=${vo.tvo.team_name }">
+						<div class="col-md-2 leagueopen_show">
+							<img src="${vo.tvo.team_icon }">
+							<p>${vo.tvo.team_name }</p>
+						</div>
+					</a>
 				</c:forEach>
 			</div>
 		</div>
 		<div class="leagueopen_team leagueopen_team_10" style="display: none;">
 			<div class="row">
 				<c:forEach var="vo" items="${list_wcs }" varStatus="status">
-					<div class="col-md-2 leagueopen_show">
-						<img src="${vo.tvo.team_icon }">
-						<p>${vo.tvo.team_name }</p>
-					</div>
+					<a href="teaminfo_detail.do?team_name=${vo.tvo.team_name }">
+						<div class="col-md-2 leagueopen_show">
+							<img src="${vo.tvo.team_icon }">
+							<p>${vo.tvo.team_name }</p>
+						</div>
+					</a>
 				</c:forEach>
 			</div>
 		</div>
