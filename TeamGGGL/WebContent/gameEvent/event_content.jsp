@@ -144,7 +144,7 @@
 				</div>
 
 				<div id="comment_nav_menu">
-					<div class="row commentrow">
+					<div class="row commentrow"> 
 						<div class="comment_list col-md-12">
 							<c:forEach var="rvo" items="${e_list }">
 								<div class="comment_form">
