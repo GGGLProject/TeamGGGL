@@ -41,7 +41,7 @@
 								<strong>${vo.home_name }</strong>
 							</p><br> 
 							<a href="#demo" data-toggle="collapse">
-								<img src="${vo.tvo.team_icon }" alt="Random Name" width="290" height="275">
+								<img src="${vo.tvo.team_icon }" alt="Random Name" width="295" height="260">
 							</a>
 							<div id="demo" class="collapse">
 								<p style="margin-top: 30px">${vo.home_name } ÆÀ ¼±¼ö</p>
@@ -75,7 +75,7 @@
 							</p>
 							<br> <a href="#demo3" data-toggle="collapse"> <img
 								src="${list__1a[status.index].away_icon }" alt="Random Name"
-								width="290" height="275">
+								width="295" height="260">
 							</a>
 							<div id="demo3" class="collapse">
 								<p style="margin-top: 30px">${list__1a[status.index].away_name } ÆÀ ¼±¼ö</p>
