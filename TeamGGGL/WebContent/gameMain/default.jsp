@@ -39,19 +39,20 @@
 						<div class="col-sm-4">
 							<p class="text-center main_teamN">
 								<strong>${vo.home_name }</strong>
-							</p><br> 
-							<a href="#demo" data-toggle="collapse">
-								<img src="${vo.tvo.team_icon }" alt="Random Name" width="295" height="260">
+							</p>
+							<br> <a href="#demo" data-toggle="collapse"> <img
+								src="${vo.tvo.team_icon }" alt="Random Name" width="295"
+								height="260">
 							</a>
 							<div id="demo" class="collapse">
-								<p style="margin-top: 30px">${vo.home_name } ÆÀ ¼±¼ö</p>
+								<p style="margin-top: 30px">${vo.home_name }ÆÀ ¼±¼ö</p>
 								<div class="detail_player_list">
 									<c:set var="doneLoop" value="false" />
 									<c:forEach var="vo" items="${h_list }" varStatus="s">
 										<c:if test="${not doneLoop}">
 											<div class="player_Img" style="float: left; margin-left: 5px">
-												<img src="${vo.pvo.player_pic }" class="detail-player-list__img">
-												<span>${vo.pvo.player_name }</span>
+												<img src="${vo.pvo.player_pic }"
+													class="detail-player-list__img"> <span>${vo.pvo.player_name }</span>
 											</div>
 											<c:if test="${s.count == 5}">
 												<c:set var="doneLoop" value="true" />
@@ -65,9 +66,11 @@
 						<div class="col-sm-4">
 							<h4>
 								<strong>${list__1a[status.index].match_day }</strong>&nbsp;<strong>${list__1a[status.index].match_time }</strong>
-							</h4><br> 
-							<img src="https://static.comicvine.com/uploads/original/11111/111119495/3299555-kickass12.png"
-								alt="Random Name" width="155" height="155" style="margin-top: 30px">
+							</h4>
+							<br> <img
+								src="https://static.comicvine.com/uploads/original/11111/111119495/3299555-kickass12.png"
+								alt="Random Name" width="155" height="155"
+								style="margin-top: 30px">
 						</div>
 						<div class="col-sm-4">
 							<p class="text-center main_teamN">
@@ -78,15 +81,15 @@
 								width="295" height="260">
 							</a>
 							<div id="demo3" class="collapse">
-								<p style="margin-top: 30px">${list__1a[status.index].away_name } ÆÀ ¼±¼ö</p>
+								<p style="margin-top: 30px">${list__1a[status.index].away_name }
+									ÆÀ ¼±¼ö</p>
 								<div class="detail_player_list">
 									<c:set var="doneLoop" value="false" />
 									<c:forEach var="vo" items="${a_list }" varStatus="s">
 										<c:if test="${not doneLoop}">
 											<div class="player_Img" style="float: left; margin-left: 5px">
-												<img src="${vo.pvo.player_pic }" class="detail-player-list__img">
-												<br>
-												<span>${vo.pvo.player_name }</span>
+												<img src="${vo.pvo.player_pic }"
+													class="detail-player-list__img"> <br> <span>${vo.pvo.player_name }</span>
 											</div>
 											<c:if test="${s.count == 5}">
 												<c:set var="doneLoop" value="true" />
@@ -139,9 +142,11 @@
 			<div class="row text-center">
 				<c:forEach var="vo" items="${rlist }">
 					<div class="col-sm-3">
-						<div class="thumbnail" style="max-height: 600px; position: relative; vertical-align: middle">
-							<a href="news_detail.do?no=${vo.news_no }">
-							<img class="img-responsive" src="gameNews/image/${vo.news_no }.jpg" id="img_a"></a> <br>
+						<div class="thumbnail"
+							style="max-height: 600px; position: relative; vertical-align: middle">
+							<a href="news_detail.do?no=${vo.news_no }"> <img
+								class="img-responsive" src="gameNews/image/${vo.news_no }.jpg"
+								id="img_a"></a> <br>
 							<p>
 								<a href="news_detail.do?no=${vo.news_no }">${vo.news_title }</a>
 							</p>
@@ -162,9 +167,13 @@
 			<c:forEach var="vo" items="${list }" varStatus="status">
 				<c:if test="${not doneLoop}">
 					<div class="col-sm-4 main_video_box">
-						<iframe class="main_video" width="360" height="220" src="https://www.youtube.com/embed/${vo.match_videokey }"
-							frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-						<h4 style="margin-top: 20px"><p>${vo.match_name }</p></h4>
+						<iframe class="main_video" width="360" height="220"
+							src="https://www.youtube.com/embed/${vo.match_videokey }"
+							frameborder="0" gesture="media" allow="encrypted-media"
+							allowfullscreen></iframe>
+						<h4 style="margin-top: 20px">
+							<p>${vo.match_name }</p>
+						</h4>
 					</div>
 					<c:if test="${status.count == 3}">
 						<c:set var="doneLoop" value="true" />

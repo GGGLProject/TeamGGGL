@@ -25,11 +25,11 @@ public class GalleryDAO {
 		}
 	}
 	
-	public static List<GalleryVO> galleryListAll(Map map) {
+	public static List<GalleryVO> galleryListAll(GalleryVO vo) {
 		List<GalleryVO> list = new ArrayList<GalleryVO>();
 		SqlSession session = ssf.openSession();	// 주소값 얻어올 때 사용(getConnenction)
 		try {
-			list = session.selectList("galleryListAll", map);
+			list = session.selectList("galleryListAll", vo);
 		} catch (Exception e) {
 			System.out.println("galleryListAll : " + e.getMessage());
 		} finally {
@@ -39,11 +39,11 @@ public class GalleryDAO {
 		return list;
 	}
 	
-	public static List<GalleryVO> galleryListTop(Map map) {
+	public static List<GalleryVO> galleryListTop(GalleryVO vo) {
 		List<GalleryVO> list = new ArrayList<GalleryVO>();
 		SqlSession session = ssf.openSession();	// 주소값 얻어올 때 사용(getConnenction)
 		try {
-			list = session.selectList("galleryListTop", map);
+			list = session.selectList("galleryListTop", vo);
 		} catch (Exception e) {
 			System.out.println("galleryListTop : " + e.getMessage());
 		} finally {
@@ -53,11 +53,11 @@ public class GalleryDAO {
 		return list;
 	}
 	
-	public static List<GalleryVO> galleryListMid(Map map) {
+	public static List<GalleryVO> galleryListMid(GalleryVO vo) {
 		List<GalleryVO> list = new ArrayList<GalleryVO>();
 		SqlSession session = ssf.openSession();	// 주소값 얻어올 때 사용(getConnenction)
 		try {
-			list = session.selectList("galleryListMid", map);
+			list = session.selectList("galleryListMid", vo);
 		} catch (Exception e) {
 			System.out.println("galleryListMid : " + e.getMessage());
 		} finally {
@@ -67,11 +67,11 @@ public class GalleryDAO {
 		return list;
 	}
 	
-	public static List<GalleryVO> galleryListJungle(Map map) {
+	public static List<GalleryVO> galleryListJungle(GalleryVO vo) {
 		List<GalleryVO> list = new ArrayList<GalleryVO>();
 		SqlSession session = ssf.openSession();	// 주소값 얻어올 때 사용(getConnenction)
 		try {
-			list = session.selectList("galleryListJungle", map);
+			list = session.selectList("galleryListJungle", vo);
 		} catch (Exception e) {
 			System.out.println("galleryListJungle : " + e.getMessage());
 		} finally {
@@ -81,11 +81,11 @@ public class GalleryDAO {
 		return list;
 	}
 	
-	public static List<GalleryVO> galleryListBottom(Map map) {
+	public static List<GalleryVO> galleryListBottom(GalleryVO vo) {
 		List<GalleryVO> list = new ArrayList<GalleryVO>();
 		SqlSession session = ssf.openSession();	// 주소값 얻어올 때 사용(getConnenction)
 		try {
-			list = session.selectList("galleryListBottom", map);
+			list = session.selectList("galleryListBottom", vo);
 		} catch (Exception e) {
 			System.out.println("galleryListBottom : " + e.getMessage());
 		} finally {
@@ -95,11 +95,11 @@ public class GalleryDAO {
 		return list;
 	}
 	
-	public static List<GalleryVO> galleryListSupport(Map map) {
+	public static List<GalleryVO> galleryListSupport(GalleryVO vo) {
 		List<GalleryVO> list = new ArrayList<GalleryVO>();
 		SqlSession session = ssf.openSession();	// 주소값 얻어올 때 사용(getConnenction)
 		try {
-			list = session.selectList("galleryListSupport", map);
+			list = session.selectList("galleryListSupport", vo);
 		} catch (Exception e) {
 			System.out.println("galleryListSupport : " + e.getMessage());
 		} finally {
@@ -108,18 +108,5 @@ public class GalleryDAO {
 		}
 		return list;
 	}
-	
-	public static int galleryTotalPage() {
-		int total = 0;
-		SqlSession session = ssf.openSession();
-		try {
-			total = session.selectOne("galleryTotalPage");
-		} catch (Exception e) {
-			System.out.println("galleryTotalPage : " + e.getMessage());
-		} finally {
-			if(session!=null)
-				session.close(); // 반환
-		}
-		return total;
-	}
+
 }

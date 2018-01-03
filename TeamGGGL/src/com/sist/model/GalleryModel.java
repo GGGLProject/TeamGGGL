@@ -16,26 +16,16 @@ public class GalleryModel {
    @RequestMapping("gallery.do")
    public String gallery(HttpServletRequest req,HttpServletResponse res)
    {
-	    String page = req.getParameter("page");
-		if(page==null)
-			page="1";
-		int curpage = Integer.parseInt(page);
-		int rowSize = 16;
-		int start = (rowSize*curpage)-(rowSize-1);
-		int end = rowSize*curpage;
-		Map map = new HashMap();
-		map.put("start", start);	// movie-mapper.xml이 받는다.
-		map.put("end", end);
-		List<GalleryVO> list_all = GalleryDAO.galleryListAll(map);
-		List<GalleryVO> list_t = GalleryDAO.galleryListTop(map);
-		List<GalleryVO> list_m = GalleryDAO.galleryListMid(map);
-		List<GalleryVO> list_j = GalleryDAO.galleryListJungle(map);
-		List<GalleryVO> list_b = GalleryDAO.galleryListBottom(map);
-		List<GalleryVO> list_s = GalleryDAO.galleryListSupport(map);
-		int totalpage = GalleryDAO.galleryTotalPage();
+	    GalleryVO vo = new GalleryVO();
+		List<GalleryVO> list_all = GalleryDAO.galleryListAll(vo);
+		List<GalleryVO> list_t = GalleryDAO.galleryListTop(vo);
+		List<GalleryVO> list_m = GalleryDAO.galleryListMid(vo);
+		List<GalleryVO> list_j = GalleryDAO.galleryListJungle(vo);
+		List<GalleryVO> list_b = GalleryDAO.galleryListBottom(vo);
+		List<GalleryVO> list_s = GalleryDAO.galleryListSupport(vo);
+		
 	   
-		req.setAttribute("curpage", curpage);
-		req.setAttribute("totalpage", totalpage);
+		
 		req.setAttribute("list_all", list_all);
 		req.setAttribute("list_t", list_t);
 		req.setAttribute("list_m", list_m);

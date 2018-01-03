@@ -381,8 +381,60 @@ public class MatchDAO {
 		return list;
 	}
 	
+	/* ´ñ±Û ±â´É */
+	public static void m_replyNewInsert(MatchReplyVO vo) {
+		SqlSession session = ssf.openSession(true);
+		System.out.println(vo.getBno());
+		System.out.println(vo.getId());
+		System.out.println(vo.getMsg());
+		System.out.println(vo.getName());
+		try {
+			session.insert("m_replyNewInsert", vo);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+	}
 	
+	public static List<MatchReplyVO> m_replyListData(int no) {
+		List<MatchReplyVO> list = new ArrayList<MatchReplyVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("m_replyListData", no);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+		return list;
+	}
 	
-		
+	public static void m_replyUpdate(MatchReplyVO vo) {
+		 SqlSession session = ssf.openSession(true);
+		 try {
+			 session.update("m_replyUpdate", vo);
+		 } catch (Exception ex) {
+			 System.out.println(ex.getMessage());
+		 } finally {
+			 if (session != null)
+				 session.close();
+		 }
+		}
+	
+	public static void m_replyDelete(int no) {
+		 SqlSession session = ssf.openSession();
+		 try {
+			 session.delete("m_replyDelete", no);
+			 session.commit();
+		 } catch (Exception ex) {
+			 System.out.println(ex.getMessage());
+		 } finally {
+			 if (session != null)
+				 session.close();
+		 }
+		}	
 
 }

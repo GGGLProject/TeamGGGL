@@ -27,17 +27,22 @@ body, a {
 .container-fluid-news .com_2 {
 	margin: 10px 0;
 }
-.contentText
-{
+
+.com_2 {
+	margin: 10px 0;
+}
+
+.contentText {
 	line-height: 1.64;
 	overflow: hidden;
-	width:650px;
-	display:inline;
+	width: 650px;
+	display: inline;
 }
-.b-writer
-{
-	text-align:right;
+
+.b-writer {
+	text-align: right;
 }
+
 hr {
 	height: 1px;
 	color: #dedee0;
@@ -52,16 +57,16 @@ hr {
 .comment_form {
 	border-bottom: 1px solid #dedee0;
 	margin-bottom: 20px;
-	padding : 0 10px 10px 10px;
+	padding: 0 10px 10px 10px;
 }
 
 .writer_img {
 	text-align: center;
-	margin: auto 10px;	
+	margin: auto 10px;
 }
 
 .comment_content {
-	margin-left : 110px;
+	margin-left: 110px;
 }
 
 .comment_content .writer_info .w_nickName {

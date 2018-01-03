@@ -63,9 +63,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	<!-- adminpage 체크 -->
 	<select id="adminpageListData" resultType="MemberVO">
-	SELECT member_id,member_pwd,member_no,member_nickname,member_favor,member_phone,member_garde,member_regdate,member_birthday
+	SELECT member_id,member_pwd,member_no,member_nickname,member_favor,member_phone,member_grade,member_regdate,member_birthday
 	FROM GGGL_MEMBER
 	ORDER BY member_id ASC,member_regdate DESC
 	</select>
+	<!-- 회원등급변경 (우수회원) -->
+	<update id="member_ok" parameterType="int">
+		UPDATE GGGL_MEMBER SET member_grade='3'
+		WHERE member_no=#{member_no}
+	</update>
+	<!-- 회원등급변경 (일반회원) -->
+	<update id="member_iok" parameterType="int">
+		UPDATE GGGL_MEMBER SET member_grade='2'
+		WHERE member_no=#{member_no}
+	</update>
+	
 </mapper>
 

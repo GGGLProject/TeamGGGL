@@ -27,22 +27,26 @@
 		 		 <c:forEach var="vo" items="${list }">
 		 		 	<tr class="dataTr">
 		 		 		<td>${vo.member_id }</td>
-		 		 		<td></td>
-		 		 		<td></td>
-		 		 		<td></td>
-		 		 		<td></td>
+		 		 		<td>${vo.member_no }</td>
+		 		 		<td>${vo.member_nickname }</td>
+		 		 		<td>${vo.member_favor }</td>
+		 		 		<td>${vo.member_phone }</td>
 		 		 		<td>
-		 		 			<c:if test="${vo.member_grade=='2' }">
-		 		 				<a href="#">일반회원</a>
+		 		 			<c:if test="${vo.member_grade.trim()=='1' }">
+		 		 				<a href="member_ok.do?no=${vo.member_no }">관리자님</a>
 		 		 			</c:if>
-		 		 			<c:if test="${vo.member_grade=='3' }">
-		 		 				<a href="#">우수회원</a>
+		 		 			
+		 		 			<c:if test="${vo.member_grade.trim()=='2' }">
+		 		 				<a href="member_ok.do?no=${vo.member_no }">일반회원</a>
+		 		 			</c:if>
+		 		 			<c:if test="${vo.member_grade.trim()=='3' }">
+		 		 				<a href="member_iok.do?no=${vo.member_no }">우수회원</a>
 		 		 			</c:if>
 		 		 		</td>
 		 		 		<td>
 		 		 			<fmt:formatDate value="${vo.member_regdate }" pattern="yyyy-MM-dd"/>
 		 		 		</td>
-		 		 		<td></td>
+		 		 		<td>${vo.member_birthday }</td>
 		 		 	</tr>
 		 		 </c:forEach>
 		 	</table>

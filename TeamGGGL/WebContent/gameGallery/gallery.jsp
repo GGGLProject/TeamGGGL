@@ -98,25 +98,7 @@ $(function () {
 					</c:forEach>
 					<input type="hidden" id=max value="${max}">
 					<!-- 페이지이동 -->
-					<center>
-					<ul class="pagination pagination-centered">
-						<li><a href="gallery.do?page=${curpage<11?curpage:curpage-10}">&laquo;</a></li>
-						<fmt:parseNumber var="num" value="${curpage/10}" integerOnly="true" />
-						<c:set var="num" value="${num<=0?1:num*10}" />
-						<c:forEach var="i" begin="${num}" end="${num==1?num+8:num+9}">
-							<c:choose>
-								<c:when test="${i > totalpage }"></c:when>
-								<c:when test="${i==curpage}">
-									<li class="active"><a href="gallery.do?page=${i}">${i}</a></li>
-								</c:when>
-								<c:when test="${i <= totalpage}">
-									<li><a href="gallery.do?page=${i }">${i}</a></li>
-								</c:when>
-							</c:choose>
-						</c:forEach>
-						<li><a href="gallery.do?page=${curpage<=totalpage-10?curpage+10:curpage}">&raquo;</a></li>
-					</ul>
-					</center>
+					
 				</div>
 				
 				

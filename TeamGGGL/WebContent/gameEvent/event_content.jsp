@@ -47,7 +47,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<h2 class="text-center"><strong>이벤트 게시판</strong></h2>
+			<h2 class="text-center"><strong>EVENT</strong></h2>
 			<br>
 			<div class="col content_board">
 				<div class="col-lg-6">

@@ -148,5 +148,30 @@ public static List<MemberVO> adminListData(){
 	}
 	return list;
 }
+// 회원 등급바꾸기
+public static void memberok(int no) {
+	SqlSession session=ssf.openSession(true);
+try {
+	session.update("member_ok",no);
+}
+catch(Exception ex) {
+	System.out.println("memberok :"+ex.getMessage());
+}finally {
+	if(session!=null)
+		session.close();
+}
+}
 
+public static void memberiok(int no) {
+	SqlSession session=ssf.openSession(true);
+try {
+	session.update("member_iok",no);
+}
+catch(Exception ex) {
+	System.out.println("memberiok :"+ex.getMessage());
+}finally {
+	if(session!=null)
+		session.close();
+}
+}
 }

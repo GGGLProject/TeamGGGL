@@ -171,6 +171,18 @@ public class MemberModel {
 		List<MemberVO> list=MemberDAO.adminListData();
 		req.setAttribute("list", list);
 		req.setAttribute("main_jsp", "../gameMyPage/adminpage.jsp");
-		return "main/main.jsp";
+		return "gameMain/main.jsp";
+	}
+	@RequestMapping("member_ok.do")
+	public String member_ok(HttpServletRequest req,HttpServletResponse res) {
+		String no=req.getParameter("no");
+		MemberDAO.memberok(Integer.parseInt(no));
+		return "adminpage.do";
+	}
+	@RequestMapping("member_iok.do")
+	public String member_iok(HttpServletRequest req,HttpServletResponse res) {
+		String no=req.getParameter("no");
+		MemberDAO.memberiok(Integer.parseInt(no));
+		return "adminpage.do";
 	}
 }

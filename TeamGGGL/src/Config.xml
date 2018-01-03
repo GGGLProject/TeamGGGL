@@ -9,12 +9,16 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.sist.news.dao.NewsVO" alias="NewsVO" />
 		<typeAlias type="com.sist.news.dao.NewsReplyVO" alias="NewsReplyVO"/>
 		<typeAlias type="com.sist.match.dao.MatchVO" alias="MatchVO"/>
+		<typeAlias type="com.sist.match.dao.MatchReplyVO" alias="MatchReplyVO"/>
 		<typeAlias type="com.sist.match.dao.TeamVO" alias="TeamVO"/>
 		<typeAlias type="com.sist.match.dao.PlayerVO" alias="PlayerVO"/>
 		<typeAlias type="com.sist.event.dao.EventVO" alias="EventVO"/>
 		<typeAlias type="com.sist.gallery.dao.GalleryVO" alias="GalleryVO"/>
 		<typeAlias type="com.sist.member.dao.MemberVO" alias="MemberVO"/>
 		
+
+
+
 	</typeAliases> 
 	<!-- "(environment)+" -->
 	<environments default="development">
