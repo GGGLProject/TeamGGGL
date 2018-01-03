@@ -82,7 +82,7 @@
 	<!-- Footer -->
 	<footer>
 		<div class="text-center arrowdiv">
-			<a class="up-arrow text-center" href="#myPage" data-toggle="tooltip" title="TO TOP">
+			<a class="up-arrow text-center" href="#top" data-toggle="tooltip" title="TO TOP">
 				<span class="glyphicon glyphicon-chevron-up"></span>
 			</a>
 		</div>
