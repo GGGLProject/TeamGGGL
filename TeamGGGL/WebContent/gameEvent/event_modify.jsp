@@ -13,9 +13,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$('#category').val(vo.event_category);
-	$('#category > option[@value="vo.event_category"]').attr("selected","true");
-	
+	var ca_sel = $("#cCheck").val();
+	var ci_sel = $("#tCheck").val();
+	$("#category").val(ca_sel);
+	$("#city").val(ci_sel);
 	$('#writeBtn').click(function(){
 
 
@@ -117,14 +118,15 @@ $(document).ready(function(){
 						</tr>
 						<tr>
 							<td width=20% class="text-center">이벤트 일자</td>
-							<td width=30% class="text-center">
-							<input class="input" type=date name=day id=day size=30 value="${vo.event_day } ">
+							<td width=30% class="text-left">
+							
+							<input class="input" type=date name=day id=day size=30 value="<fmt:formatDate value="${vo.event_day}" pattern="yyyy-MM-dd" />">
 							<input type=hidden name=no value="${vo.event_no }">
 							</td>
 						</tr>
 						<tr>
 							<td width=20% class="text-center">이벤트 장소</td>
-							<td width=30% class="text-right"><input type=text
+							<td width=30% class="text-left"><input type=text
 								name=place size=50 id="place" class="input" value="${vo.event_place }"></td>
 						</tr>
 						<tr>
@@ -149,11 +151,11 @@ $(document).ready(function(){
 						<tr>
 							
 							<td width=10% class="text-right">분류</td>
+							
 							<td class="category" width=40% class="text-left">
+							<input type=hidden id="cCheck" value="${vo.event_category }"/>
 								<select name=category id="category">
-								<c:set var="cCheck" value="${vo.event_category }"/>
-								
-							<option value="일반">일반</option>
+									<option value="일반">일반</option>
 									<option value="PC방">PC방</option>
 									<option value="공식" >공식</option>
 									<option value="개인">개인</option>
@@ -164,6 +166,7 @@ $(document).ready(function(){
 						<tr>
 							<td width=10% class="text-right">지역</td>
 							<td class="category" width=40% class="text-left" >
+							<input type=hidden id="tCheck" value="${vo.event_city }"/>
 								<select name=city id="city">
 										<option value="서울">서울</option>
 										<option value="경기">경기</option>
