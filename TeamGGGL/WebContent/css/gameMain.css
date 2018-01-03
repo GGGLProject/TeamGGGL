@@ -52,7 +52,7 @@ footer .up-arrow:hover {
 }
 
 .footer_txt {
-	width: 700px;
+	width: 800px;
 	height: 100px;
 	position: relative;
 	float: left;
@@ -71,7 +71,7 @@ footer .up-arrow:hover {
 	height: 80px;
 	position: relative;
 	float: left;
-	margin-left: 120px;
+	margin-left: 4.5%;
 	margin-top: -45px;
 }
 
