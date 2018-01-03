@@ -2,10 +2,10 @@
    pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta charset=EUC-KR">
 <title>갤러리</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="css/gameGallery.css" rel="stylesheet" type="text/css">
@@ -13,6 +13,26 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+var snum=0;
+function popup(num) {
+	/* 	img[m].onclick = function(){ */
+	var m = num;
+
+	    modal[m].style.display = "block";
+	    modalImg[m].src = Imggg[m].src;
+	    /* captionText.innerHTML = this.alt; */
+	setnum(m);
+}
+	// Get the <span> element that closes the modal
+
+
+function popclose(a){
+
+	modal[a].style.display = "none";
+}
+
+
+	
 $(function () {
 
     $(".middle_tab_content").hide();
@@ -46,28 +66,39 @@ $(function () {
 				<li rel="tab6">SUPPORT</li>
 			</ul>
 			<div class="middle_tab_container">
-
+			
 				<!-- All -->
 				<div class="middle_tab_content" id="tab1">
-					<c:forEach var="vo" items="${list_all}">
-						<figure class="snip1200" id="myImg"> 
-							<img id="Imgg" src="gameGallery/image/${vo.gallery_img }.jpg" > 
+				
+					<c:forEach var="vo" items="${list_all}" varStatus="i">
+						<c:set var="myImg" value="myImg${i.index}"/>
+						<c:set var="Imgg" value="Imgg${i.index}"/>
+						<c:set var="img01" value="img01${i.index}"/>
+						<c:set var="myModal" value="myModal${i.index}"/>
+						<c:set var="caption" value="caption${i.index}"/>
+						<input type=hidden id=num value="${i.index }"/>
+						<figure class="snip1200" id=${myImg } onclick="popup(${i.index})"> 
+							
+							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" > 
 							<figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading"><h2><span>${vo.gallery_title }</span></h2></div>
 							</figcaption>
 							<a href="#"></a>
 						</figure>
-						<div id="myModal" class="modal">
-							<span class="close">&times;</span> 
-							<img class="modal-content" id="img01">
-							<div id="caption">
+						<div id="${myModal}" class="modal">
+							<span class="close" onclick="popclose(${i.index})">&times;</span> 
+							<img class="modal-content" id="${img01}">
+							<div id="${caption}" class="caption">
 								<h3>${vo.gallery_title }</h3>
 								<p>${vo.gallery_content }</p>
 							</div>
 						</div>
+						<c:set var="max" value="${i.end}"/>
 					</c:forEach>
+					<input type="hidden" id=max value="${max}">
 					<!-- 페이지이동 -->
+					<center>
 					<ul class="pagination pagination-centered">
 						<li><a href="gallery.do?page=${curpage<11?curpage:curpage-10}">&laquo;</a></li>
 						<fmt:parseNumber var="num" value="${curpage/10}" integerOnly="true" />
@@ -85,6 +116,7 @@ $(function () {
 						</c:forEach>
 						<li><a href="gallery.do?page=${curpage<=totalpage-10?curpage+10:curpage}">&raquo;</a></li>
 					</ul>
+					</center>
 				</div>
 				
 				
@@ -211,30 +243,41 @@ $(function () {
 	</div>
 	
 	
-
-
+	<%-- 				<c:set var="myImg" value="myImg+${i}"/>
+						<c:set var="Imgg" value="Imgg+${i}"/>
+						<c:set var="img01" value="img01+${i}"/>
+						<c:set var="myModal" value="myModal+${i}"/>
+						<c:set var="caption" value="caption+${i}"/> --%>
 	<script>
 	//Get the modal
-	var modal = document.getElementById('myModal');
+
+var modal = new Array();
+var img = new Array();
+var modalImg = new Array();
+var Imggg = new Array();
+var captionText = new Array();
+var span = new Array();
+for (var n=0; n<137; n++)
+{
+	/* alert(n); */
+
+modal[n] = document.getElementById("myModal"+n);
+
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+img[n] = document.getElementById("myImg"+n);
+
+modalImg[n] = document.getElementById("img01"+n);
+
+Imggg[n] = document.getElementById("Imgg"+n);
+
+captionText[n] = document.getElementById("caption"+n);
+span[n] = document.getElementsByClassName("close")[n];
+}
+
+
+// When the user clicks on <span> (x), close the modal
 	
-	// Get the image and insert it inside the modal - use its "alt" text as a caption
-	var img = document.getElementById('myImg');
-	var modalImg = document.getElementById("img01");
-	var Imggg = document.getElementById('Imgg');
-	var captionText = document.getElementById("caption");
-	img.onclick = function(){
-	    modal.style.display = "block";
-	    modalImg.src = Imggg.src;
-	    /* captionText.innerHTML = this.alt; */
-	}
-	
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-	
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() { 
-	  modal.style.display = "none";
-	}
 	</script>
 
 

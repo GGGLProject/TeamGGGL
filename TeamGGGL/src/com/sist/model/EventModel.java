@@ -142,8 +142,8 @@ public class EventModel {
 		EventDAO.eventInsert(vo);
 		
 		
-		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
-		return "event_list.do";
+		req.setAttribute("main_jsp", "../gameEvent/event_insert_ok.jsp");
+		return "main/main.jsp";
 	}
 	
 	@RequestMapping("event_delete.do")
