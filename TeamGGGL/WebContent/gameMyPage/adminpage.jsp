@@ -33,7 +33,7 @@
 		 		 		<td>${vo.member_phone }</td>
 		 		 		<td>
 		 		 			<c:if test="${vo.member_grade.trim()=='1' }">
-		 		 				<a href="member_ok.do?no=${vo.member_no }">包府磊丛</a>
+		 		 				<span style="color:gray">包府磊丛</span>
 		 		 			</c:if>
 		 		 			
 		 		 			<c:if test="${vo.member_grade.trim()=='2' }">
