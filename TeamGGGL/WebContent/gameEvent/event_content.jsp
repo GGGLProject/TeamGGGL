@@ -133,7 +133,7 @@
 						</h4>
 						<div class="reply_write">
 							<form method=post action="event_reply_new_insert.do">
-								<input type="hidden" name=bno value="${h_list.get(0).match_no }">
+								<input type="hidden" name=bno value="${rvo.event_no }">
 								<textarea rows="3" class="com_2 form-control text-left"
 									name="msg"></textarea>
 								<input class="btn btn-primary btn-sm pull-right" type=submit
@@ -146,7 +146,7 @@
 				<div id="comment_nav_menu">
 					<div class="row commentrow">
 						<div class="comment_list col-md-12">
-							<c:forEach var="i" begin="1" end="4">
+							<c:forEach var="rvo" items="${e_list }">
 								<div class="comment_form">
 									<!-- <div class="writer_img pull-left">
 										<img src="image/co_user.png">
@@ -156,7 +156,7 @@
 											<button class="btn btn-primary modifyBtn" value="${rvo.no }">수정</button>
 											<div style="height: 5px"></div>
 											<form method=post action="event_reply_delete.do">
-												<input type="hidden" name=bno value="${h_list.get(0).match_no }"> 
+												<input type="hidden" name=bno value="${rvo.event_no }"> 
 												<input type="hidden" name=no value="${rvo.no }">
 												<button class="btn btn-primary" id="deleteBtn">삭제</button>
 											</form>
@@ -174,8 +174,8 @@
 										</div>
 									</div>
 									<div id="up${rvo.no }" style="display: none">
-										<form method=post action="match_reply_update.do">
-											<input type="hidden" name=bno value="${h_list.get(0).match_no }"> 
+										<form method=post action="event_reply_update.do">
+											<input type="hidden" name=bno value="${rvo.event_no }"> 
 											<input type="hidden" name=no value="${rvo.no }">
 											<textarea rows="3" class="com_2 form-control text-left" style="float: left" name="msg">${rvo.msg }</textarea>
 											<br> &nbsp;
