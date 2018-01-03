@@ -106,7 +106,7 @@ public static MemberVO passwordSelect(String recovery) {
 		vo=session.selectOne("passwordSelect",recovery);
 	}catch(Exception ex) {
 		System.out.println("passwordSelect "+ex.getMessage());
-	}finally {
+	}finally { 
 		if(session!=null)
 			session.close();
 	}

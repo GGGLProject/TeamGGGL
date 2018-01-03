@@ -69,6 +69,10 @@ public class MemberModel {
 				session.setAttribute("email", email);
 				session.setAttribute("name", vo.getMember_nickname());
 				session.setAttribute("grade", vo.getMember_grade().trim());
+				session.setAttribute("phone", vo.getMember_phone());
+				session.setAttribute("birthday",vo.getMember_birthday());
+				session.setAttribute("favor", vo.getMember_favor());
+				
 			}
 			else {
 				result="NOPWD";
