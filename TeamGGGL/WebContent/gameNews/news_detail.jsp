@@ -16,32 +16,20 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$(".comment_tab_content").hide();
-		$(".comment_tab_content:first").show();
-		$("ul.comment_nav_tabs li").click(function() {
-			$("ul.comment_nav_tabs li").removeClass("active2");
-			$(this).addClass("active2");
-			$(".comment_tab_content").hide();
-			var activeTab = $(this).attr("rel");
-			$("#" + activeTab).fadeIn();
-		});
-	});
-</script>
-<script type="text/javascript">
-	$(function() {
 		var u = 0;
-		$('.reply_update').click(function() {
+		$('.modifyBtn').click(function() {
 			var no = $(this).attr("value");
-			if (u == 0) {
-				$(this).text("취소");
+			var type = $(this).text();
+			if (type == '수정') {
 				$('#up' + no).show();
-				u = 1;
+				$(this).text("취소");
 			} else {
-				$(this).text("수정");
 				$('#up' + no).hide();
-				u = 0;
+				$(this).text("수정");
 			}
+
 		});
+
 	});
 </script>
 </head>
@@ -95,129 +83,64 @@
 		</div>
 
 		<div id="comment_nav_menu">
-			<ul class="comment_nav_tabs">
-				<li class="active2" rel="tab1">추천순</li>
-				<li rel="tab2">최신순</li>
-				<li rel="tab3">과거순</li>
-			</ul>
+			<div class="row commentrow">
+				<div class="comment_list col-md-12">
+					<!-- COMMENT 반복문 -->
+					<div style="height: 40px"></div>
 
-			<div class="comment_tab_container">
-				<div id="tab1" class="comment_tab_content">
-					<div class="row commentrow">
-						<div class="comment_list col-md-12">
-							<!-- COMMENT 반복문 -->
-							<c:forEach var="rvo" items="${replylist }">
-								<div class="comment_form">
-									<div class="writer_img pull-left">
-										<img src="image/co_user.png">
-									</div>
-									<div class="comment_content">
-										<div class="writer_info">
-											<div class="w_nickName">
-												<strong>${rvo.name }</strong>
-											</div>
-											<div class="w_time" style="font-size: 12px; color: #9f9fa0">${rvo.regdate }</div>
-										</div>
-										<div class="comment_body">
-											<p>${rvo.msg }</p>
-											<form method=post action="reply_update.do">
-												<input type="hidden" name=bno value="${vo.news_no }">
-												<input type="hidden" id="up${rvo.no } name=no value="${rvo.no }">
-												<textarea style="display:none" id="up${rvo.no }" rows="3" cols="80" style="float: left" name="msg">${rvo.msg }</textarea>
-												<c:if test="${sessionScope.id==rvo.id }">
-													<input type=submit class="btn btn-primary btn-sm pull-right" value="수정하기">
-												</c:if>
-												
-											</form>
-										</div>
-										<a class="reply_update" value="${rvo.no }">수정</a>
-									</div>
-									<div class="comment_content">
-									<a href="reply_delete.do?no=${rvo.no }&bno=${vo.news_no}"></a>
-									</div>
-								</div>
-							</c:forEach>
-							<center>
-								<button class="btn btn-primary btn-block moreBtn" type="button">더보기
-									▼</button>
-							</center>
-							<div style="height: 40px"></div>
-						</div>
-						<br>
-					</div>
-				</div>
+					<c:forEach var="rvo" items="${replylist }">
+						<div class="comment_form">
+							<div class="pull-right">
+								<c:if test="${sessionScope.email == rvo.id}">
+									<button class="btn btn-primary modifyBtn" value="${rvo.no }">수정</button>
 
-				<div id="tab2" class="comment_tab_content">
-					<div class="row commentrow">
-						<div class="comment_list col-md-12">
-							<c:forEach var="i" begin="1" end="4">
-								<div class="comment_form">
-									<div class="writer_img pull-left">
-										<img src="image/co_user.png">
+									<!-- <button	class="btn btn-primary" id="modifyBtn1" sytle="display:none">취소</button> -->
+									<form method=post action="news_reply_delete.do">
+										<input type="hidden" name=bno value="${vo.news_no }">
+										<input type="hidden" name=no value="${rvo.no }">
+										<button class="btn btn-primary" id="deleteBtn">삭제</button>
+									</form>
+								</c:if>
+							</div>
+							<div class="comment_content">
+								<div class="writer_info">
+									<div class="w_nickName">
+										<strong>${rvo.name }</strong>
 									</div>
-									<div class="comment_content">
-										<div class="writer_info">
-											<div class="w_nickName">
-												<strong>ybr0971</strong>
-											</div>
-											<div class="w_time" style="font-size: 12px; color: #9f9fa0">2017.09.21
-												00:27</div>
-										</div>
-										<div class="comment_body">
-											<p>
-												<br>최신순입니다. <br> 감사합니다. 잘 쓰겠습니다. :-) <br>감사합니다.
-												잘 쓰겠습니다. :-)
-											</p>
-										</div>
-									</div>
+									<div class="w_time" style="font-size: 12px; color: #9f9fa0">${rvo.regdate }</div>
 								</div>
-							</c:forEach>
-							<center>
-								<button class="btn btn-primary btn-block moreBtn" type="button">더보기
-									▼</button>
-							</center>
-							<div style="height: 40px"></div>
-						</div>
-						<br>
-					</div>
-				</div>
+								<div class="comment_body">
+									<p>${rvo.msg }</p>
+								</div>
+							</div>
+							<div class="" id="up${rvo.no }" style="display: none">
+								<form method=post action="news_reply_update.do">
+									<input type="hidden" name=bno value="${vo.news_no }"> <input
+										type="hidden" name=no value="${rvo.no }">
+									<textarea rows="3" class="com_2 form-control text-left"
+										style="float: left" name="msg">${rvo.msg }</textarea>
+									<br> &nbsp;<input
+										class="btn btn-primary btn-sm pull-right" type=submit
+										value="수정하기">
+								</form>
+							</div>
 
-				<div id="tab3" class="comment_tab_content">
-					<div class="row commentrow">
-						<div class="comment_list col-md-12">
-							<c:forEach var="i" begin="1" end="4">
-								<div class="comment_form">
-									<div class="writer_img pull-left">
-										<img src="image/co_user.png">
-									</div>
-									<div class="comment_content">
-										<div class="writer_info">
-											<div class="w_nickName">
-												<strong>ybr0971</strong>
-											</div>
-											<div class="w_time" style="font-size: 13px; color: #9f9fa0">2017.09.21
-												00:27</div>
-										</div>
-										<div class="comment_body">
-											<p>
-												<br>과거순입니다. <br> 감사합니다. 잘 쓰겠습니다. :-) <br>감사합니다.
-												잘 쓰겠습니다. :-)
-											</p>
-										</div>
-									</div>
-								</div>
-							</c:forEach>
-							<center>
-								<button class="btn btn-primary btn-block moreBtn" type="button">더보기
-									▼</button>
-							</center>
-							<div style="height: 40px"></div>
 						</div>
-						<br>
-					</div>
+
+					</c:forEach>
+					<%-- <center>
+						<button class="btn btn-primary btn-block moreBtn" type="button">더보기
+							▼</button>
+					</center> --%>
+					<div style="height: 40px"></div>
 				</div>
+				<br>
 			</div>
 		</div>
+
+		<div style="height: 40px"></div>
 	</div>
+	<br>
+
 </body>
 </html>

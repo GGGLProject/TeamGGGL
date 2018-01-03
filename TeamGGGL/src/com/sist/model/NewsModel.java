@@ -19,8 +19,7 @@ import com.sist.news.dao.NewsVO;
 @Controller
 public class NewsModel {
 	@RequestMapping("news_reply_new_insert.do")
-	public String news_reply_new_insert(HttpServletRequest req, HttpServletResponse res)
-	{
+	public String news_reply_new_insert(HttpServletRequest req, HttpServletResponse res) {
 		try {
 			req.setCharacterEncoding("EUC-KR");
 		} catch (Exception ex) {
@@ -39,7 +38,32 @@ public class NewsModel {
 		req.setAttribute("no", bno);
 		return "gameNews/reply_ok.jsp";
 	}
-	
+
+	@RequestMapping("news_reply_update.do")
+	public String reply_update(HttpServletRequest req, HttpServletResponse res) {
+		try {
+			req.setCharacterEncoding("EUC-KR");
+		} catch (Exception ex) {
+		}
+		String bno = req.getParameter("bno");
+		String no = req.getParameter("no");
+		String msg = req.getParameter("msg");
+		NewsReplyVO vo = new NewsReplyVO();
+		vo.setNo(Integer.parseInt(no));
+		vo.setMsg(msg);
+		// DB¿¬µ¿
+		NewsDAO.replyUpdate(vo);
+		return "news_detail.do?no=" + bno;
+	}
+
+	@RequestMapping("news_reply_delete.do")
+	public String reply_delete(HttpServletRequest req, HttpServletResponse res) {
+		String bno = req.getParameter("bno");
+		String no = req.getParameter("no");
+		NewsDAO.replyDelete(Integer.parseInt(no));
+		return "news_detail.do?no=" + bno;
+	}
+
 	@RequestMapping("news_detail.do")
 	public String news_detail(HttpServletRequest req, HttpServletResponse res) {
 		String no = req.getParameter("no");
@@ -55,7 +79,7 @@ public class NewsModel {
 	@RequestMapping("news_main.do")
 	public String news_main(HttpServletRequest req, HttpServletResponse res) throws UnsupportedEncodingException {
 		req.setCharacterEncoding("EUC-KR");
-		
+
 		String page = req.getParameter("page");
 		String no = req.getParameter("no");
 		if (page == null)
@@ -76,13 +100,13 @@ public class NewsModel {
 			map.put("category", category);
 		}
 		System.out.println(category);
-		
+
 		List<NewsVO> list = NewsDAO.newsListData(map);
 		List<NewsVO> ulist = NewsDAO.newsUpdateListData();
 		int newsTotalCount = NewsDAO.newsTotalCount();
 		int totalpage = NewsDAO.newsTotalPage();
 		List<NewsVO> rlist = NewsDAO.newsRecommandData();
-		
+
 		req.setAttribute("rlist", rlist);
 		req.setAttribute("list", list);
 		req.setAttribute("ulist", ulist);
@@ -92,26 +116,5 @@ public class NewsModel {
 		req.setAttribute("main_jsp", "../gameNews/news_main.jsp");
 		return "gameMain/main.jsp";
 	}
-
-//	@RequestMapping("news_reply_new_insert.do")
-//	public String reply_new_insert(HttpServletRequest req, HttpServletResponse res) {
-//		try {
-//			req.setCharacterEncoding("EUC-KR");
-//		} catch (Exception ex) {
-//		}
-//		HttpSession session = req.getSession();
-//		String bno = req.getParameter("bno");
-//		String msg = req.getParameter("msg");
-//		String id = (String) session.getAttribute("id");
-//		String name = (String) session.getAttribute("name");
-//		NewsReplyVO vo = new NewsReplyVO();
-//		vo.setBno(Integer.parseInt(bno));
-//		vo.setMsg(msg);
-//		vo.setId(id);
-//		vo.setName(name);
-//		NewsDAO.replyNewInsert(vo);
-//		req.setAttribute("no", bno);
-//		return "gameNews/news_detail.jsp";
-//	}
 
 }

@@ -210,6 +210,18 @@ public class NewsDAO {
 		return count;
 	}
 
+	public static void replyUpdate(NewsReplyVO vo) {
+		SqlSession session = ssf.openSession(true);
+		try {
+			session.update("replyUpdate", vo);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+	}
+
 	public static List<NewsReplyVO> replyListData(int no) {
 		List<NewsReplyVO> list = new ArrayList<NewsReplyVO>();
 		SqlSession session = ssf.openSession();
@@ -231,10 +243,24 @@ public class NewsDAO {
 		System.out.println(vo.getId());
 		System.out.println(vo.getMsg());
 		System.out.println(vo.getName());
-		
+
 		try {
 			session.insert("replyNewInsert", vo);
 		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+	}
+
+	public static void replyDelete(int no) {
+		SqlSession session = ssf.openSession();
+		try {
+			session.delete("replyDelete", no);
+			session.commit();
+		} catch (Exception ex) {
+			session.rollback();
 			System.out.println(ex.getMessage());
 		} finally {
 			if (session != null)
