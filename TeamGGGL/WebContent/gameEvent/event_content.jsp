@@ -30,14 +30,17 @@
 			}
 		});
 		//코멘트
-		$(".comment_tab_content").hide();
-		$(".comment_tab_content:first").show();
-		$("ul.comment_nav_tabs li").click(function() {
-			$("ul.comment_nav_tabs li").removeClass("active2");
-			$(this).addClass("active2");
-			$(".comment_tab_content").hide();
-			var activeTab = $(this).attr("rel");
-			$("#" + activeTab).fadeIn();
+		var u = 0;
+		$('.modifyBtn').click(function() {
+			var no = $(this).attr("value");
+			var type = $(this).text();
+			if (type == '수정') {
+				$('#up' + no).show();
+				$(this).text("취소");
+			} else {
+				$('#up' + no).hide();
+				$(this).text("수정");
+			}
 		});
 	});
 </script>
