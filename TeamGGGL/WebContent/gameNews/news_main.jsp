@@ -104,9 +104,11 @@
 					<div class="row_content col-sm-9 col-md-10">
 						<div class="row_newsTitle">
 							<h5>
-								<strong class="news_title"> <a
-									href="news_detail.do?no=${vo.news_no }"> ${vo.news_title }
-								</a>
+								<strong class="news_title"> 
+									<a href="news_detail.do?no=${vo.news_no }"> ${vo.news_title }</a>&nbsp;&nbsp;
+									<c:if test="${vo.count!=0 }">
+              							(${vo.count })
+             						</c:if>
 								</strong>
 							</h5>
 						</div>

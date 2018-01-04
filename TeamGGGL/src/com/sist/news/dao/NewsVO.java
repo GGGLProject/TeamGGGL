@@ -20,6 +20,8 @@ public class NewsVO {
 	private Date news_regdate;
 	private String news_category;
 	private String news_image="";
+	private int count;
+	
 	public Date getNews_regdate() {
 		return news_regdate;
 	}
@@ -61,6 +63,12 @@ public class NewsVO {
 	}
 	public void setNews_image(String news_image) {
 		this.news_image = news_image;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
 	}
 	
 }

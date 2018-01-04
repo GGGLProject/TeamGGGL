@@ -137,16 +137,16 @@
 					<div class="row commentrow" > 
 						<div class="comment_list col-md-12">
 							<div style="height: 40px"></div>
-							<c:if test="${vo.count==0 }">
+							<%-- <c:if test="${vo.count==0 }">
 								<div class="text-center">
 									<img src="noimage.gif">
 									<span>첫번째 댓글을 남겨주세요.</span>
 								</div>
        						</c:if>
-       						<c:if test="${vo.count!=0 }">
+       						<c:if test="${vo.count!=0 }"> --%>
 							<c:forEach var="rvo" items="${e_list }">
 								<div class="comment_form">
-									<div class="pull-right">
+									<div class="pull-right" style="margin-right : 15px;">
 										<c:if test="${sessionScope.email == rvo.id}">
 											<button class="btn btn-primary modifyBtn" value="${rvo.no }">수정</button>
 											<div style="height: 5px"></div>
@@ -157,9 +157,9 @@
 											</form>
 										</c:if>
 									</div>
-									<div class="comment_content" style="margin-left : 10px;">
+									<div class="comment_content" style="margin-left : 5px;">
 										<div class="writer_info">
-											 <div class="writer_img pull-left">
+											<div class="writer_img pull-left">
 												<img src="image/co_user.png">
 											</div>
 											<div class="w_nickName">
@@ -184,7 +184,7 @@
 									</div>
 								</div>
 							</c:forEach>
-							</c:if>
+							<%-- </c:if> --%>
 							<%-- <center>
 								<button class="btn btn-primary btn-block moreBtn" type="button">더보기▼</button>
 							</center> --%>
