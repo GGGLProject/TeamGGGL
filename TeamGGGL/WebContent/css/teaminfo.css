@@ -24,6 +24,10 @@ body {
 .leaguearea:hover {
 	border: 2px solid rgba(255,255,255,0.3);
 }
+.leaguearea .down {
+	margin-top : -15px;
+	height:50px; !important
+}
 
 .leaguearea img {
 	height: 200px;
@@ -35,7 +39,7 @@ body {
 	margin-top: 10px;
 }
 
-.leagueopen_team {
+.leagueopen_team, .down {
     animation-name: zoom;
     animation-duration: 0.6s;
 }

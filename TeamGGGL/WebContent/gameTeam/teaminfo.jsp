@@ -9,19 +9,28 @@
 <title>ÆÀ Á¤º¸</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="css/teaminfo.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="path/to/typicons.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
 $(function(){
 	var check;
 	$('.rok').click(function(){
 		var no = $(this).attr("value");
 		if(check!=no){
+			$('.leaguearea').css("background-color", "rgba(0,0,0,0.0)");
+			$('#'+no).css("background-color", "rgba(0,0,0,0.6)");
+			$('.down').hide();
 			$('.leagueopen_team').hide();
 			$('.leagueopen_team_'+no).show();
+			$('#img'+no).show();
+			
 			check = no;
 		} else {
+			$('.leaguearea').css("background-color", "rgba(0,0,0,0.0)");
 			$('.leagueopen_team').hide();
+			$('.down').hide();
 			check = 0;
 		}
 		return false;
@@ -34,27 +43,31 @@ $(function(){
 		<h2 class="text-center subject">¸®±×º° ÆÀÁ¤º¸</h2>
 		<div class="row">
 			<a class="rok" href="#" value="1">
-				<div class="col-md-3 leaguearea">
+				<div class="col-md-3 leaguearea" id="1">
 					<img class="ln" src="gameTeam/image/lck.png" alt="lck">
 					<p>LCK</p>
+					<img src="gameTeam/image/down.png" class="down" id="img1" style="display: none;">
 				</div>
 			</a>
 			<a class="rok" href="#" value="2">
-				<div class="col-md-3 leaguearea">
+				<div class="col-md-3 leaguearea" id="2">
 					<img class="ln" src="gameTeam/image/na-lcs.png" alt="nalcs">
 					<p>NA LCS</p>
+					<img src="gameTeam/image/down.png" class="down" id="img2" style="display: none;">
 				</div>
 			</a>
 			<a class="rok" href="#" value="3">
-				<div class="col-md-3 leaguearea">
+				<div class="col-md-3 leaguearea"  id="3">
 					<img class="ln" src="gameTeam/image/eu-lcs.png" alt="eu-lcs">
 					<p>EU LCS</p>
+					<img src="gameTeam/image/down.png" class="down" id="img3" style="display: none;">
 				</div>
 			</a>
 			<a class="rok" href="#" value="4">
-				<div class="col-md-3 leaguearea">
+				<div class="col-md-3 leaguearea" id="4">
 					<img class="ln" src="gameTeam/image/cblol.png" alt="cblol">
 					<p>CBLOL</p>
+					<img src="gameTeam/image/down.png" class="down" id="img4" style="display: none;">
 				</div>
 			</a>
 		</div>
@@ -101,27 +114,31 @@ $(function(){
 		<br>
 		<div class="row">
 			<a class="rok" href="#" value="5">
-				<div class="col-md-3 leaguearea">
+				<div class="col-md-3 leaguearea"  id="5">
 					<img class="ln" src="gameTeam/image/lms.png" alt="lms">
 					<p>lms</p>
+					<img src="gameTeam/image/down.png" class="down" id="img5" style="display: none;">
 				</div>
 			</a>
 			<a class="rok" href="#" value="6">
-				<div class="col-md-3 leaguearea">
+				<div class="col-md-3 leaguearea" id="6">
 					<img class="ln" src="gameTeam/image/na-cs.png" alt="na-cs">
 					<p>na-cs</p>
+					<img src="gameTeam/image/down.png" class="down" id="img6" style="display: none;">
 				</div>
 			</a>
 			<a class="rok" href="#" value="7">
-				<div class="col-md-3 leaguearea">
+				<div class="col-md-3 leaguearea"  id="7">
 					<img class="ln" src="gameTeam/image/eu-cs.png" alt="eu-cs">
 					<p>eu-cs</p>
+					<img src="gameTeam/image/down.png" class="down" id="img7" style="display: none;">
 				</div>
 			</a>
-			<a class="rok" href="#" value="8">
-				<div class="col-md-3 leaguearea">
+			<a class="rok" href="#" value="8" >
+				<div class="col-md-3 leaguearea" id="8">
 					<img class="ln" src="gameTeam/image/lpl.png" alt="lpl">
 					<p>lpl</p>
+					<img src="gameTeam/image/down.png" class="down" id="img8" style="display: none;">
 				</div>
 			</a>
 		</div>
@@ -168,15 +185,17 @@ $(function(){
 		<br>
 		<div class="row">
 			<a class="rok" href="#" value="9">
-				<div class="col-md-3 leaguearea">
-					<img class="ln" src="gameTeam/image/opl.png" alt="opl">
+				<div class="col-md-3 leaguearea"  id="9">
+					<img class="ln" src="gameTeam/image/opl.png" alt="opl" width=200>
 					<p>opl</p>
+					<img src="gameTeam/image/down.png" class="down" id="img9" style="display: none;">
 				</div>
 			</a>
 			<a class="rok" href="#" value="10">
-				<div class="col-md-3 leaguearea">
+				<div class="col-md-3 leaguearea"  id="10">
 					<img class="ln" src="gameTeam/image/wcs.png" alt="wcs">
 					<p>wcs</p>
+					<img src="gameTeam/image/down.png" class="down" id="img10" style="display: none;">
 				</div>
 			</a>
 		</div>
