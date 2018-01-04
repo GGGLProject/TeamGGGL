@@ -30,12 +30,12 @@
 						<h3>THE BIG MATCH WILL START</h3>
 					</div>
 					<p class="text-center">
-					<h2>
+					<h2 style="color: white">
 						<strong>${vo.match_name }</strong>
 					</h2>
 					</p>
 					<br>
-					<div class="row">
+					<div class="row" style="color: white">
 						<div class="col-sm-4">
 							<p class="text-center main_teamN">
 								<strong>${vo.home_name }</strong>
@@ -157,29 +157,31 @@
 		</div>
 	</div>
 	<!-- Video Section -->
-	<div class="bg-3">
-		<div class="text-center container">
-			<div class="video_box">
-				<h3 class="text-center" style="font-size: 40px; margin-bottom: 60px;">경기 하이라이트 영상</h3>
-			</div>
-			<br>
-			<c:set var="doneLoop" value="false" />
-			<c:forEach var="vo" items="${list }" varStatus="status">
-				<c:if test="${not doneLoop}">
-					<div class="col-sm-4 main_video_box">
-						<iframe class="main_video" width="360" height="220"
-							src="https://www.youtube.com/embed/${vo.match_videokey }"
-							frameborder="0" gesture="media" allow="encrypted-media"
-							allowfullscreen></iframe>
-						<h4 style="margin-top: 20px; color: white;">
-							<p>${vo.match_name }</p>
-						</h4>
-					</div>
-					<c:if test="${status.count == 3}">
-						<c:set var="doneLoop" value="true" />
+	<div class="bg-container">
+		<div class="bg-3">
+			<div class="text-center container">
+				<div class="video_box">
+					<h3 class="text-center" style="font-size: 40px; margin-bottom: 60px;">경기 하이라이트 영상</h3>
+				</div>
+				<br>
+				<c:set var="doneLoop" value="false" />
+				<c:forEach var="vo" items="${list }" varStatus="status">
+					<c:if test="${not doneLoop}">
+						<div class="col-sm-4 main_video_box">
+							<iframe class="main_video" width="360" height="220"
+								src="https://www.youtube.com/embed/${vo.match_videokey }"
+								frameborder="0" gesture="media" allow="encrypted-media"
+								allowfullscreen></iframe>
+							<h4 style="margin-top: 20px; color: white;">
+								<p>${vo.match_name }</p>
+							</h4>
+						</div>
+						<c:if test="${status.count == 3}">
+							<c:set var="doneLoop" value="true" />
+						</c:if>
 					</c:if>
-				</c:if>
-			</c:forEach>
+				</c:forEach>
+			</div>
 		</div>
 	</div>
 	<!-- Container (Event Section) -->

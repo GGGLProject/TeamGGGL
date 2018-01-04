@@ -54,7 +54,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li><a href="news_main.do" class="hover12" data-hover-label="뉴스"><span class="hover12__label">뉴스</span></a></li>
+				<li><a href="news_main.do">뉴스</a></li>
 				<li><a href="teaminfo.do">팀/선수 정보</a></li>
 				<li><a href="game_schedule.do">일정 / 결과</a></li>
 				<li><a href="gallery.do">갤러리</a></li>
@@ -67,7 +67,7 @@
 				</c:if>
 				<li>
 					<form method="post" action="search_result.do">
-						<input type="text" name="searchkey" style="height:30px; width:180px; margin-top: 10px; margin-left: 50px;">
+						<input type="text" name="searchkey"  placeholder="  검색어를 입력하세요." style="height:30px; width:200px; margin-top: 10px; margin-left: 40px;">
 						<button type=submit value="검색" class="btn btn-default btn-sm">검색</button>
 					</form>
 				</li>

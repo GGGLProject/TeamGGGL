@@ -35,7 +35,7 @@
 		<c:forEach var="vo" items="${h_list }" varStatus="status">
 			<c:if test="${not doneLoop}">
 				<h2 class="text-center" style="font-size: 40px;">${vo.match_name }</h2>
-				<p class="text-center">
+				<p class="text-center" style="font-size: 17px">
 					<strong>${vo.match_day }</strong>&nbsp;<strong>${vo.match_time }</strong>
 				</p>
 				<br>
@@ -57,8 +57,8 @@
 									<h1 style="color: #FF4848; font-weight: bold;">${vo.home_score }</h1>
 								</div>
 								<div class="col-sm-2 text-center">
-									<div>
-										<h2 style="margin: 10px 0">Game Over</h2>
+									<div style="border-radius: 2em; border: 1px solid orange; background-color: orange;"> 
+										<h2 style="margin: 10px 0; font-size: 20px; font-weight: bold; color: #262422; ">Game Over</h2>
 									</div>
 									<img src="gameDetail/image/vs_icon.png" alt="Random Name"
 										width="155" height="155" style="margin-top: 30px;">
