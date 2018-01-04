@@ -119,15 +119,24 @@ $(function(){
 		$(".ya").prop('class', 'btn btn-success');
 	});
 	$('#update').click(function(){
+		
 		var Mpassword=$('#Mpassword').val();
+		var Hpassword=$('#Hpassword').val();
 		if(Mpassword.trim()=="")
 		{
 			alert("비밀번호를 입력하세요");
 			$('#Mpassword').focus();
 			return;
-		}
-		alert("수정이 완료 되었습니다.");
-	})
+		}else if(Mpassword!=Hpassword){
+			alert("비밀번호가 일치하지 않습니다!")
+			$('#Mpassword').focus();
+			return;
+		}else{
+			$('#form').submit();
+		}  
+		
+		
+	});
 });
 </script>
 
@@ -141,7 +150,7 @@ $(function(){
         <div class="col-md-6 col-md-offset-3">
           
          
-          <form method="post" action="memberUpdate.do">
+          <form method="post" action="memberUpdate.do" id="form">
           <!--  이름 닉네임 입력 부분 -->
            <div class="name form-group">
               <label for="username">이름(닉네임)</label>
@@ -160,12 +169,10 @@ $(function(){
             <div class="email form-group">
               <label for="username">이메일</label>
               <div class="input-group">
-             
-                <input type="text" class="form-control" name="email" id="useremail" value="${sessionScope.email }">
-             
-                <span class="input-group-btn">
-                  <a href="#" class="btn btn-info" id="emailcheckBtn">중복확인</a>
-                </span>
+             	<p>
+                <input type="text" class="form-control" name="email" id="useremail" value="${sessionScope.email }" readonly/>
+             	</p>
+               
               </div>
             </div>
             
@@ -174,7 +181,10 @@ $(function(){
               <label for="password">비밀번호</label>
               
               <input type="password" name="Mpassword" class="form-control" id="Mpassword">
-      
+      		<input type="hidden" id="Hpassword" value="${sessionScope.pwd }">
+      		
+      		 <input type="password" name="Cpassword" class="form-control" id="Cpassword">
+      		 
             </div>
            
             
@@ -243,7 +253,7 @@ $(function(){
             <!-- 회원가입, 취소 버튼 -->
             <div class="form-group text-center">
            
-              <input type="submit" class="btn btn-info" id="update" value="수정확인"/>
+              <input type="button" class="btn btn-info" id="update" value="수정확인"/>
             	
               <a href="main.do" type="submit" class="btn btn-default" >수정취소</a>
             

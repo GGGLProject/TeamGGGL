@@ -59,7 +59,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="mypage" parameterType="MemberVO">
 		UPDATE GGGL_MEMBER 
 		SET member_nickname=#{member_nickname},member_id=#{member_id},member_pwd=#{member_pwd},member_phone=#{member_phone},member_birthday=#{member_birthday}
-		WHERE member_pwd=#{member_pwd}
+		WHERE member_id=#{member_id} AND member_pwd=#{member_pwd}
 	</update>
 	<!-- adminpage 체크 -->
 	<select id="adminpageListData" resultType="MemberVO">
