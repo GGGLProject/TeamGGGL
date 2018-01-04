@@ -1,6 +1,7 @@
 body {
 	background-image: url('../image/lol_back1.jpg');
 	background-attachment: fixed;
+	margin-top: 70px;
 }
 
 .subject {

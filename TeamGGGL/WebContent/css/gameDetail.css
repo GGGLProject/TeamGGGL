@@ -3,6 +3,7 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	color: #dedee0;
+	margin-top: 70px;
 }
 
 ul.comment_nav_tabs {

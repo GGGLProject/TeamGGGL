@@ -4,8 +4,9 @@
 
 body {
 	background-image: url('../image/lol_back1.jpg');
-	background-repeat: no-repeat;
+	background-attachment: fixed;
 	color: #dedee0;
+	margin-top: 70px;
 }
 
 h2 {
