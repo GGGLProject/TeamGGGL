@@ -5,7 +5,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
 import java.io.*;
 import java.util.*;
 
@@ -93,5 +92,62 @@ public class EventDAO {
 		session.insert("eventDelete",no);
 		session.close();
 	}
+	
+	/* ´ñ±Û ±â´É */
+	public static void e_replyNewInsert(EventReplyVO vo) {
+		SqlSession session = ssf.openSession(true);
+		System.out.println(vo.getBno());
+		System.out.println(vo.getId());
+		System.out.println(vo.getMsg());
+		System.out.println(vo.getName());
+		try {
+			session.insert("e_replyNewInsert", vo);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+	}
+	
+	public static List<EventReplyVO> e_replyListData(int no) {
+		List<EventReplyVO> list = new ArrayList<EventReplyVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("e_replyListData", no);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+		return list;
+	}
+	
+	public static void e_replyUpdate(EventReplyVO vo) {
+		SqlSession session = ssf.openSession(true);
+		 try {
+			 session.update("e_replyUpdate", vo);
+		 } catch (Exception ex) {
+			 System.out.println(ex.getMessage());
+		 } finally {
+			 if (session != null)
+				 session.close();
+		 }
+	}
+	
+	public static void e_replyDelete(int no) {
+		SqlSession session = ssf.openSession();
+		try {
+			session.delete("e_replyDelete", no);
+			session.commit();
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+	}	
+
 	   
 }

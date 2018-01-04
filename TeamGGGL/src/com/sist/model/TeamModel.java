@@ -45,6 +45,10 @@ public class TeamModel {
 	public String teaminfo_detail(HttpServletRequest req, HttpServletResponse res) {
 		String team_name = req.getParameter("team_name");
 		
+		List<MatchVO> list_teamdetail = MatchDAO.team_detail(team_name);
+		
+		req.setAttribute("list_teamdetail", list_teamdetail);
+		
 		req.setAttribute("main_jsp", "../gameTeam/teaminfo_detail.jsp");
 		return "gameMain/main.jsp";
 	}
