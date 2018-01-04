@@ -187,7 +187,7 @@ $(function(){
                 <input type="text" class="form-control" name="id" id="id" placeholder="이름(닉네임)" >
               
                 <span class="input-group-btn">
-        
+         
                   <a href="#" class="btn btn-info" onClick="emailCheckfunction();" id="checkBtn">중복확인</a>
                 </span>
              </div>
