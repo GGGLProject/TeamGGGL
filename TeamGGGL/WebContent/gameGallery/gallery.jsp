@@ -59,7 +59,7 @@ $(function () {
 		<div id="middle_nav_menu">
 			<ul class="middle_nav_tabs">
 				<li class="active2" rel="tab1">ALL</li>
-				<li rel="tab2">${msize }</li>
+				<li rel="tab2">TOP</li>
 				<li rel="tab3">MID</li>
 				<li rel="tab4">JUNGLE</li>
 				<li rel="tab5">BOTTOM</li>
@@ -181,17 +181,31 @@ $(function () {
 				<div class="middle_tab_content" id="tab4">
 					<div class="row qnarow gametable">
 						<div class="row text-center">
-							<c:forEach var="vo" items="${list_j}">
-								<figure class="snip1200" id="myImg1"> <img id="modal1"
-									src="gameGallery/image/${vo.gallery_img }.jpg" alt="lol" /> <figcaption>
+							<c:forEach var="vo" items="${list_j}" varStatus="j">
+						
+ 					<c:set var="myImg" value="myImg${j.index+jsize}"/>
+						<c:set var="Imgg" value="Imgg${j.index+jsize}"/>
+						<c:set var="img01" value="img01${j.index+jsize}"/>
+						<c:set var="myModal" value="myModal${j.index+jsize}"/>
+						<c:set var="caption" value="caption${j.index+jsize}"/>
+						<input type=hidden id=num value="${j.index+jsize}"/>
+						<figure class="snip1200" id=${myImg } onclick="popup(${j.index+jsize})"> 
+							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" > 
+							<figcaption>
 								<p>${vo.gallery_content }</p>
-								<div class="heading">
-									<h2>
-										<span>${vo.gallery_title }</span>
-									</h2>
-								</div>
-								</figcaption> <a href="#"></a> </figure>
-							</c:forEach>
+								<div class="heading"><h2><span>${vo.gallery_title }</span></h2></div>
+							</figcaption>
+							<a href="#"></a>
+						</figure>
+						<div id="${myModal}" class="modal">
+							<span class="close" onclick="popclose(${j.index+jsize})">&times;</span> 
+							<img class="modal-content" id="${img01}">
+							<div id="${caption}" class="caption">
+								<h3>${vo.gallery_title }</h3>
+								<p>${vo.gallery_content }</p>
+							</div>
+						</div>
+					</c:forEach>
 						</div>
 						<!-- //row text-center -->
 					</div>
@@ -205,17 +219,31 @@ $(function () {
 				<div class="middle_tab_content" id="tab5">
 					<div class="row qnarow gametable">
 						<div class="row text-center">
-							<c:forEach var="vo" items="${list_b}">
-								<figure class="snip1200" id="myImg1"> <img id="modal1"
-									src="gameGallery/image/${vo.gallery_img }.jpg" alt="lol" /> <figcaption>
+							<c:forEach var="vo" items="${list_b}" varStatus="b">
+						
+ 					<c:set var="myImg" value="myImg${b.index+bsize}"/>
+						<c:set var="Imgg" value="Imgg${b.index+bsize}"/>
+						<c:set var="img01" value="img01${b.index+bsize}"/>
+						<c:set var="myModal" value="myModal${b.index+bsize}"/>
+						<c:set var="caption" value="caption${b.index+bsize}"/>
+						<input type=hidden id=num value="${b.index+bsize}"/>
+						<figure class="snip1200" id=${myImg } onclick="popup(${b.index+bsize})"> 
+							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" > 
+							<figcaption>
 								<p>${vo.gallery_content }</p>
-								<div class="heading">
-									<h2>
-										<span>${vo.gallery_title }</span>
-									</h2>
-								</div>
-								</figcaption> <a href="#"></a> </figure>
-							</c:forEach>
+								<div class="heading"><h2><span>${vo.gallery_title }</span></h2></div>
+							</figcaption>
+							<a href="#"></a>
+						</figure>
+						<div id="${myModal}" class="modal">
+							<span class="close" onclick="popclose(${b.index+bsize})">&times;</span> 
+							<img class="modal-content" id="${img01}">
+							<div id="${caption}" class="caption">
+								<h3>${vo.gallery_title }</h3>
+								<p>${vo.gallery_content }</p>
+							</div>
+						</div>
+					</c:forEach>
 						</div>
 						<!-- //row text-center -->
 					</div>
@@ -229,17 +257,31 @@ $(function () {
 				<div class="middle_tab_content" id="tab6">
 					<div class="row qnarow gametable">
 						<div class="row text-center">
-							<c:forEach var="vo" items="${list_s}">
-								<figure class="snip1200" id="myImg1"> <img id="modal1"
-									src="gameGallery/image/${vo.gallery_img }.jpg" alt="lol" /> <figcaption>
+							<c:forEach var="vo" items="${list_s}" varStatus="s">
+						
+ 					<c:set var="myImg" value="myImg${s.index+ssize}"/>
+						<c:set var="Imgg" value="Imgg${s.index+ssize}"/>
+						<c:set var="img01" value="img01${s.index+ssize}"/>
+						<c:set var="myModal" value="myModal${s.index+ssize}"/>
+						<c:set var="caption" value="caption${s.index+ssize}"/>
+						<input type=hidden id=num value="${s.index+ssize}"/>
+						<figure class="snip1200" id=${myImg } onclick="popup(${s.index+ssize})"> 
+							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" > 
+							<figcaption>
 								<p>${vo.gallery_content }</p>
-								<div class="heading">
-									<h2>
-										<span>${vo.gallery_title }</span>
-									</h2>
-								</div>
-								</figcaption> <a href="#"></a> </figure>
-							</c:forEach>
+								<div class="heading"><h2><span>${vo.gallery_title }</span></h2></div>
+							</figcaption>
+							<a href="#"></a>
+						</figure>
+						<div id="${myModal}" class="modal">
+							<span class="close" onclick="popclose(${s.index+ssize})">&times;</span> 
+							<img class="modal-content" id="${img01}">
+							<div id="${caption}" class="caption">
+								<h3>${vo.gallery_title }</h3>
+								<p>${vo.gallery_content }</p>
+							</div>
+						</div>
+					</c:forEach>
 						</div>
 						<!-- //row text-center -->
 					</div>
