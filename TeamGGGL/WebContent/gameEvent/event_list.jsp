@@ -59,15 +59,32 @@
 								<td class="text-center td-top">${vo.event_no }</td>
 								<td class="text-center td-top">${vo.event_category }</td>
 								<td class="text-center">
+				
+									<c:if test="${sessionScope.email!=null }">
 									<a href="event_content.do?no=${vo.event_no }">
 									<img src="${vo.event_image }" width=100 height=50></a>
+									</c:if>
+									
+									<c:if test="${sessionScope.email==null }">
+									<img src="${vo.event_image }" width=100 height=50>
+									</c:if>
+									
 								</td>
 								<td class="text-center td-top">
+								<c:if test="${sessionScope.email!=null }">
 									<a href="event_content.do?no=${vo.event_no }">${vo.event_title }</a>
 									&nbsp;&nbsp;&nbsp;
 									<c:if test="${vo.count!=0 }">
               							(${vo.count })
              						</c:if>
+             					</c:if>
+             					<c:if test="${sessionScope.email==null }">
+									${vo.event_title }
+									&nbsp;&nbsp;&nbsp;
+									<c:if test="${vo.count!=0 }">
+              							(${vo.count })
+             						</c:if>
+             					</c:if>
              					</td>
 								<td class="text-center td-top">
 									<fmt:formatDate value="${vo.event_day}" pattern="yyyy.MM.dd(E)" />
@@ -101,7 +118,7 @@
 					<a href="event_list.do?page=${curpage<=totalpage-10?curpage+10:curpage}">&raquo;</a>
 				</li>
 			</ul>
-			<c:if test="${sessionScope.email!=null }">
+			<c:if test="${sessionScope.grade==3 || sessionScope.grade==1}">
 				<a href="event_write.do" style="float: right;" class="btn btn-danger btn-nm btn-sub">µî·Ï</a>
 			</c:if>
 		</center>
