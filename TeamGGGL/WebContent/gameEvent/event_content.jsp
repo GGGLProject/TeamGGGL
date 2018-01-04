@@ -7,13 +7,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Event 상세 내용 - GG GL</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="css/eventContent.css" rel="stylesheet" type="text/css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 		//수정버튼
@@ -44,6 +41,17 @@
 		});
 	});
 </script>
+<style type="text/css">
+	.container-fluid-event {
+	margin-top: 50px;
+	border: 1px solid #dedee0;
+	padding: 10px 0;
+}
+
+.com_2 {
+	margin: 10px 0;
+} 
+</style>
 </head>
 <body>
 	<div class="container">
@@ -104,31 +112,12 @@
  ${vo.event_content }
 
 								</textarea> </pre></td>
-
 						</tr>
 					</table>
-
 				</div>
-
-
 			</div>
 			<!--코멘트 시작-->
-			<div class="comment">
-				<!-- <div class="container-fluid-news container-fluid col-md-12 ">
-			<div class="comment_Total col-md-12">
-				<h4>
-					<span class="com_title"><b>Comment</b></span>
-				</h4>
-				<div class="reply_write">
-					<textarea class="com_2 form-control text-left"
-						placeholder="내용을 입력하세요." rows="3"></textarea>
-				</div>
-				<div class="reply_writer">
-					<button class="btn btn-primary btn-sm pull-right" type="submit">댓글
-						달기</button>
-				</div>
-			</div>
-		</div> -->
+			<div class="comment" style="padding: 0px 15px;">
 				<div class="container-fluid-event container-fluid col-md-12 ">
 					<div class="comment_Total col-md-12">
 						<h4>
@@ -137,23 +126,26 @@
 						<div class="reply_write">
 							<form method=post action="event_reply_new_insert.do">
 								<input type="hidden" name=bno value="${vo.event_no }">
-								<textarea rows="3" class="com_2 form-control text-left"
-									name="msg"></textarea>
-								<input class="btn btn-primary btn-sm pull-right" type=submit
-									value="댓글달기">
+								<textarea rows="3" class="com_2 form-control text-left" name="msg"></textarea>
+								<input class="btn btn-primary btn-sm pull-right" type=submit value="댓글달기">
 							</form>
 						</div>
 					</div>
 				</div>
 
 				<div id="comment_nav_menu">
-					<div class="row commentrow"> 
+					<div class="row commentrow" > 
 						<div class="comment_list col-md-12">
+							<div style="height: 40px"></div>
+							<c:if test="${vo.count==0 }">
+								<div class="text-center">
+									<img src="noimage.gif">
+									<span>첫번째 댓글을 남겨주세요.</span>
+								</div>
+       						</c:if>
+       						<c:if test="${vo.count!=0 }">
 							<c:forEach var="rvo" items="${e_list }">
 								<div class="comment_form">
-									<!-- <div class="writer_img pull-left">
-										<img src="image/co_user.png">
-									</div> -->
 									<div class="pull-right">
 										<c:if test="${sessionScope.email == rvo.id}">
 											<button class="btn btn-primary modifyBtn" value="${rvo.no }">수정</button>
@@ -165,12 +157,17 @@
 											</form>
 										</c:if>
 									</div>
-									<div class="comment_content">
+									<div class="comment_content" style="margin-left : 10px;">
 										<div class="writer_info">
+											 <div class="writer_img pull-left">
+												<img src="image/co_user.png">
+											</div>
 											<div class="w_nickName">
 												<strong>${rvo.name }</strong>
 											</div>
-											<div class="w_time" style="font-size: 12px; color: #9f9fa0">${rvo.regdate }</div>
+											<div class="w_time" style="font-size: 12px; color: #9f9fa0">
+												<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd hh:mm:ss" />
+											</div>
 										</div>
 										<div class="comment_body">
 											<p>${rvo.msg }</p>
@@ -187,11 +184,11 @@
 									</div>
 								</div>
 							</c:forEach>
-							<center>
-								<button class="btn btn-primary btn-block moreBtn" type="button">더보기
-									▼</button>
-							</center>
-							<div style="height: 40px"></div>
+							</c:if>
+							<%-- <center>
+								<button class="btn btn-primary btn-block moreBtn" type="button">더보기▼</button>
+							</center> --%>
+							<div style="height: 30px"></div>
 						</div>
 						<br>
 					</div>

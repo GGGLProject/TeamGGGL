@@ -106,6 +106,19 @@ public class NewsDAO {
 		}
 		return list;
 	}
+	public static List<NewsVO> newsSearchData(String searchkey) {
+		List<NewsVO> list = new ArrayList<NewsVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("newsSearchData", searchkey);
+		} catch (Exception e) {
+			System.out.println("NewsDAO:newsSearchData : " + e.getMessage());
+		} finally {
+			if (session != null)
+				session.close();
+		}
+		return list;
+	}
 
 	public static List<NewsVO> newsUpdateListData() {
 		List<NewsVO> list = new ArrayList<NewsVO>();
@@ -129,6 +142,7 @@ public class NewsDAO {
 		return vo;
 
 	}
+	
 
 	public static int newsTotalPage() {
 		int total = 0;

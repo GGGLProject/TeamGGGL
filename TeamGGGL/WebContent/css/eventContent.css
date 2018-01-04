@@ -5,10 +5,10 @@ body {
 	color: #dedee0;
 }
 .content_board {
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(20, 20, 20, 0.7);
 }
 .comment {
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(20, 20, 20, 0.7);
 }
 
 /* .comment_list, .comment_nav_tabs, .active2 {
@@ -17,7 +17,7 @@ body {
 } */
 
 .table th {
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(20, 20, 20, 0.7);
 	
 }
 .input {
@@ -27,7 +27,6 @@ body {
 .event-img {
 	border: 1px solid black;
 }
-
 
 h2 {
 	padding-top: 40px;
@@ -49,22 +48,16 @@ h2 {
 	color:black;
 }
 
-pre {
+.input {
 	background-color: rgba(0,0,0,0.5);
 	color:white;
 }
-
-.table {
-	 
-}
-
 
 .contentImage {
 	padding-top: 10px;
 }
 
 .container-fluid-event {
-	background-color: rgba(0,0,0,0.9);
 	margin-top: 50px;
 	border: 1px solid #dedee0;
 	padding: 10px 0;
@@ -74,15 +67,14 @@ pre {
 	margin: 10px 0;
 } 
 
-.contentText
-{
+.contentText {
 	line-height: 1.64;
 	overflow: hidden;
 	width:650px;
 	display:inline;
 }
-.b-writer
-{
+
+.b-writer {
 	text-align:right;
 }
 hr {
@@ -103,13 +95,13 @@ hr {
 }
 
 .writer_img {
-	text-align: center;
-	margin: auto 10px;	
+	float: left;
+	margin: auto 20px;	
 }
 
-.comment_content {
-	margin-left : 110px;
-}
+/* .comment_content {
+	margin-left : 20px;
+} */
 
 .comment_content .writer_info .w_nickName {
 	color: #3d9eed
@@ -156,7 +148,3 @@ ul.comment_nav_tabs li.active2 {
 	opacity: 0.9;
 }
 
-.comment_tab_content {
-	height: auto;
-	display: none;
-}

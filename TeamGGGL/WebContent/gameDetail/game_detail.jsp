@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -191,7 +192,9 @@
 									<div class="w_nickName">
 										<strong>${rvo.name }</strong>
 									</div>
-									<div class="w_time" style="font-size: 12px; color: #9f9fa0">${rvo.regdate }</div>
+									<div class="w_time" style="font-size: 12px; color: #9f9fa0">
+										<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd hh:mm:ss" />
+									</div>
 								</div>
 								<div class="comment_body">
 									<p>${rvo.msg }</p>
@@ -208,11 +211,15 @@
 							</div>
 						</div>
 					</c:forEach>
-					<div style="height: 40px"></div>
+					<div style="height: 30px"></div>
 				</div>
 				<br>
 			</div>
+			<div class="text-right">
+				<a href="game_schedule.do"><input type="button" class="btn btn-nm btn-success" value="¸ñ·Ï"></a>
+			</div>
 		</div>
+		
 	</div>
 </body>
 </html>

@@ -23,9 +23,9 @@ public class EventModel {
 		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
 		return "gameMain/main.jsp";
 	}
+	
 	@RequestMapping("event_list.do")
 	public String event_list(HttpServletRequest req, HttpServletResponse res) throws Throwable {
-		// TODO Auto-generated method stub
 		req.setCharacterEncoding("EUC-KR");
 		String page= req.getParameter("page");
 		
@@ -44,18 +44,9 @@ public class EventModel {
 		String today = sdf.format(date);
 
 		List<EventVO> list = EventDAO.eventListData(map);
-//		String event_day;
-//		String[] event_days = new String [list.size()];
-//		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-//		for (int i =0; i<list.size(); i++)
-//		{	event_day=list.get(i).getEvent_day();
-//			event_days[i] = sdf.format(event_day);
-//		}
-//		req.setAttribute("event_day", event_days);\
-		
-		
-//		HttpSession session=req.getSession();
-//		String id = (String) session.getAttribute("admin");
+		for(EventVO vo:list) {
+			vo.setCount(EventDAO.e_ReplyCount(vo.getEvent_no()));
+		}
 		req.setAttribute("list", list);
 		req.setAttribute("curpage", curpage);
 		int totalpage= EventDAO.eventTotalPage();
@@ -66,11 +57,16 @@ public class EventModel {
 	}
 	
 	@RequestMapping("event_content.do")
-	public String event_content(HttpServletRequest req, HttpServletResponse res) {
+	public String event_content(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		try {
+	         req.setCharacterEncoding("EUC-KR");
+	      } catch (Exception ex) {}
 		String no = req.getParameter("no");
 		int event_no=Integer.parseInt(no);
 		EventVO vo = EventDAO.eventContentData(event_no);
 		List<EventReplyVO> e_list = EventDAO.e_replyListData(event_no);
+		
+		
 		req.setAttribute("vo", vo);
 		req.setAttribute("e_list", e_list);
 		req.setAttribute("main_jsp", "../gameEvent/event_content.jsp");
@@ -176,8 +172,6 @@ public class EventModel {
 	}
 	@RequestMapping("event_modify_ok.do")
 	public String event_modify_ok(HttpServletRequest req, HttpServletResponse res) throws Throwable {
-		
-		
 		HttpSession session=req.getSession();
 		String realFolder = "";
 		 String filename1 = "";

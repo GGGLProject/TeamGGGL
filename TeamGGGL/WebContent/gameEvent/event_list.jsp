@@ -60,7 +60,11 @@
 							<td class="text-center td-top">${vo.event_category }</td>
 							<td class="text-center"><a href="event_content.do?no=${vo.event_no }"><img
 									src="${vo.event_image }" width=100 height=50></a></td>
-							<td class="text-center td-top"><a href="event_content.do?no=${vo.event_no }">${vo.event_title }</a></td>
+							<td class="text-center td-top"><a href="event_content.do?no=${vo.event_no }">${vo.event_title }</a>&nbsp;&nbsp;&nbsp;
+								<c:if test="${vo.count!=0 }">
+              						(${vo.count })
+             					</c:if>
+							</td>
 							<td class="text-center td-top"><%-- <fmt:parseDate var="parsedDate" value="${vo.event_day }" pattern="yyy-MM-dd" />
 							<fmt:formatDate var="newFormattedDateString" value="${parseDate }" pattern="yyy-MM-dd" /> --%>
 							<fmt:formatDate value="${vo.event_day}" pattern="yyyy.MM.dd(E)" />

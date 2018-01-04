@@ -30,6 +30,20 @@ public class EventDAO {
 		session.close();
 		return list;
 	}
+	public static List<EventVO> eventSearchData(String searchKey)
+	{
+		List<EventVO> list = new ArrayList<EventVO>();
+		try {
+			SqlSession session = ssf.openSession();
+			list = session.selectList("eventSearchData",searchKey);
+			session.close();
+		}catch(Exception e)
+		{
+			System.out.println("eventSearchData : "+e.getMessage());
+		}
+
+		return list;
+	}
 	public static List<EventVO> recommandEventListData()
 	{
 		SqlSession session = ssf.openSession();
@@ -147,7 +161,20 @@ public class EventDAO {
 			if (session != null)
 				session.close();
 		}
-	}	
-
+	}
+	
+	public static int e_ReplyCount(int bno){
+	   int count=0;
+	   SqlSession session=ssf.openSession();
+	   try {
+		   count=session.selectOne("e_ReplyCount", bno);
+	   } catch(Exception ex){
+		   System.out.println("e_ReplyCount" + ex.getMessage());
+	   } finally {
+		   if(session!=null)
+			   session.close();
+	   }
+	   return count;
+   }
 	   
 }

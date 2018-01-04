@@ -107,7 +107,9 @@
 									<div class="w_nickName">
 										<strong>${rvo.name }</strong>
 									</div>
-									<div class="w_time" style="font-size: 12px; color: #9f9fa0">${rvo.regdate }</div>
+									<div class="w_time" style="font-size: 12px; color: #9f9fa0">
+										<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd hh:mm:ss" />
+									</div>
 								</div>
 								<div class="comment_body">
 									<p>${rvo.msg }</p>

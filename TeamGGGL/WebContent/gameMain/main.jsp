@@ -36,11 +36,11 @@
         });
     });
 </script>
-d
+
 <title>Insert title here</title>
 </head>
 <body class="body-main" data-spy="scroll" data-target=".navbar"
-	data-offset="50">
+	data-offset="50" style="overflow-x:hidden; overflow-y:auto;">
 	<!-- navbar -->
 	<nav class="navbar navbar-fixed-top navbar-inverse">
 	<div class="container-fluid">
@@ -50,11 +50,11 @@ d
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.do">GGGL</a>
+			<a class="navbar-brand ggglatag" href="main.do">GGGL</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li><a href="news_main.do">뉴스</a></li>
+				<li><a href="news_main.do" class="hover12" data-hover-label="뉴스"><span class="hover12__label">뉴스</span></a></li>
 				<li><a href="teaminfo.do">팀/선수 정보</a></li>
 				<li><a href="game_schedule.do">일정 / 결과</a></li>
 				<li><a href="gallery.do">갤러리</a></li>
@@ -117,8 +117,7 @@ d
 				<li><a href="news_main.do">NEWS</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
 				<li><a href="game_schedule.do">MATCHES</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
 				<li><a href="gallery.do">GALLERY</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
-				<li><a href="event_list.do">EVENT</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
-				<li><a href="#">FREEBOARD</a></li>
+				<li><a href="event_list.do">EVENT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 			</ul>
 		</div>
 		<div class="footer_txt">

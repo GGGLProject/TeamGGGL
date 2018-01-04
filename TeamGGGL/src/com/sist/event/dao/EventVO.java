@@ -18,6 +18,7 @@ public class EventVO {
 	private String event_city;
 	private int event_hit;
 	private String event_image;
+	private int count;
 //	EVENT_HIT               NUMBER        
 //	EVENT_IMAGE             VARCHAR2(500) 
 //	두개 추가
@@ -90,6 +91,12 @@ public class EventVO {
 	public void setEvent_city(String event_city) {
 		this.event_city = event_city;
 	}
-
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	
 	
 }
