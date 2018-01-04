@@ -72,7 +72,7 @@
 					</form>
 				</li>
 			</ul>
-			<c:if test="${sessionScope.email==null }">
+			<c:if test="${sessionScope.email==null }"> 
 				<form method=post action="login.do">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="new_member.do"><span
