@@ -46,6 +46,33 @@ public class MainModel {
 		req.setAttribute("main_jsp", "default.jsp");
 		return "gameMain/main.jsp";
 	}
+	@RequestMapping("search.do")
+	public String search(HttpServletRequest req, HttpServletResponse res) {
+
+		req.setAttribute("main_jsp", "../gameMain/main.jsp");
+
+		return "gameMain/main.jsp";
+	}
+	@RequestMapping("search_result.do")
+	public String search_page(HttpServletRequest req, HttpServletResponse res) {
+		try {
+			req.setCharacterEncoding("EUC-KR");
+		} catch (Exception ex) {
+		}
+		String searchKey = req.getParameter("searchkey");
+		System.out.println(searchKey);
+
+		// JSP Àü¼Û
+		List<NewsVO> rlist = NewsDAO.newsSearchData(searchKey);
+		List<EventVO> elist = EventDAO.eventSearchData(searchKey);
+
+		req.setAttribute("rlist", rlist);
+		req.setAttribute("elist", elist);
+
+		req.setAttribute("main_jsp", "../gameMain/search_result.jsp");
+
+		return "gameMain/main.jsp";
+	}
 }
 
 

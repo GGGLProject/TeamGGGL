@@ -40,7 +40,7 @@ public class SearchModel {
 	@RequestMapping("search.do")
 	public String search(HttpServletRequest req, HttpServletResponse res) {
 
-		req.setAttribute("main_jsp", "../gameMain/search.jsp");
+		req.setAttribute("main_jsp", "../gameMain/main.jsp");
 
 		return "gameMain/main.jsp";
 	}
