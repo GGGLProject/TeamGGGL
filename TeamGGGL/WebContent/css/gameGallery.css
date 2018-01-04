@@ -271,7 +271,7 @@ snip1200 {
     cursor: pointer;
 }
 
-#caption p {
+.caption p {
 	font-size: 17px;
 }
 
@@ -288,4 +288,5 @@ snip1200 {
 	display: inline-block;
 	
 }
+
 

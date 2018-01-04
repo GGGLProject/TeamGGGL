@@ -14,14 +14,21 @@
 
 <script type="text/javascript">
 var snum=0;
-function popup(num) {
-	/* 	img[m].onclick = function(){ */
-	var m = num;
+var modalFlag = false;
 
+function popup(num) {
+	var m = num;
+	if (modalFlag){
+		modalFlag = false;
+		return;
+	}
+	else {
+		modalFlag = true;
 	    modal[m].style.display = "block";
 	    modalImg[m].src = Imggg[m].src;
 	    /* captionText.innerHTML = this.alt; */
 	setnum(m);
+	}
 }
 	// Get the <span> element that closes the modal
 
@@ -123,7 +130,7 @@ $(function () {
 							</figcaption>
 							<a href="#"></a>
 						</figure>
-						<div id="${myModal}" class="modal">
+						<div id="${myModal}" class="modal"  data-backdrop="static">
 							<span class="close" onclick="popclose(${t.index+allsize})">&times;</span> 
 							<img class="modal-content" id="${img01}">
 							<div id="${caption}" class="caption">
