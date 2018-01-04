@@ -1,6 +1,7 @@
 body {
 	background-image: url('../image/lol_back1.jpg');
 	background-attachment: fixed;
+	margin-top: 70px;
 }
 
 h2 {
@@ -8,6 +9,7 @@ h2 {
 	padding-bottom: 20px;
 	color: white;
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 .gametable .table tr th, .gametable .table tr td {

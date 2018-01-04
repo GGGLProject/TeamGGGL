@@ -1,8 +1,8 @@
 body {
 	background-image: url('../image/lol_back1.jpg');
-	background-repeat: no-repeat;
 	background-attachment: fixed;
 	color: #dedee0;
+	margin-top: 70px;
 }
 .content_board {
 	background-color: rgba(20, 20, 20, 0.7);
