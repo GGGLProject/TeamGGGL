@@ -91,7 +91,7 @@
 				</div>
 
 				<div class="col-lg-6">
-					<table class="table event-table">
+					<table class="table event-table" id="table10">
 						<tr>
 							<th width=20% class="text-right">분류</th>
 							<td width=30% class="text-left">${vo.event_category }</td>
@@ -107,11 +107,10 @@
 						<tr>
 							<th class="input text-left qna-td" valign="top">내용</th>
 							<td width=30% class="text-left qna-td"><pre class="input">
-									<textarea class="input" rows="15" cols="65" name=content id="content">
-										
- ${vo.event_content }
-
-								</textarea> </pre></td>
+								<textarea class="input" rows="15" cols="65" name=content id="content">
+ 									${vo.event_content }
+								</textarea> </pre>
+							</td>
 						</tr>
 					</table>
 				</div>
