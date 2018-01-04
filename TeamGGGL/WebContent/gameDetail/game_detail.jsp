@@ -57,8 +57,8 @@
 									<h1 style="color: #FF4848; font-weight: bold;">${vo.home_score }</h1>
 								</div>
 								<div class="col-sm-2 text-center">
-									<div style="border-radius: 2em; border: 1px solid orange; background-color: orange;"> 
-										<h2 style="margin: 10px 0; font-size: 20px; font-weight: bold; color: #262422; ">Game Over</h2>
+									<div><!-- style="border-radius: 2em; border: 1px solid orange; background-color: orange;" --> 
+										<h2>Game Over</h2><!--  style="margin: 10px 0; font-size: 20px; font-weight: bold; color: #262422; " -->
 									</div>
 									<img src="gameDetail/image/vs_icon.png" alt="Random Name"
 										width="155" height="155" style="margin-top: 30px;">
@@ -74,7 +74,7 @@
 								</div>
 								<div class="col-sm-2 text-center">
 									<div>
-										<h2 style="margin: 10px 0">Game Over</h2>
+										<h2>Game Over</h2><!-- style="margin: 10px 0" -->
 									</div>
 									<img src="gameDetail/image/vs_icon.png" alt="Random Name"
 										width="155" height="155" style="margin-top: 30px;">
@@ -110,7 +110,7 @@
 					<div class="row">
 						<div class="col-sm-1"></div>
 						<div class="col-sm-3 p_img">
-							<img src="${vo.pvo.player_pic }" width="250">
+							<img src="${vo.pvo.player_pic }" width="200">
 						</div>
 
 						<div class="col-sm-1 h_player1name">
@@ -126,7 +126,7 @@
 							</div>
 						</div>
 						<div class="col-sm-3 p_img">
-							<img src="${a_list[status.index].a_player_pic }" width="250">
+							<img src="${a_list[status.index].a_player_pic }" width="200">
 						</div>
 						<div class="col-sm-1"></div>
 					</div>
