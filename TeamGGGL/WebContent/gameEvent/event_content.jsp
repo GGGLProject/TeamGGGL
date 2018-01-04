@@ -166,7 +166,7 @@
 											</div>
 											<div class="w_time" style="font-size: 12px; color: #9f9fa0">
 												<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss" />
-											</div>
+											</div> 
 										</div>
 										<div class="comment_body" style="margin-top: 5px">
 											<p>${rvo.msg }</p>
