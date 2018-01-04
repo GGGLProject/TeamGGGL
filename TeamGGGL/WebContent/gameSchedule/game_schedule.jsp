@@ -218,18 +218,18 @@ $(function () {
 						<div class="lastteam_score">${vo.away_score }</div>
 						<div class="lastteam_logo"><img src="${list_a[status.index].away_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
-						<div class="game_time">종료</div>
+						<div class="game_time">${vo.match_time }</div>
 						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<%-- <div class="col-md-3 gameready">
 						<div class="leaguelogo">${vo.match_league }</div>
-						<div class="firstteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
+						<div class="firstteam_logo"><img src="${vo.tvo.team_icon }"></div>
 						<div class="firstteam_name">${vo.home_name }</div>
 						<div class="vsvs">VS</div>
-						<div class="lastteam_logo"><img src="gameSchedule/image/fnatic.png"></div>
+						<div class="lastteam_logo"><img src="${list_a[status.index].away_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
 						<div class="game_time">${vo.match_time }</div>
-						<a href="game_detail.do"><div class="detail_button">상세보기 ></div></a>
+						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div> --%>
 					<c:set var="count" value="${status.index+1 }"/>
 					</c:forEach>
@@ -255,7 +255,7 @@ $(function () {
 						<div class="lastteam_score">${vo.away_score }</div>
 						<div class="lastteam_logo"><img src="${list__1a[status.index].away_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
-						<div class="game_time">종료</div>
+						<div class="game_time">${vo.match_time }</div>
 						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<c:set var="count" value="${status.index+1 }"/>
@@ -282,7 +282,7 @@ $(function () {
 						<div class="lastteam_score">${vo.away_score }</div>
 						<div class="lastteam_logo"><img src="${list__2a[status.index].away_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
-						<div class="game_time">종료</div>
+						<div class="game_time">${vo.match_time }</div>
 						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<c:set var="count" value="${status.index+1 }"/>
@@ -309,7 +309,7 @@ $(function () {
 						<div class="lastteam_score">${vo.away_score }</div>
 						<div class="lastteam_logo"><img src="${list__3a[status.index].away_icon }"></div>
 						<div class="lastteam_name">${vo.away_name }</div>
-						<div class="game_time">종료</div>
+						<div class="game_time">${vo.match_time }</div>
 						<a href="game_detail.do?match_no=${vo.match_no }"><div class="detail_button">상세보기 ></div></a>
 					</div>
 					<c:set var="count" value="${status.index+1 }"/>
