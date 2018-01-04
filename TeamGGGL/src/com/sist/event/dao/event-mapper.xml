@@ -35,6 +35,11 @@
 		FROM gggl_event
 		WHERE event_no = #{event_no}
 	</select>
+	<!-- 댓글 수 조회 -->
+	<select id="e_ReplyCount" resultType="int" parameterType="int">
+    SELECT COUNT(*) FROM event_reply
+    WHERE bno=#{bno}
+  	</select>
 
 	<!--조회수 증가 -->
 	<update id="eventHitIncrement" parameterType="int">
