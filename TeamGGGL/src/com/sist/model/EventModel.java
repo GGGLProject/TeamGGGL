@@ -88,7 +88,7 @@ public class EventModel {
 		HttpSession session=req.getSession();
 		String realFolder = "";
 		 String filename1 = "";
-		 int maxSize = 400*400*10;
+		 int maxSize = 400*400*20;
 		 String encType = "EUC-KR";
 		 String savefile = "image";
 		 realFolder = "C:\\git\\TeamGGGL\\TeamGGGL\\WebContent\\image";
