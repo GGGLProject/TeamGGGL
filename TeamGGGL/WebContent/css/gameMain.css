@@ -129,8 +129,8 @@ footer .up-arrow:hover {
 }
 
 .bg-1 {
-   background: #2d2d30;
-   color: #bdbdbd;
+   background: url(../gameMain/image/backkk3.jpg);
+    height: 650px;
 }
 .bg-2 {
 	margin-top: 110px;
@@ -146,6 +146,17 @@ footer .up-arrow:hover {
     background-size: cover;
 }
 
+.bg-3 {
+    background: url(../gameMain/image/backkk2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    min-height: 500px;
+    height: 600px;
+}
+
 .body-main {
    /* font: 400 15px/1.8 Lato, sans-serif; */
 }
@@ -154,13 +165,10 @@ footer .up-arrow:hover {
    color: #fff;
 }
 
-.bg-1 p {
-   font-style: italic;
+.ggglatag {
+	font-family: Zelta-Six;
 }
 
-.container-fluid {
-	padding-left: 60px !important;
-}
 
 .navbar-header {
 	margin-top: 28px;
@@ -189,7 +197,7 @@ footer .up-arrow:hover {
 
 .navbar {
    /* font-family: Montserrat, sans-serif; */
-   font-family: Zelta-Six;
+   /* font-family: Zelta-Six; */
    margin-bottom: 0;
    background-color: #181818;
    border: 0;
@@ -198,6 +206,7 @@ footer .up-arrow:hover {
 }
 .navbar-inverse {
 	border-style: none;
+	padding-left: 60px;
 }
 .navbar li a, .navbar .navbar-brand {
    color: #d5d5d5 !important;

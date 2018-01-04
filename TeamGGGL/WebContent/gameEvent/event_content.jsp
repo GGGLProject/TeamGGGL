@@ -117,7 +117,7 @@
 				</div>
 			</div>
 			<!--코멘트 시작-->
-			<div class="comment" style="padding: 0px 15px;">
+			<div class="comment" style="padding: 0px 15px 20px 15px;">
 				<div class="container-fluid-event container-fluid col-md-12 ">
 					<div class="comment_Total col-md-12">
 						<h4>
@@ -166,7 +166,7 @@
 												<strong>${rvo.name }</strong>
 											</div>
 											<div class="w_time" style="font-size: 12px; color: #9f9fa0">
-												<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd hh:mm:ss" />
+												<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss" />
 											</div>
 										</div>
 										<div class="comment_body">
@@ -188,40 +188,34 @@
 							<%-- <center>
 								<button class="btn btn-primary btn-block moreBtn" type="button">더보기▼</button>
 							</center> --%>
-							<div style="height: 30px"></div>
+							<div style="height: 20px"></div>
 						</div>
 						<br>
 					</div>
+				<div class="text-right">
+					<c:if test="${sessionScope.name!=vo.event_id }">
+						<a href="event_list.do" style="margin-right: 5px ">
+							<input type="button" class="btn btn-nm btn-success" value="목록">
+						</a>
+					</c:if>
+					<c:if test="${sessionScope.name==vo.event_id }">
+						<form method=post action="event_modify.do" id=modf style="display: inline-block;">
+							<input type=hidden name=no value="${vo.event_no }"> 
+							<input type=hidden name=id value="${vo.event_id }">
+							<input type="button" value="수정" class="btn btn-nm btn-info" id="modifyBtn">
+						</form>
+						<a href="event_list.do"><input type="button" class="btn btn-nm btn-success" value="목록">
+						</a>
+						<form method=post action="event_delete.do" id=delf style="display: inline-block;">
+							<input type=hidden name=no value="${vo.event_no }">
+							<input type=hidden name=id value="${vo.event_id }">
+							<input type="button" value="삭제" class="btn btn-nm btn-danger" id="deleteBtn">
+						</form>
+					</c:if>
 				</div>
-			</div>
-			<!--코멘트끝  -->
-			<p>
-			<div class="text-right">
-				<c:if test="${sessionScope.name!=vo.event_id }">
-					<a href="event_list.do"><input type="button"
-						class="btn btn-nm btn-success" value="목록"></a>
-				</c:if>
-				<c:if test="${sessionScope.name==vo.event_id }">
-					<form method=post action="event_modify.do" id=modf
-						style="display: inline-block;">
-						<input type=hidden name=no value="${vo.event_no }"> <input
-							type=hidden name=id value="${vo.event_id }"> <input
-							type="button" value="수정" class="btn btn-nm btn-info"
-							id="modifyBtn">
-					</form>
-					<a href="event_list.do"><input type="button"
-						class="btn btn-nm btn-success" value="목록"></a>
-					<form method=post action="event_delete.do" id=delf
-						style="display: inline-block;">
-						<input type=hidden name=no value="${vo.event_no }"> <input
-							type=hidden name=id value="${vo.event_id }"> <input
-							type="button" value="삭제" class="btn btn-nm btn-danger"
-							id="deleteBtn">
-					</form>
-				</c:if>
-			</div>
+				</div>
+			</div>			
 		</div>
-
 	</div>
 </body>
 </html>

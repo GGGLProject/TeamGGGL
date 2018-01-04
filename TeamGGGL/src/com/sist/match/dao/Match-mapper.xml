@@ -191,6 +191,7 @@
    <select id="m_replyListData" resultType="MatchReplyVO" parameterType="int">
       SELECT no, bno, id, name, msg, regdate FROM match_reply 
       WHERE bno = #{no}
+      ORDER BY regdate DESC
    </select>
    <update id="m_replyUpdate" parameterType="MatchReplyVO">
       UPDATE match_reply SET

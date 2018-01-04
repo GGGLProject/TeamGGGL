@@ -71,8 +71,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	<select id="replyListData" resultType="NewsReplyVO"
 		parameterType="int">
-		SELECT no, bno,id,name,msg,regdate from news_reply where
-		bno=#{no}
+		SELECT no, bno,id,name,msg,regdate from news_reply 
+		WHERE bno=#{no}
+		ORDER BY regdate DESC
 	</select>
 	<update id="replyUpdate" parameterType="NewsReplyVO">
 		UPDATE news_reply SET

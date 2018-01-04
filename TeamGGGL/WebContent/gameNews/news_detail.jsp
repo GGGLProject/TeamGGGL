@@ -6,14 +6,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>LOL 뉴스 - GG GL</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<title>News - GG GL</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="css/newsDetail.css" rel="stylesheet" type="text/css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(function() {
 	var u = 0;
@@ -36,8 +33,8 @@ $(function() {
 		<div class="newsPart">
 			<div class="newsHead text-center">
 				<h2>
-					<span class="newsCategory">[ ${vo.news_category } ]</span><span
-						class="newsTitle"> ${vo.news_title }</span>
+					<span class="newsCategory">[ ${vo.news_category } ]</span>
+					<span class="newsTitle"> ${vo.news_title }</span>
 				</h2>
 				<br>
 				<div class="topInfo text-right">
@@ -71,8 +68,7 @@ $(function() {
 					<form method=post action="news_reply_new_insert.do">
 						<input type="hidden" name=bno value="${vo.news_no }">
 						<textarea rows="3" class="com_2 form-control text-left" name="msg"></textarea>
-						<input class="btn btn-primary btn-sm pull-right" type=submit
-							value="댓글달기">
+						<input class="btn btn-primary btn-sm pull-right" type=submit value="댓글달기">
 					</form>
 				</div>
 			</div>
@@ -106,7 +102,7 @@ $(function() {
 										<strong>${rvo.name }</strong>
 									</div>
 									<div class="w_time" style="font-size: 12px; color: #9f9fa0">
-										<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd hh:mm:ss" />
+										<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss" />
 									</div>
 								</div>
 								<div class="comment_body">
@@ -131,15 +127,15 @@ $(function() {
 						<button class="btn btn-primary btn-block moreBtn" type="button">더보기
 							▼</button>
 					</center> --%>
-					<div style="height: 40px"></div>
+					<div style="height: 30px"></div>
 				</div>
 				<br>
 			</div>
+			<div class="text-right">
+				<a href="news_main.do"><input type="button" class="btn btn-nm btn-success" value="목록"></a>
+			</div>
 		</div>
-
-		<div style="height: 40px"></div>
 	</div>
 	<br>
-
 </body>
 </html>

@@ -196,7 +196,7 @@
 										<strong>${rvo.name }</strong>
 									</div>
 									<div class="w_time" style="font-size: 12px; color: #9f9fa0">
-										<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd hh:mm:ss" />
+										<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss" />
 									</div>
 								</div>
 								<div class="comment_body">
@@ -222,7 +222,6 @@
 				<a href="game_schedule.do"><input type="button" class="btn btn-nm btn-success" value="¸ñ·Ï"></a>
 			</div>
 		</div>
-		
 	</div>
 </body>
 </html>
