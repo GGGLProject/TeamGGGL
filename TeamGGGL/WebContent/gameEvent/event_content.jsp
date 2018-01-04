@@ -136,7 +136,7 @@
 						</h4>
 						<div class="reply_write">
 							<form method=post action="event_reply_new_insert.do">
-								<input type="hidden" name=bno value="${rvo.event_no }">
+								<input type="hidden" name=bno value="${vo.event_no }">
 								<textarea rows="3" class="com_2 form-control text-left"
 									name="msg"></textarea>
 								<input class="btn btn-primary btn-sm pull-right" type=submit
@@ -159,7 +159,7 @@
 											<button class="btn btn-primary modifyBtn" value="${rvo.no }">수정</button>
 											<div style="height: 5px"></div>
 											<form method=post action="event_reply_delete.do">
-												<input type="hidden" name=bno value="${rvo.event_no }"> 
+												<input type="hidden" name=bno value="${vo.event_no }"> 
 												<input type="hidden" name=no value="${rvo.no }">
 												<button class="btn btn-primary" id="deleteBtn">삭제</button>
 											</form>
@@ -178,7 +178,7 @@
 									</div>
 									<div id="up${rvo.no }" style="display: none">
 										<form method=post action="event_reply_update.do">
-											<input type="hidden" name=bno value="${rvo.event_no }"> 
+											<input type="hidden" name=bno value="${vo.event_no }"> 
 											<input type="hidden" name=no value="${rvo.no }">
 											<textarea rows="3" class="com_2 form-control text-left" style="float: left" name="msg">${rvo.msg }</textarea>
 											<br> &nbsp;
