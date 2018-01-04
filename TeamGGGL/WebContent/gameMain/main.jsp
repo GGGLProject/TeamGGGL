@@ -13,7 +13,7 @@
 	rel="stylesheet" type="text/css">
 <link href="css/gameMain.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat"
-	rel="stylesheet" type="text/css">http://localhost:8080/TeamProject_update/gameMain/image/maingif_1.gif
+	rel="stylesheet" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
@@ -65,6 +65,12 @@
 				<c:if test="${sessionScope.email!=null && sessionScope.grade==1 }">
 				<li><a href="adminpage.do">관리자 페이지</a></li>
 				</c:if>
+				<li>
+					<form method="post" action="search_result.do">
+						<input type="text" name="searchkey" style="height:30px; width:150px; margin-top: 10px; margin-left: 40px;">
+						<button type=submit value="검색" class="btn btn-default btn-sm">검색</button>
+					</form>
+				</li>
 			</ul>
 			<c:if test="${sessionScope.email==null }">
 				<form method=post action="login.do">

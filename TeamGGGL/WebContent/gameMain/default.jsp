@@ -13,16 +13,16 @@
 <script type="text/javascript" src="js/timer.js"></script>
 </head>
 <body>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-md-12 padding-0"
 			style="background: url(gameMain/image/maingif_1.gif) no repeat center center">
 			<img src="gameMain/image/maingif_1.gif" width="100%">
 		</div>
-	</div>
+	</div> -->
 
 	<!-- Container (The Match Section) -->
-	<div class="bg-1">
-		<div class="container text-center">
+	<div class="bg-2"> 
+		<div class="container text-center" style="height:900px"> 
 			<c:set var="doneLoop" value="false" />
 			<c:forEach var="vo" items="${list__1h }" varStatus="status">
 				<c:if test="${not doneLoop}">

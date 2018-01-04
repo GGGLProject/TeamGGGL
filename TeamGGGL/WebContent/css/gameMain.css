@@ -132,6 +132,19 @@ footer .up-arrow:hover {
    background: #2d2d30;
    color: #bdbdbd;
 }
+.bg-2 {
+	margin-top: 110px;
+   background: url(../gameMain/image/maingif_1.gif);
+   color: #bdbdbd;
+   
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .body-main {
    /* font: 400 15px/1.8 Lato, sans-serif; */
@@ -241,6 +254,7 @@ footer .up-arrow:hover {
 .clock {
 	margin-left: 16%;
 	margin-top: 20px;
+	z-index: -1;
 }
 
 .main_teamN {
