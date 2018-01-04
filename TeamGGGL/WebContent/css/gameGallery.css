@@ -47,6 +47,7 @@ ul.middle_nav_tabs li.active2 {
 	height: auto;
 	font-size: 12px;
 	display: inline-block;
+	margin: -1px;
 }
 
 .middle_tab_container .tab_content ul {
@@ -78,11 +79,11 @@ figure.snip1200 {
 	position: relative;
 	float: left;
 	overflow: hidden;
-	margin: 5px 1%;
+	margin: 3px 1%;
 	margin-bottom: 20px;
 	min-width: 250px;
 	max-width: 340px;
-	max-height: 340px;
+	max-height: 200px;
 	width: 100%;
 	background: #000000;
 	color: #ffffff;
