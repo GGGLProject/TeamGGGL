@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.sist.event.dao.EventVO;
+
 import org.apache.ibatis.session.SqlSessionFactory;
 
 public class MemberDAO {
@@ -174,4 +176,45 @@ catch(Exception ex) {
 		session.close();
 }
 }
+//페이지 가져오기
+public static List<MemberVO> memberListData(Map map)
+{
+	SqlSession session = ssf.openSession();
+	List<MemberVO> list = session.selectList("memberListData",map);
+	session.close();
+	return list;
+}
+//페이지
+public static int m_ReplyCount(int bno){
+	   int count=0;
+	   SqlSession session=ssf.openSession();
+	   try {
+		   count=session.selectOne("m_ReplyCount", bno);
+	   } catch(Exception ex){
+		   System.out.println("m_ReplyCount" + ex.getMessage());
+	   } finally {
+		   if(session!=null)
+			   session.close();
+	   }
+	   return count;
+	}
+
+//총페이지
+public static int MemberTotalPage() {
+    int total = 0;
+    SqlSession session = null;
+    
+    try {
+       // session : connection 연결
+       session = ssf.openSession();
+       total = session.selectOne("MemberTotalPage");
+    } catch(Exception e) {
+       System.out.println(e.getMessage());
+    } finally {
+       // 반환
+       if(session!=null)
+          session.close();
+    }
+    return total;
+ }
 }

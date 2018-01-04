@@ -24,14 +24,19 @@ public class GalleryModel {
 		List<GalleryVO> list_b = GalleryDAO.galleryListBottom(vo);
 		List<GalleryVO> list_s = GalleryDAO.galleryListSupport(vo);
 		
-	   
-		
 		req.setAttribute("list_all", list_all);
+		req.setAttribute("allsize", list_all.size());
 		req.setAttribute("list_t", list_t);
+		req.setAttribute("tsize", list_t.size());
 		req.setAttribute("list_m", list_m);
+		req.setAttribute("msize", list_all.size()+list_t.size());
 		req.setAttribute("list_j", list_j);
+		req.setAttribute("jsize", list_j.size());
 		req.setAttribute("list_b", list_b);
+		req.setAttribute("bsize", list_b.size());
 		req.setAttribute("list_s", list_s);
+		req.setAttribute("ssize", list_s.size());
+		req.setAttribute("totalsize", list_all.size()*2);
 	    req.setAttribute("main_jsp", "../gameGallery/gallery.jsp");
 	    return "gameMain/main.jsp";
    }

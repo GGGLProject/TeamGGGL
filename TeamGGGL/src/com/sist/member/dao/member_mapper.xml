@@ -78,5 +78,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE member_no=#{member_no}
 	</update>
 	
+	<!-- <select id="m_ReplyCount" resultType="int" parameterType="int">
+    SELECT COUNT(*) FROM event_reply
+    WHERE bno=#{bno}
+  	</select> -->
+  	<select id="MemberTotalPage" resultType="int">
+		SELECT CEIL(COUNT(*)/10) FROM gggl_member
+	</select>
+	
+	<select id="memberListData" resultType="MemberVO" parameterType="java.util.Map">
+		SELECT
+		member_id,member_pwd,member_no,member_nickname,member_favor,member_phone,member_grade,member_regdate,member_birthday,num
+		FROM (SELECT
+		member_id,member_pwd,member_no,member_nickname,member_favor,member_phone,member_grade,member_regdate,member_birthday,rownum
+		as num
+		FROM (SELECT
+		member_id,member_pwd,member_no,member_nickname,member_favor,member_phone,member_grade,member_regdate,member_birthday
+		FROM gggl_member ORDER BY member_no ASC))
+		WHERE num BETWEEN #{start} AND
+		#{end}
+		<!-- map.get("start") => map.put("start",1) map.get("end") => map.put("end",10) -->
+	</select>
 </mapper>
 
