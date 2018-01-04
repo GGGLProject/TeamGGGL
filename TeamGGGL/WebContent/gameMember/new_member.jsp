@@ -128,8 +128,7 @@ $(function(){
 		var day=$('#day').val();
 		var checkBtn =$('#checkBtn').text();
 		var emailcheckBtn=$('#emailcheckBtn').text();	
-		var Checkbox1=$('#Checkbox1').getAttribute("checked");
-		alert(Checkbox1);
+		
 		if(sid==""){
 			alert("아이디를 입력해주세요.");
 			$('#id').focus();
@@ -154,15 +153,13 @@ $(function(){
 		}else if(emailcheckBtn=="중복확인"){
 			alert("이메일을 중복확인 해주세요")
 		}
-		
-		
 		else{
 		alert("회원가입이 완료 되었습니다.");
 		$('#newform').submit();
 		}
 		
-		
 	});
+	
 });
 </script>
 
@@ -248,7 +245,7 @@ $(function(){
                 <!-- 월 옵션 박스 -->
                 <div class="col-xs-4 col-md-4">
                     <select class="form-control" name="month" id="month">
-                        <option value="Day">월</option>
+                        <option >월</option>
                          <c:forEach var="i" begin="1" end="12" step="1" >
                          
                         <option value="${i}">${i}월</option>
@@ -263,7 +260,7 @@ $(function(){
                         <option value="day">일</option>
                          <c:forEach var="i" begin="1" end="31" step="1" >
                          
-                        <option value="${i}">${i}일</option>
+                        <option>${i}일</option>
                         
                         </c:forEach>
                     </select>
