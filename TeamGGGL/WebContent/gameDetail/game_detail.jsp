@@ -12,19 +12,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$(".comment_tab_content").hide();
-		$(".comment_tab_content:first").show();
-		$("ul.comment_nav_tabs li").click(function() {
-			$("ul.comment_nav_tabs li").removeClass("active2");
-			$(this).addClass("active2");
-			$(".comment_tab_content").hide();
-			var activeTab = $(this).attr("rel");
-			$("#" + activeTab).fadeIn();
-		});
-
-	});
-
-	$(function() {
 		var u = 0;
 		$('.modifyBtn').click(function() {
 			var no = $(this).attr("value");

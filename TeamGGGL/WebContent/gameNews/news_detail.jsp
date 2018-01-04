@@ -54,7 +54,7 @@
 					style="width: 60%; height: 50%">
 			</div>
 			<br>
-			<div class="contentText">
+			<div class="contentText" style="word-break: normal">
 				${vo.news_content }
 				<div class="b-writer">
 					<span>${vo.news_name }</span>
@@ -93,7 +93,7 @@
 							<div class="pull-right">
 								<c:if test="${sessionScope.email == rvo.id}">
 									<button class="btn btn-primary modifyBtn" value="${rvo.no }">수정</button>
-									<div style="height:10px"></div>
+									<div style="height: 10px"></div>
 									<!-- <button	class="btn btn-primary" id="modifyBtn1" sytle="display:none">취소</button> -->
 									<form method=post action="news_reply_delete.do">
 										<input type="hidden" name=bno value="${vo.news_no }">
@@ -119,10 +119,8 @@
 										type="hidden" name=no value="${rvo.no }">
 									<textarea rows="3" class="com_2 form-control text-left"
 										style="float: left" name="msg">${rvo.msg }</textarea>
-									 &nbsp; &nbsp;
-									<input
-										class="btn btn-primary btn-sm pull-right" type=submit
-										value="수정하기">
+									&nbsp; &nbsp; <input class="btn btn-primary btn-sm pull-right"
+										type=submit value="수정하기">
 								</form>
 							</div>
 

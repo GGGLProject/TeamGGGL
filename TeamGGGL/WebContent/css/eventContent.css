@@ -63,16 +63,17 @@ pre {
 	padding-top: 10px;
 }
 
-.container-fluid-news {
-		 background-color: rgba(0,0,0,0.9);
-	
+.container-fluid-event {
+	background-color: rgba(0,0,0,0.9);
+	margin-top: 50px;
 	border: 1px solid #dedee0;
 	padding: 10px 0;
 }
 
-.container-fluid-news .com_2 {
+.com_2 {
 	margin: 10px 0;
-}
+} 
+
 .contentText
 {
 	line-height: 1.64;

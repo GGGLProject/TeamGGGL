@@ -14,8 +14,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.sist.controller.Controller;
 import com.sist.controller.RequestMapping;
 
-import com.sist.event.dao.EventDAO;
-import com.sist.event.dao.EventVO;
+import com.sist.event.dao.*;
 import com.sun.org.apache.bcel.internal.generic.MULTIANEWARRAY;
 @Controller
 public class EventModel {
@@ -71,23 +70,25 @@ public class EventModel {
 		String no = req.getParameter("no");
 		int event_no=Integer.parseInt(no);
 		EventVO vo = EventDAO.eventContentData(event_no);
+		List<EventReplyVO> e_list = EventDAO.e_replyListData(event_no);
 		req.setAttribute("vo", vo);
-		
-		
+		req.setAttribute("e_list", e_list);
 		req.setAttribute("main_jsp", "../gameEvent/event_content.jsp");
 		return "gameMain/main.jsp";
 	}
+	
 	@RequestMapping("event_write.do")
 	public String event_write(HttpServletRequest req, HttpServletResponse res) {
 		req.setAttribute("main_jsp", "../gameEvent/event_write.jsp");
 		return "gameMain/main.jsp";
 	}
+	
 	@RequestMapping("event_insert_ok.do")
 	public String event_insert_ok(HttpServletRequest req, HttpServletResponse res) throws Throwable {
 		HttpSession session=req.getSession();
 		String realFolder = "";
 		 String filename1 = "";
-		 int maxSize = 400*400*10;
+		 int maxSize = 400*400*20;
 		 String encType = "EUC-KR";
 		 String savefile = "image";
 		 realFolder = "C:\\git\\TeamGGGL\\TeamGGGL\\WebContent\\image";
@@ -143,7 +144,7 @@ public class EventModel {
 		
 		
 		req.setAttribute("main_jsp", "../gameEvent/event_insert_ok.jsp");
-		return "main/main.jsp";
+		return "gameEvent/event_insert_ok.jsp";
 	}
 	
 	@RequestMapping("event_delete.do")
@@ -249,18 +250,49 @@ public class EventModel {
 		return "event_list.do";
 	}	
 	
+	@RequestMapping("event_reply_new_insert.do")
+	   public String event_reply_new_insert(HttpServletRequest req, HttpServletResponse res) {
+	      try {
+	         req.setCharacterEncoding("EUC-KR");
+	      } catch (Exception ex) {}
+	      HttpSession session = req.getSession();
+	      String bno = req.getParameter("bno");
+	      String msg = req.getParameter("msg");
+	      String id = (String) session.getAttribute("email");
+	      String name = (String) session.getAttribute("name");
+	      EventReplyVO rvo = new EventReplyVO();
+	      rvo.setBno(Integer.parseInt(bno));
+	      rvo.setMsg(msg);
+	      rvo.setId(id);
+	      rvo.setName(name);
+	      EventDAO.e_replyNewInsert(rvo);
+	      req.setAttribute("no", bno);
+	      return "gameEvent/reply_ok.jsp";
+	   }
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	 @RequestMapping("event_reply_update.do")
+	   public String reply_update(HttpServletRequest req, HttpServletResponse res) {
+	      try {
+	         req.setCharacterEncoding("EUC-KR");
+	      } catch (Exception ex) {}
+	      String bno = req.getParameter("bno");
+	      String no = req.getParameter("no");
+	      String msg = req.getParameter("msg");
+	      EventReplyVO vo = new EventReplyVO();
+	      vo.setNo(Integer.parseInt(no));
+	      vo.setMsg(msg);
+	      // DB¿¬µ¿
+	      EventDAO.e_replyUpdate(vo);
+	      return "event_content.do?no=" + bno;
+	   }
+	 
+	 @RequestMapping("event_reply_delete.do")
+	   public String reply_delete(HttpServletRequest req, HttpServletResponse res) {
+	      String bno = req.getParameter("bno");
+	      String no = req.getParameter("no");
+	      EventDAO.e_replyDelete(Integer.parseInt(no));
+	      return "event_content.do?no=" + bno;
+	   }
 	
 	
 	

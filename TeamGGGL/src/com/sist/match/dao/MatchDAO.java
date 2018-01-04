@@ -422,7 +422,7 @@ public class MatchDAO {
 			 if (session != null)
 				 session.close();
 		 }
-		}
+	}
 	
 	public static void m_replyDelete(int no) {
 		 SqlSession session = ssf.openSession();
@@ -435,6 +435,20 @@ public class MatchDAO {
 			 if (session != null)
 				 session.close();
 		 }
-		}	
+	}
+	
+	public static List<MatchVO> team_detail(String team_name) {
+		List<MatchVO> list = new ArrayList<MatchVO>();
+		SqlSession session = ssf.openSession();
+		try {
+			list = session.selectList("team_detail", team_name);
+		} catch (Exception e) {
+			System.out.println("team_detail : " + e.getMessage());
+		} finally {
+			if(session!=null)
+				session.close(); // ¹ÝÈ¯
+		}
+		return list;
+	}
 
 }

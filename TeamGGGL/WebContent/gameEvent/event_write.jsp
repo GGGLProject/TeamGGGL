@@ -83,12 +83,12 @@
 							</tr>
 							<tr>
 								<td width=20% class="text-center">이벤트 일자</td>
-								<td width=30% class="text-center"><input class="input"
+								<td width=30% class="text-left"><input class="input"
 									type=date name=day id=day size=30></td>
 							</tr>
 							<tr>
 								<td width=20% class="text-center">이벤트 장소</td>
-								<td width=30% class="text-right"><input type=text
+								<td width=30% class="text-left"><input type=text
 									name=place size=50 id="place" class="input"></td>
 							</tr>
 							<tr>

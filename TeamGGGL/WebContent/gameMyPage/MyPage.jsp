@@ -170,10 +170,18 @@ $(function(){
             <div class="email form-group">
               <label for="username">¿Ã∏ﬁ¿œ</label>
               <div class="input-group">
+<<<<<<< HEAD
              	<p>
                 <input type="text" class="form-control" name="email" id="useremail" value="${sessionScope.email }" readonly/>
              	</p>
                
+=======
+             
+                <%-- <input type="text" class="form-control" name="email" id="useremail" value="${sessionScope.email }"> --%>
+                <p>${sessionScope.email }</p>
+             
+           
+>>>>>>> branch '1.2' of https://github.com/GGGLProject/TeamGGGL.git
               </div>
             </div>
             

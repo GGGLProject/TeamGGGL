@@ -81,4 +81,26 @@
 	<delete id="eventDelete" parameterType="int">
 		DELETE FROM gggl_event WHERE event_no=#{no}
 	</delete>
+	
+	<!-- 댓글 -->
+	<insert id="e_replyNewInsert" parameterType="EventReplyVO">
+      <selectKey keyProperty="no" resultType="int" order="BEFORE">
+         SELECT NVL(MAX(no)+1, 1) as no FROM event_reply
+      </selectKey>
+      INSERT INTO event_reply(no, bno, id, name, msg)
+      VALUES(#{no}, #{bno}, #{id}, #{name}, #{msg})
+   </insert>
+   <select id="e_replyListData" resultType="EventReplyVO" parameterType="int">
+      SELECT no, bno, id, name, msg, regdate FROM event_reply 
+      WHERE bno = #{no}
+   </select>
+   <update id="e_replyUpdate" parameterType="EventReplyVO">
+      UPDATE event_reply SET
+      msg = #{msg}
+      WHERE no = #{no}
+   </update>
+   <delete id="e_replyDelete" parameterType="int">
+      DELETE FROM event_reply
+      WHERE no = #{no}
+   </delete>
  </mapper>
