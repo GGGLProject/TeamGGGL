@@ -30,6 +30,20 @@ public class EventDAO {
 		session.close();
 		return list;
 	}
+	public static List<EventVO> eventSearchData(String searchKey)
+	{
+		List<EventVO> list = new ArrayList<EventVO>();
+		try {
+			SqlSession session = ssf.openSession();
+			list = session.selectList("eventSearchData",searchKey);
+			session.close();
+		}catch(Exception e)
+		{
+			System.out.println("eventSearchData : "+e.getMessage());
+		}
+
+		return list;
+	}
 	public static List<EventVO> recommandEventListData()
 	{
 		SqlSession session = ssf.openSession();

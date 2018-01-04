@@ -85,6 +85,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE
 		no=#{no}
 	</delete>
+	<select id="newsSearchData" resultType="NewsVO" parameterType="String">
+		select * from gggl_news where news_title like '%'||#{searchkey}||'%'
+	</select>
 	<!-- 댓글 추가(새로운) -->
 	<!-- 찾기 find <select id="boardFindData" resultType="BoardVO" parameterType="java.util.Map"> 
 		SELECT no,subject,name,regdate,hit FROM gggl_news WHERE ${fs} LIKE '%'||#{ss}||'%' 

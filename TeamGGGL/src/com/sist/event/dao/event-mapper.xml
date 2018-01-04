@@ -17,8 +17,14 @@
 		#{end}
 		<!-- map.get("start") => map.put("start",1) map.get("end") => map.put("end",10) -->
 	</select>
-	<select id="eventSearchData" resultType="EventVO" parameterType="java.util.Map">
-		select * from gggl_event where event_title like'%${event_title}%';
+	<select id="eventSearchData" resultType="EventVO" parameterType="String">
+		select * from gggl_event WHERE UPPER(event_city) LIKE
+		'%'||UPPER(#{searchKey})||'%'
+		OR UPPER(event_title) LIKE '%'||UPPER(#{searchKey})||'%'
+		OR UPPER(event_id) LIKE '%'||UPPER(#{searchKey})||'%'
+		OR UPPER(event_content) LIKE '%'||UPPER(#{searchKey})||'%'
+		OR UPPER(event_place) LIKE '%'||UPPER(#{searchKey})||'%'
+		ORDER BY event_day DESC
 	</select>
 	<!-- Content(내용보기) -->
 	<select id="eventContentData" resultType="EventVO"
@@ -29,8 +35,8 @@
 		FROM gggl_event
 		WHERE event_no = #{event_no}
 	</select>
-	
-	<!--조회수 증가  -->
+
+	<!--조회수 증가 -->
 	<update id="eventHitIncrement" parameterType="int">
 		UPDATE gggl_event
 		SET
@@ -41,68 +47,74 @@
 	<!--메인 이벤트 추천 -->
 	<select id="recommandEventList" resultType="EventVO">
 		SELECT * from (select
-		event_no,event_title,event_image from gggl_event order by event_hit desc) where
+		event_no,event_title,event_image from gggl_event order by event_hit
+		desc) where
 		rownum &lt;=4
 	</select>
-	
+
 	<!-- 총페이지 -->
-   <select id="eventTotalPage" resultType="int">
-     SELECT CEIL(COUNT(*)/10) FROM gggl_event
-   </select>
-   
-   <!-- 글쓰기 -->
-  <insert id="eventInsert" parameterType="EventVO">
-      <!-- 자동 증가번호(sequence)에 사용, BEFORE: 먼저 사용(insert보다 먼저 사용됨) -->
-      <selectKey keyProperty="event_no" resultType="int" order="BEFORE">
-         SELECT NVL(MAX(event_no)+1, 1) as event_no FROM gggl_event 
-      </selectKey>
-      INSERT INTO gggl_event VALUES(
-         #{event_no}, #{event_title}, #{event_id}, #{event_content}, #{event_day}, SYSDATE, #{event_place}, #{event_category}, #{event_city}, 0, #{event_image}
-      )
-   </insert>
-   
-   <!--글 수정  -->
-   <update id="eventModifytest" parameterType="EventVO">
-   UPDATE gggl_event
-   SET
-   event_title = #{event_title}, event_content = #{event_content}
-   WHERE event_no = #{event_no}
-   </update>
-   <update id="eventModify" parameterType="EventVO">
-   UPDATE gggl_event
-   SET
-   event_title = #{event_title}, event_content = #{event_content}, event_day = #{event_day}, event_place = #{event_place}, event_category = #{event_category}, 
-   event_city = #{event_city} 
-   <if test ="event_image!=null">
-   , event_image = #{event_image}
-   </if>
-   WHERE event_no = #{event_no}
-   </update>
-   
-   	<!--글 삭제  -->
+	<select id="eventTotalPage" resultType="int">
+		SELECT CEIL(COUNT(*)/10) FROM gggl_event
+	</select>
+
+	<!-- 글쓰기 -->
+	<insert id="eventInsert" parameterType="EventVO">
+		<!-- 자동 증가번호(sequence)에 사용, BEFORE: 먼저 사용(insert보다 먼저 사용됨) -->
+		<selectKey keyProperty="event_no" resultType="int" order="BEFORE">
+			SELECT NVL(MAX(event_no)+1, 1) as event_no FROM gggl_event
+		</selectKey>
+		INSERT INTO gggl_event VALUES(
+		#{event_no}, #{event_title}, #{event_id}, #{event_content}, #{event_day}, SYSDATE,
+		#{event_place}, #{event_category}, #{event_city}, 0, #{event_image}
+		)
+	</insert>
+
+	<!--글 수정 -->
+	<update id="eventModifytest" parameterType="EventVO">
+		UPDATE gggl_event
+		SET
+		event_title = #{event_title}, event_content = #{event_content}
+		WHERE event_no = #{event_no}
+	</update>
+	<update id="eventModify" parameterType="EventVO">
+		UPDATE gggl_event
+		SET
+		event_title = #{event_title}, event_content = #{event_content}, event_day =
+		#{event_day}, event_place = #{event_place}, event_category =
+		#{event_category},
+		event_city = #{event_city}
+		<if test="event_image!=null">
+			, event_image = #{event_image}
+		</if>
+		WHERE event_no = #{event_no}
+	</update>
+
+	<!--글 삭제 -->
 	<delete id="eventDelete" parameterType="int">
-		DELETE FROM gggl_event WHERE event_no=#{no}
+		DELETE FROM gggl_event
+		WHERE event_no=#{no}
 	</delete>
-	
+
 	<!-- 댓글 -->
 	<insert id="e_replyNewInsert" parameterType="EventReplyVO">
-      <selectKey keyProperty="no" resultType="int" order="BEFORE">
-         SELECT NVL(MAX(no)+1, 1) as no FROM event_reply
-      </selectKey>
-      INSERT INTO event_reply(no, bno, id, name, msg)
-      VALUES(#{no}, #{bno}, #{id}, #{name}, #{msg})
-   </insert>
-   <select id="e_replyListData" resultType="EventReplyVO" parameterType="int">
-      SELECT no, bno, id, name, msg, regdate FROM event_reply 
-      WHERE bno = #{no}
-   </select>
-   <update id="e_replyUpdate" parameterType="EventReplyVO">
-      UPDATE event_reply SET
-      msg = #{msg}
-      WHERE no = #{no}
-   </update>
-   <delete id="e_replyDelete" parameterType="int">
-      DELETE FROM event_reply
-      WHERE no = #{no}
-   </delete>
- </mapper>
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			SELECT NVL(MAX(no)+1, 1) as no FROM event_reply
+		</selectKey>
+		INSERT INTO event_reply(no, bno, id, name, msg)
+		VALUES(#{no}, #{bno}, #{id}, #{name}, #{msg})
+	</insert>
+	<select id="e_replyListData" resultType="EventReplyVO"
+		parameterType="int">
+		SELECT no, bno, id, name, msg, regdate FROM event_reply
+		WHERE bno = #{no}
+	</select>
+	<update id="e_replyUpdate" parameterType="EventReplyVO">
+		UPDATE event_reply SET
+		msg = #{msg}
+		WHERE no = #{no}
+	</update>
+	<delete id="e_replyDelete" parameterType="int">
+		DELETE FROM event_reply
+		WHERE no = #{no}
+	</delete>
+</mapper>
