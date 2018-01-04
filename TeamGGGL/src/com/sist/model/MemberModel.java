@@ -73,6 +73,7 @@ public class MemberModel {
 				session.setAttribute("phone", vo.getMember_phone());
 				session.setAttribute("birthday",vo.getMember_birthday());
 				session.setAttribute("favor", vo.getMember_favor());
+				session.setAttribute("pwd", vo.getMember_pwd());
 				
 			}
 			else {
@@ -138,11 +139,13 @@ public class MemberModel {
 	//수정하기
 	@RequestMapping("memberUpdate.do")
 	public String memberUpdate(HttpServletRequest req,HttpServletResponse res) {
+		HttpSession session=req.getSession();
 		try {
 			req.setCharacterEncoding("EUC-KR");
 		} catch (Exception ex) {
 			System.out.println("memberJoin :" + ex.getMessage());
 		}
+		
 		String id =req.getParameter("id");
 		String email=req.getParameter("email");
 		String pwd=req.getParameter("Mpassword");
@@ -150,7 +153,7 @@ public class MemberModel {
 		String year=req.getParameter("year");
 		String month=req.getParameter("month");
 		String day=req.getParameter("day");
-		String birthday=year+"-"+month+"-"+day;
+		String birthday=year+"-0"+month+"-"+day;
 		String grade = req.getParameter("grade");
 		
 		
@@ -160,9 +163,11 @@ public class MemberModel {
 		vo.setMember_pwd(pwd);
 		vo.setMember_phone(telnumber);
 		vo.setMember_birthday(birthday);
+		
+	
 		req.setAttribute("vo", vo);
 		MemberDAO.memberUpdate(vo);
-	
+		session.invalidate();
 		return "gameMain/main.jsp";
 	}
 	// admin 페이지

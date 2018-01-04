@@ -79,9 +79,23 @@ body {
 .leagueopen_show p {
 	color: white;
 	font-size: 20px;
+	margin-top: 2%;
 }
 
-.leagueopen_show:hover {
-	border: 2px solid rgba(255,255,255,0.3);
+.leagueopen_show a {
+	text-decoration: none;
 }
+
+.leagueopen_show figure img{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.leagueopen_show figure:hover img{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+
 

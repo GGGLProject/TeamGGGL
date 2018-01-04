@@ -1,12 +1,19 @@
+@font-face {
+	font-family: 'Zelta-Six';
+	src: url(../gameMain/font/Zelta-Six.otf) format('opentype');
+}
+
+
 .navbar {
    margin-bottom: 0;
    border-radius: 0;
+   height: 110px;
 }
 
 ul.nav a:hover { color: #fff !important; }
 
 .log {
-	margin-left: 1100px;
+	margin-left: 1400px;
 	margin-top: 7px;
 	font-color: white;
 }
@@ -127,7 +134,7 @@ footer .up-arrow:hover {
 }
 
 .body-main {
-   font: 400 15px/1.8 Lato, sans-serif;
+   /* font: 400 15px/1.8 Lato, sans-serif; */
 }
 
 .bg-1 h3 {
@@ -138,8 +145,38 @@ footer .up-arrow:hover {
    font-style: italic;
 }
 
+.container-fluid {
+	padding-left: 60px !important;
+}
+
+.navbar-header {
+	margin-top: 28px;
+}
+
+.navbar-brand {
+	font-size: 55px !important;
+}
+
+.navbar-collapse {
+	margin-top: 40px;
+	font-weight: bold;
+}
+
+.navbar-collapse ul {
+	margin-left: 20px;
+}
+
+/* .navbar-collapse ul li a {
+		font-size: 19px;
+} */
+
+.navbar-right {
+	padding-right: 30px;
+}
+
 .navbar {
-   font-family: Montserrat, sans-serif;
+   /* font-family: Montserrat, sans-serif; */
+   font-family: Zelta-Six;
    margin-bottom: 0;
    background-color: #181818;
    border: 0;
@@ -153,37 +190,25 @@ footer .up-arrow:hover {
    color: #d5d5d5 !important;
 }
 
-.navbar-nav li a:hover {
+/* .navbar-nav li a:hover {
    color: #fff !important;
-}
+} */
 
-.navbar-nav li.active a {
+/* .navbar-nav li.active a {
    color: #fff !important;
    background-color: #29292c !important;
-}
+} */
 
 .navbar-default .navbar-toggle {
    border-color: transparent;
 }
 
-.navbar-nav li a:hover {
-   color: #fff !important;
-}
-
-.navbar-nav li.active a {
-   color: #fff !important;
-   background-color: #29292c !important;
-}
 
 .carousel-inner img {
    width: 100%; /* Set width to 100% */
    margin: auto;
 }
 
-<<<<<<< HEAD
-
-
-=======
 #img_a {
 	width: 400px;
 	height: 250px;
@@ -264,4 +289,45 @@ footer .up-arrow:hover {
 .main_video_box .main_video:hover {
 	border-color: #f8b700;
 }
->>>>>>> branch '1.2' of https://github.com/GGGLProject/TeamGGGL.git
+
+
+
+
+
+
+
+
+
+
+.hover12{
+  /* position: relative; */
+  overflow: hidden;
+  display: inline-block;
+  font-size: 19px;
+}
+
+.hover12:after{
+  content: '' attr(data-hover-label) '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate3d(0, 140%, 0);
+}
+
+.hover12:after, .hover12__label{
+  transition: transform .2s cubic-bezier(.86, .6, .08, 1.01);
+}
+
+.hover12__label{
+  transform: translate3d(0, 0, 0);
+  transition-delay: .15s;
+  display: inline-block;
+}
+
+.hover12:hover:after, .hover12:focus:after{
+  transform: translate3d(0, 0, 0);
+  transition-duration: .3s;
+  transition-delay: .1s;
+}
+
+

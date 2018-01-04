@@ -52,7 +52,6 @@ public class NewsModel {
 		vo.setNo(Integer.parseInt(no));
 		vo.setMsg(msg);
 		// DB¿¬µ¿
-		NewsDAO.replyUpdate(vo);
 		return "news_detail.do?no=" + bno;
 	}
 

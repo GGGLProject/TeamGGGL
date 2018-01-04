@@ -18,7 +18,7 @@
 		<c:forEach var="vo" items="${list_teamdetail }" varStatus="status">
 			<c:if test="${not doneLoop}">
 				<h1 class="text-center subject">${vo.tvo.team_name }</h1>
-				<img src="${vo.tvo.team_icon }" alt="${vo.tvo.team_name }" class="teamimg">
+				<div class="gilgil"><img src="${vo.tvo.team_icon }" alt="${vo.tvo.team_name }" class="teamimg"></div>
 				<c:if test="${status.count == 1}">
 					<c:set var="doneLoop" value="true" />
 				</c:if>
@@ -28,7 +28,7 @@
 		<div class="playerinfo">
 			<div class="row">
 				<c:forEach var="vo" items="${list_teamdetail }" varStatus="status">
-					<div class="col-md-2">
+					<div class="col-md-2 playerdiv">
 						<div class="imgdiv"><img src="${vo.pvo.player_pic }"></div>
 						<div class="pdiv"><p>${vo.pvo.player_name }</p></div>
 					</div>

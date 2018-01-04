@@ -14,8 +14,18 @@ body {
 	margin-bottom: 50px;
 }
 
+.playerdiv {
+	margin-left: -7px;
+	margin-right: -7px;
+	margin-bottom: 5px;
+	width: 209px;
+}
+
 .imgdiv {
 	background-color: rgba(255,255,255,0.8);
+	padding-top: 5px;
+	height: 155px;
+	text-align: center;
 }
 
 .imgdiv p {
@@ -23,7 +33,8 @@ body {
 }
 
 .imgdiv img {
-	width: 160px;
+	width: 170px;
+	height: 150px;
 }
 
 .pdiv {
@@ -34,6 +45,13 @@ body {
 	margin-bottom: 20px;
 }
 
+.pdiv p {
+	font-size: 18px;
+}
+
+.gilgil {
+	text-align: center;
+}
 
 
 
