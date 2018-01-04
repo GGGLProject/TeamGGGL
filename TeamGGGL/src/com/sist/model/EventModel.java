@@ -144,7 +144,7 @@ public class EventModel {
 		
 		
 		req.setAttribute("main_jsp", "../gameEvent/event_insert_ok.jsp");
-		return "main/main.jsp";
+		return "gameEvent/event_insert_ok.jsp";
 	}
 	
 	@RequestMapping("event_delete.do")
