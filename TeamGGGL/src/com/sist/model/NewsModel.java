@@ -101,6 +101,9 @@ public class NewsModel {
 		System.out.println(category);
 
 		List<NewsVO> list = NewsDAO.newsListData(map);
+		for(NewsVO vo:list) {
+			vo.setCount(NewsDAO.n_ReplyCount(vo.getNews_no()));
+		}
 		List<NewsVO> ulist = NewsDAO.newsUpdateListData();
 		int newsTotalCount = NewsDAO.newsTotalCount();
 		int totalpage = NewsDAO.newsTotalPage();

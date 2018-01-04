@@ -281,4 +281,19 @@ public class NewsDAO {
 				session.close();
 		}
 	}
+	
+	public static int n_ReplyCount(int bno){
+		   int count=0;
+		   SqlSession session=ssf.openSession();
+		   try {
+			   count=session.selectOne("n_ReplyCount", bno);
+		   } catch(Exception ex){
+			   System.out.println("n_ReplyCount" + ex.getMessage());
+		   } finally {
+			   if(session!=null)
+				   session.close();
+		   }
+		   return count;
+		}
+
 }

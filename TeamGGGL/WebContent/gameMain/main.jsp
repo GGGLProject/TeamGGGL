@@ -37,7 +37,7 @@
     });
 </script>
 
-<title>Insert title here</title>
+<title>GGGL</title>
 </head>
 <body class="body-main" data-spy="scroll" data-target=".navbar"
 	data-offset="50" style="overflow-x:hidden; overflow-y:auto;">

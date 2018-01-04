@@ -15,22 +15,20 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	$(function() {
-		var u = 0;
-		$('.modifyBtn').click(function() {
-			var no = $(this).attr("value");
-			var type = $(this).text();
-			if (type == '수정') {
-				$('#up' + no).show();
-				$(this).text("취소");
-			} else {
-				$('#up' + no).hide();
-				$(this).text("수정");
-			}
-
-		});
-
+$(function() {
+	var u = 0;
+	$('.modifyBtn').click(function() {
+		var no = $(this).attr("value");
+		var type = $(this).text();
+		if (type == '수정') {
+			$('#up' + no).show();
+			$(this).text("취소");
+		} else {
+			$('#up' + no).hide();
+			$(this).text("수정");
+		}
 	});
+});
 </script>
 </head>
 <body>
@@ -44,14 +42,15 @@
 				<br>
 				<div class="topInfo text-right">
 					<span class="t-writer">${vo.news_name }</span>&nbsp;<span>기자</span>&nbsp;&nbsp;
-					| &nbsp; <span>기사입력 : </span><span class="newsDate"> <fmt:formatDate
-							value="${vo.news_regdate }" pattern="yyyy-MM-dd" /></span>
+					| &nbsp; <span>기사입력 : </span>
+					<span class="newsDate"> 
+						<fmt:formatDate value="${vo.news_regdate }" pattern="yyyy-MM-dd" />
+					</span>
 				</div>
 			</div>
 			<hr>
 			<div class="contentImage text-center">
-				<img src="gameNews/image/${vo.news_no }.jpg"
-					style="width: 60%; height: 50%">
+				<img src="gameNews/image/${vo.news_no }.jpg" style="width: 60%; height: 50%">
 			</div>
 			<br>
 			<div class="contentText" style="word-break: normal">
@@ -59,7 +58,6 @@
 				<div class="b-writer">
 					<span>${vo.news_name }</span>
 				</div>
-
 			</div>
 			<hr>
 		</div>
@@ -69,7 +67,6 @@
 				<h4>
 					<span class="com_title"><b>Comment</b></span>
 				</h4>
-
 				<div class="reply_write">
 					<form method=post action="news_reply_new_insert.do">
 						<input type="hidden" name=bno value="${vo.news_no }">
@@ -78,7 +75,6 @@
 							value="댓글달기">
 					</form>
 				</div>
-
 			</div>
 		</div>
 
@@ -87,7 +83,6 @@
 				<div class="comment_list col-md-12">
 					<!-- COMMENT 반복문 -->
 					<div style="height: 40px"></div>
-
 					<c:forEach var="rvo" items="${replylist }">
 						<div class="comment_form">
 							<div class="pull-right">
@@ -102,13 +97,16 @@
 									</form>
 								</c:if>
 							</div>
-							<div class="comment_content">
+							<div class="comment_content" style="margin-left : 5px;">
 								<div class="writer_info">
+									<div class="writer_img pull-left">
+										<img src="image/co_user.png">
+									</div>
 									<div class="w_nickName">
 										<strong>${rvo.name }</strong>
 									</div>
 									<div class="w_time" style="font-size: 12px; color: #9f9fa0">
-										<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd hh:mm:ss" />
+										<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss" />
 									</div>
 								</div>
 								<div class="comment_body">
@@ -121,8 +119,8 @@
 										type="hidden" name=no value="${rvo.no }">
 									<textarea rows="3" class="com_2 form-control text-left"
 										style="float: left" name="msg">${rvo.msg }</textarea>
-									&nbsp; &nbsp; <input class="btn btn-primary btn-sm pull-right"
-										type=submit value="수정하기">
+									&nbsp;&nbsp; 
+									<input class="btn btn-primary btn-sm pull-right" type=submit value="수정하기">
 								</form>
 							</div>
 

@@ -137,8 +137,6 @@ public class EventModel {
 		
 //		System.out.println("vo이후 :"+event_place + " / " +event_city);
 		EventDAO.eventInsert(vo);
-		
-		
 		req.setAttribute("main_jsp", "../gameEvent/event_insert_ok.jsp");
 		return "gameEvent/event_insert_ok.jsp";
 	}
@@ -153,11 +151,9 @@ public class EventModel {
 		// 세션상 아이디와 작성자 아이디와 일치할때만 삭제
 		if (session_id.equals(id))
 		EventDAO.eventDelete(event_no);
-		
 		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
 		return "event_list.do";
 	}
-	
 	
 	@RequestMapping("event_modify.do")
 	public String event_modify(HttpServletRequest req, HttpServletResponse res) {

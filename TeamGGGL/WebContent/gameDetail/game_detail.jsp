@@ -187,13 +187,16 @@
 									</form>
 								</c:if>
 							</div>
-							<div class="comment_content">
+							<div class="comment_content" style="margin-left : 5px;">
 								<div class="writer_info">
+									<div class="writer_img pull-left">
+										<img src="image/co_user.png">
+									</div>
 									<div class="w_nickName">
 										<strong>${rvo.name }</strong>
 									</div>
 									<div class="w_time" style="font-size: 12px; color: #9f9fa0">
-										<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd hh:mm:ss" />
+										<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss" />
 									</div>
 								</div>
 								<div class="comment_body">

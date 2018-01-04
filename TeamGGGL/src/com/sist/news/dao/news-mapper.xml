@@ -56,7 +56,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		news_no, news_title from gggl_news order by
 		news_regdate desc) where
 		rownum &lt;= 5
-
 	</select>
 	<select id="newsReplyCount" resultType="int" parameterType="int">
 		SELECT COUNT(*) FROM news_reply
@@ -72,8 +71,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	<select id="replyListData" resultType="NewsReplyVO"
 		parameterType="int">
-		SELECT no, bno,id,name,msg,regdate from news_reply where
-		bno=#{no}
+		SELECT no, bno,id,name,msg,regdate from news_reply 
+		WHERE bno=#{no}
+		ORDER BY regdate DESC
 	</select>
 	<update id="replyUpdate" parameterType="NewsReplyVO">
 		UPDATE news_reply SET
@@ -92,6 +92,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 찾기 find <select id="boardFindData" resultType="BoardVO" parameterType="java.util.Map"> 
 		SELECT no,subject,name,regdate,hit FROM gggl_news WHERE ${fs} LIKE '%'||#{ss}||'%' 
 		</select> -->
+	<!-- 댓글 수 조회 -->
+	<select id="n_ReplyCount" resultType="int" parameterType="int">
+    	SELECT COUNT(*) FROM news_reply
+    	WHERE bno=#{bno}
+  	</select>
 </mapper>
 
 

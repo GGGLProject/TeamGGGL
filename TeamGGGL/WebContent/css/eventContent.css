@@ -91,17 +91,13 @@ hr {
 .comment_form {
 	border-bottom: 1px solid #dedee0;
 	margin-bottom: 20px;
-	padding : 0 10px 10px 10px;
+	padding : 0 10px 20px 10px;
 }
 
 .writer_img {
 	float: left;
-	margin: auto 20px;	
+	margin: 0px 25px 0 10px;
 }
-
-/* .comment_content {
-	margin-left : 20px;
-} */
 
 .comment_content .writer_info .w_nickName {
 	color: #3d9eed

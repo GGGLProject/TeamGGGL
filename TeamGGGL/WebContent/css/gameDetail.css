@@ -103,16 +103,12 @@ h1 {
 .comment_form {
 	border-bottom: 1px solid #dedee0;
 	margin-bottom: 20px;
-	padding: 0 10px 15px 10px;
+	padding : 0 10px 20px 10px;
 }
 
 .writer_img {
-	text-align: center;
-	margin: auto 10px;
-}
-
-.comment_content {
-	margin-left: 110px;
+	float: left;
+	margin: 0px 25px 0 10px;
 }
 
 .comment_content .writer_info .w_nickName {

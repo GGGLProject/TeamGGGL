@@ -175,6 +175,6 @@ public class EventDAO {
 			   session.close();
 	   }
 	   return count;
-   }
+	}
 	   
 }

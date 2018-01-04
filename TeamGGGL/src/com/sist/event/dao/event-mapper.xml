@@ -112,6 +112,7 @@
 		parameterType="int">
 		SELECT no, bno, id, name, msg, regdate FROM event_reply
 		WHERE bno = #{no}
+		ORDER BY regdate DESC
 	</select>
 	<update id="e_replyUpdate" parameterType="EventReplyVO">
 		UPDATE event_reply SET

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>GGGL- 회원관리</title>
 
 <link href="css/adminpage.css" rel="stylesheet" type="text/css">
  
@@ -14,7 +14,7 @@
 <body>
 	<div id="member_area">
 		<center>
-		 <h1 style="color:white">예매현황보기</h1>
+		 <h1>회원보기</h1>
 		 	<table id="table_content" width=900>
 		 		<tr>
 		 			<th>회원 이메일</th>
