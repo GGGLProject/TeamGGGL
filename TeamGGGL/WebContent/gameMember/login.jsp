@@ -52,6 +52,7 @@ $(function(){
 		 	} 
 		});  
     });
+    
 });
 </script>
 
@@ -83,6 +84,7 @@ $(function(){
                     </form>
                    
                     <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">비밀번호 찾기</a>
+                    
                     <hr>
         	    </div>
     		</div> <!-- /.col-xs-12 -->

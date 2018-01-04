@@ -136,6 +136,7 @@ public class MemberModel {
 		req.setAttribute("vo", vo);	
 		return "gameMember/recoveryEmail.jsp";
 	}
+	
 	//수정하기
 	@RequestMapping("memberUpdate.do")
 	public String memberUpdate(HttpServletRequest req,HttpServletResponse res) {

@@ -28,6 +28,7 @@ $(function emailCheckfunction(){
 			alert("이름을 입력해주세요");
 			return;
 		} 
+		
 	 	$.ajax({
 			type:'post',
 			url:'checkmember.do',
@@ -114,12 +115,54 @@ $(function(){
 <!-- 동의 버튼 -->
 <script type="text/javascript">
 $(function(){
-	$('.ya').click(function(){
-		$(".ya").prop('class', 'btn btn-success');
-	});
+	
+	
+	
 	$('#join').click(function(){
+		var sid=$('#id').val();
+		var email=$('#useremail').val();
+		var Mpassword=$('#Mpassword').val();
+		var telnumber=$('#telnumber').val();
+		var year=$('#year').val();
+		var month=$('#month').val();
+		var day=$('#day').val();
+		var checkBtn =$('#checkBtn').text();
+		var emailcheckBtn=$('#emailcheckBtn').text();	
+		var Checkbox1=$('#Checkbox1').getAttribute("checked");
+		alert(Checkbox1);
+		if(sid==""){
+			alert("아이디를 입력해주세요.");
+			$('#id').focus();
+			return false;
+		}else if(email==""){
+			alert("이메일을 입력해 주세요.");
+			$('#useremail').focus();
+		}else if(Mpassword==""){
+			alert("비밀번호를 입력해주세요");
+			$('#Mpassword').focus();
+		}else if(telnumber==""){
+			alert("핸드폰번호를 입력해주세요");
+			$('#telnumber').focus();
+		}else if(year=="년도"){
+			alert("년도를 선택해 주세요.");
+		}else if(month=="월"){
+			alert("월 을 선택해 주세요.");
+		}else if(day=="일"){
+			alert("일 을 선택해 주세요.");
+		}else if(checkBtn=="중복확인"){
+			alert("아이디를 중복확인 해주세요.")
+		}else if(emailcheckBtn=="중복확인"){
+			alert("이메일을 중복확인 해주세요")
+		}
+		
+		
+		else{
 		alert("회원가입이 완료 되었습니다.");
-	})
+		$('#newform').submit();
+		}
+		
+		
+	});
 });
 </script>
 
@@ -135,13 +178,13 @@ $(function(){
         <div class="col-md-6 col-md-offset-3">
           
          
-          <form method="post" action="memberJoin.do">
+          <form method="post" action="memberJoin.do" id="newform">
           <!--  이름 닉네임 입력 부분 -->
            <div class="name form-group">
               <label for="username">이름(닉네임)</label>
               <div class="input-group"> 
               
-                <input type="text" class="form-control" name="id" id="id" placeholder="이름(닉네임)">
+                <input type="text" class="form-control" name="id" id="id" placeholder="이름(닉네임)" >
               
                 <span class="input-group-btn">
         
@@ -232,7 +275,7 @@ $(function(){
             <!-- 관심리그 입력 -->
            
             <div><label for="">
-                관심리그</label></div>
+                관심리그    ( 하나이상 선택해주세요. )</label></div>
              <label class="radio-inline">
                 <input type="checkbox" name="favor" id="Checkbox1" value="LCK" />
                 LCK
@@ -254,7 +297,7 @@ $(function(){
             <!-- 회원가입, 취소 버튼 -->
             <div class="form-group text-center">
            
-              <input type="submit" class="btn btn-info" id="join" value="회원가입"/>
+              <input type="button" class="btn btn-info" id="join" value="회원가입"/>
             	
               <a href="main.do" type="submit" class="btn btn-default" >가입취소</a>
             

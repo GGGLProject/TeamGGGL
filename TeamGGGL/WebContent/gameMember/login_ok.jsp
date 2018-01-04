@@ -9,7 +9,7 @@
       history.back();
       </script>
    </c:when>
-   
+   	
    <c:when test="${result=='NOPWD' }">
       <script>
       alert("비밀번호가 틀립니다.");

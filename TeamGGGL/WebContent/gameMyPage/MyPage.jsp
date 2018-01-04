@@ -122,6 +122,7 @@ $(function(){
 		
 		var Mpassword=$('#Mpassword').val();
 		var Hpassword=$('#Hpassword').val();
+		var Cpassword=$('#Cpassword').val();
 		if(Mpassword.trim()=="")
 		{
 			alert("비밀번호를 입력하세요");
@@ -131,8 +132,9 @@ $(function(){
 			alert("비밀번호가 일치하지 않습니다!")
 			$('#Mpassword').focus();
 			return;
-		}else{
-			
+		}
+		else{
+			alert("수정이 완료되었습니다.")
 			$('#form').submit();
 		}  
 		
@@ -146,7 +148,7 @@ $(function(){
 
 <article class="container">
         <div class="page-header">
-          <h1>회원가입 <small></small></h1>
+          <h1>마이페이지</h1>
         </div>
         <div class="col-md-6 col-md-offset-3">
           
@@ -170,18 +172,14 @@ $(function(){
             <div class="email form-group">
               <label for="username">이메일</label>
               <div class="input-group">
-<<<<<<< HEAD
+
              	<p>
                 <input type="text" class="form-control" name="email" id="useremail" value="${sessionScope.email }" readonly/>
              	</p>
                
-=======
              
-                <%-- <input type="text" class="form-control" name="email" id="useremail" value="${sessionScope.email }"> --%>
-                <p>${sessionScope.email }</p>
              
-           
->>>>>>> branch '1.2' of https://github.com/GGGLProject/TeamGGGL.git
+
               </div>
             </div>
             
@@ -192,8 +190,6 @@ $(function(){
               <input type="password" name="Mpassword" class="form-control" id="Mpassword">
       		<input type="hidden" id="Hpassword" value="${sessionScope.pwd }">
       		
-      		 <input type="password" name="Cpassword" class="form-control" id="Cpassword">
-      		 
             </div>
            
             
