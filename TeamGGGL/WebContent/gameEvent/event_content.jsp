@@ -67,12 +67,12 @@
 							<th class="text-center" colspan=2>이벤트 / 대회</th>
 						</tr>
 						<tr>
-							<th width=20% class="text-center">이벤트 일정</th>
-							<td width=30% class="text-center"><fmt:formatDate
+							<th class="text-center">이벤트 일정</th>
+							<td class="text-center"><fmt:formatDate
 									value="${vo.event_day}" pattern="yyyy.MM.dd(E)" /></td>
 						<tr>
-							<th width=20% class="text-center">이벤트 장소</th>
-							<td width=30% class="text-center">${vo.event_place }</td>
+							<th class="text-center">이벤트 장소</th>
+							<td class="text-center">${vo.event_place }</td>
 						</tr>
 						<tr>
 							<th class="text-center" colspan=2>대표 포스터</th>
@@ -93,23 +93,23 @@
 				<div class="col-lg-6">
 					<table class="table event-table" id="table10">
 						<tr>
-							<th width=20% class="text-right">분류</th>
-							<td width=30% class="text-left">${vo.event_category }</td>
+							<th class="text-right">분류</th>
+							<td class="text-left">${vo.event_category }</td>
 						</tr>
 						<tr>
-							<th width=20% class="text-right">지역</th>
-							<td width=30% class="text-left">${vo.event_city }</td>
+							<th  class="text-right">지역</th>
+							<td class="text-left">${vo.event_city }</td>
 						</tr>
 						<tr>
-							<th width=20% class="text-right qna-td">제목</th>
-							<td class="text" width=30% class="text-left qna-td">${vo.event_title }</td>
+							<th  class="text-right qna-td">제목</th>
+							<td class="text"  class="text-left qna-td">${vo.event_title }</td>
 						</tr>
 						<tr>
-							<th class="input text-left qna-td" valign="top">내용</th>
-							<td width=30% class="text-left qna-td"><pre class="input">
-								<textarea class="input" rows="15" cols="65" name=content id="content">
+							<th class="text-left qna-td" valign="top">내용</th>
+							<td class="text-left qna-td">
+								<textarea class="input" rows="19" cols="66" name=content id="content">
  									${vo.event_content }
-								</textarea> </pre>
+								</textarea>
 							</td>
 						</tr>
 					</table>
