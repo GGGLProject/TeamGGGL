@@ -128,7 +128,9 @@ $(function(){
 		var day=$('#day').val();
 		var checkBtn =$('#checkBtn').text();
 		var emailcheckBtn=$('#emailcheckBtn').text();	
-		alert(year);
+		var leng=$('input[name=favor]:checkbox:checked').length;
+	   
+		
 		if(sid==""){
 			alert("아이디를 입력해주세요.");
 			$('#id').focus();
@@ -152,6 +154,8 @@ $(function(){
 			alert("아이디를 중복확인 해주세요.")
 		}else if(emailcheckBtn=="중복확인"){
 			alert("이메일을 중복확인 해주세요")
+		}else if(leng==0){
+			alert("하나이상의 리그를 선택해주세요");
 		}
 		else{
 		alert("회원가입이 완료 되었습니다.");
@@ -162,7 +166,6 @@ $(function(){
 	
 });
 </script>
-
 
 
 </head>
