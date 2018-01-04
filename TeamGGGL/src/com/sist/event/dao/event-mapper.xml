@@ -17,7 +17,9 @@
 		#{end}
 		<!-- map.get("start") => map.put("start",1) map.get("end") => map.put("end",10) -->
 	</select>
-	
+	<select id="eventSearchData" resultType="EventVO" parameterType="java.util.Map">
+		select * from gggl_event where event_title like'%${event_title}%';
+	</select>
 	<!-- Content(내용보기) -->
 	<select id="eventContentData" resultType="EventVO"
 		parameterType="int">
