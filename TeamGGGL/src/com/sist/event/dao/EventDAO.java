@@ -147,7 +147,20 @@ public class EventDAO {
 			if (session != null)
 				session.close();
 		}
-	}	
-
+	}
+	
+	public static int e_ReplyCount(int bno){
+	   int count=0;
+	   SqlSession session=ssf.openSession();
+	   try {
+		   count=session.selectOne("e_ReplyCount", bno);
+	   } catch(Exception ex){
+		   System.out.println("e_ReplyCount" + ex.getMessage());
+	   } finally {
+		   if(session!=null)
+			   session.close();
+	   }
+	   return count;
+   }
 	   
 }
