@@ -63,7 +63,7 @@
 					<li><a href="MyPage.do">마이페이지</a></li>
 				</c:if>
 				<c:if test="${sessionScope.email!=null && sessionScope.grade==1 }">
-				<li><a href="adminpage.do">관리자 페이지</a></li>
+				<li><a href="member_list.do">관리자 페이지</a></li>
 				</c:if>
 				<li>
 					<form method="post" action="search_result.do">
@@ -88,13 +88,13 @@
 					<div class="log">
 						<span style="color: white;"> ${sessionScope.name } 
 						<c:if test="${sessionScope.grade==1 }">
-						(관리자)님 로그인중입니다.	
+						(관리자)님 .	
 						</c:if>
 						<c:if test="${sessionScope.grade==2 }">
-						(일반사용자)님 로그인중입니다.	
+						(일반사용자)님 .	
 						</c:if>
 						<c:if test="${sessionScope.grade==3 }">
-						(이벤트등록회원)님 로그인중입니다.	
+						(이벤트등록회원)님 .	
 						</c:if>
 						</span> 
 						<input type=submit value="로그아웃" >

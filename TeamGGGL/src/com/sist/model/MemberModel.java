@@ -1,6 +1,7 @@
 package com.sist.model;
 
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -183,12 +184,44 @@ public class MemberModel {
 	public String member_ok(HttpServletRequest req,HttpServletResponse res) {
 		String no=req.getParameter("no");
 		MemberDAO.memberok(Integer.parseInt(no));
-		return "adminpage.do";
+		return "member_list.do";
 	}
 	@RequestMapping("member_iok.do")
 	public String member_iok(HttpServletRequest req,HttpServletResponse res) {
 		String no=req.getParameter("no");
 		MemberDAO.memberiok(Integer.parseInt(no));
-		return "adminpage.do";
+		return "member_list.do";
+	}
+	
+	
+
+@RequestMapping("member_list.do")
+	public String event_list(HttpServletRequest req, HttpServletResponse res) throws Throwable {
+		req.setCharacterEncoding("EUC-KR");
+		String page= req.getParameter("page");
+		
+		// request => 기존요청값 + 추가 (setAttribute())
+		if(page==null)
+			page="1";
+		int curpage = Integer.parseInt(page);
+		int rowSize=10;
+		int start = (rowSize*curpage)-(rowSize-1);
+		int end = rowSize*curpage;
+		Map map = new HashMap();
+		map.put("start", start);
+		map.put("end", end);
+		Date date = new Date();
+		SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
+		String today = sdf.format(date);
+
+		List<MemberVO> list = MemberDAO.memberListData(map);
+		
+		req.setAttribute("list", list);
+		req.setAttribute("curpage", curpage);
+		int totalpage= MemberDAO.MemberTotalPage();
+		req.setAttribute("totalpage", totalpage);
+		req.setAttribute("today", date);
+		req.setAttribute("main_jsp", "../gameMyPage/adminpage.jsp");
+		return "gameMain/main.jsp";
 	}
 }
