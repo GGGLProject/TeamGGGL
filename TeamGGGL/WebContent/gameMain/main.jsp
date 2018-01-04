@@ -67,7 +67,7 @@
 				</c:if>
 				<li>
 					<form method="post" action="search_result.do">
-						<input type="text" name="searchkey" style="height:30px; width:150px; margin-top: 10px; margin-left: 40px;">
+						<input type="text" name="searchkey" style="height:30px; width:180px; margin-top: 10px; margin-left: 50px;">
 						<button type=submit value="검색" class="btn btn-default btn-sm">검색</button>
 					</form>
 				</li>
