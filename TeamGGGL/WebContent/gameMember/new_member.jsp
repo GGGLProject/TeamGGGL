@@ -128,7 +128,7 @@ $(function(){
 		var day=$('#day').val();
 		var checkBtn =$('#checkBtn').text();
 		var emailcheckBtn=$('#emailcheckBtn').text();	
-		
+		alert(year);
 		if(sid==""){
 			alert("酒捞叼甫 涝仿秦林技夸.");
 			$('#id').focus();
@@ -257,10 +257,10 @@ $(function(){
                 <!-- 老 可记 冠胶 -->
                 <div class="col-xs-4 col-md-4">
                     <select class="form-control" name="day" id="day">
-                        <option value="day">老</option>
+                        <option>老</option>
                          <c:forEach var="i" begin="1" end="31" step="1" >
                          
-                        <option>${i}老</option>
+                        <option value="${i}">${i}老</option>
                         
                         </c:forEach>
                     </select>
