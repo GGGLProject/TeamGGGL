@@ -450,5 +450,19 @@ public class MatchDAO {
 		}
 		return list;
 	}
+	
+	public static int m_ReplyCount(int bno){
+		   int count=0;
+		   SqlSession session=ssf.openSession();
+		   try {
+			   count=session.selectOne("m_ReplyCount", bno);
+		   } catch(Exception ex){
+			   System.out.println("m_ReplyCount" + ex.getMessage());
+		   } finally {
+			   if(session!=null)
+				   session.close();
+		   }
+		   return count;
+		}
 
 }

@@ -211,4 +211,9 @@
         AND gggl_team.team_name = #{team_name}
         ORDER BY player_name
 	</select>
+	<!-- 댓글 수 조회 -->
+	<select id="m_ReplyCount" resultType="int" parameterType="int">
+    	SELECT COUNT(*) FROM match_reply
+    	WHERE bno=#{bno}
+  	</select>
 </mapper>

@@ -18,7 +18,7 @@ public class MatchVO {
 	private String away_icon;
 	private String a_player_name;
 	private String a_player_pic;
-	
+	private int count;
 	
 	
 	public String getA_player_name() {
@@ -112,10 +112,11 @@ public class MatchVO {
 	public void setMatch_videokey(String match_videokey) {
 		this.match_videokey = match_videokey;
 	}
-	
-	
-	
-	
-	
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
 
 }

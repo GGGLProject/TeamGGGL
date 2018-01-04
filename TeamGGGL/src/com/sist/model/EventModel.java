@@ -65,8 +65,7 @@ public class EventModel {
 		int event_no=Integer.parseInt(no);
 		EventVO vo = EventDAO.eventContentData(event_no);
 		List<EventReplyVO> e_list = EventDAO.e_replyListData(event_no);
-		
-		
+		vo.setCount(EventDAO.e_ReplyCount(vo.getEvent_no()));
 		req.setAttribute("vo", vo);
 		req.setAttribute("e_list", e_list);
 		req.setAttribute("main_jsp", "../gameEvent/event_content.jsp");

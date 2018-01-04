@@ -136,13 +136,13 @@
 					<div class="row commentrow" > 
 						<div class="comment_list col-md-12">
 							<div style="height: 40px"></div>
-							<%-- <c:if test="${vo.count==0 }">
+							<c:if test="${vo.count==0 }">
 								<div class="text-center">
-									<img src="noimage.gif">
-									<span>첫번째 댓글을 남겨주세요.</span>
+									<img src="gameMain/image/noimage.gif" width="110"><br><br>
+									<p>첫번째 댓글을 남겨주세요.</p>
 								</div>
        						</c:if>
-       						<c:if test="${vo.count!=0 }"> --%>
+       						<c:if test="${vo.count!=0 }">
 							<c:forEach var="rvo" items="${e_list }">
 								<div class="comment_form">
 									<div class="pull-right" style="margin-right : 15px;">
@@ -161,14 +161,14 @@
 											<div class="writer_img pull-left">
 												<img src="image/co_user.png">
 											</div>
-											<div class="w_nickName">
+											<div class="w_nickName" style="color: #3d9eed">
 												<strong>${rvo.name }</strong>
 											</div>
 											<div class="w_time" style="font-size: 12px; color: #9f9fa0">
 												<fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss" />
 											</div>
 										</div>
-										<div class="comment_body">
+										<div class="comment_body" style="margin-top: 5px">
 											<p>${rvo.msg }</p>
 										</div>
 									</div>
@@ -183,7 +183,7 @@
 									</div>
 								</div>
 							</c:forEach>
-							<%-- </c:if> --%>
+							</c:if>
 							<%-- <center>
 								<button class="btn btn-primary btn-block moreBtn" type="button">더보기▼</button>
 							</center> --%>

@@ -36,7 +36,6 @@
         });
     });
 </script>
-
 <title>GGGL</title> 
 </head>
 <body class="body-main" data-spy="scroll" data-target=".navbar"
@@ -50,7 +49,7 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand ggglatag" href="main.do">GGGL</a>
+			<a class="navbar-brand ggglatag" href="main.do" style="text-shadow: #d5d5d5 0px 0px 10px;">G<span style="color:#efae21; text-shadow: #efae21 0px 0px 10px;">G</span>GL</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">

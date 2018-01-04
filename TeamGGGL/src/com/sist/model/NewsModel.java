@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.sist.controller.Controller;
 import com.sist.controller.RequestMapping;
+import com.sist.event.dao.EventDAO;
 import com.sist.news.dao.NewsDAO;
 import com.sist.news.dao.NewsReplyVO;
 import com.sist.news.dao.NewsVO;
@@ -69,6 +70,7 @@ public class NewsModel {
 		// ${sessionScope.name }
 		List<NewsReplyVO> replylist = NewsDAO.replyListData(Integer.parseInt(no));
 		NewsVO vo = NewsDAO.newsDetailData(Integer.parseInt(no));
+		vo.setCount(NewsDAO.n_ReplyCount(vo.getNews_no()));
 		req.setAttribute("replylist", replylist);
 		req.setAttribute("vo", vo);
 		req.setAttribute("main_jsp", "../gameNews/news_detail.jsp");

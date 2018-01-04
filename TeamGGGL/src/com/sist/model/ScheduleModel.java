@@ -21,9 +21,12 @@ public class ScheduleModel {
 		List<MatchVO> h_list = MatchDAO.match_detail_h(Integer.parseInt(match_no));
 		List<MatchVO> a_list = MatchDAO.match_detail_a(Integer.parseInt(match_no));
 		List<MatchReplyVO> m_list = MatchDAO.m_replyListData(Integer.parseInt(match_no));
+		MatchVO vo = new MatchVO();
+		vo.setCount(MatchDAO.m_ReplyCount(Integer.parseInt(match_no)));
 		req.setAttribute("h_list", h_list);
 		req.setAttribute("a_list", a_list);
 		req.setAttribute("m_list", m_list);
+		req.setAttribute("vo", vo);
 		req.setAttribute("main_jsp", "../gameDetail/game_detail.jsp");
 		return "gameMain/main.jsp";
 	}
