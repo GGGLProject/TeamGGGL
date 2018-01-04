@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 
 <link href="css/adminpage.css" rel="stylesheet" type="text/css">
-
+ 
 </head>
 <body>
 	<div id="member_area">
