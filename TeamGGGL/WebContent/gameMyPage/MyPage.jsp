@@ -65,7 +65,7 @@ $(function emailCheckfunction(){
 <!-- 이메일 체크 부분  -->
 <script type="text/javascript">
 $(function(){
-
+ 
 	$('#emailcheckBtn').click(function(){
 	 	var useremail=$('#useremail').val();
 	 	 var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
