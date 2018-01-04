@@ -29,18 +29,18 @@ public class MainModel {
 		List<NewsVO> rlist = NewsDAO.mainNewsRecommandData();
 		List<EventVO> elist = EventDAO.recommandEventListData();
 		List<MatchVO> list = MatchDAO.matchList_h(match_day);
-		List<MatchVO> list__1h = MatchDAO.matchList__1h(match_day);
-		List<MatchVO> list__1a = MatchDAO.matchList__1a(match_day);
-		int match_no_h = list__1h.get(0).getMatch_no();
-		int match_no_a = list__1a.get(0).getMatch_no();
+		List<MatchVO> list__2h = MatchDAO.matchList__2h(match_day);
+		List<MatchVO> list__2a = MatchDAO.matchList__2a(match_day);
+		int match_no_h = list__2h.get(0).getMatch_no();
+		int match_no_a = list__2a.get(0).getMatch_no();
 		List<MatchVO> h_list = MatchDAO.match_detail_h(match_no_h);
 		List<MatchVO> a_list = MatchDAO.match_detail_a(match_no_a);
 
 		req.setAttribute("rlist", rlist);
 		req.setAttribute("elist", elist);
 		req.setAttribute("list", list);
-		req.setAttribute("list__1h", list__1h);
-		req.setAttribute("list__1a", list__1a);
+		req.setAttribute("list__2h", list__2h);
+		req.setAttribute("list__2a", list__2a);
 		req.setAttribute("h_list", h_list);
 		req.setAttribute("a_list", a_list);
 		req.setAttribute("main_jsp", "default.jsp");

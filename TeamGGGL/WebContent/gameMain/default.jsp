@@ -21,10 +21,10 @@
 	</div> -->
 
 	<!-- Container (The Match Section) -->
-	<div class="bg-2"> 
+	<div class="bg-2">
 		<div class="container text-center" style="height:900px"> 
 			<c:set var="doneLoop" value="false" />
-			<c:forEach var="vo" items="${list__1h }" varStatus="status">
+			<c:forEach var="vo" items="${list__2h }" varStatus="status">
 				<c:if test="${not doneLoop}">
 					<div class="start_box">
 						<h3>THE BIG MATCH WILL START</h3>
@@ -65,23 +65,23 @@
 						</div>
 						<div class="col-sm-4">
 							<h4>
-								<strong>${list__1a[status.index].match_day }</strong>&nbsp;<strong>${list__1a[status.index].match_time }</strong>
+								<strong>${list__2a[status.index].match_day }</strong>&nbsp;<strong>${list__2a[status.index].match_time }</strong>
 							</h4>
 							<br> <img
-								src="https://static.comicvine.com/uploads/original/11111/111119495/3299555-kickass12.png"
+								src="gameMain/image/vs_icon.png"
 								alt="Random Name" width="155" height="155"
 								style="margin-top: 30px">
 						</div>
 						<div class="col-sm-4">
 							<p class="text-center main_teamN">
-								<strong>${list__1a[status.index].away_name }</strong>
+								<strong>${list__2a[status.index].away_name }</strong>
 							</p>
 							<br> <a href="#demo3" data-toggle="collapse"> <img
-								src="${list__1a[status.index].away_icon }" alt="Random Name"
+								src="${list__2a[status.index].away_icon }" alt="Random Name"
 								width="295" height="260">
 							</a>
 							<div id="demo3" class="collapse">
-								<p style="margin-top: 30px">${list__1a[status.index].away_name }
+								<p style="margin-top: 30px">${list__2a[status.index].away_name }
 									팀 선수</p>
 								<div class="detail_player_list">
 									<c:set var="doneLoop" value="false" />
@@ -130,13 +130,13 @@
 
 		</div>
 	</div>
-	<div>
+	<div class="bg-1">
 		<div class="container">
 			<div class="news_box">
-				<h3 class="text-center">E스포츠 하이라이트 뉴스</h3>
+				<h3 class="text-center" style="font-size:40px; margin-bottom: 25px; margin-top: -10px;">E-Sports 인기 뉴스</h3>
 			</div>
-			<p class="text-center">
-				<a href="news_main.do"><em>뉴스 더 보기</em></a>
+			<p class="text-center" style="margin-bottom: 40px;">
+				<a href="news_main.do" style="font-size: 18px; color: white; font-weight: bold;">뉴스 더 보기</a>
 			</p>
 
 			<div class="row text-center">
@@ -157,10 +157,10 @@
 		</div>
 	</div>
 	<!-- Video Section -->
-	<div class="bg-1">
+	<div class="bg-3">
 		<div class="text-center container">
 			<div class="video_box">
-				<h3 class="text-center">경기 하이라이트 영상</h3>
+				<h3 class="text-center" style="font-size: 40px; margin-bottom: 60px;">경기 하이라이트 영상</h3>
 			</div>
 			<br>
 			<c:set var="doneLoop" value="false" />
@@ -171,7 +171,7 @@
 							src="https://www.youtube.com/embed/${vo.match_videokey }"
 							frameborder="0" gesture="media" allow="encrypted-media"
 							allowfullscreen></iframe>
-						<h4 style="margin-top: 20px">
+						<h4 style="margin-top: 20px; color: white;">
 							<p>${vo.match_name }</p>
 						</h4>
 					</div>
@@ -183,14 +183,14 @@
 		</div>
 	</div>
 	<!-- Container (Event Section) -->
-	<div>
+	<div class="bg-1">
 		<div class="container">
 			<div class="row">
 				<div class="event_box">
-					<h3 class="text-center">Event</h3>
+					<h3 class="text-center" style="font-size: 45px; margin-bottom: 30px; margin-top: -10px;">Event</h3>
 				</div>
-				<p class="text-center">
-					<em>대회에 참여하여 상금을 쟁취하세요!</em>
+				<p class="text-center" style="font-size: 17px; color: white; margin-bottom: 40px;">
+					대회에 참여하여 상금을 쟁취하세요!
 				</p>
 				<div class="row text-center">
 					<c:forEach var="vo" items="${elist }">

@@ -43,7 +43,7 @@
 	data-offset="50" style="overflow-x:hidden; overflow-y:auto;">
 	<!-- navbar -->
 	<nav class="navbar navbar-fixed-top navbar-inverse">
-	<div class="container-fluid">
+	<div class="container-fluid maincont">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target="#myNavbar">
