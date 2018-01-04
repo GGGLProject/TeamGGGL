@@ -19,7 +19,6 @@ var modalFlag = false;
 function popup(num) {
 	var m = num;
 	if (modalFlag){
-		modalFlag = false;
 		return;
 	}
 	else {
@@ -34,7 +33,7 @@ function popup(num) {
 
 
 function popclose(a){
-
+	modalFlag = false;
 	modal[a].style.display = "none";
 }
 
@@ -85,13 +84,12 @@ $(function () {
 						<c:set var="myModal" value="myModal${i.index}"/>
 						<c:set var="caption" value="caption${i.index}"/>
 						<input type=hidden id=num value="${i.index }"/>
-						<figure class="snip1200" id=${myImg } onclick="popup(${i.index})"> 
-							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" > 
+						<figure class="snip1200" id=${myImg } onclick="popup(${i.index})" style="cursor:pointer"> 
+							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" style="cursor:pointer"> 
 							<figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading"><h2><span>${vo.gallery_title }</span></h2></div>
 							</figcaption>
-							<a href="#"></a>
 						</figure>
 						<div id="${myModal}" class="modal">
 							<span class="close" onclick="popclose(${i.index})">&times;</span> 
@@ -122,13 +120,13 @@ $(function () {
 						<c:set var="myModal" value="myModal${t.index+allsize}"/>
 						<c:set var="caption" value="caption${t.index+allsize}"/>
 						<input type=hidden id=num value="${t.index+allsize}"/>
-						<figure class="snip1200" id=${myImg } onclick="popup(${t.index+allsize})"> 
-							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" > 
+						<figure class="snip1200" id=${myImg } onclick="popup(${t.index+allsize})" style="cursor:pointer"> 
+							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" style="cursor:pointer" > 
 							<figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading"><h2><span>${vo.gallery_title }</span></h2></div>
 							</figcaption>
-							<a href="#"></a>
+							 
 						</figure>
 						<div id="${myModal}" class="modal"  data-backdrop="static">
 							<span class="close" onclick="popclose(${t.index+allsize})">&times;</span> 
@@ -159,13 +157,13 @@ $(function () {
 						<c:set var="myModal" value="myModal${m.index+msize}"/>
 						<c:set var="caption" value="caption${m.index+msize}"/>
 						<input type=hidden id=num value="${m.index+msize}"/>
-						<figure class="snip1200" id=${myImg } onclick="popup(${m.index+msize})"> 
-							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" > 
+						<figure class="snip1200" id=${myImg } onclick="popup(${m.index+msize})" style="cursor:pointer"> 
+							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" style="cursor:pointer"> 
 							<figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading"><h2><span>${vo.gallery_title }</span></h2></div>
 							</figcaption>
-							<a href="#"></a>
+							 
 						</figure>
 						<div id="${myModal}" class="modal">
 							<span class="close" onclick="popclose(${m.index+msize})">&times;</span> 
@@ -196,13 +194,13 @@ $(function () {
 						<c:set var="myModal" value="myModal${j.index+jsize}"/>
 						<c:set var="caption" value="caption${j.index+jsize}"/>
 						<input type=hidden id=num value="${j.index+jsize}"/>
-						<figure class="snip1200" id=${myImg } onclick="popup(${j.index+jsize})"> 
-							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" > 
+						<figure class="snip1200" id=${myImg } onclick="popup(${j.index+jsize})" style="cursor:pointer"> 
+							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" style="cursor:pointer"> 
 							<figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading"><h2><span>${vo.gallery_title }</span></h2></div>
 							</figcaption>
-							<a href="#"></a>
+							 
 						</figure>
 						<div id="${myModal}" class="modal">
 							<span class="close" onclick="popclose(${j.index+jsize})">&times;</span> 
@@ -234,13 +232,13 @@ $(function () {
 						<c:set var="myModal" value="myModal${b.index+bsize}"/>
 						<c:set var="caption" value="caption${b.index+bsize}"/>
 						<input type=hidden id=num value="${b.index+bsize}"/>
-						<figure class="snip1200" id=${myImg } onclick="popup(${b.index+bsize})"> 
-							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" > 
+						<figure class="snip1200" id=${myImg } onclick="popup(${b.index+bsize})" style="cursor:pointer"> 
+							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" style="cursor:pointer"> 
 							<figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading"><h2><span>${vo.gallery_title }</span></h2></div>
 							</figcaption>
-							<a href="#"></a>
+							 
 						</figure>
 						<div id="${myModal}" class="modal">
 							<span class="close" onclick="popclose(${b.index+bsize})">&times;</span> 
@@ -272,13 +270,13 @@ $(function () {
 						<c:set var="myModal" value="myModal${s.index+ssize}"/>
 						<c:set var="caption" value="caption${s.index+ssize}"/>
 						<input type=hidden id=num value="${s.index+ssize}"/>
-						<figure class="snip1200" id=${myImg } onclick="popup(${s.index+ssize})"> 
-							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" > 
+						<figure class="snip1200" id=${myImg } onclick="popup(${s.index+ssize})" style="cursor:pointer"> 
+							<img id="${Imgg}" src="gameGallery/image/${vo.gallery_img }.jpg" class="image" style="cursor:pointer" > 
 							<figcaption>
 								<p>${vo.gallery_content }</p>
 								<div class="heading"><h2><span>${vo.gallery_title }</span></h2></div>
 							</figcaption>
-							<a href="#"></a>
+							 
 						</figure>
 						<div id="${myModal}" class="modal">
 							<span class="close" onclick="popclose(${s.index+ssize})">&times;</span> 
