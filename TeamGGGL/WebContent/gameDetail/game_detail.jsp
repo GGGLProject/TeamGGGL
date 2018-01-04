@@ -222,7 +222,6 @@
 				<a href="game_schedule.do"><input type="button" class="btn btn-nm btn-success" value="¸ñ·Ï"></a>
 			</div>
 		</div>
-		
 	</div>
 </body>
 </html>
