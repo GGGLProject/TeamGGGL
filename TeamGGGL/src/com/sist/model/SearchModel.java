@@ -21,6 +21,7 @@ public class SearchModel {
 		try {
 			req.setCharacterEncoding("EUC-KR");
 		} catch (Exception ex) {
+			System.out.println("서치:"+ex.getMessage());
 		}
 		String searchKey = req.getParameter("searchkey");
 		System.out.println(searchKey);
@@ -28,10 +29,11 @@ public class SearchModel {
 		// JSP 전송
 		List<NewsVO> rlist = NewsDAO.newsSearchData(searchKey);
 		List<EventVO> elist = EventDAO.eventSearchData(searchKey);
-
+		
+		req.setAttribute("key123", searchKey);
 		req.setAttribute("rlist", rlist);
 		req.setAttribute("elist", elist);
-
+		
 		req.setAttribute("main_jsp", "../gameMain/search_result.jsp");
 
 		return "gameMain/main.jsp";

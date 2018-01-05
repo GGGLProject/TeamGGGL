@@ -15,7 +15,9 @@ h2 {
 	text-align : center;
 	color: white;
 }
-
+input {
+	color:black;	
+}
 .input {
 	background-color: rgba(0,0,0,0.1);
 }

@@ -49,6 +49,9 @@ h2 {
 	color:black;
 }
 
+input {
+	color:black;	
+}
 .input {
 	background-color: rgba(0,0,0,0.5);
 	color:white;

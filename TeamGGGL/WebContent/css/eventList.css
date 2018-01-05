@@ -20,6 +20,9 @@ body {
 	color:white;
 	margin-top: 70px;
 }
+input {
+	color:black;	
+}
 
 .table {
 	 background-color: rgba(0,0,0,0.3);
