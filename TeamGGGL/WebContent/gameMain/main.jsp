@@ -94,13 +94,13 @@
 						<div class="log">
 							<span style="color: white;"> ${sessionScope.name } 
 								<c:if test="${sessionScope.grade==1 }">
-									(관리자)님 .	
+									(관리자)님 	
 								</c:if> 
 								<c:if test="${sessionScope.grade==2 }">
-									(일반사용자)님 .	
+									(일반사용자)
 								</c:if> 
 								<c:if test="${sessionScope.grade==3 }">
-								(이벤트등록회원)님 .	
+								(우수회원)	
 								</c:if>
 							</span><input type=submit value="로그아웃">
 						</div>
