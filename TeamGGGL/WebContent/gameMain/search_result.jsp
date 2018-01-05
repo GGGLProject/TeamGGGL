@@ -55,7 +55,12 @@ body {
 	<div class="container-fluid" style="margin: 30px 50px;">
 		<div class="news_box">
 			<h1 class="text-center">NEWS</h1>
+			<c:if test="${key==''}">
+			<h4 class="text-center">'전체'에 대한 검색 결과</h4>
+			</c:if>
+			<c:if test="${key!=''}">
 			<h4 class="text-center">'${key }'에 대한 검색 결과</h4>
+			</c:if>
 		</div>
 
 		<div class="row text-center">
@@ -84,7 +89,12 @@ body {
 		<div class="row">
 			<div class="event_box">
 				<h1 class="text-center">Event</h1>
+				<c:if test="${key==''}">
+				<h4 class="text-center">'전체'에 대한 검색 결과</h4>
+				</c:if>
+				<c:if test="${key!=''}">
 				<h4 class="text-center">'${key }'에 대한 검색 결과</h4>
+				</c:if>
 			</div>
 			
 			<div class="row text-center">
