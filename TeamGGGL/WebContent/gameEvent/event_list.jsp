@@ -124,6 +124,7 @@
 				<a href="event_write.do" style="float: right;" class="btn btn-danger btn-nm btn-sub">µî·Ï</a>
 			</c:if>
 		</center>
+		<div style="height: 70px;"></div>
 	</div>
 	</div>
 </body>

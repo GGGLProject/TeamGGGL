@@ -33,7 +33,7 @@
 </script>
 <style type="text/css">
 .navbar-nav li a {
-	font-family: GODOM;
+	font-family: NanumBarunGothic;
 	font-size: 30px;
 }
 .navbar-nav li a:hover {
@@ -41,6 +41,9 @@
    font-family: GODOM;
    font-size: 30px;
 } 
+body {
+	font-family: NanumBarunGothic;
+}
 </style>
 <title>GGGL</title>
 </head>
