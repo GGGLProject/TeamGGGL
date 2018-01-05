@@ -55,10 +55,14 @@ body {
 	<div class="container-fluid" style="margin: 30px 50px;">
 		<div class="news_box">
 			<h1 class="text-center">NEWS</h1>
-			<h4 class="text-center">'○○○'에 대한 검색 결과</h4>
+			<h4 class="text-center">'${key }'에 대한 검색 결과</h4>
 		</div>
-		<c:if test=""></c:if>
+
 		<div class="row text-center">
+		<c:if test="${rcount == 0 }">
+		<span style="color:white; font-size:30px">"검색 결과가 없습니다"</span>
+		</c:if>
+		<c:if test="${rcount != 0 }">
 			<c:forEach var="vo" items="${rlist }">
 				<div class="col-sm-3">
 					<div class="thumbnail thumb_search">
@@ -71,6 +75,7 @@ body {
 					</div>
 				</div>
 			</c:forEach>
+			</c:if>
 		</div>
 		<br>
 		<hr>
@@ -79,9 +84,14 @@ body {
 		<div class="row">
 			<div class="event_box">
 				<h1 class="text-center">Event</h1>
-				<h4 class="text-center">'○○○'에 대한 검색 결과</h4>
+				<h4 class="text-center">'${key }'에 대한 검색 결과</h4>
 			</div>
+			
 			<div class="row text-center">
+			<c:if test="${ecount == 0 }">
+			<span style="color:white; font-size:30px">"검색 결과가 없습니다"</span>
+			</c:if>
+			<c:if test="${ecount != 0 }">
 				<c:forEach var="vo" items="${elist }">
 					<div class="col-sm-3">
 						<div class="thumbnail thumb_search">
@@ -94,6 +104,7 @@ body {
 						</div>
 					</div>
 				</c:forEach>
+				</c:if>
 			</div>
 		</div>
 	</div>
