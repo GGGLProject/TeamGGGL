@@ -200,7 +200,7 @@
    <div class="bodybody">
       <div class="container">
          <div class="row">
-            <div class="event_box">
+            <div class="event_box"> 
                <h3 class="text-center" style="font-size: 45px; margin-bottom: 30px; margin-top: -10px;">Event</h3>
             </div>
             <p class="text-center" style="font-size: 17px; color: white; margin-bottom: 40px;">
