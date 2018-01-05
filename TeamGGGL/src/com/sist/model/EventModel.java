@@ -117,12 +117,12 @@ public class EventModel {
 		 }
 		 
 		 String fullpath = image_path + "/" + filename1;
-		 System.out.println(fullpath);
+		 /*System.out.println(fullpath);*/
 		 String event_image = fullpath;
 		
 		 String id = (String)session.getAttribute("name");
 
-			System.out.println(id);
+			/*System.out.println(id);*/
 		 
 		EventVO vo =new EventVO();
 		vo.setEvent_id(id);
@@ -216,11 +216,11 @@ public class EventModel {
 		 else {
 		 event_image = filename1;
 		 }
-		 System.out.println(event_image);
+		 //System.out.println(event_image);
 		 
 		 String id = (String)session.getAttribute("name");
 
-			System.out.println(id);
+			//System.out.println(id);
 		 
 		EventVO vo =new EventVO();
 		vo.setEvent_day(event_day);
@@ -233,7 +233,7 @@ public class EventModel {
 		vo.setEvent_no(event_no);
 		EventDAO.eventModify(vo);
 //		EventDAO.eventModifytest(vo);
-		System.out.println("테스트끝");
+		//System.out.println("테스트끝");
 		
 		req.setAttribute("main_jsp", "../gameEvent/event_list.jsp");
 		return "event_list.do";
