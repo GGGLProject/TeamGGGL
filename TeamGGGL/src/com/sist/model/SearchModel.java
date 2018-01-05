@@ -17,34 +17,26 @@ import com.sist.news.dao.NewsVO;
 
 @Controller
 public class SearchModel {
-	@RequestMapping("search_result_old.do")
-	public String search_page(HttpServletRequest req, HttpServletResponse res) {
-		HttpSession session = req.getSession();
-		String searchKey = req.getParameter("searchkey");
-		try {
-			req.setCharacterEncoding("EUC-KR");
-		} catch (Exception ex) {
-			System.out.println("서치:"+ex.getMessage());
+	   @RequestMapping("search_result_news.do")
+		public String search_result_news(HttpServletRequest req, HttpServletResponse res) {
+			try {
+				req.setCharacterEncoding("EUC-KR");
+			} catch (Exception ex) {
+			}
+			String searchKey = req.getParameter("searchkey");
+			System.out.println(searchKey);
+
+			// JSP 전송
+			List<NewsVO> rlist = NewsDAO.newsSearchData(searchKey);
+			req.setAttribute("rcount", rlist.size());
+		
+			req.setAttribute("key", searchKey);
+			req.setAttribute("rlist", rlist);
+
+			req.setAttribute("main_jsp", "../gameMain/search_result_news.jsp");
+
+			return "gameMain/main.jsp";
 		}
-		
-		session.setAttribute("skey",searchKey );
-		System.out.println("dd");
-		System.out.println("세선:"+session.getAttribute("skey"));
-		System.out.println(searchKey);
-
-		// JSP 전송
-		List<NewsVO> rlist = NewsDAO.newsSearchData(searchKey);
-		List<EventVO> elist = EventDAO.eventSearchData(searchKey);
-		
-		req.setAttribute("key", searchKey);
-		req.setAttribute("rlist", rlist);
-		req.setAttribute("elist", elist);
-		
-		req.setAttribute("main_jsp", "../gameMain/search_result.jsp");
-
-		return "gameMain/main.jsp";
-	}
-
 	@RequestMapping("search.do")
 	public String search(HttpServletRequest req, HttpServletResponse res) {
 
