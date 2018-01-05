@@ -52,12 +52,8 @@
 			<div class="form-group">
 				<input type="text" class="form-control"
 					placeholder="${newsTotalCount }개 등록됨 (2017-05-01 ~ 2017-12-30)"
-					size=70 readonly>
+					size=130 readonly>
 			</div>
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="뉴스 검색" size=30>
-			</div>
-			<input type=button class="btn btn-default" value="검색">
 		</form>
 
 		<div style="height: 10px"></div>
@@ -135,15 +131,14 @@
 			<div class="pageNum">
 				<ul class="pagination">
 
-					<li class="page-item"><a
-						href="news_main.do?page=${curpage>1?curpage-1:curpage }">이전</a></li>
-					<li class="page-item"><a
-						href="news_main.do?page=${curpage<totalpage?curpage+1:curpage }">다음</a></li>
+					
+				
 				</ul>
 				<br>
 				
 				<ul class="pagination pagination-centered">
 						<li><a href="news_main.do?page=${curpage<11?curpage:curpage-10}">&laquo;</a></li>
+						<li><a href="news_main.do?page=${curpage>1?curpage-1:curpage }">&lt;</span></a></li>
 						<fmt:parseNumber var="num" value="${curpage/10}" integerOnly="true" />
 						<c:set var="num" value="${num<=0?1:num*10}" />
 						<c:forEach var="i" begin="${num}" end="${num==1?num+8:num+9}">
@@ -157,6 +152,7 @@
 								</c:when>
 							</c:choose>
 						</c:forEach>
+							<li><a href="news_main.do?page=${curpage<totalpage?curpage+1:curpage }">&gt;</a></li>
 						<li><a href="news_main.do?page=${curpage<=totalpage-10?curpage+10:curpage}">&raquo;</a></li>
 					</ul>
 			</div>
