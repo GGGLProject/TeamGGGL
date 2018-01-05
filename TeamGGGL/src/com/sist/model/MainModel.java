@@ -55,25 +55,27 @@ public class MainModel {
       return "gameMain/main.jsp";
    }
    @RequestMapping("search_result.do")
-   public String search_page(HttpServletRequest req, HttpServletResponse res) {
-      try {
-         req.setCharacterEncoding("EUC-KR");
-      } catch (Exception ex) {
-      }
-      String searchKey = req.getParameter("searchkey");
-      System.out.println(searchKey);
+	public String search_page(HttpServletRequest req, HttpServletResponse res) {
+		try {
+			req.setCharacterEncoding("EUC-KR");
+		} catch (Exception ex) {
+		}
+		String searchKey = req.getParameter("searchkey");
+		System.out.println(searchKey);
 
-      // JSP 전송
-      List<NewsVO> rlist = NewsDAO.newsSearchData(searchKey);
-      List<EventVO> elist = EventDAO.eventSearchData(searchKey);
+		// JSP 전송
+		List<NewsVO> rlist = NewsDAO.newsSearchData(searchKey);
+		List<EventVO> elist = EventDAO.eventSearchData(searchKey);
+		req.setAttribute("rcount", rlist.size());
+		req.setAttribute("ecount", elist.size());
+		req.setAttribute("key", searchKey);
+		req.setAttribute("rlist", rlist);
+		req.setAttribute("elist", elist);
 
-      req.setAttribute("rlist", rlist);
-      req.setAttribute("elist", elist);
+		req.setAttribute("main_jsp", "../gameMain/search_result.jsp");
 
-      req.setAttribute("main_jsp", "../gameMain/search_result.jsp");
-
-      return "gameMain/main.jsp";
-   }
+		return "gameMain/main.jsp";
+	}
 }
 
 
