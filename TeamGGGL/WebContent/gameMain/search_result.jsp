@@ -44,13 +44,18 @@
 }
 
 body {
-	background-image: url('image/lol_back1.jpg');
+	background-image: url('image/backimgg_2.jpg');
 	background-attachment: fixed;
+	background-size: 2000px 1200px;
 	margin-top: 70px;
+}
+.bodybody {
+	background-color: rgba(25,25,25, 0.6);
 }
 </style>
 </head>
 <body>
+<div class="bodybody">
 	<div style="height: 100px"></div>
 	<div class="container-fluid" style="margin: 30px 50px;">
 		<div class="news_box">
@@ -107,6 +112,7 @@ body {
 				</c:if>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

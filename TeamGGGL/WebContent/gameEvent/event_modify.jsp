@@ -103,6 +103,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<div class="bodybody">
 	<div class="container">
 		<div class="row">
 			<h2 class="text-center"><strong>EVENT</strong></h2>
@@ -195,6 +196,7 @@ $(document).ready(function(){
 							</td>
 						</tr>
 					</table>
+					</div>
 					</form>
 				</div>
 				<div class="text-right">

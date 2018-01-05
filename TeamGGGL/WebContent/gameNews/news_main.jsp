@@ -25,6 +25,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="bodybody">
 	<!-- 	<div class="container_t"> -->
 	<div class="container">
 		<h1 class="news_head">
@@ -164,5 +165,6 @@
 	</div>
 	<!-- /.container -->
 	<!-- 	</div> -->
+	</div>
 </body>
 </html>

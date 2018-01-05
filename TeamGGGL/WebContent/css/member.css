@@ -1,17 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
 
 body {
-	background-image: url('../image/lol_back5.jpg');
+	background-image: url('../image/backimgg_7.jpg');
 	background-attachment: fixed;
+	background-size: 2000px 1200px;
 	color: #dedee0;
 	margin-top: 70px;
+}
+.bodybody {
+	background-color: rgba(30,30,30, 0.6);
+	height: 650px;
 }
 .allbox{
 	margin-top:50px;
 	margin-bottom: 160px;
 }
 #login {
-    padding-top: 50px;
+    padding-top: 70px;
     margin-bottom: 70px;
 }
 #login .form-wrap {
@@ -20,7 +25,7 @@ body {
 }
 #login h1 {
     color: #1fa67b;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     font-weight: bold;
     padding-bottom: 20px;

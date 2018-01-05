@@ -11,8 +11,14 @@
 <link href="css/teaminfo_detail.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+.bodybody {
+	background-color: rgba(30,30,30, 0.6);
+}
+</style>
 </head>
 <body>
+<div class="bodybody"> 
 	<div class="container">
 		<c:set var="doneLoop" value="false" />
 		<c:forEach var="vo" items="${list_teamdetail }" varStatus="status">
@@ -36,7 +42,7 @@
 			</div>
 		</div>
 	</div>
-
+</div>
 </body>
 </html>
 

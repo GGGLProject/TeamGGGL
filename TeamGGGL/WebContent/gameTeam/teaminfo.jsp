@@ -37,8 +37,14 @@ $(function(){
 	});
 });
 </script>
+<style type="text/css">
+.bodybody {
+	background-color: rgba(30,30,30, 0.6);
+}
+</style>
 </head>
 <body>
+<div class="bodybody">
 	<div class="container">
 		<h2 class="text-center subject">리그별 팀정보</h2>
 		<div class="row">
@@ -220,7 +226,7 @@ $(function(){
 			</div>
 		</div>
 	</div>
-
+</div>
 </body>
 </html>
 

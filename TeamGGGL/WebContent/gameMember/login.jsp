@@ -58,6 +58,7 @@ $(function(){
 
 </head>
 <body>
+<div class="bodybody">
 	<section id="login">
     <div class="container">
     	<div class="row">
@@ -114,6 +115,6 @@ $(function(){
 	</div> <!-- /.modal-dialog -->
 </div> <!-- /.modal -->
 
-
+</div>
 </body>
 </html>

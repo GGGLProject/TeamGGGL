@@ -54,6 +54,7 @@
 </style>
 </head>
 <body>
+<div class="bodybody">
 	<div class="container">
 		<div class="row">
 			<h2 class="text-center">
@@ -215,6 +216,7 @@
 				</div>
 			</div>			
 		</div>
+	</div>
 	</div>
 </body>
 </html>

@@ -13,6 +13,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="bodybody">
+
 	<div class="container eventhello">
 		<div class="row">
 			<div class="col">
@@ -122,6 +124,7 @@
 				<a href="event_write.do" style="float: right;" class="btn btn-danger btn-nm btn-sub">µî·Ï</a>
 			</c:if>
 		</center>
+	</div>
 	</div>
 </body>
 </html>

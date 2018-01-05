@@ -62,16 +62,21 @@ ul.middle_nav_tabs li.active2 {
 }
 
 .title {
-	margin-top: 120px;
+	padding-top: 100px;
 	margin-bottom: 35px;
 	font-size: 20px;
 }
 
 body {
-	background-image: url('../image/lol_back5.jpg');
+	background-image: url('../image/backimgg_10.jpg');
 	background-attachment: fixed;
+	background-size: 1900px 1200px;
 	color: #dedee0;
-	padding-top: 70px;
+	margin-top: 70px;
+}
+
+.bodybody {
+	background-color: rgba(20,20,20, 0.7);
 }
 
 figure.snip1200 {

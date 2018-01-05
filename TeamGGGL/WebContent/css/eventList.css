@@ -11,15 +11,22 @@ h2 {
 	padding-top: 40px;
 	padding-bottom: 20px;
 	text-align : center;
-	color: #dedee0;
+	color: white;
+	font-size: 40px;
 }
 
 body {
-	background-image: url('../image/lol_back1.jpg');
+	background-image: url('../image/backimgg_8.jpg');
 	background-attachment: fixed;
-	color:white;
+	background-size: 2000px 1200px;
 	margin-top: 70px;
+	color:white;
 }
+
+.bodybody {
+	background-color: rgba(30,30,30, 0.6);
+}
+
 input {
 	color:black;	
 }

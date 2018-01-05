@@ -1,6 +1,12 @@
 body {
-	background-image: url('../image/lol_back5.jpg');
+	background-image: url('../image/backimgg_7.jpg');
 	background-attachment: fixed;
-	color: #dedee0;
+	background-size: 2000px 1200px;
+	color: white;
 	margin-top: 70px;
+}
+
+.bodybody {
+	background-color: rgba(30,30,30, 0.6);
+
 }

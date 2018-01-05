@@ -56,6 +56,7 @@ $(function () {
 </head>
 
 <body>
+<div class="bodybody">
 	<div class="title" align="center">
 		<h1>
 			<strong>Gallery</strong>
@@ -337,7 +338,7 @@ span[n] = document.getElementsByClassName("close")[n];
 	
 	</script>
 
-
+</div>
 </body>
 </html>
 

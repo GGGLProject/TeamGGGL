@@ -170,12 +170,12 @@ $(function(){
 
 </head>
 <body>
-
+<div class="bodybody">
 <article class="container">
         <div class="page-header">
-          <h1>회원가입 <small></small></h1>
+          <h1 class="text-center" style="font-size: 30px; font-weight: bold;">회원가입 <small></small></h1> 
         </div>
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3" style="margin-top: 30px;">
           
          
           <form method="post" action="memberJoin.do" id="newform">
@@ -305,6 +305,6 @@ $(function(){
         </div>
 		
       </article>
-      
+      </div>
 </body>
 </html>

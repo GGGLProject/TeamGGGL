@@ -129,8 +129,11 @@ footer .up-arrow:hover {
 }
 
 .bg-1 {
-   background: url(../gameMain/image/backkk3.jpg);
-    height: 650px;
+   background: url(../gameMain/image/lol_bakkkk1.jpg);
+    height: 625px;
+}
+.bodybody {
+	background-color: rgba(100,100,100, 0.55);
 }
 .bg-2 {
    margin-top: 65px;

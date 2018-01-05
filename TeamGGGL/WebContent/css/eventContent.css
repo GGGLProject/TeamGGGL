@@ -1,8 +1,12 @@
 body {
-	background-image: url('../image/lol_back1.jpg');
+	background-image: url('../image/backimgg_8.jpg');
 	background-attachment: fixed;
-	color: #dedee0;
+	background-size: 2000px 1200px;
 	margin-top: 70px;
+	color: #dedee0;
+}
+.bodybody {
+	background-color: rgba(30,30,30, 0.6);
 }
 .content_board {
 	background-color: rgba(20, 20, 20, 0.7);
@@ -34,6 +38,7 @@ h2 {
 	padding-bottom: 20px;
 	text-align : center;
 	color: white;
+	font-size: 40px;
 }
 
 .text-link td>a {

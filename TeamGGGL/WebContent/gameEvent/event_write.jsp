@@ -65,6 +65,7 @@
 </script>
 </head>
 <body>
+<div class="bodybody">
 	<div class="container">
 		<div class="row">
 			<h2 class="text-center">
@@ -169,7 +170,7 @@
 								</textarea></td>
 							</tr>
 						</table>
-						
+						</div>
 				</form>
 			</div>
 			

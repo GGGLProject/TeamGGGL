@@ -1,9 +1,9 @@
 body {
-	background-image: url('../image/lol_back1.jpg');
-	background-repeat: no-repeat;
+	background-image: url('../image/backimgg_3.jpg');
 	background-attachment: fixed;
-	color: #dedee0;
+	background-size: 2000px 1200px;
 	margin-top: 70px;
+	color: white;
 }
 
 .container {

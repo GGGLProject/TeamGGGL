@@ -140,6 +140,7 @@
       </div>
    </div>
    <div class="bg-1">
+   <div class="bodybody">
       <div class="container">
          <div class="news_box">
             <h3 class="text-center" style="font-size:40px; margin-bottom: 25px; margin-top: -10px;">E-Sports 인기 뉴스</h3>
@@ -163,6 +164,7 @@
                </div>
             </c:forEach>
          </div>
+      </div>
       </div>
    </div>
    <!-- Video Section -->
@@ -195,6 +197,7 @@
    </div>
    <!-- Container (Event Section) -->
    <div class="bg-1">
+   <div class="bodybody">
       <div class="container">
          <div class="row">
             <div class="event_box">
@@ -219,6 +222,7 @@
                </c:forEach>
             </div>
          </div>
+      </div>
       </div>
    </div>
 </body>
