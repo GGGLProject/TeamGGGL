@@ -19,6 +19,11 @@
     left: 0;
     border: 1px solid #504137;
 }
+
+.row .thub-box .col-sm-3 .gkgkgk:hover {
+	/* border-color: #efae21; */
+	border-color: red;
+}
 </style>
 </head>
 <body>
@@ -151,16 +156,19 @@
 
          <div class="row text-center">
             <c:forEach var="vo" items="${rlist }">
+            <div class="thub-box">
                <div class="col-sm-3">
-                  <div class="thumbnail"
-                     style="max-height: 600px; position: relative; vertical-align: middle">
+                  <div class="thumbnail gkgkgk"
+                     style="max-height: 600px; position: relative; vertical-align: middle; padding: 10px; background-color: rgb(44,22,20);
+                     		border: 1px solid #9b7115;">
                      <a href="news_detail.do?no=${vo.news_no }"> <img
                         class="img-responsive" src="gameNews/image/${vo.news_no }.jpg"
                         id="img_a"></a> <br>
                      <p>
-                        <a href="news_detail.do?no=${vo.news_no }">${vo.news_title }</a>
+                        <a href="news_detail.do?no=${vo.news_no }" style="color:#efae21">${vo.news_title }</a>
                      </p>
                   </div>
+               </div>
                </div>
             </c:forEach>
          </div>
@@ -210,12 +218,13 @@
                <c:forEach var="vo" items="${elist }">
                   <div class="col-sm-3">
                      <div class="thumbnail"
-                        style="max-height: 600px; position: relative; vertical-align: middle">
+                        style="max-height: 600px; position: relative; vertical-align: middle; padding: 10px;  background-color: rgb(44,22,20);
+                     		border: 1px solid #9b7115;">
                         <a href="event_content.do?no=${vo.event_no }"><img
                            class="img-responsive" src="${vo.event_image }" id="img_a"></a>
                         <br>
                         <p>
-                           <a href="event_content.do?no=${vo.event_no }">${vo.event_title }</a>
+                           <a href="event_content.do?no=${vo.event_no }" style="color:#efae21">${vo.event_title }</a>
                         </p>
                      </div>
                   </div>

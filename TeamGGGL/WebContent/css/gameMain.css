@@ -3,6 +3,15 @@
    src: url(../gameMain/font/Zelta-Six.otf) format('opentype');
 }
 
+@font-face {
+   font-family: 'GODOM';
+   src: url(../gameMain/font/GODOM.TTF) format('opentype');
+}
+
+@font-face {
+   font-family: 'NanumBarunGothic';
+   src: url(../gameMain/font/NanumBarunGothic.ttf) format('truetype');
+}
 
 .navbar {
    margin-bottom: 0;
@@ -129,11 +138,12 @@ footer .up-arrow:hover {
 }
 
 .bg-1 {
-   background: url(../gameMain/image/lol_bakkkk1.jpg);
+   background: url(../gameMain/image/rtrt.jpg);
+   background-size: 1800px 800px;
     height: 625px;
 }
 .bodybody {
-	background-color: rgba(100,100,100, 0.55);
+	background-color: rgba(7, 111, 130, 0.1);
 }
 .bg-2 {
    margin-top: 65px;
@@ -148,7 +158,7 @@ footer .up-arrow:hover {
 }
 
 .bg-3 {
-   background-color: rgba(58, 43, 34, 0.6);
+   background-color: rgba(71,46,35, 0.9);
    height: 600px;
 }
 
@@ -301,7 +311,7 @@ footer .up-arrow:hover {
    font-size: 16px;
 }
 
-.event_box h3, .news_box h3 {
+/* .event_box h3, .news_box h3 {
    font-size: 2.3em;
    margin: 10px 0;
    text-transform: uppercase;
@@ -309,9 +319,9 @@ footer .up-arrow:hover {
    color: #000;
    font-weight: 1000;
    text-shadow: 2px 2px 3px rgb(149, 149, 149);
-}
+} */
 
-.video_box h3 {
+.video_box h3, .event_box h3, .news_box h3 {
    font-size: 2.3em;
    margin: 10px 0;
    text-transform: uppercase;
@@ -322,5 +332,6 @@ footer .up-arrow:hover {
 }
 
 .main_video_box .main_video:hover {
-   border-color: #f8b700;
+   border-color: #efae21;
 }
+
