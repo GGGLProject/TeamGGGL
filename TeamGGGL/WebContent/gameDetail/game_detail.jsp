@@ -12,7 +12,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	$(function() {
+$(function() {
 		var u = 0;
 		$('.modifyBtn').click(function() {
 			var no = $(this).attr("value");
@@ -25,7 +25,22 @@
 				$(this).text("수정");
 			}
 		});
+		
+		$('#replyBtn').click(function(){
+				
+			var check = ${sessionScope.email != null}
+			if(check) 
+			{
+				$('#newReply').submit();
+			} 
+			else 
+			{ 	
+				alert("로그인이 필요합니다.")
+				location.href = "login.do";
+			}
+		});
 	});
+	
 </script>
 </head>
 <body class="body">
@@ -162,10 +177,10 @@
 					<span class="com_title"><b>Comment</b></span>
 				</h4>
 				<div class="reply_write">
-					<form method=post action="match_reply_new_insert.do">
+					<form method=post action="match_reply_new_insert.do" id="newReply">
 						<input type="hidden" name=bno value="${h_list.get(0).match_no }">
 						<textarea rows="3" class="com_2 form-control text-left" name="msg"></textarea>
-						<input class="btn btn-primary btn-sm pull-right" type=submit value="댓글달기">
+						<input id="replyBtn" class="btn btn-primary btn-sm pull-right" type=button value="댓글달기">
 					</form>
 				</div>
 			</div>
