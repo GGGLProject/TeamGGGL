@@ -16,11 +16,37 @@
 	word-wrap: normal;
 }
 
+.news_box, .event_box {
+	margin-bottom: 50px;
+}
+
+.news_box h1, .event_box h1 {
+	color: white;
+	font-weight: bold;
+	font-size: 50px;
+	margin-bottom: 20px;
+}
+
+.news_box h4, .event_box h4 {
+	color: white;
+	font-size: 25px;
+}
+
 .thumb_search {
 	max-height: 600px; 
 	position: relative; 
 	vertical-align: middle; 
 	padding: 10px;
+}
+
+.thumb_search:hover {
+	opacity: 0.75;
+}
+
+body {
+	background-image: url('image/lol_back1.jpg');
+	background-attachment: fixed;
+	margin-top: 70px;
 }
 </style>
 </head>
@@ -28,7 +54,7 @@
 	<div style="height: 100px"></div>
 	<div class="container-fluid" style="margin: 30px 50px;">
 		<div class="news_box">
-			<h3 class="text-center">NEWS</h3>
+			<h1 class="text-center">NEWS</h1>
 			<h4 class="text-center">'○○○'에 대한 검색 결과</h4>
 		</div>
 		<c:if test=""></c:if>
@@ -46,11 +72,13 @@
 				</div>
 			</c:forEach>
 		</div>
+		<br>
 		<hr>
+		<br><br>
 
 		<div class="row">
 			<div class="event_box">
-				<h3 class="text-center">Event</h3>
+				<h1 class="text-center">Event</h1>
 				<h4 class="text-center">'○○○'에 대한 검색 결과</h4>
 			</div>
 			<div class="row text-center">
