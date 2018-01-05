@@ -173,8 +173,9 @@ footer .up-arrow:hover {
     height: 600px;
 }
 
-.body-main {
+body {
    /* font: 400 15px/1.8 Lato, sans-serif; */
+   font-family: NanumBarunGothic;
 }
 
 .bg-1 h3 {

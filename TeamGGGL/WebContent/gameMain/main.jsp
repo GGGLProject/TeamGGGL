@@ -38,7 +38,7 @@
 }
 .navbar-nav li a:hover {
    color: #efae21 !important;
-   font-family: GODOM;
+   font-family: NanumBarunGothic;
    font-size: 30px;
 } 
 body {
@@ -105,7 +105,7 @@ body {
 								<c:if test="${sessionScope.grade==3 }">
 								(우수회원)	
 								</c:if>
-							</span><input type=submit value="로그아웃">
+							</span><input type=submit value="로그아웃" style="color: black;">
 						</div>
 					</form>
 				</c:if>

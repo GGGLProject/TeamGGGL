@@ -145,10 +145,10 @@ $(function(){
 
 </head>
 <body>
-
+<div class="bodybody">
 <article class="container">
         <div class="page-header">
-          <h1>마이페이지</h1>
+          <h1 class="text-center">마이페이지</h1>
         </div>
         <div class="col-md-6 col-md-offset-3">
           
@@ -266,6 +266,6 @@ $(function(){
         </div>
 		
       </article>
-      
+      </div>
 </body>
 </html>

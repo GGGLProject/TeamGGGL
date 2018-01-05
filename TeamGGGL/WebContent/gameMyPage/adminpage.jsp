@@ -12,6 +12,7 @@
  
 </head>
 <body>
+<div class="bodybody">
 	<div id="member_area">
 		<center>
 		 <h1>회원보기</h1>
@@ -73,6 +74,7 @@
 							<li><a href="member_list.do?page=${curpage<=totalpage-10?curpage+10:curpage}">&raquo;</a></li>
 			</ul> 
 		</center>
+	</div>
 	</div>
 </body>
 </html>

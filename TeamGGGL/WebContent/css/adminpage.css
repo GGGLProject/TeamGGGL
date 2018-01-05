@@ -1,8 +1,14 @@
 body {
-	background-image: url('../image/lol_back5.jpg');
+	background-image: url('../image/backimgg_7.jpg');
 	background-attachment: fixed;
-	color: #dedee0;
-	margin-top: 100px;
+	background-size: 2000px 1200px;
+	color: white;
+}
+
+.bodybody {
+	background-color: rgba(30,30,30, 0.6);
+	height: 694px;
+	padding-top: 130px;
 }
 
 h1 {
@@ -10,7 +16,7 @@ h1 {
 }
 
 center{
-	margin-top:180px;
+	margin-top:80px;
 	margin-bottom:150px;
 }
 #table_content{
