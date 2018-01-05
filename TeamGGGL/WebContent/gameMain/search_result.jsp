@@ -39,7 +39,7 @@
 	padding: 10px;
 }
 
-.thumb_search:hover {
+.thumb_search:hover { 
 	opacity: 0.75;
 }
 
