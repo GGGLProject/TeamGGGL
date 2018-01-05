@@ -7,101 +7,107 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Lato"
-	rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 <link href="css/gameMain.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat"
-	rel="stylesheet" type="text/css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
-    $(function() {
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 500) {
-                $('#MOVE_TOP_BTN').fadeIn();
-            } else {
-                $('#MOVE_TOP_BTN').fadeOut();
-            }
-        });
-        
-        $("#MOVE_TOP_BTN").click(function() {
-            $('html, body').animate({
-                scrollTop : 0
-            }, 600);
-            return false;
-        });
-    });
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+	$(function() {
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 500) {
+				$('#MOVE_TOP_BTN').fadeIn();
+			} else {
+				$('#MOVE_TOP_BTN').fadeOut();
+			}
+		});
+
+		$("#MOVE_TOP_BTN").click(function() {
+			$('html, body').animate({
+				scrollTop : 0
+			}, 600);
+			return false;
+		});
+	});
 </script>
-<title>GGGL</title> 
+<style type="text/css">
+.navbar-nav li a {
+	font-family: GODOM;
+	font-size: 30px;
+}
+.navbar-nav li a:hover {
+   color: #efae21 !important;
+   font-family: GODOM;
+   font-size: 30px;
+} 
+</style>
+<title>GGGL</title>
 </head>
 <body class="body-main" data-spy="scroll" data-target=".navbar"
-	data-offset="50" style="overflow-x:hidden; overflow-y:auto;">
+	data-offset="50" style="overflow-x: hidden; overflow-y: auto;">
 	<!-- navbar -->
 	<nav class="navbar navbar-fixed-top navbar-inverse">
-	<div class="container-fluid maincont">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#myNavbar">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand ggglatag" href="main.do" style="text-shadow: #d5d5d5 0px 0px 10px;">G<span style="color:#efae21; text-shadow: #efae21 0px 0px 10px;">G</span>GL</a>
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<li><a href="news_main.do">뉴스</a></li>
-				<li><a href="teaminfo.do">팀/선수 정보</a></li>
-				<li><a href="game_schedule.do">일정 / 결과</a></li>
-				<li><a href="gallery.do">갤러리</a></li>
-				<li><a href="event_list.do">이벤트</a></li>
-				<c:if test="${sessionScope.email!=null}">
-					<li><a href="MyPage.do">마이페이지</a></li>
-				</c:if>
-				<c:if test="${sessionScope.email!=null && sessionScope.grade==1 }">
-				<li><a href="member_list.do">관리자 페이지</a></li>
-				</c:if>
-				<li>
-					<form method="post" action="search_result.do">
-						<input type="text" name="searchkey"  placeholder="  검색어를 입력하세요." style="height:30px; width:200px; margin-top: 10px; margin-left: 40px;">
-						<button type=submit value="검색" class="btn btn-default btn-sm">검색</button>
+		<div class="container-fluid maincont">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand ggglatag" href="main.do" style="text-shadow: #d5d5d5 0px 0px 10px;">
+					G<span style="color: #efae21; text-shadow: #efae21 0px 0px 10px;">G</span>GL
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="news_main.do">뉴스</a></li>
+					<li><a href="teaminfo.do">팀/선수 정보</a></li>
+					<li><a href="game_schedule.do">일정 / 결과</a></li>
+					<li><a href="gallery.do">갤러리</a></li>
+					<li><a href="event_list.do">이벤트</a></li>
+					<c:if test="${sessionScope.email!=null}">
+						<li><a href="MyPage.do">마이페이지</a></li>
+					</c:if>
+					<c:if test="${sessionScope.email!=null && sessionScope.grade==1 }">
+						<li><a href="member_list.do">관리자 페이지</a></li>
+					</c:if>
+					<li>
+						<form method="post" action="search_result.do">
+							<input type="text" name="searchkey" placeholder="  검색어를 입력하세요."
+								style="height: 30px; width: 200px; margin-top: 10px; margin-left: 40px;">
+							<button type=submit value="검색" class="btn btn-default btn-sm">검색</button>
+						</form>
+					</li>
+				</ul>
+				
+				<c:if test="${sessionScope.email==null }">
+					<form method=post action="login.do">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="new_member.do"><span class="glyphicon glyphicon-user"></span> 회원가입</a></li>
+							<li><a href="login.do"><span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
+						</ul>
 					</form>
-				</li>
-			</ul>
-			<c:if test="${sessionScope.email==null }"> 
-				<form method=post action="login.do">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="new_member.do"><span
-								class="glyphicon glyphicon-user"></span> 회원가입</a></li>
-						<li><a href="login.do"><span
-								class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
-					</ul>
-				</form>
-			</c:if>
-
-			<c:if test="${sessionScope.email!=null }">
-				<form method=post action="logout.do">
-					<div class="log">
-						<span style="color: white;"> ${sessionScope.name } 
-						<c:if test="${sessionScope.grade==1 }">
-						(관리자)님 .	
-						</c:if>
-						<c:if test="${sessionScope.grade==2 }">
-						(일반사용자)님 .	
-						</c:if>
-						<c:if test="${sessionScope.grade==3 }">
-						(이벤트등록회원)님 .	
-						</c:if>
-						</span> 
-						<input type=submit value="로그아웃" >
-					</div>
-				</form>
-			</c:if>
+				</c:if>
+				<c:if test="${sessionScope.email!=null }">
+					<form method=post action="logout.do">
+						<div class="log">
+							<span style="color: white;"> ${sessionScope.name } 
+								<c:if test="${sessionScope.grade==1 }">
+									(관리자)님 .	
+								</c:if> 
+								<c:if test="${sessionScope.grade==2 }">
+									(일반사용자)님 .	
+								</c:if> 
+								<c:if test="${sessionScope.grade==3 }">
+								(이벤트등록회원)님 .	
+								</c:if>
+							</span><input type=submit value="로그아웃">
+						</div>
+					</form>
+				</c:if>
+			</div>
 		</div>
-	</div>
 	</nav>
 
 	<!-- Content -->
@@ -111,11 +117,11 @@
 	<!-- Footer -->
 	<footer>
 		<div class="text-center arrowdiv">
-			<a class="up-arrow text-center" href="#" data-toggle="tooltip" title="TO TOP" id="MOVE_TOP_BTN">
+			<a class="up-arrow text-center" href="#" data-toggle="tooltip" title="TO TOP" id="MOVE_TOP_BTN"> 
 				<span class="glyphicon glyphicon-chevron-up"></span>
 			</a>
 		</div>
-		
+
 		<div class="footer_menu">
 			<ul>
 				<li><a href="main.do">HOME</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</li>
@@ -126,24 +132,29 @@
 			</ul>
 		</div>
 		<div class="footer_txt">
-			<p>주소 : 서울특별시 마포구 월드컵북로 21 풍성빌딩 4층 쌍용강북교육센터 H CLASS | 대표 : 윤승구 | 사업자등록번호 : 123-45-67890</p>
-			<p>GGGL <a href="#">1:1 문의</a> | 뉴스상담(무료)010-8661-2704 | 경기상담(무료)010-9482-0971 | 갤러리상담(무료)010-2853-0928 | 가입문의(무료)010-2630-9375</p>
+			<p>주소 : 서울특별시 마포구 월드컵북로 21 풍성빌딩 4층 쌍용강북교육센터 H CLASS | 대표 : 윤승구 |
+				사업자등록번호 : 123-45-67890</p>
+			<p>
+				GGGL <a href="#">1:1 문의</a> | 뉴스상담(무료)010-8661-2704 |
+				경기상담(무료)010-9482-0971 | 갤러리상담(무료)010-2853-0928 |
+				가입문의(무료)010-2630-9375
+			</p>
 			<p>Copyright 2018 GGGL. Co. Ltd., ALL Right Reserved.</p>
 		</div>
 		<div class="footer_sns">
-			<img src="gameMain/image/sns1.png">&nbsp;&nbsp;
-			<img src="gameMain/image/sns2.png">&nbsp;&nbsp;
-			<img src="gameMain/image/sns3.png">&nbsp;&nbsp;
-			<img src="gameMain/image/sns4.png">&nbsp;&nbsp;
+			<img src="gameMain/image/sns1.png">&nbsp;&nbsp; 
+			<img src="gameMain/image/sns2.png">&nbsp;&nbsp; 
+			<img src="gameMain/image/sns3.png">&nbsp;&nbsp; 
+			<img src="gameMain/image/sns4.png">&nbsp;&nbsp; 
 			<img src="gameMain/image/sns5.png">
 		</div>
 		<div class="footer_aboutus">
 			<p class="aboutus">About Us</p>
-			<p class="aboutname1">Seunggoo Yoon&nbsp;&nbsp;&nbsp;Jinhyeok Oh&nbsp;&nbsp;&nbsp;Bora Yang</p>
-			<p class="aboutname2">Jieun Bae&nbsp;&nbsp;&nbsp;Seungjae Moon&nbsp;&nbsp;&nbsp;Dojin Lim</p>
+			<p class="aboutname1">Seunggoo Yoon&nbsp;&nbsp;&nbsp;Jinhyeok
+				Oh&nbsp;&nbsp;&nbsp;Bora Yang</p>
+			<p class="aboutname2">Jieun Bae&nbsp;&nbsp;&nbsp;Seungjae
+				Moon&nbsp;&nbsp;&nbsp;Dojin Lim</p>
 		</div>
 	</footer>
 </body>
 </html>
-
-
